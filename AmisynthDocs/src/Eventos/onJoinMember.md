@@ -8,7 +8,7 @@ $onJoinedMember
 
 es una llamada de retorno, lo que significa que se utiliza en el disparador del comando (no en el código). El comando se ejecuta cuando un usuario se une al servidor.
 
-> 📌 Se puede tener varios $onJoined[] por bot, pero no es recomendable.
+> 📌 Se puede tener varios $onJoined por bot, pero no es recomendable.
 
 **Sintaxis**
 
