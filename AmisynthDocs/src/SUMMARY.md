@@ -23,6 +23,8 @@
     - [$footer[]](funciones/footer.md)
     - [$footerIcon[]](funciones/footerIcon.md)
     - [$sendMessage[]](funciones/sendMessage.md)
+    - [$channelNames[]](funciones/channelNames.md)
+    - [$categorys[]](funciones/categorys.md)
 
 - [Eventos](Eventos/README.md)
     - [$onJoinMember](Eventos/onJoinMember.md)
