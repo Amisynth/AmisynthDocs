@@ -1,0 +1,6 @@
+[book]
+authors = ["samiunkonow"]
+language = "en"
+multilingual = false
+src = "src"
+title = "AmisynthDocs"
