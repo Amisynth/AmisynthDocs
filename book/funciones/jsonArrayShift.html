@@ -153,6 +153,25 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="jsonarrayshift"><a class="header" href="#jsonarrayshift">$jsonArrayShift[]</a></h1>
+<p>La función <code>$jsonArrayShift</code> elimina el primer elemento de un array y devuelve el elemento eliminado.</p>
+<h3 id="sintaxis"><a class="header" href="#sintaxis"><strong>Sintaxis</strong></a></h3>
+<pre><code class="language-plaintext">$jsonArrayShift[Key;...]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros"><strong>Parámetros</strong></a></h3>
+<ul>
+<li><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave del array del cual se eliminará un elemento.</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
+<pre><code class="language-plaintext">$jsonParse[{
+    'music': ['Paranoid - MADKID', 'Ping! 2 - Exyl', 'Tokyo - Leateq']
+}]
+
+Eliminado: $jsonArrayShift[music]
+
+Música actual:
+&gt; $jsonJoinArray[music;, ]
+</code></pre>
+<pre><code></code></pre>
 
                     </main>
 

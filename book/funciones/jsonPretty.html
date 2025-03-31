@@ -152,7 +152,36 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="jsonpretty"><a class="header" href="#jsonpretty">$jsonPretty[]</a></h1>
+                        <h1 id="jsonpretty"><a class="header" href="#jsonpretty">jsonPretty[]</a></h1>
+<p>La función <code>$jsonPretty</code> convierte el objeto JSON actual en una cadena formateada con sangría para una mejor visualización.</p>
+<blockquote>
+<p>La función <code>$jsonPretty</code> devolverá un resultado vacío si no se ejecutaron las funciones <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
+</blockquote>
+<h3 id="sintaxis"><a class="header" href="#sintaxis"><code>Sintaxis</code></a></h3>
+<pre><code class="language-plaintext">$jsonPretty[Indent length]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros"><code>Parámetros</code></a></h3>
+<ul>
+<li><code>Indent length</code> <code>(Tipo: Integer || Flag: Required)</code>: La cantidad de espacios usados para la indentación. Generalmente es <code>2</code> o <code>4</code>.</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo"><code>Ejemplo</code></a></h3>
+<pre><code class="language-plaintext">$nomention
+$disableInnerSpaceRemoval
+$jsonParse[{
+    'computer': [{
+        'apps': {
+            'software': ['BlueStacks', 'Krita', 'Visual Studio Code'],
+            'games': ['GTA 5', 'RDR 2', 'CS:GO', 'Cyberpunk 2077']
+        }
+    },{
+        'cpu': 'Intel',
+        'gpu': 'NVIDIA',
+        'ram': 'XPG'
+    }]
+}]
+
+$jsonPretty[4]
+</code></pre>
 
                     </main>
 

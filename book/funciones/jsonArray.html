@@ -152,7 +152,29 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="jsonarray"><a class="header" href="#jsonarray">$jsonArray[]</a></h1>
+                        <h1 id="jsonarray-"><a class="header" href="#jsonarray-">$jsonArray []</a></h1>
+<p>La función <code>$jsonArray</code> marca una clave JSON especificada como un <strong>array</strong>.</p>
+<h3 id="sintaxis"><a class="header" href="#sintaxis"><strong>Sintaxis</strong></a></h3>
+<pre><code class="language-plaintext">$jsonArray[Key;...]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros"><strong>Parámetros</strong></a></h3>
+<ul>
+<li><code>Key</code> <code>(Tipo: String || Obligatorio)</code>: La clave JSON que será marcada como un array.</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
+<pre><code class="language-plaintext">
+$jsonParse[{
+    'games': ''
+}]
+
+Clave `games` sin array:  
+$jsonPretty[4]  
+
+$jsonArray[games]  
+
+Clave `games` convertida en array:  
+$optOff[$jsonPretty[4]]  
+</code></pre>
 
                     </main>
 

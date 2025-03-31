@@ -2,7 +2,7 @@
 
 
 
-$onLeaveMember Se activa cuando un usuario se une al servidor.
+$onLeaveMember Se activa cuando un usuario se va del servidor.
 
 ```
 $onLeaveMember

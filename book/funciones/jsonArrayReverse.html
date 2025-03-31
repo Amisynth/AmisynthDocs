@@ -153,6 +153,25 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="jsonarrayreverse"><a class="header" href="#jsonarrayreverse">$jsonArrayReverse[]</a></h1>
+<p>La función <code>$jsonArrayReverse</code> invierte el orden de un array JSON específico.</p>
+<h3 id="sintaxis"><a class="header" href="#sintaxis"><strong>Sintaxis</strong></a></h3>
+<pre><code class="language-plaintext">$jsonArrayReverse[Key;...]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros"><strong>Parámetros</strong></a></h3>
+<ul>
+<li><code>key</code> <code>(Tipo: String || Opcional)</code> La clave del array JSON que se invertirá.</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
+<pre><code class="language-plaintext">
+$jsonParse[{
+  'fruits': ['apple', 'orange', 'banana', 'grape']
+}]
+
+$jsonArrayReverse[fruits]
+
+Después de invertir:
+&gt; $json[fruits]
+</code></pre>
 
                     </main>
 

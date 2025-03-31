@@ -152,7 +152,34 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="jsonarraycount"><a class="header" href="#jsonarraycount">$jsonArrayCount[]</a></h1>
+                        <h1 id="jsonarraycount--"><a class="header" href="#jsonarraycount--">$jsonArrayCount  []</a></h1>
+<p>La función <code>$jsonArrayCount</code> cuenta los elementos en la clave JSON especificada.</p>
+<h3 id="sintaxis"><a class="header" href="#sintaxis"><strong>Sintaxis</strong></a></h3>
+<pre><code class="language-plaintext">$jsonArrayCount[Key;...]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros"><strong>Parámetros</strong></a></h3>
+<ul>
+<li><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave JSON donde se contarán los elementos.</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
+<pre><code class="language-plaintext">
+$jsonParse[{
+    'computer': [{
+        'apps': {
+            'software': ['BlueStacks', 'Krita', 'Visual Studio Code'],
+            "games": ['GTA 5', 'RDR 2', 'CS:GO', 'Cyberpunk 2077']
+        }
+    },{
+        'cpu': 'Intel',
+        'gpu': 'NVIDIA',
+        'ram': 'XPG'
+    }]
+}]
+
+$onlyIf[$checkCondition[$jsonExists[computer;0;apps;$message[-1]]==true];¡La categoría especificada no existe! Categorías disponibles: `software` y `games`]
+
+La cantidad de aplicaciones en `$message[-1]` es: $jsonArrayCount[computer;0;apps;$message[-1]].
+</code></pre>
 
                     </main>
 

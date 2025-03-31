@@ -153,6 +153,36 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="jsonunset"><a class="header" href="#jsonunset">$jsonUnset[]</a></h1>
+<p>La función <code>$jsonUnset</code> elimina el valor en la clave JSON especificada.<br />
+En resumen, es la función opuesta a <code>$jsonSet</code>.</p>
+<h3 id="sintaxis"><a class="header" href="#sintaxis"><code>Sintaxis</code></a></h3>
+<pre><code class="language-plaintext">$jsonUnset[Key;...]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros"><code>Parámetros</code></a></h3>
+<ul>
+<li><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON que se eliminará.</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo"><code>Ejemplo</code></a></h3>
+<pre><code class="language-plaintext">$jsonParse[{
+    "username": "NightNutSky",
+    "tag": "6700",
+    "identity": {
+        "age": 16
+    }
+}]
+
+Username: $json[username]
+Tag: $json[tag]
+Age: $json[identity;age] years old
+
+$jsonUnset[username]
+$jsonUnset[tag]
+$jsonUnset[identity;age]
+
+$optOff[Username: $json[username]
+Tag: $json[tag]
+Age: $json[identity;age] years old]
+</code></pre>
 
                     </main>
 

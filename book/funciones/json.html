@@ -153,6 +153,30 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="json"><a class="header" href="#json">$json[]</a></h1>
+<p>La función $json recupera valores JSON de una clave especificada en el objeto JSON actual.</p>
+<blockquote>
+<p>La función $json devolverá una cadena vacía si el valor es nulo, la clave no existe, no se ejecutaron las funciones $jsonParse o $jsonSet, o se ejecutó $jsonClear.</p>
+</blockquote>
+<p>Sintaxis</p>
+<pre><code>$json[Key;...]
+</code></pre>
+<p>Parámetros</p>
+<p><code>Key</code> (Tipo: String || Flag: Required): La clave JSON que se recuperará.</p>
+<p>Ejemplos</p>
+<pre><code># Sin arrays
+
+$jsonParse[{
+    'username': 'Izana',
+    'tag': '6700',
+    'identity': {
+        'age': 16
+        }
+    }]
+
+Nombre de usuario: $json[username]
+Etiqueta: $json[tag]
+Edad: $json[identity;age] años
+</code></pre>
 
                     </main>
 

@@ -152,7 +152,28 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="jsonarrayunshift"><a class="header" href="#jsonarrayunshift">$jsonArrayUnshift[]</a></h1>
+                        <pre><code class="language-markdown"># $jsonArrayUnshift  
+La función `$jsonArrayUnshift` agrega un valor al inicio de un array JSON.  
+
+### **Sintaxis**  
+```plaintext
+$jsonArrayUnshift[Key;...;Value]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros"><strong>Parámetros</strong></a></h3>
+<ul>
+<li><code>key</code> <code>(Tipo: String || Requerido)</code> La clave del array JSON donde se añadirá el valor.</li>
+<li><code>value</code> <code>(Tipo: Float, String, Bool, Integer || Requerido)</code> El valor que se agregará al inicio del array.</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
+<pre><code class="language-plaintext">$jsonParse[{
+    'music': ['Paranoid - MADKID', 'Ping! 2 - Exyl, 'Tokyo - Leat'eq]
+}]
+
+$jsonArrayUnshift[music;Side Character - Cloudfodder]
+
+Música:
+&gt; $jsonJoinArray[music;, ]
+</code></pre>
 
                     </main>
 
