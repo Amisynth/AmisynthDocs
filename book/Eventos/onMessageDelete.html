@@ -167,10 +167,15 @@
 <p><strong>Ejemplo</strong></p>
 <pre><code class="language-python">bot = ...
 
-bot.new_event("$onMessageDelete", "El mensaje de $username[] fue eliminado en &lt;#$channelID[]&gt;, contenido: $getMessageDelete[].")
-
+bot.new_event("$onMessageDelete", 
+               """
+               Mensaje eliminado.
+               Mensaje eliminado en: $channelID[]
+               Mensaje eliminado en: $channelID[], contenido del mensaje: $getMessageDelete[]
+               """)
 bot.run(..)
 </code></pre>
+<p><img src="image-2.png" alt="alt text" /></p>
 
                     </main>
 

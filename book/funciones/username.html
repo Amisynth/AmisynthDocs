@@ -159,15 +159,12 @@
 </code></pre>
 <h3 id="parámetros"><a class="header" href="#parámetros"><strong>Parámetros</strong></a></h3>
 <ul>
-<li><code>ID de usuario</code> <em>(Tipo: ID | Opcional)</em> → Especifica el ID del usuario del que se desea obtener el nombre. Si se omite, devuelve el nombre del usuario que ejecutó el comando o activó el evento.</li>
+<li><code>ID de usuario</code> <code>(Tipo: ID | Opcional)</code>: → Especifica el ID del usuario del que se desea obtener el nombre. Si se omite, devuelve el nombre del usuario que ejecutó el comando o activó el evento.</li>
 </ul>
 <h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
-<pre><code class="language-python">bot.new_command(name="etc",
-                type="text", 
-                code="El nombre de usuario con ID 987654321 es `$username[987654321]`.")
+<pre><code>Tu nombre es: $username
 </code></pre>
-<p>🔹 Si el usuario con ID <code>987654321</code> se llama "Carlos", el mensaje será:<br />
-<strong>"El nombre de usuario con ID 987654321 es <code>Carlos</code>."</strong></p>
+<p><img src="image-19.png" alt="alt text" /></p>
 
                     </main>
 

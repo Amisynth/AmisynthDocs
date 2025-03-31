@@ -9,5 +9,12 @@ $channelID[(Nombre del canal)]
 
 **Parámetros**
 
-- `Nombre del canal` (Tipo: Cadena || Marca: Opcional): El nombre del canal.
-Ejemplo
+- `Nombre del canal` `(Tipo: Cadena || Marca: Opcional)`: El nombre del canal.
+
+**Codigo de ejemplo**
+
+```
+Canal ID: $channelID[]
+```
+
+![alt text](image-18.png)

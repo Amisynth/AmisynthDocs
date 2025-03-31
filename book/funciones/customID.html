@@ -161,10 +161,15 @@
 <p>📌 <strong>Nota:</strong> Solo funciona dentro de eventos como <code>$onInteraction</code>.</p>
 </blockquote>
 <h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
-<pre><code class="language-python">bot.new_event("$onInteraction", "Has interactuado con el botón de ID `$customID[]`.")
+<pre><code class="language-python">bot = ..
+
+bot.new_event("$onInteraction", "customid: $customID[]")
+
+bot.run(..)
 </code></pre>
-<p>🔹 Si un usuario hace clic en un botón con ID <code>"boton_aceptar"</code>, el bot responderá:<br />
-<strong>"Has interactuado con el botón de ID <code>boton_aceptar</code>."</strong></p>
+<p>🔹 Si un usuario hace clic en un botón con ID <code>"value-1"</code>, el bot responderá:<br />
+<strong>"customid: <code>value-1</code>."</strong></p>
+<p><img src="image-22.png" alt="alt text" /></p>
 
                     </main>
 

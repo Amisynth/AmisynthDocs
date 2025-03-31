@@ -160,19 +160,17 @@
 <h3 id="parámetros"><a class="header" href="#parámetros"><strong>Parámetros</strong></a></h3>
 <ul>
 <li>
-<p><code>Separador</code> (Tipo: Cadena | Obligatorio) → Especifica el carácter o texto que separará los nombres de las categorías en la lista.</p>
+<p><code>Separador</code> <code>(Tipo: Cadena | Obligatorio)</code> → Especifica el carácter o texto que separará los nombres de las categorías en la lista.</p>
 </li>
 <li>
-<p><code>Guild ID</code> (Tipo: ID | Opcional) → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
+<p><code>Guild ID</code> <code>(Tipo: ID | Opcional)</code> → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
 </li>
 </ul>
 <h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
-<pre><code class="language-python">bot.new_event("$onMessage", "Lista de categorías: `$categoryNames[, ]`")
+<pre><code class="language-python">$categorysNames[|]
 </code></pre>
 <p>🔹 Devuelve algo como: <code>Información, General, Juegos, Staff</code></p>
-<pre><code class="language-python">bot.new_event("$onMessage", "Categorías del servidor con ID 123456789: `$categoryNames[ | ;123456789]`")
-</code></pre>
-<p>🔹 Devuelve los nombres de las categorías del servidor con ID <code>123456789</code>, separados por <code>|</code>.</p>
+<p><img src="image-21.png" alt="alt text" /></p>
 
                     </main>
 

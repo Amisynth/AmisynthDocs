@@ -158,9 +158,21 @@
 <pre><code>$sendMessage[Texto;(¿ID del mensaje de retorno?;ID Canal)]
 </code></pre>
 <p><strong>Parámetros</strong></p>
-<p><code>Texto</code> (Tipo: Cadena || Indicador: Obligatorio): El texto que se enviará en el nuevo mensaje.</p>
-<p><code>¿ID del mensaje de retorno?</code> (Tipo: Bool || Indicador: Opcional): Si se debe devolver el ID del mensaje recién enviado en otro mensaje. El valor predeterminado es no.</p>
-<p><code>ID Canal</code> (Tipo: Cadena || Indicador: Opcional): El canal a donde se va ir el mensaje por default es el canal ID donde ejecuta</p>
+<ul>
+<li>
+<p><code>Texto</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: El texto que se enviará en el nuevo mensaje.</p>
+</li>
+<li>
+<p><code>¿ID del mensaje de retorno?</code> <code>(Tipo: Bool || Indicador: Opcional)</code>: Si se debe devolver el ID del mensaje recién enviado en otro mensaje. El valor predeterminado es no.</p>
+</li>
+<li>
+<p><code>ID Canal</code> <code>(Tipo: Cadena || Indicador: Opcional)</code>: El canal a donde se va ir el mensaje por default es el canal ID donde ejecuta</p>
+</li>
+</ul>
+<p><strong>Codigo de Ejemplo</strong></p>
+<pre><code>$sendMesssage[Hola, $username[];false;$channelID[]]
+</code></pre>
+<p><img src="image-17.png" alt="alt text" /></p>
 
                     </main>
 

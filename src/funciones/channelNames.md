@@ -17,13 +17,9 @@ $channelNames[separador;(guild opcional)]
 
 ### **Ejemplo**  
 
-```python
-bot.new_event("$onMessage", "Lista de canales: `$channelNames[, ]`")
+```
+$channelNames[|]
 ```
 🔹 Devuelve algo como: `general, memes, música, sugerencias`  
 
-```python
-bot.new_event("$onMessage", "Canales del servidor con ID 123456789: `$channelNames[ | ;123456789]`")
-```
-🔹 Devuelve los nombres de los canales del servidor con ID `123456789`, separados por ` | `.  
-
+![alt text](image-20.png)

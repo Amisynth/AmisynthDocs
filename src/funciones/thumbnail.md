@@ -14,8 +14,17 @@ $thumbnail[URL de la imagen;(Índice)]
 - `Índice` (Tipo: Entero || Marca: Opcional): El índice de incrustación al que debe pertenecer la miniatura (predeterminado: 1).
 
 **Permisos**
+
 Permisos necesarios que el bot debe tener para que esta función funcione correctamente:
 
 - sendmessages
 - sendmessagesinthreads
 - embedlinks
+
+**Codigo de ejemplo**
+
+```lua
+$thumbnail[https://amisynth.bot/image.png]
+```
+
+![alt text](image-11.png)

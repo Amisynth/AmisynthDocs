@@ -222,27 +222,27 @@ Si tienes alguna pregunta o inquietud sobre estos Términos de Servicio, puedes 
 </code></pre>
 <p><strong>Parámetros</strong></p>
 <ul>
-<li><code>¿Nueva fila?</code> (Tipo: Bool || Marca: Obligatorio): Si se establece en sí, el botón aparecerá en una nueva fila. Si se establece en no, el botón aparecerá en la misma fila que el botón anterior.</li>
+<li><code>¿Nueva fila?</code> <code>(Tipo: Bool || Marca: Obligatorio)</code>: Si se establece en sí, el botón aparecerá en una nueva fila. Si se establece en no, el botón aparecerá en la misma fila que el botón anterior.</li>
 </ul>
 <p>Un mensaje puede tener un máximo de 25 botones (5 filas de 5 botones).</p>
 <ul>
 <li>
-<p><code>ID/URL de interacción</code> (Tipo: Cadena, URL || Marca: Obligatorio): Según el tipo de botón, se establece en ID de interacción, que se utiliza en la devolución de llamada $onInteraction[ID], o en URL si se trata de un botón de enlace.</p>
+<p><code>ID/URL de interacción</code> <code>(Tipo: Cadena, URL || Marca: Obligatorio)</code>: Según el tipo de botón, se establece en ID de interacción, que se utiliza en la devolución de llamada $onInteraction[ID], o en URL si se trata de un botón de enlace.</p>
 </li>
 <li>
-<p><code>Etiqueta</code> (Tipo: Cadena || Marca: Vaciable): El valor de texto visible en el botón.</p>
+<p><code>Etiqueta</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El valor de texto visible en el botón.</p>
 </li>
 <li>
-<p><code>Estilo</code> (Tipo: Enumeración || Indicador: Obligatorio): Se utiliza para especificar el color de fondo del botón. Si el botón tiene un enlace/URL, debe establecer el valor en enlace. Consulte esta sección para obtener más detalles.</p>
+<p><code>Estilo</code> <code>(Tipo: Enumeración || Indicador: Obligatorio)</code>: Se utiliza para especificar el color de fondo del botón. Si el botón tiene un enlace/URL, debe establecer el valor en enlace. Consulte esta sección para obtener más detalles.</p>
 </li>
 <li>
-<p><code>¿Deshabilitar?</code> (Tipo: Bool || Indicador: Vacante): Si se establece en sí, el botón no se puede presionar. El valor predeterminado es no.</p>
+<p><code>¿Deshabilitar?</code> <code>(Tipo: Bool || Indicador: Vacante)</code>: Si se establece en sí, el botón no se puede presionar. El valor predeterminado es no.</p>
 </li>
 <li>
-<p><code>Emoji</code> (Tipo: Emoji || Indicador: Vacante): Agrega un emoji dentro del botón. Los emojis deben pegarse como Unicode, alias o tener el siguiente formato: &lt;:emoji name:emoji ID&gt;.</p>
+<p><code>Emoji</code> <code>(Tipo: Emoji || Indicador: Vacante)</code>: Agrega un emoji dentro del botón. Los emojis deben pegarse como Unicode, alias o tener el siguiente formato: &lt;:emoji name:emoji ID&gt;.</p>
 </li>
 <li>
-<p><code>ID de mensaje</code> (Tipo: Copo de nieve || Indicador: Vacante): Agrega el botón al ID de mensaje proporcionado. Es importante tener en cuenta que el autor del ID de mensaje proporcionado debe ser el bot.</p>
+<p><code>ID de mensaje</code> <code>(Tipo: Copo de nieve || Indicador: Vacante)</code>: Agrega el botón al ID de mensaje proporcionado. Es importante tener en cuenta que el autor del ID de mensaje proporcionado debe ser el bot.</p>
 </li>
 </ul>
 <p><strong>Ejemplo</strong></p>
@@ -259,19 +259,19 @@ $addButton[false;id;Prueba de boton;primary;false]
 <p><strong>Parámetros</strong></p>
 <ul>
 <li>
-<p><code>Nombre</code> (Tipo: Cadena || Indicador: Obligatorio): El nombre del campo. No puede superar los 256 caracteres.</p>
+<p><code>Nombre</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: El nombre del campo. No puede superar los 256 caracteres.</p>
 </li>
 <li>
-<p><code>Valor</code> (Tipo: Cadena || Indicador: Obligatorio): El valor del campo. No puede superar los 1024 caracteres.</p>
+<p><code>Valor</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: El valor del campo. No puede superar los 1024 caracteres.</p>
 </li>
 <li>
-<p><code>¿Inline?</code> (Tipo: Bool || Indicador: Opcional): Si la opción es sí, los campos aparecerán en la misma línea. Sin embargo, si tienes más de 3 campos (o si son demasiado largos) con la opción en línea</p>
+<p><code>¿Inline?</code> <code>(Tipo: Bool || Indicador: Opcional)</code>: Si la opción es sí, los campos aparecerán en la misma línea. Sin embargo, si tienes más de 3 campos (o si son demasiado largos) con la opción en línea</p>
 </li>
 <li>
 <p><code>habilitada</code>, el bot devolverá filas con 3 campos (2 si hay una miniatura) en cada fila. Por defecto, está configurado como no.</p>
 </li>
 <li>
-<p><code>Índice</code> (Tipo: Entero || Indicador: Opcional): Añade el campo a un número de índice de incrustación especificado. (aprender más)</p>
+<p><code>Índice</code> <code>(Tipo: Entero || Indicador: Opcional)</code>: Añade el campo a un número de índice de incrustación especificado. (aprender más)</p>
 </li>
 </ul>
 <p><strong>Ejemplo #1:</strong></p>
@@ -370,6 +370,10 @@ $titleURL[https:/example.com]
 <p><code>Índice</code> (Tipo: Entero || Marca: Opcional): A qué incrustación debe pertenecer el borde de color (opcional). El valor predeterminado es 1. (Más información)</p>
 </li>
 </ul>
+<pre><code>$color[#000001]
+$description[&lt;- Este es el color]
+</code></pre>
+<p><img src="funciones/image-9.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="image"><a class="header" href="#image">$image[]</a></h1>
 <p>$image Añade una imagen a la incrustación.</p>
 <p>Sintaxis</p>
@@ -377,9 +381,13 @@ $titleURL[https:/example.com]
 </code></pre>
 <p><strong>Parámetros</strong></p>
 <ul>
-<li><code>URL de la imagen</code> (Tipo: URL || Marca: Vaciable): La URL de la imagen que aparece. Debe ser una URL de imagen válida.</li>
-<li><code>Índice</code> (Tipo: Entero || Marca: Opcional): A qué incrustación debe pertenecer la imagen. El valor predeterminado es 1. (Más información)</li>
+<li><code>URL de la imagen</code> <code>(Tipo: URL || Marca: Vaciable)</code>: La URL de la imagen que aparece. Debe ser una URL de imagen válida.</li>
+<li><code>Índice</code> <code>(Tipo: Entero || Marca: Opcional)</code>: A qué incrustación debe pertenecer la imagen. El valor predeterminado es 1. (Más información)</li>
 </ul>
+<h1 id="codigo-de-ejemplo"><a class="header" href="#codigo-de-ejemplo">Codigo de ejemplo</a></h1>
+<pre><code>$image[https://amisynth.bot/image.png]
+</code></pre>
+<p><img src="funciones/image-10.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="thumbnail"><a class="header" href="#thumbnail">$thumbnail[]</a></h1>
 <p>$thumbnail Añade una miniatura incrustada al mensaje de respuesta del bot.</p>
 <p><strong>Sintaxis</strong></p>
@@ -394,13 +402,17 @@ $titleURL[https:/example.com]
 <p><code>Índice</code> (Tipo: Entero || Marca: Opcional): El índice de incrustación al que debe pertenecer la miniatura (predeterminado: 1).</p>
 </li>
 </ul>
-<p><strong>Permisos</strong>
-Permisos necesarios que el bot debe tener para que esta función funcione correctamente:</p>
+<p><strong>Permisos</strong></p>
+<p>Permisos necesarios que el bot debe tener para que esta función funcione correctamente:</p>
 <ul>
 <li>sendmessages</li>
 <li>sendmessagesinthreads</li>
 <li>embedlinks</li>
 </ul>
+<p><strong>Codigo de ejemplo</strong></p>
+<pre><code class="language-lua">$thumbnail[https://amisynth.bot/image.png]
+</code></pre>
+<p><img src="funciones/image-11.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="author"><a class="header" href="#author">$author[]</a></h1>
 <p>$author Añade el texto del autor a una incrustación.</p>
 <p><strong>Sintaxis</strong></p>
@@ -409,12 +421,16 @@ Permisos necesarios que el bot debe tener para que esta función funcione correc
 <p><strong>Parámetros</strong></p>
 <ul>
 <li>
-<p><code>Texto</code> (Tipo: Cadena || Marca: Vaciable): El texto que aparece en el texto del autor. No puede superar los 256 caracteres.</p>
+<p><code>Texto</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El texto que aparece en el texto del autor. No puede superar los 256 caracteres.</p>
 </li>
 <li>
-<p><code>Índice</code> (Tipo: Entero || Marca: Opcional): A qué incrustación se añadirá el texto del autor. (Más información)</p>
+<p><code>Índice</code> <code>(Tipo: Entero || Marca: Opcional)</code>: A qué incrustación se añadirá el texto del autor. (Más información)</p>
 </li>
 </ul>
+<p><strong>Codigo de Ejemplo</strong></p>
+<pre><code>$author[$username[]]
+</code></pre>
+<p><img src="funciones/image-12.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="authoricon"><a class="header" href="#authoricon">$authorIcon[]</a></h1>
 <p>$authorICon Añade el texto del autor a una incrustación.</p>
 <p><strong>Sintaxis</strong></p>
@@ -423,12 +439,17 @@ Permisos necesarios que el bot debe tener para que esta función funcione correc
 <p><strong>Parámetros</strong></p>
 <ul>
 <li>
-<p><code>URL</code> (Tipo: Cadena || Marca: Vaciable): La imagen del icono del autor. Debe ser una URL de imagen válida.</p>
+<p><code>URL</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: La imagen del icono del autor. Debe ser una URL de imagen válida.</p>
 </li>
 <li>
-<p><code>Índice</code> (Tipo: Entero || Marca: Opcional): A qué incrustación se añadirá el texto del autor. (Más información)</p>
+<p><code>Índice</code> <code>(Tipo: Entero || Marca: Opcional)</code>: A qué incrustación se añadirá el texto del autor. (Más información)</p>
 </li>
 </ul>
+<p><strong>Codigo de ejemplo</strong></p>
+<pre><code>$authorIcon[$userAvatar[]]
+$author[&lt;- icono de author]
+</code></pre>
+<p><img src="funciones/image-13.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="authorurl"><a class="header" href="#authorurl">$authorURL[]</a></h1>
 <p>$authorURL Añade un hipervínculo al texto del autor.</p>
 <p><strong>Sintaxis</strong></p>
@@ -440,12 +461,17 @@ Permisos necesarios que el bot debe tener para que esta función funcione correc
 <p><strong>Parámetros</strong></p>
 <ul>
 <li>
-<p><code>URL</code> (Tipo: URL || Marca: Vaciable): El enlace que se establecerá como hipervínculo del autor.</p>
+<p><code>URL</code> <code>(Tipo: URL || Marca: Vaciable)</code>: El enlace que se establecerá como hipervínculo del autor.</p>
 </li>
 <li>
-<p><code>Índice</code> (Tipo: Entero || Marca: Opcional): A qué se añadirá la URL del autor. (Más información)</p>
+<p><code>Índice</code> <code>(Tipo: Entero || Marca: Opcional)</code>: A qué se añadirá la URL del autor. (Más información)</p>
 </li>
 </ul>
+<p><strong>Codigo de ejemplo</strong></p>
+<pre><code>$authorURL[$authorAvatar[]]
+$author[Texto de author con URL]
+</code></pre>
+<p><img src="funciones/image-14.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="footer"><a class="header" href="#footer">$footer[]</a></h1>
 <p>$footer Establece el texto del pie de página incrustado.</p>
 <p><strong>Sintaxis</strong></p>
@@ -454,12 +480,16 @@ Permisos necesarios que el bot debe tener para que esta función funcione correc
 <p><strong>Parámetros</strong></p>
 <ul>
 <li>
-<p><code>Texto</code> (Tipo: Cadena || Marca: Vaciable): El texto que se usará para el pie de página. No puede superar los 2048 caracteres.</p>
+<p><code>Texto</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El texto que se usará para el pie de página. No puede superar los 2048 caracteres.</p>
 </li>
 <li>
-<p><code>Índice </code>(Tipo: Entero || Marca: Opcional): A qué incrustación debe pertenecer el texto del pie de página. El valor predeterminado es 1. (Más información)</p>
+<p><code>Índice</code> <code>(Tipo: Entero || Marca: Opcional)</code>: A qué incrustación debe pertenecer el texto del pie de página. El valor predeterminado es 1. (Más información)</p>
 </li>
 </ul>
+<p><strong>Codigo de Ejemplo</strong></p>
+<pre><code>$footer[texto del footer]
+</code></pre>
+<p><img src="funciones/image-15.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="footericon"><a class="header" href="#footericon">$footerIcon[]</a></h1>
 <p>$footerIcon Establece el icono de pie de página para incrustar.</p>
 <blockquote>
@@ -469,17 +499,40 @@ Permisos necesarios que el bot debe tener para que esta función funcione correc
 <pre><code>$footerIcon[URL del icono;(Índice)]
 </code></pre>
 <p><strong>Parámetros</strong></p>
-<p><code>URL del icono</code> (Tipo: URL || Marca: Vaciable): La URL para configurar el icono de pie de página. Debe ser una URL de imagen válida.
-<code>Índice</code> (Tipo: Entero || Marca: Vaciable): A qué incrustación debe pertenecer el icono de pie de página. El valor predeterminado es 1. (Más información)</p>
+<ul>
+<li>
+<p><code>URL del icono</code> <code>(Tipo: URL || Marca: Vaciable)</code>: La URL para configurar el icono de pie de página. Debe ser una URL de imagen válida.</p>
+</li>
+<li>
+<p><code>Índice</code> <code>(Tipo: Entero || Marca: Vaciable)</code>: A qué incrustación debe pertenecer el icono de pie de página. El valor predeterminado es 1. (Más información)</p>
+</li>
+</ul>
+<p><strong>Codigo de ejemplo</strong></p>
+<pre><code>$footerIcon[$userAvatar[]]
+$footer[&lt;- icono]
+</code></pre>
+<p><img src="funciones/image-16.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="sendmessage"><a class="header" href="#sendmessage">$sendMessage[]</a></h1>
 <p>Envía un nuevo mensaje al canal actual.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code>$sendMessage[Texto;(¿ID del mensaje de retorno?;ID Canal)]
 </code></pre>
 <p><strong>Parámetros</strong></p>
-<p><code>Texto</code> (Tipo: Cadena || Indicador: Obligatorio): El texto que se enviará en el nuevo mensaje.</p>
-<p><code>¿ID del mensaje de retorno?</code> (Tipo: Bool || Indicador: Opcional): Si se debe devolver el ID del mensaje recién enviado en otro mensaje. El valor predeterminado es no.</p>
-<p><code>ID Canal</code> (Tipo: Cadena || Indicador: Opcional): El canal a donde se va ir el mensaje por default es el canal ID donde ejecuta</p>
+<ul>
+<li>
+<p><code>Texto</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: El texto que se enviará en el nuevo mensaje.</p>
+</li>
+<li>
+<p><code>¿ID del mensaje de retorno?</code> <code>(Tipo: Bool || Indicador: Opcional)</code>: Si se debe devolver el ID del mensaje recién enviado en otro mensaje. El valor predeterminado es no.</p>
+</li>
+<li>
+<p><code>ID Canal</code> <code>(Tipo: Cadena || Indicador: Opcional)</code>: El canal a donde se va ir el mensaje por default es el canal ID donde ejecuta</p>
+</li>
+</ul>
+<p><strong>Codigo de Ejemplo</strong></p>
+<pre><code>$sendMesssage[Hola, $username[];false;$channelID[]]
+</code></pre>
+<p><img src="funciones/image-17.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="channelid"><a class="header" href="#channelid">$channelID[]</a></h1>
 <p>Devuelve el ID del canal para el nombre del canal especificado.</p>
 <p>Sintaxis</p>
@@ -487,9 +540,12 @@ Permisos necesarios que el bot debe tener para que esta función funcione correc
 </code></pre>
 <p><strong>Parámetros</strong></p>
 <ul>
-<li><code>Nombre del canal</code> (Tipo: Cadena || Marca: Opcional): El nombre del canal.
-Ejemplo</li>
+<li><code>Nombre del canal</code> <code>(Tipo: Cadena || Marca: Opcional)</code>: El nombre del canal.</li>
 </ul>
+<p><strong>Codigo de ejemplo</strong></p>
+<pre><code>Canal ID: $channelID[]
+</code></pre>
+<p><img src="funciones/image-18.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="username"><a class="header" href="#username">$username[]</a></h1>
 <p><code>$username[]</code> retorna el nombre de usuario de un miembro del servidor.</p>
 <h3 id="sintaxis"><a class="header" href="#sintaxis"><strong>Sintaxis</strong></a></h3>
@@ -497,15 +553,12 @@ Ejemplo</li>
 </code></pre>
 <h3 id="parámetros"><a class="header" href="#parámetros"><strong>Parámetros</strong></a></h3>
 <ul>
-<li><code>ID de usuario</code> <em>(Tipo: ID | Opcional)</em> → Especifica el ID del usuario del que se desea obtener el nombre. Si se omite, devuelve el nombre del usuario que ejecutó el comando o activó el evento.</li>
+<li><code>ID de usuario</code> <code>(Tipo: ID | Opcional)</code>: → Especifica el ID del usuario del que se desea obtener el nombre. Si se omite, devuelve el nombre del usuario que ejecutó el comando o activó el evento.</li>
 </ul>
 <h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
-<pre><code class="language-python">bot.new_command(name="etc",
-                type="text", 
-                code="El nombre de usuario con ID 987654321 es `$username[987654321]`.")
+<pre><code>Tu nombre es: $username
 </code></pre>
-<p>🔹 Si el usuario con ID <code>987654321</code> se llama "Carlos", el mensaje será:<br />
-<strong>"El nombre de usuario con ID 987654321 es <code>Carlos</code>."</strong></p>
+<p><img src="funciones/image-19.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="channelnames"><a class="header" href="#channelnames">$channelNames[]</a></h1>
 <p>$channelNames[] retornar todos los nombre de los canales del servidor</p>
 <h3 id="sintaxis-1"><a class="header" href="#sintaxis-1"><strong>Sintaxis</strong></a></h3>
@@ -521,12 +574,10 @@ Ejemplo</li>
 </li>
 </ul>
 <h3 id="ejemplo-1"><a class="header" href="#ejemplo-1"><strong>Ejemplo</strong></a></h3>
-<pre><code class="language-python">bot.new_event("$onMessage", "Lista de canales: `$channelNames[, ]`")
+<pre><code>$channelNames[|]
 </code></pre>
 <p>🔹 Devuelve algo como: <code>general, memes, música, sugerencias</code></p>
-<pre><code class="language-python">bot.new_event("$onMessage", "Canales del servidor con ID 123456789: `$channelNames[ | ;123456789]`")
-</code></pre>
-<p>🔹 Devuelve los nombres de los canales del servidor con ID <code>123456789</code>, separados por <code>|</code>.</p>
+<p><img src="funciones/image-20.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="categorynames"><a class="header" href="#categorynames">$categoryNames[]</a></h1>
 <p><code>$categoryNames[]</code> retorna todos los nombres de las categorías del servidor.</p>
 <h3 id="sintaxis-2"><a class="header" href="#sintaxis-2"><strong>Sintaxis</strong></a></h3>
@@ -535,19 +586,17 @@ Ejemplo</li>
 <h3 id="parámetros-2"><a class="header" href="#parámetros-2"><strong>Parámetros</strong></a></h3>
 <ul>
 <li>
-<p><code>Separador</code> (Tipo: Cadena | Obligatorio) → Especifica el carácter o texto que separará los nombres de las categorías en la lista.</p>
+<p><code>Separador</code> <code>(Tipo: Cadena | Obligatorio)</code> → Especifica el carácter o texto que separará los nombres de las categorías en la lista.</p>
 </li>
 <li>
-<p><code>Guild ID</code> (Tipo: ID | Opcional) → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
+<p><code>Guild ID</code> <code>(Tipo: ID | Opcional)</code> → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
 </li>
 </ul>
 <h3 id="ejemplo-2"><a class="header" href="#ejemplo-2"><strong>Ejemplo</strong></a></h3>
-<pre><code class="language-python">bot.new_event("$onMessage", "Lista de categorías: `$categoryNames[, ]`")
+<pre><code class="language-python">$categorysNames[|]
 </code></pre>
 <p>🔹 Devuelve algo como: <code>Información, General, Juegos, Staff</code></p>
-<pre><code class="language-python">bot.new_event("$onMessage", "Categorías del servidor con ID 123456789: `$categoryNames[ | ;123456789]`")
-</code></pre>
-<p>🔹 Devuelve los nombres de las categorías del servidor con ID <code>123456789</code>, separados por <code>|</code>.</p>
+<p><img src="funciones/image-21.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="customid"><a class="header" href="#customid">$customID[]</a></h1>
 <p><code>$customID[]</code> retorna el <strong>ID personalizado</strong> de una interacción con botones o menús desplegables en Discord.</p>
 <h3 id="sintaxis-3"><a class="header" href="#sintaxis-3"><strong>Sintaxis</strong></a></h3>
@@ -557,10 +606,15 @@ Ejemplo</li>
 <p>📌 <strong>Nota:</strong> Solo funciona dentro de eventos como <code>$onInteraction</code>.</p>
 </blockquote>
 <h3 id="ejemplo-3"><a class="header" href="#ejemplo-3"><strong>Ejemplo</strong></a></h3>
-<pre><code class="language-python">bot.new_event("$onInteraction", "Has interactuado con el botón de ID `$customID[]`.")
+<pre><code class="language-python">bot = ..
+
+bot.new_event("$onInteraction", "customid: $customID[]")
+
+bot.run(..)
 </code></pre>
-<p>🔹 Si un usuario hace clic en un botón con ID <code>"boton_aceptar"</code>, el bot responderá:<br />
-<strong>"Has interactuado con el botón de ID <code>boton_aceptar</code>."</strong></p>
+<p>🔹 Si un usuario hace clic en un botón con ID <code>"value-1"</code>, el bot responderá:<br />
+<strong>"customid: <code>value-1</code>."</strong></p>
+<p><img src="funciones/image-22.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="editmessageafter"><a class="header" href="#editmessageafter">$editMessageAfter[]</a></h1>
 <p><code>$editMessageAfter[]</code> devuelde el mensaje ya editado.</p>
 <h3 id="sintaxis-4"><a class="header" href="#sintaxis-4"><strong>Sintaxis</strong></a></h3>
@@ -593,18 +647,18 @@ $editMessagBefore[]
             """
 )
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="rolegrant"><a class="header" href="#rolegrant">$roleGrant</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rolegrant"><a class="header" href="#rolegrant">$roleGrant[]</a></h1>
 <p>Añade o elimina roles del usuario proporcionado.</p>
 <h2 id="sintaxis-6"><a class="header" href="#sintaxis-6">Sintaxis</a></h2>
 <pre><code>$roleGrant[ID de usuario;+/-ID de rol;...]
 </code></pre>
-<h2 id="parámetros-5"><a class="header" href="#parámetros-5">Parámetros</a></h2>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li>
-<p><code>ID de usuario</code> (Tipo: Snowflake || Obligatorio): El usuario al que se le otorgarán o eliminarán roles.</p>
+<p><code>ID de usuario</code> <code>(Tipo: Snowflake || Obligatorio)</code>: El usuario al que se le otorgarán o eliminarán roles.</p>
 </li>
 <li>
-<p><code>ID de rol</code> (Tipo: Snowflake || Obligatorio): El rol a añadir o eliminar.</p>
+<p><code>ID de rol</code> <code>(Tipo: Snowflake || Obligatorio)</code>: El rol a añadir o eliminar.</p>
 <ul>
 <li>Usa <code>+</code> antes del ID del rol para añadirlo.</li>
 <li>Usa <code>-</code> antes del ID del rol para eliminarlo.</li>
@@ -612,21 +666,18 @@ $editMessagBefore[]
 </ul>
 </li>
 </ul>
-<h2 id="ejemplos"><a class="header" href="#ejemplos">Ejemplos</a></h2>
-<h3 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo #1</a></h3>
+<p><strong>Ejemplo</strong></p>
 <pre><code class="language-plaintext">$nomention
 $roleGrant[3869969062509936;-9368562753613496]
 </code></pre>
-<h3 id="ejemplo-2"><a class="header" href="#ejemplo-2">Ejemplo #2</a></h3>
-<pre><code class="language-plaintext">$roleGrant[$mentioned[1];+$mentionedRoles[1]]
-&lt;@$mentioned[1]&gt; usuario recibió el rol &lt;@&amp;$mentionedRoles[1]&gt;
-</code></pre>
+<p><img src="funciones/image-24.png" alt="alt text" /></p>
+<p><img src="funciones/image-25.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="sendembedmessage"><a class="header" href="#sendembedmessage">$sendEmbedMessage[]</a></h1>
 <p>Envía un mensaje embed al canal proporcionado. Los campos no necesarios pueden dejarse vacíos.</p>
 <h2 id="sintaxis-7"><a class="header" href="#sintaxis-7">Sintaxis</a></h2>
 <pre><code>$sendEmbedMessage[ID del canal;Contenido;(Título;URL del título;Descripción;Color;Autor;Ícono del autor;Pie de página;Ícono del pie de página;Miniatura;Imagen;Añadir timestamp?;Retornar ID?;Nombre del campo;Valor del campo;¿En línea?;...)]
 </code></pre>
-<h2 id="parámetros-6"><a class="header" href="#parámetros-6">Parámetros</a></h2>
+<h2 id="parámetros-5"><a class="header" href="#parámetros-5">Parámetros</a></h2>
 <ul>
 <li>
 <p><code>ID del canal</code> (Tipo: Snowflake || Obligatorio): ID del canal donde se enviará el mensaje.</p>
@@ -681,7 +732,7 @@ $roleGrant[3869969062509936;-9368562753613496]
 </li>
 </ul>
 <h2 id="ejemplo-6"><a class="header" href="#ejemplo-6">Ejemplo</a></h2>
-<h3 id="ejemplo-1-1"><a class="header" href="#ejemplo-1-1">Ejemplo #1</a></h3>
+<h3 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$sendEmbedMessage[$channelID[];;Título;https://discord.com/;Descripción;000000;Autor;$authorAvatar;Pie de página;$authorAvatar;$authorAvatar;yes;no;Nombre del campo;Valor del campo;true]
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="textsplit"><a class="header" href="#textsplit">$textSplit[]</a></h1>
@@ -689,7 +740,7 @@ $roleGrant[3869969062509936;-9368562753613496]
 <h2 id="sintaxis-8"><a class="header" href="#sintaxis-8">Sintaxis</a></h2>
 <pre><code>$textSplit[Texto;Separador]
 </code></pre>
-<h2 id="parámetros-7"><a class="header" href="#parámetros-7">Parámetros</a></h2>
+<h2 id="parámetros-6"><a class="header" href="#parámetros-6">Parámetros</a></h2>
 <ul>
 <li>
 <p><code>Texto</code> (Tipo: String || Opcional): El texto a dividir.</p>
@@ -702,7 +753,7 @@ $roleGrant[3869969062509936;-9368562753613496]
 </li>
 </ul>
 <h2 id="ejemplo-7"><a class="header" href="#ejemplo-7">Ejemplo</a></h2>
-<h3 id="ejemplo-1-2"><a class="header" href="#ejemplo-1-2">Ejemplo #1</a></h3>
+<h3 id="ejemplo-1-1"><a class="header" href="#ejemplo-1-1">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$nomention
 $textSplit[hello-world-!;-]
 &gt; $splitText[2]
@@ -713,7 +764,7 @@ $textSplit[hello-world-!;-]
 <pre><code>$getTextSplitLength
 </code></pre>
 <h2 id="ejemplo-8"><a class="header" href="#ejemplo-8">Ejemplo</a></h2>
-<h3 id="ejemplo-1-3"><a class="header" href="#ejemplo-1-3">Ejemplo #1</a></h3>
+<h3 id="ejemplo-1-2"><a class="header" href="#ejemplo-1-2">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$textSplit[hello%world%!;%]
 &gt; $getTextSplitLength   // Devuelve 3
 </code></pre>
@@ -722,7 +773,7 @@ $textSplit[hello-world-!;-]
 <h2 id="sintaxis-10"><a class="header" href="#sintaxis-10">Sintaxis</a></h2>
 <pre><code>$splitText[Índice]
 </code></pre>
-<h2 id="parámetros-8"><a class="header" href="#parámetros-8">Parámetros</a></h2>
+<h2 id="parámetros-7"><a class="header" href="#parámetros-7">Parámetros</a></h2>
 <ul>
 <li>
 <p><code>Índice</code> (Tipo: Número o Símbolo || Obligatorio): El índice del fragmento de texto a obtener.</p>
@@ -734,7 +785,7 @@ $textSplit[hello-world-!;-]
 </li>
 </ul>
 <h2 id="ejemplo-9"><a class="header" href="#ejemplo-9">Ejemplo</a></h2>
-<h3 id="ejemplo-1-4"><a class="header" href="#ejemplo-1-4">Ejemplo #1</a></h3>
+<h3 id="ejemplo-1-3"><a class="header" href="#ejemplo-1-3">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$textSplit[hello world !; ]
 &gt; $splitText[&lt;]   // Obtiene "hello"
 &gt; $splitText[2]   // Obtiene "world"
@@ -745,12 +796,12 @@ $textSplit[hello-world-!;-]
 <h2 id="sintaxis-11"><a class="header" href="#sintaxis-11">Sintaxis</a></h2>
 <pre><code>$getTextSplitIndex[Valor]
 </code></pre>
-<h2 id="parámetros-9"><a class="header" href="#parámetros-9">Parámetros</a></h2>
+<h2 id="parámetros-8"><a class="header" href="#parámetros-8">Parámetros</a></h2>
 <ul>
 <li><code>Valor</code> (Tipo: String || Opcional): El valor a buscar dentro del texto dividido.</li>
 </ul>
 <h2 id="ejemplo-10"><a class="header" href="#ejemplo-10">Ejemplo</a></h2>
-<h3 id="ejemplo-1-5"><a class="header" href="#ejemplo-1-5">Ejemplo #1</a></h3>
+<h3 id="ejemplo-1-4"><a class="header" href="#ejemplo-1-4">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$textSplit[hello_world_!;_]
 &gt; $getTextSplitIndex[$message]   // Devuelve el índice del valor en la lista dividida o -1 si no se encuentra
 </code></pre>
@@ -764,7 +815,7 @@ $textSplit[hello-world-!;-]
 <li><code>Separador</code>: <em>(Tipo: String || Opcional)</em> El separador que se usará entre los valores del texto dividido.</li>
 </ul>
 <h2 id="ejemplo-11"><a class="header" href="#ejemplo-11">Ejemplo</a></h2>
-<h3 id="ejemplo-1-6"><a class="header" href="#ejemplo-1-6">Ejemplo #1</a></h3>
+<h3 id="ejemplo-1-5"><a class="header" href="#ejemplo-1-5">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$textSplit[hello#world#!;#]
 &gt; $joinSplitText[.]   // Devuelve "hello.world.!"
 </code></pre>
@@ -778,7 +829,7 @@ $textSplit[hello-world-!;-]
 <li><code>Índice</code>: <em>(Tipo: Entero || Obligatorio)</em> El índice del valor en <code>$textSplit[]</code> que se desea eliminar.</li>
 </ul>
 <h2 id="ejemplo-12"><a class="header" href="#ejemplo-12">Ejemplo</a></h2>
-<h3 id="ejemplo-1-7"><a class="header" href="#ejemplo-1-7">Ejemplo #1</a></h3>
+<h3 id="ejemplo-1-6"><a class="header" href="#ejemplo-1-6">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$textSplit[hello-world-!;-]
 $removeSplitTextElement[3]
 &gt; $joinSplitText[-]   // Devuelve "hello-world"
@@ -788,7 +839,7 @@ $removeSplitTextElement[3]
 <h2 id="sintaxis-14"><a class="header" href="#sintaxis-14">Sintaxis</a></h2>
 <pre><code class="language-plaintext">$editSplitText[Índice;Valor]
 </code></pre>
-<h2 id="parámetros-10"><a class="header" href="#parámetros-10">Parámetros</a></h2>
+<h2 id="parámetros-9"><a class="header" href="#parámetros-9">Parámetros</a></h2>
 <ul>
 <li>
 <p><code>Índice</code>: <em>(Tipo: Entero || Obligatorio)</em> El índice del elemento que se desea editar.</p>
@@ -798,7 +849,7 @@ $removeSplitTextElement[3]
 </li>
 </ul>
 <h2 id="ejemplo-13"><a class="header" href="#ejemplo-13">Ejemplo</a></h2>
-<h3 id="ejemplo-1-8"><a class="header" href="#ejemplo-1-8">Ejemplo #1</a></h3>
+<h3 id="ejemplo-1-7"><a class="header" href="#ejemplo-1-7">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$nomention
 $textSplit[hello-world-!;-]
 $editSplitText[2;bdfd]
@@ -813,7 +864,7 @@ Esta función analiza una cadena JSON y la convierte en un objeto que luego pued
 <blockquote>
 <p>Solo puede usar para claves y valores en str este tipo de comilla: <code>'</code></p>
 </blockquote>
-<h3 id="parámetros-11"><a class="header" href="#parámetros-11"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-10"><a class="header" href="#parámetros-10"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>JSON string</code> <em>(Tipo: String || Obligatorio)</em>: La cadena JSON que se analizará y convertirá en un objeto.</li>
 </ul>
@@ -850,7 +901,7 @@ Edad: $json[identity;age] años
 <h3 id="sintaxis-16"><a class="header" href="#sintaxis-16"><strong>Sintaxis</strong></a></h3>
 <pre><code class="language-plaintext">$jsonSet[Key;...;Value]
 </code></pre>
-<h3 id="parámetros-12"><a class="header" href="#parámetros-12"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-11"><a class="header" href="#parámetros-11"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Obligatorio)</code>: La clave JSON donde se establecerá o reemplazará el valor.</li>
 <li><code>Value</code> <code>(Tipo: Integer, Bool, Float, String || Obligatorio)</code>: El valor que se asignará o reemplazará en la clave especificada.</li>
@@ -883,7 +934,7 @@ Edad: $json[identity;age] años
 <h3 id="sintaxis-17"><a class="header" href="#sintaxis-17"><code>Sintaxis</code></a></h3>
 <pre><code class="language-plaintext">$jsonSetString[Key;...;Value]
 </code></pre>
-<h3 id="parámetros-13"><a class="header" href="#parámetros-13"><code>Parámetros</code></a></h3>
+<h3 id="parámetros-12"><a class="header" href="#parámetros-12"><code>Parámetros</code></a></h3>
 <ul>
 <li>
 <p><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON donde se establecerá o reemplazará el valor.</p>
@@ -918,7 +969,7 @@ En resumen, es la función opuesta a <code>$jsonSet</code>.</p>
 <h3 id="sintaxis-18"><a class="header" href="#sintaxis-18"><code>Sintaxis</code></a></h3>
 <pre><code class="language-plaintext">$jsonUnset[Key;...]
 </code></pre>
-<h3 id="parámetros-14"><a class="header" href="#parámetros-14"><code>Parámetros</code></a></h3>
+<h3 id="parámetros-13"><a class="header" href="#parámetros-13"><code>Parámetros</code></a></h3>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON que se eliminará.</li>
 </ul>
@@ -968,7 +1019,7 @@ Nombre de usuario: $optOff[$json[username]]
 <h3 id="sintaxis-20"><a class="header" href="#sintaxis-20"><strong>Sintaxis</strong></a></h3>
 <pre><code class="language-plaintext">$jsonExists[Key;...]
 </code></pre>
-<h3 id="parámetros-15"><a class="header" href="#parámetros-15"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-14"><a class="header" href="#parámetros-14"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON que se verificará.</li>
 </ul>
@@ -1018,7 +1069,7 @@ $jsonStringify[]
 <h3 id="sintaxis-22"><a class="header" href="#sintaxis-22"><code>Sintaxis</code></a></h3>
 <pre><code class="language-plaintext">$jsonPretty[Indent length]
 </code></pre>
-<h3 id="parámetros-16"><a class="header" href="#parámetros-16"><code>Parámetros</code></a></h3>
+<h3 id="parámetros-15"><a class="header" href="#parámetros-15"><code>Parámetros</code></a></h3>
 <ul>
 <li><code>Indent length</code> <code>(Tipo: Integer || Flag: Required)</code>: La cantidad de espacios usados para la indentación. Generalmente es <code>2</code> o <code>4</code>.</li>
 </ul>
@@ -1045,7 +1096,7 @@ $jsonPretty[4]
 <h3 id="sintaxis-23"><a class="header" href="#sintaxis-23"><strong>Sintaxis</strong></a></h3>
 <pre><code class="language-plaintext">$jsonArray[Key;...]
 </code></pre>
-<h3 id="parámetros-17"><a class="header" href="#parámetros-17"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-16"><a class="header" href="#parámetros-16"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Obligatorio)</code>: La clave JSON que será marcada como un array.</li>
 </ul>
@@ -1068,7 +1119,7 @@ $optOff[$jsonPretty[4]]
 <h3 id="sintaxis-24"><a class="header" href="#sintaxis-24"><strong>Sintaxis</strong></a></h3>
 <pre><code class="language-plaintext">$jsonArrayCount[Key;...]
 </code></pre>
-<h3 id="parámetros-18"><a class="header" href="#parámetros-18"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-17"><a class="header" href="#parámetros-17"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave JSON donde se contarán los elementos.</li>
 </ul>
@@ -1099,7 +1150,7 @@ La cantidad de aplicaciones en `$message[-1]` es: $jsonArrayCount[computer;0;app
 <h3 id="sintaxis-25"><a class="header" href="#sintaxis-25"><strong>Sintaxis</strong></a></h3>
 <pre><code class="language-plaintext">$jsonArrayIndex[Key;...;Value]
 </code></pre>
-<h3 id="parámetros-19"><a class="header" href="#parámetros-19"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-18"><a class="header" href="#parámetros-18"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave JSON donde se buscará el valor.</li>
 <li><code>value</code> <code>(Tipo: String, Integer, Float || Obligatorio)</code> El valor a buscar dentro del array.</li>
@@ -1126,7 +1177,7 @@ El índice de `$message[-1]` en `apps/software` es: $jsonArrayIndex[computer;0;a
 <h3 id="sintaxis-26"><a class="header" href="#sintaxis-26"><strong>Sintaxis</strong></a></h3>
 <pre><code class="language-plaintext">$jsonArrayAppend[Key;...;Value]
 </code></pre>
-<h3 id="parámetros-20"><a class="header" href="#parámetros-20"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-19"><a class="header" href="#parámetros-19"><strong>Parámetros</strong></a></h3>
 <ul>
 <li>
 <p><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave JSON donde se agregará el valor.</p>
@@ -1163,7 +1214,7 @@ Aplicaciones actuales en la categoría `$message[1]`: $json[computer;0;apps;$mes
 <h3 id="sintaxis-27"><a class="header" href="#sintaxis-27"><strong>Sintaxis</strong></a></h3>
 <pre><code class="language-plaintext">$jsonArrayPop[Key;...]
 </code></pre>
-<h3 id="parámetros-21"><a class="header" href="#parámetros-21"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-20"><a class="header" href="#parámetros-20"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave del array del cual se eliminará un elemento.</li>
 </ul>
@@ -1182,7 +1233,7 @@ Música actual:
 <h3 id="sintaxis-28"><a class="header" href="#sintaxis-28"><strong>Sintaxis</strong></a></h3>
 <pre><code class="language-plaintext">$jsonArrayShift[Key;...]
 </code></pre>
-<h3 id="parámetros-22"><a class="header" href="#parámetros-22"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-21"><a class="header" href="#parámetros-21"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave del array del cual se eliminará un elemento.</li>
 </ul>
@@ -1204,7 +1255,7 @@ La función `$jsonArrayUnshift` agrega un valor al inicio de un array JSON.
 ```plaintext
 $jsonArrayUnshift[Key;...;Value]
 </code></pre>
-<h3 id="parámetros-23"><a class="header" href="#parámetros-23"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-22"><a class="header" href="#parámetros-22"><strong>Parámetros</strong></a></h3>
 <ul>
 <li>
 <p><code>key</code> <code>(Tipo: String || Requerido)</code> La clave del array JSON donde se añadirá el valor.</p>
@@ -1235,7 +1286,7 @@ Música:
 <h3 id="sintaxis-29"><a class="header" href="#sintaxis-29"><strong>Sintaxis</strong></a></h3>
 <pre><code class="language-plaintext">$jsonArraySort[Key;...]
 </code></pre>
-<h3 id="parámetros-24"><a class="header" href="#parámetros-24"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-23"><a class="header" href="#parámetros-23"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>key</code> <code>(Tipo: String || Opcional)</code> La clave del array JSON que se ordenará.</li>
 </ul>
@@ -1254,7 +1305,7 @@ Después de ordenar:
 <h3 id="sintaxis-30"><a class="header" href="#sintaxis-30"><strong>Sintaxis</strong></a></h3>
 <pre><code class="language-plaintext">$jsonArrayReverse[Key;...]
 </code></pre>
-<h3 id="parámetros-25"><a class="header" href="#parámetros-25"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-24"><a class="header" href="#parámetros-24"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>key</code> <code>(Tipo: String || Opcional)</code> La clave del array JSON que se invertirá.</li>
 </ul>
@@ -1277,7 +1328,7 @@ Después de invertir:
 <h3 id="sintaxis-31"><a class="header" href="#sintaxis-31"><code>Sintaxis</code></a></h3>
 <pre><code class="language-plaintext">$jsonJoinArray[Key;...;Separator]
 </code></pre>
-<h3 id="parámetros-26"><a class="header" href="#parámetros-26"><code>Parámetros</code></a></h3>
+<h3 id="parámetros-25"><a class="header" href="#parámetros-25"><code>Parámetros</code></a></h3>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON que apunta a un array que será recuperado.</li>
 <li><code>Separator</code> <code>(Tipo: String || Flag: Required)</code>: El separador que se utilizará para unir los elementos del array.</li>
@@ -1293,10 +1344,10 @@ Music:
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="let"><a class="header" href="#let">$let[]</a></h1>
 <p>La función <code>$let[]</code> almacena un valor en una variable temporal dentro de la ejecución del comando.</p>
-<h3 id="sintaxis-32"><a class="header" href="#sintaxis-32"><code>Sintaxis</code></a></h3>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$let[Nombre;Valor]
 </code></pre>
-<h3 id="parámetros-27"><a class="header" href="#parámetros-27"><code>Parámetros</code></a></h3>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li>
 <p><code>Nombre</code> <code>(Tipo: String || Flag: Required)</code>: El nombre de la variable.</p>
@@ -1305,34 +1356,35 @@ Music:
 <p><code>Valor</code> <code>(Tipo: String, Integer, Float, Bool || Flag: Required)</code>: El valor a almacenar.</p>
 </li>
 </ul>
-<h3 id="ejemplo-31"><a class="header" href="#ejemplo-31"><code>Ejemplo</code></a></h3>
-<pre><code class="language-plaintext">$nomention
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">
 $let[user;Izana]
 Usuario guardado: $get[user]
 </code></pre>
+<p><img src="funciones/image-23.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="get"><a class="header" href="#get">$get[]</a></h1>
 <p>La función <code>$get[]</code> recupera el valor almacenado en una variable temporal mediante <code>$let</code>.</p>
-<h3 id="sintaxis-33"><a class="header" href="#sintaxis-33"><code>Sintaxis</code></a></h3>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$get[Nombre]
 </code></pre>
-<h3 id="parámetros-28"><a class="header" href="#parámetros-28"><code>Parámetros</code></a></h3>
+<p><strong>Parametros</strong></p>
 <ul>
 <li><code>Nombre</code> <code>(Tipo: String || Flag: Required)</code>: El nombre de la variable a recuperar.</li>
 </ul>
-<h3 id="ejemplo-32"><a class="header" href="#ejemplo-32"><code>Ejemplo</code></a></h3>
-<pre><code class="language-plaintext">$nomention
-$let[user;Izana]
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$let[user;Izana]
 Usuario guardado: $get[user]
 </code></pre>
+<p><img src="funciones/image-23.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="reationevent"><a class="header" href="#reationevent">$reationEvent[]</a></h1>
 <p>La función <code>$reactionEvent[]</code> almacena un valor en una variable temporal dentro de la ejecución del comando.</p>
-<h3 id="sintaxis-34"><a class="header" href="#sintaxis-34"><code>Sintaxis</code></a></h3>
+<h3 id="sintaxis-32"><a class="header" href="#sintaxis-32"><code>Sintaxis</code></a></h3>
 <pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <blockquote>
 <p>Esta es una funcion compartida que retornar el emoji usado o removido en los eventos <code>$onReactionAdd</code> y <code>$onReactionRemove</code></p>
 </blockquote>
-<h3 id="ejemplo-33"><a class="header" href="#ejemplo-33"><code>Ejemplo</code></a></h3>
+<h3 id="ejemplo-31"><a class="header" href="#ejemplo-31"><code>Ejemplo</code></a></h3>
 <pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <p><img src="funciones/image-3.png" alt="alt text" /></p>
@@ -1410,10 +1462,15 @@ bot.run(..)
 <p><strong>Ejemplo</strong></p>
 <pre><code class="language-python">bot = ...
 
-bot.new_event("$onMessageDelete", "El mensaje de $username[] fue eliminado en &lt;#$channelID[]&gt;, contenido: $getMessageDelete[].")
-
+bot.new_event("$onMessageDelete", 
+               """
+               Mensaje eliminado.
+               Mensaje eliminado en: $channelID[]
+               Mensaje eliminado en: $channelID[], contenido del mensaje: $getMessageDelete[]
+               """)
 bot.run(..)
 </code></pre>
+<p><img src="Eventos/image-2.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onmessageedit"><a class="header" href="#onmessageedit">$onMessageEdit</a></h1>
 <p><code>$onMessageEdit</code> se activa cuando un mensaje es editado en el servidor.</p>
 <pre><code>$onMessageEdit
@@ -1460,13 +1517,13 @@ bot.run(..)
 <p><img src="Eventos/image-1.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onreactionadd"><a class="header" href="#onreactionadd">$onReactionAdd</a></h1>
 <p><code>$onReactionAdd</code> es un evento que se activa cuando un usuario añade una reacción a un mensaje en el servidor.</p>
-<h3 id="sintaxis-35"><a class="header" href="#sintaxis-35"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-33"><a class="header" href="#sintaxis-33"><strong>Sintaxis</strong></a></h3>
 <pre><code>$onReactionAdd
 </code></pre>
 <blockquote>
 <p>📌 <strong>Nota:</strong> Este evento se usa como un disparador, no dentro del código del comando.</p>
 </blockquote>
-<h3 id="ejemplo-34"><a class="header" href="#ejemplo-34"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-32"><a class="header" href="#ejemplo-32"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot = ..
 
 bot.new_event("$onReactionAdd", "Emoji: $reactionEvent[]")
@@ -1490,10 +1547,11 @@ bot.run(..)
 <p><strong>Ejemplo</strong></p>
 <pre><code class="language-python">bot = ...
 
-bot.new_event("$onInteraction", "El usuario &lt;@$authorID[]&gt; has interactuado.")
+bot.new_event("$onInteraction", "Canal ID: $authorID[]")
 
 bot.run(..)
 </code></pre>
+<p><img src="Eventos/image-3.png" alt="alt text" /></p>
 
                     </main>
 

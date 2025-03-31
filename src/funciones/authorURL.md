@@ -10,6 +10,16 @@ $authorURL[URL;(Índice)]
 > $authorURL[] no funcionará si no se proporciona texto en $author[].
 
 **Parámetros**
-- `URL` (Tipo: URL || Marca: Vaciable): El enlace que se establecerá como hipervínculo del autor.
+- `URL` `(Tipo: URL || Marca: Vaciable)`: El enlace que se establecerá como hipervínculo del autor.
 
-- `Índice` (Tipo: Entero || Marca: Opcional): A qué se añadirá la URL del autor. (Más información)
+- `Índice` `(Tipo: Entero || Marca: Opcional)`: A qué se añadirá la URL del autor. (Más información)
+
+
+**Codigo de ejemplo**
+
+```
+$authorURL[$authorAvatar[]]
+$author[Texto de author con URL]
+```
+
+![alt text](image-14.png)

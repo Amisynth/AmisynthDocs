@@ -20,8 +20,13 @@ Es una llamada de retorno, lo que significa que se utiliza en el disparador del 
 ```python
 bot = ...
 
-bot.new_event("$onMessageDelete", "El mensaje de $username[] fue eliminado en <#$channelID[]>, contenido: $getMessageDelete[].")
-
+bot.new_event("$onMessageDelete", 
+               """
+               Mensaje eliminado.
+               Mensaje eliminado en: $channelID[]
+               Mensaje eliminado en: $channelID[], contenido del mensaje: $getMessageDelete[]
+               """)
 bot.run(..)
 ```  
 
+![alt text](image-2.png)

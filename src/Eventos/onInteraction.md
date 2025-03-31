@@ -21,8 +21,9 @@ Es una llamada de retorno que se ejecuta automáticamente cuando se detecta una 
 ```python
 bot = ...
 
-bot.new_event("$onInteraction", "El usuario <@$authorID[]> has interactuado.")
+bot.new_event("$onInteraction", "Canal ID: $authorID[]")
 
 bot.run(..)
 ```  
 
+![alt text](image-3.png)

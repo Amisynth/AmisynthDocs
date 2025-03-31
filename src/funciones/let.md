@@ -2,19 +2,21 @@
 # $let[]
 La función `$let[]` almacena un valor en una variable temporal dentro de la ejecución del comando.  
 
-### `Sintaxis`  
+**Sintaxis** 
 ```plaintext
 $let[Nombre;Valor]
 ```
 
-### `Parámetros`  
+**Parámetros**
 - `Nombre` `(Tipo: String || Flag: Required)`: El nombre de la variable.
 
 - `Valor` `(Tipo: String, Integer, Float, Bool || Flag: Required)`: El valor a almacenar.  
 
-### `Ejemplo`  
+**Ejemplo**
 ```plaintext
-$nomention
+
 $let[user;Izana]
 Usuario guardado: $get[user]
 ```
+
+![alt text](image-23.png)

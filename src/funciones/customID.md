@@ -15,8 +15,13 @@ $customID[]
 ### **Ejemplo**  
 
 ```python
-bot.new_event("$onInteraction", "Has interactuado con el botón de ID `$customID[]`.")
-```
-🔹 Si un usuario hace clic en un botón con ID `"boton_aceptar"`, el bot responderá:  
-   **"Has interactuado con el botón de ID `boton_aceptar`."**  
+bot = ..
 
+bot.new_event("$onInteraction", "customid: $customID[]")
+
+bot.run(..)
+```
+🔹 Si un usuario hace clic en un botón con ID `"value-1"`, el bot responderá:  
+   **"customid: `value-1`."**  
+
+![alt text](image-22.png)

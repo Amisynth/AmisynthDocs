@@ -152,18 +152,18 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="rolegrant"><a class="header" href="#rolegrant">$roleGrant</a></h1>
+                        <h1 id="rolegrant"><a class="header" href="#rolegrant">$roleGrant[]</a></h1>
 <p>Añade o elimina roles del usuario proporcionado.</p>
 <h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
 <pre><code>$roleGrant[ID de usuario;+/-ID de rol;...]
 </code></pre>
-<h2 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h2>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li>
-<p><code>ID de usuario</code> (Tipo: Snowflake || Obligatorio): El usuario al que se le otorgarán o eliminarán roles.</p>
+<p><code>ID de usuario</code> <code>(Tipo: Snowflake || Obligatorio)</code>: El usuario al que se le otorgarán o eliminarán roles.</p>
 </li>
 <li>
-<p><code>ID de rol</code> (Tipo: Snowflake || Obligatorio): El rol a añadir o eliminar.</p>
+<p><code>ID de rol</code> <code>(Tipo: Snowflake || Obligatorio)</code>: El rol a añadir o eliminar.</p>
 <ul>
 <li>Usa <code>+</code> antes del ID del rol para añadirlo.</li>
 <li>Usa <code>-</code> antes del ID del rol para eliminarlo.</li>
@@ -171,15 +171,12 @@
 </ul>
 </li>
 </ul>
-<h2 id="ejemplos"><a class="header" href="#ejemplos">Ejemplos</a></h2>
-<h3 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo #1</a></h3>
+<p><strong>Ejemplo</strong></p>
 <pre><code class="language-plaintext">$nomention
 $roleGrant[3869969062509936;-9368562753613496]
 </code></pre>
-<h3 id="ejemplo-2"><a class="header" href="#ejemplo-2">Ejemplo #2</a></h3>
-<pre><code class="language-plaintext">$roleGrant[$mentioned[1];+$mentionedRoles[1]]
-&lt;@$mentioned[1]&gt; usuario recibió el rol &lt;@&amp;$mentionedRoles[1]&gt;
-</code></pre>
+<p><img src="image-24.png" alt="alt text" /></p>
+<p><img src="image-25.png" alt="alt text" /></p>
 
                     </main>
 

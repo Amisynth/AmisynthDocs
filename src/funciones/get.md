@@ -3,17 +3,17 @@
 # $get[]
 La función `$get[]` recupera el valor almacenado en una variable temporal mediante `$let`.  
 
-### `Sintaxis`  
+**Sintaxis** 
 ```plaintext
 $get[Nombre]
 ```
 
-### `Parámetros`  
+**Parametros**
 - `Nombre` `(Tipo: String || Flag: Required)`: El nombre de la variable a recuperar.  
 
-### `Ejemplo`  
+**Ejemplo**
 ```plaintext
-$nomention
 $let[user;Izana]
 Usuario guardado: $get[user]
 ```
+![alt text](image-23.png)
