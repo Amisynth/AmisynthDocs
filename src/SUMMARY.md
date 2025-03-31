@@ -63,6 +63,7 @@
     - [$let[]](funciones/let.md)
     - [$get[]](funciones/get.md)
     - [$reactionEvent[]](funciones/reactionEvent.md)
+    - [$if[]](funciones/if.md)
 
 
 - [Eventos](Eventos/README.md)

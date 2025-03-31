@@ -3,23 +3,25 @@
 
 Esta función reemplaza el elemento en el índice especificado con un nuevo valor.  
 
-## Sintaxis  
+**Sintaxis** 
 ```plaintext
 $editSplitText[Índice;Valor]
 ```  
 
-## Parámetros  
+**Parámetros**
 
-- `Índice`: *(Tipo: Entero || Obligatorio)* El índice del elemento que se desea editar.  
+- `Índice`: `(Tipo: Entero || Obligatorio)`: El índice del elemento que se desea editar.  
 
-- `Valor`: *(Tipo: String || Obligatorio)* El nuevo valor que reemplazará al elemento en el índice proporcionado.  
+- `Valor`: `(Tipo: String || Obligatorio)`: El nuevo valor que reemplazará al elemento en el índice proporcionado.  
 
-## Ejemplo  
+ 
 
-### Ejemplo #1  
+**Ejemplo**  
+
 ```plaintext
-$nomention
 $textSplit[hello-world-!;-]
-$editSplitText[2;bdfd]
+$editSplitText[2;amisynth]
 > $joinSplitText[-]   // Devuelve "hello-bdfd-!"
 ```
+
+![alt text](image-35.png)

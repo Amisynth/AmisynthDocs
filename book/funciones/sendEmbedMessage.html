@@ -153,68 +153,68 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="sendembedmessage"><a class="header" href="#sendembedmessage">$sendEmbedMessage[]</a></h1>
-<p>Envía un mensaje embed al canal proporcionado. Los campos no necesarios pueden dejarse vacíos.</p>
-<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<p>Envía un mensaje embed completo (incluye filas) al canal proporcionado. Los campos no necesarios pueden dejarse vacíos.</p>
+<p><strong>Sintaxis</strong></p>
 <pre><code>$sendEmbedMessage[ID del canal;Contenido;(Título;URL del título;Descripción;Color;Autor;Ícono del autor;Pie de página;Ícono del pie de página;Miniatura;Imagen;Añadir timestamp?;Retornar ID?;Nombre del campo;Valor del campo;¿En línea?;...)]
 </code></pre>
-<h2 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h2>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li>
-<p><code>ID del canal</code> (Tipo: Snowflake || Obligatorio): ID del canal donde se enviará el mensaje.</p>
+<p><code>ID del canal</code> <code>(Tipo: Snowflake || Obligatorio)</code>: ID del canal donde se enviará el mensaje.</p>
 </li>
 <li>
-<p><code>Contenido</code> (Tipo: String || Opcional): Texto mostrado sobre el embed.</p>
+<p><code>Contenido</code> <code>(Tipo: String || Opcional)</code>: Texto mostrado sobre el embed.</p>
 </li>
 <li>
-<p><code>Título</code> (Tipo: String || Opcional): Texto que se usará como título.</p>
+<p><code>Título</code> <code>(Tipo: String || Opcional)</code>: Texto que se usará como título.</p>
 </li>
 <li>
-<p><code>URL del título</code> (Tipo: URL || Opcional): Enlace aplicado al título.</p>
+<p><code>URL del título</code> <code>(Tipo: URL || Opcional)</code>: Enlace aplicado al título.</p>
 </li>
 <li>
-<p><code>Descripción</code> (Tipo: String || Opcional): Texto de descripción del embed.</p>
+<p><code>Descripción</code> <code>(Tipo: String || Opcional)</code>: Texto de descripción del embed.</p>
 </li>
 <li>
-<p><code>Color</code> (Tipo: Color || Opcional): Código hexadecimal o entero del color del borde del embed.</p>
+<p><code>Color</code> <code>(Tipo: Color || Opcional)</code>: Código hexadecimal o entero del color del borde del embed.</p>
 </li>
 <li>
-<p><code>Autor</code> (Tipo: String || Opcional): Texto mostrado como autor del embed.</p>
+<p><code>Autor</code> <code>(Tipo: String || Opcional)</code>: Texto mostrado como autor del embed.</p>
 </li>
 <li>
-<p><code>Ícono del autor</code> (Tipo: URL || Opcional): Imagen junto al autor (URL válida de imagen).</p>
+<p><code>Ícono del autor</code> <code>(Tipo: URL || Opcional)</code>: Imagen junto al autor (URL válida de imagen).</p>
 </li>
 <li>
-<p><code>Pie de página</code> (Tipo: String || Opcional): Texto mostrado en el pie del embed.</p>
+<p><code>Pie de página</code> <code>(Tipo: String || Opcional)</code>: Texto mostrado en el pie del embed.</p>
 </li>
 <li>
-<p><code>Ícono del pie de página</code> (Tipo: URL || Opcional): Imagen junto al pie de página (URL válida de imagen).</p>
+<p><code>Ícono del pie de página</code> <code>(Tipo: URL || Opcional)</code>: Imagen junto al pie de página (URL válida de imagen).</p>
 </li>
 <li>
-<p><code>Miniatura</code> (Tipo: URL || Opcional): Imagen mostrada como miniatura.</p>
+<p><code>Miniatura</code> <code>(Tipo: URL || Opcional)</code>: Imagen mostrada como miniatura.</p>
 </li>
 <li>
-<p><code>Imagen</code> (Tipo: URL || Opcional): Imagen mostrada arriba del pie de página (URL válida de imagen).</p>
+<p><code>Imagen</code> <code>(Tipo: URL || Opcional)</code>: Imagen mostrada arriba del pie de página (URL válida de imagen).</p>
 </li>
 <li>
-<p><code>Añadir timestamp?</code> (Tipo: Bool || Opcional): Agrega una marca de tiempo en el pie (<code>true</code> o <code>false</code>).</p>
+<p><code>Añadir timestamp?</code> <code>(Tipo: Bool || Opcional)</code>: Agrega una marca de tiempo en el pie (<code>true</code> o <code>false</code>).</p>
 </li>
 <li>
-<p><code>Retornar ID?</code> (Tipo: Bool || Opcional): Devuelve el ID del mensaje fuera del embed (<code>true</code> o <code>false</code>).</p>
+<p><code>Retornar ID?</code> <code>(Tipo: Bool || Opcional)</code>: Devuelve el ID del mensaje fuera del embed (<code>true</code> o <code>false</code>).</p>
 </li>
 <li>
-<p><code>Nombre del campo</code> (Tipo: String || Opcional): Nombre del campo adicional en el embed.</p>
+<p><code>Nombre del campo</code> <code>(Tipo: String || Opcional)</code>: Nombre del campo adicional en el embed.</p>
 </li>
 <li>
-<p><code>Valor del campo</code> (Tipo: String || Opcional): Contenido del campo adicional.</p>
+<p><code>Valor del campo</code> <code>(Tipo: String || Opcional)</code>: Contenido del campo adicional.</p>
 </li>
 <li>
-<p><code>¿En línea?</code> (Tipo: Bool || Opcional): Define si el campo adicional es en línea (<code>true</code> o <code>false</code>).</p>
+<p><code>¿En línea?</code> <code>(Tipo: Bool || Opcional)</code>: Define si el campo adicional es en línea (<code>true</code> o <code>false</code>).</p>
 </li>
 </ul>
-<h2 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h2>
-<h3 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo #1</a></h3>
-<pre><code class="language-plaintext">$sendEmbedMessage[$channelID[];;Título;https://discord.com/;Descripción;000000;Autor;$authorAvatar;Pie de página;$authorAvatar;$authorAvatar;yes;no;Nombre del campo;Valor del campo;true]
+<p><strong>Ejemplo #1</strong></p>
+<pre><code class="language-plaintext">$sendEmbedMessage[$channelID[];Content;Hola;;;;;;;;;false;false;prueba;test;true]
 </code></pre>
+<p><img src="image-28.png" alt="alt text" /></p>
 
                     </main>
 

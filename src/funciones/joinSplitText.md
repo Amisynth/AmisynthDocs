@@ -3,19 +3,19 @@
 
 Esta función devuelve los elementos actuales del texto dividido, unidos con el separador especificado.  
 
-## Sintaxis  
+**Sintaxis**
 ```plaintext
 $joinSplitText[Separador]
 ```  
 
-## Parámetro  
+**Parámetro**  
 
-- `Separador`: *(Tipo: String || Opcional)* El separador que se usará entre los valores del texto dividido.  
+- `Separador`: `(Tipo: String || Opcional)` El separador que se usará entre los valores del texto dividido.  
 
-## Ejemplo  
 
-### Ejemplo #1  
+**Ejemplo #1** 
 ```plaintext
-$textSplit[hello#world#!;#]
-> $joinSplitText[.]   // Devuelve "hello.world.!"
+$textSplit[h.o-l-a;$message[1]]
+$joinSplitText[+]
 ```
+![alt text](image-33.png)

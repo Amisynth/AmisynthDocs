@@ -10,14 +10,13 @@ $editMessageAfter[]
 
 ### **Parámetros**  
 
-> No requiere Parametros, solo funcion en el evento `$onMessageEdit`
+> No requiere Parametros, solo funciona en el evento `$onMessageEdit`
 
 ### **Ejemplo**  
 
 ```python
-bot.new_event("$onMessageEdit", 
-            """
-$editMessageAfter[]
-            """
-)
+Contenido Original: $editMessageBefore[]
+Contenido Nuevo: $editMessageAfter[]
 ```
+
+![alt text](image-27.png)

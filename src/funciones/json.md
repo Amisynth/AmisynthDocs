@@ -9,7 +9,7 @@ $json[Key;...]
 ```
 Parámetros
 
-`Key` (Tipo: String || Flag: Required): La clave JSON que se recuperará.
+- `Key` `(Tipo: String || Flag: Required)`: La clave JSON que se recuperará.
 
 Ejemplos
 ```
@@ -27,3 +27,5 @@ Nombre de usuario: $json[username]
 Etiqueta: $json[tag]
 Edad: $json[identity;age] años
 ```
+
+![alt text](image-37.png)

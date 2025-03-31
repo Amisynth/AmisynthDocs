@@ -154,19 +154,19 @@
                     <main>
                         <h1 id="removesplittextelement"><a class="header" href="#removesplittextelement">$removeSplitTextElement[]</a></h1>
 <p>Esta función elimina un elemento del texto dividido según el índice especificado.</p>
-<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$removeSplitTextElement[Índice]
 </code></pre>
-<h2 id="parámetro"><a class="header" href="#parámetro">Parámetro</a></h2>
+<p><strong>Parámetro</strong></p>
 <ul>
-<li><code>Índice</code>: <em>(Tipo: Entero || Obligatorio)</em> El índice del valor en <code>$textSplit[]</code> que se desea eliminar.</li>
+<li><code>Índice</code>: <code>(Tipo: Entero || Obligatorio)</code> El índice del valor en <code>$textSplit[]</code> que se desea eliminar.</li>
 </ul>
-<h2 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h2>
-<h3 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo #1</a></h3>
-<pre><code class="language-plaintext">$textSplit[hello-world-!;-]
-$removeSplitTextElement[3]
-&gt; $joinSplitText[-]   // Devuelve "hello-world"
+<p><strong>Ejemplo</strong></p>
+<pre><code>$textSplit[hola-mundo-!;-]
+$removeSplitTextElement[2]
+&gt; $joinSplitText[-] 
 </code></pre>
+<p><img src="image-34.png" alt="alt text" /></p>
 
                     </main>
 

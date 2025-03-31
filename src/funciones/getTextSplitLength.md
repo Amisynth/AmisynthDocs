@@ -1,15 +1,17 @@
 # $getTextSplitLength[]
 
-Devuelve la cantidad de fragmentos obtenidos después de dividir un texto con `$textSplit`.  
+Devuelve la cantidad de fragmentos obtenidos después de dividir un texto con `$textSplit[]`.  
 
-## Sintaxis  
+**Sintaxis**  
 ```
 $getTextSplitLength
 ``` 
 
-## Ejemplo  
 
-### Ejemplo #1  
+**Ejemplo #1**
 ```plaintext
 $textSplit[hello%world%!;%]
 > $getTextSplitLength   // Devuelve 3
+```
+
+![alt text](image-30.png)

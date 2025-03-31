@@ -154,25 +154,24 @@
                     <main>
                         <h1 id="editsplittext"><a class="header" href="#editsplittext">$editSplitText[]</a></h1>
 <p>Esta función reemplaza el elemento en el índice especificado con un nuevo valor.</p>
-<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$editSplitText[Índice;Valor]
 </code></pre>
-<h2 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h2>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li>
-<p><code>Índice</code>: <em>(Tipo: Entero || Obligatorio)</em> El índice del elemento que se desea editar.</p>
+<p><code>Índice</code>: <code>(Tipo: Entero || Obligatorio)</code>: El índice del elemento que se desea editar.</p>
 </li>
 <li>
-<p><code>Valor</code>: <em>(Tipo: String || Obligatorio)</em> El nuevo valor que reemplazará al elemento en el índice proporcionado.</p>
+<p><code>Valor</code>: <code>(Tipo: String || Obligatorio)</code>: El nuevo valor que reemplazará al elemento en el índice proporcionado.</p>
 </li>
 </ul>
-<h2 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h2>
-<h3 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo #1</a></h3>
-<pre><code class="language-plaintext">$nomention
-$textSplit[hello-world-!;-]
-$editSplitText[2;bdfd]
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$textSplit[hello-world-!;-]
+$editSplitText[2;amisynth]
 &gt; $joinSplitText[-]   // Devuelve "hello-bdfd-!"
 </code></pre>
+<p><img src="image-35.png" alt="alt text" /></p>
 
                     </main>
 

@@ -3,20 +3,21 @@
 
 Esta función elimina un elemento del texto dividido según el índice especificado.  
 
-## Sintaxis  
+**Sintaxis** 
 ```plaintext
 $removeSplitTextElement[Índice]
 ```  
 
-## Parámetro  
+**Parámetro**   
 
-- `Índice`: *(Tipo: Entero || Obligatorio)* El índice del valor en `$textSplit[]` que se desea eliminar.  
+- `Índice`: `(Tipo: Entero || Obligatorio)` El índice del valor en `$textSplit[]` que se desea eliminar.  
 
-## Ejemplo  
 
-### Ejemplo #1  
-```plaintext
-$textSplit[hello-world-!;-]
-$removeSplitTextElement[3]
-> $joinSplitText[-]   // Devuelve "hello-world"
+**Ejemplo** 
 ```
+$textSplit[hola-mundo-!;-]
+$removeSplitTextElement[2]
+> $joinSplitText[-] 
+```
+
+![alt text](image-34.png)

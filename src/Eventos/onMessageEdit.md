@@ -22,11 +22,15 @@ bot = ...
 
 bot.new_event(name="$onMessageEdit", 
               code="""
-                El mensaje de $username[] en <#$channelID[]> fue editado 
-                Antiguo: `$editMessageAfter[]` 
-                Nuevo: `$editMessageBefore[]`.
+                Contenido Original: $editMessageAfter[] 
+                Contenido Nuevo: $editMessageBefore[].
                 """)
 
 bot.run(..)
 ```  
 
+![alt text](image-6.png)
+
+![alt text](image-5.png)
+
+![alt text](image-4.png)

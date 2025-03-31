@@ -2,12 +2,12 @@
 
 Cada fragmento de texto separado tiene un número de índice. `$splitText` es una función que devuelve uno de los elementos del texto dividido según el índice especificado o los signos `<` y `>` para obtener el primer o último elemento, respectivamente.  
 
-## Sintaxis  
+**Sintaxis**
 ```
 $splitText[Índice]
 ```
 
-## Parámetros  
+**Parámetros**  
 
 - `Índice` (Tipo: Número o Símbolo || Obligatorio): El índice del fragmento de texto a obtener.  
 
@@ -15,11 +15,13 @@ $splitText[Índice]
   - Usa `<` para obtener el primer fragmento.  
   - Usa `>` para obtener el último fragmento.  
 
-## Ejemplo  
+**Ejemplo**  
 
-### Ejemplo #1  
 ```plaintext
 $textSplit[hello world !; ]
 > $splitText[<]   // Obtiene "hello"
 > $splitText[2]   // Obtiene "world"
 > $splitText[>]   // Obtiene "!"
+```
+
+![alt text](image-31.png)

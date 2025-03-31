@@ -3,21 +3,19 @@
 
 `$editMessagBefore[]` devuelde el mensaje ya editado.
 
-### **Sintaxis**  
+**Sintaxis**  
 ```
 $editMessagBefore[]
 ```
 
-### **Parámetros**  
+**Parámetros**  
 
-> No requiere Parametros, solo funcion en el evento `$onMessageEdit`
+> No requiere Parametros, solo funciona en el evento `$onMessageEdit`
 
-### **Ejemplo**  
+**Ejemplo**  
 
 ```python
-bot.new_event("$onMessageEdit", 
-            """
-$editMessagBefore[]
-            """
-)
+Contenido Original: $editMessageBefore[]
 ```
+
+![alt text](image-26.png)
