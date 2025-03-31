@@ -1,4 +1,4 @@
-# $onMessageDelete
+# $onMessage
 
 
 $onMessage Se activa cuando un usuario se une al servidor.
