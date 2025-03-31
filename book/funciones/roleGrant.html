@@ -160,10 +160,10 @@
 <h2 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h2>
 <ul>
 <li>
-<p><strong>ID de usuario</strong> (Tipo: Snowflake || Obligatorio): El usuario al que se le otorgarán o eliminarán roles.</p>
+<p><code>ID de usuario</code> (Tipo: Snowflake || Obligatorio): El usuario al que se le otorgarán o eliminarán roles.</p>
 </li>
 <li>
-<p><strong>ID de rol</strong> (Tipo: Snowflake || Obligatorio): El rol a añadir o eliminar.</p>
+<p><code>ID de rol</code> (Tipo: Snowflake || Obligatorio): El rol a añadir o eliminar.</p>
 <ul>
 <li>Usa <code>+</code> antes del ID del rol para añadirlo.</li>
 <li>Usa <code>-</code> antes del ID del rol para eliminarlo.</li>
@@ -177,8 +177,7 @@
 $roleGrant[3869969062509936;-9368562753613496]
 </code></pre>
 <h3 id="ejemplo-2"><a class="header" href="#ejemplo-2">Ejemplo #2</a></h3>
-<pre><code class="language-plaintext">$nomention
-$roleGrant[$mentioned[1];+$mentionedRoles[1]]
+<pre><code class="language-plaintext">$roleGrant[$mentioned[1];+$mentionedRoles[1]]
 &lt;@$mentioned[1]&gt; usuario recibió el rol &lt;@&amp;$mentionedRoles[1]&gt;
 </code></pre>
 

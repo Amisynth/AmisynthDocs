@@ -16,7 +16,6 @@ $joinSplitText[Separador]
 
 ### Ejemplo #1  
 ```plaintext
-$nomention
 $textSplit[hello#world#!;#]
 > $joinSplitText[.]   // Devuelve "hello.world.!"
 ```

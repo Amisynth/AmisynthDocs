@@ -17,7 +17,6 @@ $jsonArraySort[Key;...]
 
 ### **Ejemplo**  
 ```plaintext
-$nomention
 $jsonParse[{
   'data': ['Oranges', 'banana', 10, 'apple', 'Apples', 2, 30]
 }]

@@ -1,6 +1,6 @@
 
 # $jsonArrayShift[]
-La función `$jsonArrayShift` elimina el primer elemento de un array y devuelve el elemento eliminado.  
+La función `$jsonArrayShift[]` elimina el primer elemento de un array y devuelve el elemento eliminado.  
 
 ### **Sintaxis**  
 ```plaintext

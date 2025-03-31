@@ -159,8 +159,12 @@
 </code></pre>
 <h3 id="parámetros"><a class="header" href="#parámetros"><strong>Parámetros</strong></a></h3>
 <ul>
-<li><code>Separador</code> (Tipo: Cadena | Obligatorio) → Especifica el carácter o texto que separará los nombres de las categorías en la lista.</li>
-<li><code>Guild ID</code> (Tipo: ID | Opcional) → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</li>
+<li>
+<p><code>Separador</code> (Tipo: Cadena | Obligatorio) → Especifica el carácter o texto que separará los nombres de las categorías en la lista.</p>
+</li>
+<li>
+<p><code>Guild ID</code> (Tipo: ID | Opcional) → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
+</li>
 </ul>
 <h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot.new_event("$onMessage", "Lista de categorías: `$categoryNames[, ]`")

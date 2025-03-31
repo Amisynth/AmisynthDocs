@@ -25,3 +25,13 @@ Un mensaje puede tener un máximo de 25 botones (5 filas de 5 botones).
 - `Emoji` (Tipo: Emoji || Indicador: Vacante): Agrega un emoji dentro del botón. Los emojis deben pegarse como Unicode, alias o tener el siguiente formato: <:emoji name:emoji ID>.
 
 - `ID de mensaje` (Tipo: Copo de nieve || Indicador: Vacante): Agrega el botón al ID de mensaje proporcionado. Es importante tener en cuenta que el autor del ID de mensaje proporcionado debe ser el bot.
+
+
+**Ejemplo**
+
+```
+Test
+$addButton[false;id;Prueba de boton;primary;false]
+```
+
+![alt text](image-2.png)

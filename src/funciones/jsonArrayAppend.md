@@ -9,20 +9,21 @@ $jsonArrayAppend[Key;...;Value]
 
 ### **Parámetros**  
 - `key` `(Tipo: String || Obligatorio)` La clave JSON donde se agregará el valor.  
+
 - `value` `(Tipo: Integer, Bool, Float, String || Obligatorio)` El valor que se agregará al final del array.  
 
 ### **Ejemplo**  
 ```plaintext
 $jsonParse[{
-    "computer": [{
-        "apps": {
-            "software": ["BlueStacks", "Krita", "Visual Studio Code"],
-            "games": ["GTA 5", "RDR 2", "CS:GO", "Cyberpunk 2077"]
+    'computer': [{
+        'apps': {
+            'software': ['BlueStacks', 'Krita', 'Visual Studio Code'],
+            'games': ['GTA 5', 'RDR 2', 'CS:GO', 'Cyberpunk 2077']
         }
     },{
-        "cpu": "Intel",
-        "gpu": "NVIDIA",
-        "ram": "XPG"
+        'cpu': 'Intel',
+        'gpu': 'NVIDIA',
+        'ram': 'XPG'
     }]
 }]
 
@@ -35,4 +36,3 @@ $jsonArrayAppend[computer;0;apps;$message[1];$get[value]]
 ¡Se agregó una nueva aplicación a la categoría `$message[1]`!  
 Aplicaciones actuales en la categoría `$message[1]`: $json[computer;0;apps;$message[1]]
 ```  
-```

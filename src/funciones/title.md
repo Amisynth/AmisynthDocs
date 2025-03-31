@@ -19,3 +19,12 @@ Permisos necesarios que el bot debe tener para que esta función funcione correc
 - sendmessages
 - sendmessagesinthreads
 - embedlinks
+
+**Ejemplo**
+
+```
+$title[Gran Titulo]
+```
+
+
+![alt text](image.png)

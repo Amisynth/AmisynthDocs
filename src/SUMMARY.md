@@ -60,6 +60,8 @@
     - [$jsonArraySort[]](funciones/jsonArraySort.md)
     - [$jsonArrayReverse[]](funciones/jsonArrayReverse.md)
     - [$jsonJoinArray[]](funciones/jsonJoinArray.md)
+    - [$let[]](funciones/let.md)
+    - [$get[]](funciones/get.md)
 
 
 - [Eventos](Eventos/README.md)

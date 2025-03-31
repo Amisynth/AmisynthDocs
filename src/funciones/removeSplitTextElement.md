@@ -16,7 +16,6 @@ $removeSplitTextElement[Índice]
 
 ### Ejemplo #1  
 ```plaintext
-$nomention
 $textSplit[hello-world-!;-]
 $removeSplitTextElement[3]
 > $joinSplitText[-]   // Devuelve "hello-world"
