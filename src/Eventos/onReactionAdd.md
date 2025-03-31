@@ -15,8 +15,13 @@ $onReactionAdd
 ### **Ejemplo**  
 
 ```python
-bot.new_event("$onReactionAdd", "El usuario `$username[]` reaccionó con `$reactionAdd[]` en el canal <#$channelID[]>.")
-```
-🔹 Si un usuario llamado "Juan" reacciona con "❤️" en el canal `#general`, el bot enviará:  
-   **"El usuario `Juan` reaccionó con `❤️` en el canal `#general`."**  
+bot = ..
 
+bot.new_event("$onReactionAdd", "Emoji: $reactionEvent[]")
+
+bot.run(..)
+```
+🔹 Si un usuario llamado "Saul" reacciona con "✅" en el canal `#general`, el bot enviará:  
+
+
+![alt text](image.png)

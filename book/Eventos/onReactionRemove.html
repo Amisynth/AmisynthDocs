@@ -162,15 +162,16 @@
 </blockquote>
 <p><strong>Sintaxis</strong></p>
 <blockquote>
-<p>No requiere sintaxis específica, pero para capturar detalles de la reacción eliminada se pueden usar funciones como <code>$reactionRemove[]</code>, <code>$channelID[]</code>, <code>$messageID[]</code>, y <code>$userID[]</code>.</p>
+<p>No requiere sintaxis específica, pero para capturar detalles de la reacción eliminada se pueden usar funciones como <code>$reactionEvent[]</code>, <code>$channelID[]</code>, <code>$messageID[]</code>.</p>
 </blockquote>
 <p><strong>Ejemplo</strong></p>
 <pre><code class="language-python">bot = ...
 
-bot.new_event("$onReactionRemove", "El usuario &lt;@$authorID[]&gt; eliminó la reacción `$reactionRemove[]` en el mensaje del canal &lt;#$channelID[]&gt;.")
+bot.new_event("$onReactionRemove", "Emoji: $reactionEvent[]")
 
 bot.run(..)
 </code></pre>
+<p><img src="image-1.png" alt="alt text" /></p>
 
                     </main>
 

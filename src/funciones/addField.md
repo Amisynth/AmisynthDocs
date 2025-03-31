@@ -20,3 +20,29 @@ $addField[Nombre;Valor;(¿Inline?;Índice)]
 - `habilitada`, el bot devolverá filas con 3 campos (2 si hay una miniatura) en cada fila. Por defecto, está configurado como no.
 
 - `Índice` (Tipo: Entero || Indicador: Opcional): Añade el campo a un número de índice de incrustación especificado. (aprender más)
+
+**Ejemplo #1:**
+
+```
+
+$addField[¡El nombre del campo 1!;¡El valor del campo 1!]
+$addField[¡El nombre del campo 2!;¡El valor del campo 2!]
+$addField[¡El nombre del campo 3!;¡El valor del campo 3!]
+```
+
+![alt text](image-5.png)
+
+**Ejemplo #2:**
+
+```
+$nomention
+$addField[¡Nombre del campo 1!;¡Valor del campo 1!;true]
+$addField[¡Nombre del campo 2!;¡Valor del campo 2!;true]
+$addField[¡Nombre del campo 3!;¡Valor del campo 3!;true]
+```
+
+
+![alt text](image-6.png)
+
+
+

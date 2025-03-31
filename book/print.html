@@ -274,6 +274,20 @@ $addButton[false;id;Prueba de boton;primary;false]
 <p><code>Índice</code> (Tipo: Entero || Indicador: Opcional): Añade el campo a un número de índice de incrustación especificado. (aprender más)</p>
 </li>
 </ul>
+<p><strong>Ejemplo #1:</strong></p>
+<pre><code>
+$addField[¡El nombre del campo 1!;¡El valor del campo 1!]
+$addField[¡El nombre del campo 2!;¡El valor del campo 2!]
+$addField[¡El nombre del campo 3!;¡El valor del campo 3!]
+</code></pre>
+<p><img src="funciones/image-5.png" alt="alt text" /></p>
+<p><strong>Ejemplo #2:</strong></p>
+<pre><code>$nomention
+$addField[¡Nombre del campo 1!;¡Valor del campo 1!;true]
+$addField[¡Nombre del campo 2!;¡Valor del campo 2!;true]
+$addField[¡Nombre del campo 3!;¡Valor del campo 3!;true]
+</code></pre>
+<p><img src="funciones/image-6.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="title"><a class="header" href="#title">$title[]</a></h1>
 <p>Agrega un título incrustado al mensaje de respuesta del bot.</p>
 <p>Sintaxis</p>
@@ -312,6 +326,11 @@ $addButton[false;id;Prueba de boton;primary;false]
 <p><code>Índice</code> (Tipo: Entero || Marca: Opcional): A qué incrustación debe pertenecer el hipervínculo del título. El valor predeterminado es 1. (Más información)</p>
 </li>
 </ul>
+<p><strong>Ejemplo #1</strong></p>
+<pre><code>$title[Titulo con url]
+$titleURL[https:/example.com]
+</code></pre>
+<p><img src="funciones/image-7.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="description"><a class="header" href="#description">$description[]</a></h1>
 <p>$description Añade una descripción a una incrustación.</p>
 <p><strong>Sintaxis</strong></p>
@@ -333,6 +352,10 @@ $addButton[false;id;Prueba de boton;primary;false]
 <li>sendmessagesinthreads</li>
 <li>embedlinks</li>
 </ul>
+<p><strong>Ejemplo #1</strong></p>
+<pre><code>$description[Esta es la descripcion;1]
+</code></pre>
+<p><img src="funciones/image-8.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="color"><a class="header" href="#color">$color[]</a></h1>
 <p>$color Establece el color del borde de la incrustación.</p>
 <p><strong>Sintaxis</strong></p>
@@ -1301,6 +1324,18 @@ Usuario guardado: $get[user]
 $let[user;Izana]
 Usuario guardado: $get[user]
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reationevent"><a class="header" href="#reationevent">$reationEvent[]</a></h1>
+<p>La función <code>$reactionEvent[]</code> almacena un valor en una variable temporal dentro de la ejecución del comando.</p>
+<h3 id="sintaxis-34"><a class="header" href="#sintaxis-34"><code>Sintaxis</code></a></h3>
+<pre><code class="language-plaintext">$reactionEvent[]
+</code></pre>
+<blockquote>
+<p>Esta es una funcion compartida que retornar el emoji usado o removido en los eventos <code>$onReactionAdd</code> y <code>$onReactionRemove</code></p>
+</blockquote>
+<h3 id="ejemplo-33"><a class="header" href="#ejemplo-33"><code>Ejemplo</code></a></h3>
+<pre><code class="language-plaintext">$reactionEvent[]
+</code></pre>
+<p><img src="funciones/image-3.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="eventos"><a class="header" href="#eventos">Eventos</a></h1>
 <p>Soon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onjoinmember"><a class="header" href="#onjoinmember">$onJoinMember</a></h1>
@@ -1413,28 +1448,33 @@ bot.run(..)
 </blockquote>
 <p><strong>Sintaxis</strong></p>
 <blockquote>
-<p>No requiere sintaxis específica, pero para capturar detalles de la reacción eliminada se pueden usar funciones como <code>$reactionRemove[]</code>, <code>$channelID[]</code>, <code>$messageID[]</code>, y <code>$userID[]</code>.</p>
+<p>No requiere sintaxis específica, pero para capturar detalles de la reacción eliminada se pueden usar funciones como <code>$reactionEvent[]</code>, <code>$channelID[]</code>, <code>$messageID[]</code>.</p>
 </blockquote>
 <p><strong>Ejemplo</strong></p>
 <pre><code class="language-python">bot = ...
 
-bot.new_event("$onReactionRemove", "El usuario &lt;@$authorID[]&gt; eliminó la reacción `$reactionRemove[]` en el mensaje del canal &lt;#$channelID[]&gt;.")
+bot.new_event("$onReactionRemove", "Emoji: $reactionEvent[]")
 
 bot.run(..)
 </code></pre>
+<p><img src="Eventos/image-1.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onreactionadd"><a class="header" href="#onreactionadd">$onReactionAdd</a></h1>
 <p><code>$onReactionAdd</code> es un evento que se activa cuando un usuario añade una reacción a un mensaje en el servidor.</p>
-<h3 id="sintaxis-34"><a class="header" href="#sintaxis-34"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-35"><a class="header" href="#sintaxis-35"><strong>Sintaxis</strong></a></h3>
 <pre><code>$onReactionAdd
 </code></pre>
 <blockquote>
 <p>📌 <strong>Nota:</strong> Este evento se usa como un disparador, no dentro del código del comando.</p>
 </blockquote>
-<h3 id="ejemplo-33"><a class="header" href="#ejemplo-33"><strong>Ejemplo</strong></a></h3>
-<pre><code class="language-python">bot.new_event("$onReactionAdd", "El usuario `$username[]` reaccionó con `$reactionAdd[]` en el canal &lt;#$channelID[]&gt;.")
+<h3 id="ejemplo-34"><a class="header" href="#ejemplo-34"><strong>Ejemplo</strong></a></h3>
+<pre><code class="language-python">bot = ..
+
+bot.new_event("$onReactionAdd", "Emoji: $reactionEvent[]")
+
+bot.run(..)
 </code></pre>
-<p>🔹 Si un usuario llamado "Juan" reacciona con "❤️" en el canal <code>#general</code>, el bot enviará:<br />
-<strong>"El usuario <code>Juan</code> reaccionó con <code>❤️</code> en el canal <code>#general</code>."</strong></p>
+<p>🔹 Si un usuario llamado "Saul" reacciona con "✅" en el canal <code>#general</code>, el bot enviará:</p>
+<p><img src="Eventos/image.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="oninteraction"><a class="header" href="#oninteraction">$onInteraction</a></h1>
 <p><code>$onInteraction</code> se activa cuando un usuario interactúa con un botón, menú desplegable o cualquier otro componente de interacción en Discord.</p>
 <pre><code>$onInteraction

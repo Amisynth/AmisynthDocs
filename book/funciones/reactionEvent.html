@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>$onReactionAdd - AmisynthDocs</title>
+        <title>$reactionEvent[] - AmisynthDocs</title>
 
 
         <!-- Custom HTML head -->
@@ -152,33 +152,28 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="onreactionadd"><a class="header" href="#onreactionadd">$onReactionAdd</a></h1>
-<p><code>$onReactionAdd</code> es un evento que se activa cuando un usuario añade una reacción a un mensaje en el servidor.</p>
-<h3 id="sintaxis"><a class="header" href="#sintaxis"><strong>Sintaxis</strong></a></h3>
-<pre><code>$onReactionAdd
+                        <h1 id="reationevent"><a class="header" href="#reationevent">$reationEvent[]</a></h1>
+<p>La función <code>$reactionEvent[]</code> almacena un valor en una variable temporal dentro de la ejecución del comando.</p>
+<h3 id="sintaxis"><a class="header" href="#sintaxis"><code>Sintaxis</code></a></h3>
+<pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <blockquote>
-<p>📌 <strong>Nota:</strong> Este evento se usa como un disparador, no dentro del código del comando.</p>
+<p>Esta es una funcion compartida que retornar el emoji usado o removido en los eventos <code>$onReactionAdd</code> y <code>$onReactionRemove</code></p>
 </blockquote>
-<h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
-<pre><code class="language-python">bot = ..
-
-bot.new_event("$onReactionAdd", "Emoji: $reactionEvent[]")
-
-bot.run(..)
+<h3 id="ejemplo"><a class="header" href="#ejemplo"><code>Ejemplo</code></a></h3>
+<pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
-<p>🔹 Si un usuario llamado "Saul" reacciona con "✅" en el canal <code>#general</code>, el bot enviará:</p>
-<p><img src="image.png" alt="alt text" /></p>
+<p><img src="image-3.png" alt="alt text" /></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../Eventos/onReactionRemove.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../funciones/get.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../Eventos/onInteraction.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../Eventos/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -188,11 +183,11 @@ bot.run(..)
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../Eventos/onReactionRemove.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../funciones/get.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../Eventos/onInteraction.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../Eventos/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

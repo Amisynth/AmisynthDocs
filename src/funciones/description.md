@@ -22,3 +22,12 @@ Permisos necesarios que el bot debe tener para que esta función funcione correc
 - sendmessages
 - sendmessagesinthreads
 - embedlinks
+
+
+**Ejemplo #1**
+
+```
+$description[Esta es la descripcion;1]
+```
+
+![alt text](image-8.png)

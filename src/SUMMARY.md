@@ -62,6 +62,7 @@
     - [$jsonJoinArray[]](funciones/jsonJoinArray.md)
     - [$let[]](funciones/let.md)
     - [$get[]](funciones/get.md)
+    - [$reactionEvent[]](funciones/reactionEvent.md)
 
 
 - [Eventos](Eventos/README.md)
