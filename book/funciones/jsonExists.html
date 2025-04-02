@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>$jsjsonExistson[] - AmisynthDocs</title>
+        <title>$jsjsonExists[] - AmisynthDocs</title>
 
 
         <!-- Custom HTML head -->
@@ -157,16 +157,15 @@
 <blockquote>
 <p>Devuelve un resultado vacío si no se ejecutaron las funciones <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
 </blockquote>
-<h3 id="sintaxis"><a class="header" href="#sintaxis"><strong>Sintaxis</strong></a></h3>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonExists[Key;...]
 </code></pre>
-<h3 id="parámetros"><a class="header" href="#parámetros"><strong>Parámetros</strong></a></h3>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON que se verificará.</li>
 </ul>
-<h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
-<pre><code class="language-plaintext">
-$jsonParse[{
+<p><strong>Ejemplo</strong></p>
+<pre><code>$jsonParse[{
     'user': {
         'name': 'Amisadai',
         'age': 20
@@ -176,7 +175,7 @@ $jsonParse[{
 $jsonExists[user;name] ✅ La clave 'name' existe.
 $jsonExists[user;email] ❌ La clave 'email' no existe.
 </code></pre>
-<pre><code></code></pre>
+<p><img src="image-43.png" alt="alt text" /></p>
 
                     </main>
 

@@ -154,23 +154,24 @@
                     <main>
                         <h1 id="jsonarraypop-"><a class="header" href="#jsonarraypop-">$jsonArrayPop []</a></h1>
 <p>La función <code>$jsonArrayPop</code> elimina el último elemento de un array y devuelve el elemento eliminado.</p>
-<h3 id="sintaxis"><a class="header" href="#sintaxis"><strong>Sintaxis</strong></a></h3>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonArrayPop[Key;...]
 </code></pre>
-<h3 id="parámetros"><a class="header" href="#parámetros"><strong>Parámetros</strong></a></h3>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave del array del cual se eliminará un elemento.</li>
 </ul>
-<h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
+<p><strong>Ejemplo</strong></p>
 <pre><code class="language-plaintext">$jsonParse[{
     'music': ['Paranoid - MADKID', 'Ping! 2 - Exyl', 'Tokyo - Leat'eq']
 }]
 
-Eliminado: $jsonArrayPop[music]
+Eliminado: $jsonArrayPop[musica]
 
 Música actual:
-&gt; $jsonJoinArray[music;, ]
+&gt; $jsonJoinArray[musica;, ]
 </code></pre>
+<p><img src="image-48.png" alt="alt text" /></p>
 
                     </main>
 

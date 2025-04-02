@@ -157,15 +157,15 @@
 <blockquote>
 <p>La función <code>$jsonArrayIndex</code> devolverá <code>-1</code> si el valor no se encuentra y devolverá un resultado vacío si no se ejecutaron <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
 </blockquote>
-<h3 id="sintaxis"><a class="header" href="#sintaxis"><strong>Sintaxis</strong></a></h3>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonArrayIndex[Key;...;Value]
 </code></pre>
-<h3 id="parámetros"><a class="header" href="#parámetros"><strong>Parámetros</strong></a></h3>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave JSON donde se buscará el valor.</li>
 <li><code>value</code> <code>(Tipo: String, Integer, Float || Obligatorio)</code> El valor a buscar dentro del array.</li>
 </ul>
-<h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
+<p><strong>Ejemplo</strong></p>
 <pre><code class="language-plaintext">$jsonParse[{
     'computer': [{
         'apps': {
@@ -182,6 +182,7 @@
 
 El índice de `$message[-1]` en `apps/software` es: $jsonArrayIndex[computer;0;apps;software;$message[-1]].
 </code></pre>
+<p><img src="image-46.png" alt="alt text" /></p>
 
                     </main>
 

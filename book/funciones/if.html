@@ -153,6 +153,46 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="if"><a class="header" href="#if">$if[]</a></h1>
+<p>Ejecuta el siguiente bloque de código si la condición proporcionada es verdadera.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$if[Condición;Bloque verdadero;Bloque Falso]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Condición</code> <code>(Tipo: Cadena || Bandera: Obligatoria)</code>: Verificación que se llevará a cabo.</p>
+</li>
+<li>
+<p><code>Bloque falso</code> <code>(Tipo: Cadena || Bandera: Obligatoria)</code>: Bloque verdadero a devolver.</p>
+</li>
+<li>
+<p><code>Bloque verdadero</code> <code>(Tipo: Cadena || Bandera: Obligatoria)</code>: Bloque false a devolver.</p>
+</li>
+</ul>
+<p><strong>Operadores</strong></p>
+<ul>
+<li><code>==</code> - Igual a</li>
+<li><code>!=</code> - Diferente de</li>
+<li><code>&lt;</code> - Menor que</li>
+<li><code>&gt;</code> - Mayor que</li>
+<li><code>&gt;=</code> - Mayor o igual a</li>
+<li><code>&lt;=</code> - Menor o igual a</li>
+</ul>
+<blockquote>
+<p>Estos operadores pueden variar en su significado dependiendo del orden o la intención de la declaración <code>if</code>.</p>
+</blockquote>
+<blockquote>
+<p>Si usas texto como <code>x</code> y/o <code>y</code>, no podrás usar otros operadores que no sean <code>==</code> y <code>!=</code>. Sin embargo, si trabajas con números, puedes usar cualquiera de los operadores mencionados en la lista anterior.</p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code>// Buen Uso
+$if[$checkCondition[h==$message[-1]];Verdadero;Falso]  
+</code></pre>
+<p><img src="image-55.png" alt="alt text" /></p>
+<pre><code>// Mal Uso
+$if[hola==$message[-1];Verdadero;Falso]  
+</code></pre>
+<p><img src="image-56.png" alt="alt text" /></p>
 
                     </main>
 
@@ -162,7 +202,7 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../Eventos/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../funciones/checkCondition.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -176,7 +216,7 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../Eventos/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../funciones/checkCondition.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

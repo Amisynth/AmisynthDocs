@@ -4,17 +4,17 @@ La función `$jsonExists` verifica si una clave JSON especificada existe en el o
 
 > Devuelve un resultado vacío si no se ejecutaron las funciones `$jsonParse` o `$jsonSet`, o si se ejecutó `$jsonClear`.  
 
-### **Sintaxis**  
+**Sintaxis**  
 ```plaintext
 $jsonExists[Key;...]
 ```
 
-### **Parámetros**  
+**Parámetros**  
 - `Key` `(Tipo: String || Flag: Required)`: La clave JSON que se verificará.  
 
-### **Ejemplo**  
-```plaintext
+**Ejemplo**  
 
+```
 $jsonParse[{
     'user': {
         'name': 'Amisadai',
@@ -25,4 +25,5 @@ $jsonParse[{
 $jsonExists[user;name] ✅ La clave 'name' existe.
 $jsonExists[user;email] ❌ La clave 'email' no existe.
 ```  
-```
+
+![alt text](image-43.png)

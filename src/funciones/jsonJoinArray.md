@@ -4,16 +4,16 @@ La función `$jsonJoinArray` une un array JSON bajo la clave especificada utiliz
 
 > La función `$jsonJoinArray` devolverá una cadena vacía si el valor es `null`, la clave no existe, no se ejecutaron las funciones `$jsonParse` o `$jsonSet`, o si se ejecutó `$jsonClear`.  
 
-### `Sintaxis`  
+**Sintaxis**  
 ```plaintext
 $jsonJoinArray[Key;...;Separator]
 ```
 
-### `Parámetros`  
+**Parámetros**  
 - `Key` `(Tipo: String || Flag: Required)`: La clave JSON que apunta a un array que será recuperado.  
 - `Separator` `(Tipo: String || Flag: Required)`: El separador que se utilizará para unir los elementos del array.  
 
-### `Ejemplo`  
+**Ejemplo**  
 ```plaintext
 
 $jsonParse[{
@@ -23,3 +23,5 @@ $jsonParse[{
 Music:
 > $jsonJoinArray[music;, ]
 ```
+
+![alt text](image-54.png)

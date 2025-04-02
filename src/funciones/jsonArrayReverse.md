@@ -2,15 +2,15 @@
 # $jsonArrayReverse[]
 La función `$jsonArrayReverse` invierte el orden de un array JSON específico.  
 
-### **Sintaxis**  
+**Sintaxis**  
 ```plaintext
 $jsonArrayReverse[Key;...]
 ```
 
-### **Parámetros**  
+**Parámetros**  
 - `key` `(Tipo: String || Opcional)` La clave del array JSON que se invertirá.  
 
-### **Ejemplo**  
+**Ejemplo**  
 ```plaintext
 
 $jsonParse[{
@@ -22,3 +22,5 @@ $jsonArrayReverse[fruits]
 Después de invertir:
 > $json[fruits]
 ```  
+
+![alt text](image-52.png)

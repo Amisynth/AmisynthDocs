@@ -1,16 +1,16 @@
 
-# $jsonArrayCount  []
+# $jsonArrayCount[]
 La función `$jsonArrayCount` cuenta los elementos en la clave JSON especificada.  
 
-### **Sintaxis**  
+**Sintaxis**  
 ```plaintext
 $jsonArrayCount[Key;...]
 ```
 
-### **Parámetros**  
+**Parámetros**  
 - `key` `(Tipo: String || Obligatorio)` La clave JSON donde se contarán los elementos.  
 
-### **Ejemplo**  
+**Ejemplo**  
 ```plaintext
 
 $jsonParse[{
@@ -30,3 +30,5 @@ $onlyIf[$checkCondition[$jsonExists[computer;0;apps;$message[-1]]==true];¡La ca
 
 La cantidad de aplicaciones en `$message[-1]` es: $jsonArrayCount[computer;0;apps;$message[-1]].
 ```  
+
+![alt text](image-53.png)

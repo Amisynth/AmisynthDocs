@@ -27,3 +27,5 @@ $jsonParse[{
 
 $jsonStringify[]
 ```
+
+![alt text](image-42.png)

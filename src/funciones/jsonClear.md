@@ -2,12 +2,12 @@
 # $jsonClear[]
 La función `$jsonClear` elimina el objeto JSON actual, restableciendo su contenido.  
 
-### **Sintaxis**  
+**Sintaxis**  
 ```plaintext
 $jsonClear[]
 ```
 
-### **Ejemplo**  
+**Ejemplo**  
 ```plaintext
 $jsonParse[{
     'username': 'Izana',
@@ -18,5 +18,7 @@ $jsonParse[{
     }]
 Nombre de usuario: $json[username]  
 $jsonClear[]
-Nombre de usuario: $optOff[$json[username]]
+Nombre de usuario: $json[username]
 ```  
+
+![alt text](image-45.png)

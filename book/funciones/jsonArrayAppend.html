@@ -182,13 +182,14 @@
 
 $onlyIf[$checkCondtion[$jsonExists[computer;0;apps;$message[1]]==true];¡La categoría especificada no existe! Categorías disponibles: `software` y `games`]
 
-$let[value;$replaceText[$message;$message[1];]]
+$let[value;$replaceText[$message[-1];$message[1];]]
 
 $jsonArrayAppend[computer;0;apps;$message[1];$get[value]]
 
 ¡Se agregó una nueva aplicación a la categoría `$message[1]`!  
 Aplicaciones actuales en la categoría `$message[1]`: $json[computer;0;apps;$message[1]]
 </code></pre>
+<p><img src="image-47.png" alt="alt text" /></p>
 
                     </main>
 

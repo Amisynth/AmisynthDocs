@@ -4,16 +4,16 @@ La función `$jsonArrayIndex` obtiene el índice de un valor dentro de un array 
 
 > La función `$jsonArrayIndex` devolverá `-1` si el valor no se encuentra y devolverá un resultado vacío si no se ejecutaron `$jsonParse` o `$jsonSet`, o si se ejecutó `$jsonClear`.  
 
-### **Sintaxis**  
+**Sintaxis**  
 ```plaintext
 $jsonArrayIndex[Key;...;Value]
 ```
 
-### **Parámetros**  
+**Parámetros**  
 - `key` `(Tipo: String || Obligatorio)` La clave JSON donde se buscará el valor.  
 - `value` `(Tipo: String, Integer, Float || Obligatorio)` El valor a buscar dentro del array.  
 
-### **Ejemplo**  
+**Ejemplo**  
 ```plaintext
 $jsonParse[{
     'computer': [{
@@ -31,3 +31,5 @@ $jsonParse[{
 
 El índice de `$message[-1]` en `apps/software` es: $jsonArrayIndex[computer;0;apps;software;$message[-1]].
 ```  
+
+![alt text](image-46.png)

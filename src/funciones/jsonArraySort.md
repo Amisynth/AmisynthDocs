@@ -7,15 +7,15 @@ La función `$jsonArraySort` ordena un array JSON específico en orden ascendent
 > 1. Números enteros de menor a mayor.  
 > 2. Cadenas de texto basadas en sus valores ASCII/Unicode.  
 
-### **Sintaxis**  
+**Sintaxis**  
 ```plaintext
 $jsonArraySort[Key;...]
 ```
 
-### **Parámetros**  
+**Parámetros**  
 - `key` `(Tipo: String || Opcional)` La clave del array JSON que se ordenará.  
 
-### **Ejemplo**  
+**Ejemplo**  
 ```plaintext
 $jsonParse[{
   'data': ['Oranges', 'banana', 10, 'apple', 'Apples', 2, 30]
@@ -26,3 +26,5 @@ $jsonArraySort[data]
 Después de ordenar:
 > $json[data]
 ```  
+
+![alt text](image-51.png)

@@ -25,7 +25,7 @@ $jsonSet[balance;$message]
 Balance key was set to: $json[balance]
 ```
 
-#### Usando `$jsonSetString`  
+Usando `$jsonSetString`  
 ```plaintext
 $nomention
 $jsonParse[{}]

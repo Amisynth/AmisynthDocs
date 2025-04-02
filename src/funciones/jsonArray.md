@@ -25,3 +25,5 @@ $jsonArray[games]
 Clave `games` convertida en array:  
 $optOff[$jsonPretty[4]]  
 ```
+
+![alt text](image-39.png)

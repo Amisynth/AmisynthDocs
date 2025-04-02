@@ -157,15 +157,15 @@
 <blockquote>
 <p>La función <code>$jsonJoinArray</code> devolverá una cadena vacía si el valor es <code>null</code>, la clave no existe, no se ejecutaron las funciones <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
 </blockquote>
-<h3 id="sintaxis"><a class="header" href="#sintaxis"><code>Sintaxis</code></a></h3>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonJoinArray[Key;...;Separator]
 </code></pre>
-<h3 id="parámetros"><a class="header" href="#parámetros"><code>Parámetros</code></a></h3>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON que apunta a un array que será recuperado.</li>
 <li><code>Separator</code> <code>(Tipo: String || Flag: Required)</code>: El separador que se utilizará para unir los elementos del array.</li>
 </ul>
-<h3 id="ejemplo"><a class="header" href="#ejemplo"><code>Ejemplo</code></a></h3>
+<p><strong>Ejemplo</strong></p>
 <pre><code class="language-plaintext">
 $jsonParse[{
     'music': ['Paranoid - MADKID', 'Ping! 2 - Exyl', 'Tokyo - Leat\'eq']
@@ -174,6 +174,7 @@ $jsonParse[{
 Music:
 &gt; $jsonJoinArray[music;, ]
 </code></pre>
+<p><img src="image-54.png" alt="alt text" /></p>
 
                     </main>
 

@@ -47,7 +47,7 @@
     - [$jsonSetString[]](funciones/jsonSetString.md)
     - [$jsonUnset[]](funciones/jsonUnset.md)
     - [$jsonClear[]](funciones/jsonClear.md)
-    - [$jsjsonExistson[]](funciones/jsonExists.md)
+    - [$jsjsonExists[]](funciones/jsonExists.md)
     - [$jsonStringify[]](funciones/jsonStringify.md)
     - [$jsonPretty[]](funciones/jsonPretty.md)
     - [$jsonArray[]](funciones/jsonArray.md)
@@ -64,6 +64,7 @@
     - [$get[]](funciones/get.md)
     - [$reactionEvent[]](funciones/reactionEvent.md)
     - [$if[]](funciones/if.md)
+    - [$checkCondition[]](funciones/checkCondition.md)
 
 
 - [Eventos](Eventos/README.md)

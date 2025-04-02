@@ -2,22 +2,24 @@
 # $jsonArrayPop []
 La función `$jsonArrayPop` elimina el último elemento de un array y devuelve el elemento eliminado.  
 
-### **Sintaxis**  
+**Sintaxis**  
 ```plaintext
 $jsonArrayPop[Key;...]
 ```
 
-### **Parámetros**  
+**Parámetros**  
 - `key` `(Tipo: String || Obligatorio)` La clave del array del cual se eliminará un elemento.  
 
-### **Ejemplo**  
+**Ejemplo**  
 ```plaintext
 $jsonParse[{
     'music': ['Paranoid - MADKID', 'Ping! 2 - Exyl', 'Tokyo - Leat'eq']
 }]
 
-Eliminado: $jsonArrayPop[music]
+Eliminado: $jsonArrayPop[musica]
 
 Música actual:
-> $jsonJoinArray[music;, ]
+> $jsonJoinArray[musica;, ]
 ```  
+
+![alt text](image-48.png)

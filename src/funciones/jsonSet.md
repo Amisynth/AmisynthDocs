@@ -29,9 +29,10 @@ $jsonSet[username;Priyanuj]
 $jsonSet[tag;2626]  
 $jsonSet[identity;age;19]  
 
-$optOff[  
+
 Nombre de usuario: $json[username]  
 Etiqueta: $json[tag]  
-Edad: $json[identity;age] años  
-]  
+Edad: $json[identity;age] años
 ```  
+
+![alt text](image-38.png)
