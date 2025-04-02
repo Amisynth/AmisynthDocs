@@ -4,7 +4,7 @@
 Antes de leer, deberías estar familiarizado con JSON y dónde y cómo se utiliza. Puedes familiarizarte con JSON leyendo un tutorial en [W3Schools](https://www.w3schools.com/js/js_json_intro.asp).
 
 
-## Lista de comandos JSON Experimentales
+## Lista de comandos JSON Experimentales.
 
 
 - [$jsonParse[]](/funciones/jsonParse.md)
