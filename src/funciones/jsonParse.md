@@ -20,3 +20,7 @@ JSON guardado. $jsonParse[{'numero': 100}]
 ```
 
 ![alt text](image-36.png)
+
+
+
+> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).

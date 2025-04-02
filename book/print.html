@@ -158,14 +158,6 @@
 ✨ Imagina una libreria que facilita la creación de bots de Discord con funciones fáciles de usar. Una app capaz de desarrollar casi todo tipo de bots, desde simples bots de eco hasta bots avanzados de administración multipropósito. Donde la simplicidad se une a la funcionalidad y la escalabilidad. Eso es Bot Designer para Discord.</p>
 <p>¿Qué esperas? ¡Crea el bot de tus sueños hoy mismo!</p>
 <p>Empieza con Amisynth</p>
-<p>Indice de la Wiki</p>
-<p>Guías</p>
-<p>Recursos</p>
-<p>BDScript</p>
-<p>Premium</p>
-<p>JavaScript</p>
-<p>Callbacks</p>
-<p>¿Quieres contribuir a la wiki?</p>
 <p>¡Visita el archivo de contribuciones del repositorio de GitHub y descubre cómo puedes ayudar!</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cambios"><a class="header" href="#cambios">Cambios</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="terminos-de-servicio"><a class="header" href="#terminos-de-servicio">Terminos de servicio</a></h1>
@@ -212,7 +204,213 @@ Si tienes alguna pregunta o inquietud sobre estos Términos de Servicio, puedes 
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="guias"><a class="header" href="#guias">Guias</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="introduccion"><a class="header" href="#introduccion">Introduccion</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-comenzando"><a class="header" href="#-comenzando">📌 Comenzando</a></h1>
+<p>Para usar nuestra libreria debes tener lenguaje de programacion llamado Python para usar nuestra libreria.</p>
+<h2 id="instalar-python-en-windows"><a class="header" href="#instalar-python-en-windows">Instalar Python en Windows</a></h2>
+<p>Si aún no tienes Python instalado, descárgalo desde la página oficial:</p>
+<ul>
+<li><a href="https://www.python.org/downloads/">Python Downland</a></li>
+</ul>
+<blockquote>
+<p>Si eres nuevo puedes seguir un video tutorial de como instalar python rrapidamente en tu Sistema Windows: <a href="https://www.youtube.com/watch?v=xd_0RN2SyfI">Link</a></p>
+</blockquote>
+<p>Ahora necesitaras un editor de codigo!</p>
+<blockquote>
+<p>Si eres nuevo te seguiero ver un video de como usar el editor de codigo mas famoso de todos aqui el video: <a href="https://www.youtube.com/watch?v=6pD7_rcFrj8">Visual Estudio Code</a>:</p>
+</blockquote>
+<ul>
+<li>Link de aplicacion de escritorio: <a href="https://code.visualstudio.com/download">Visual Estudio Code Downland</a></li>
+</ul>
+<h2 id="instalar-python-en-android"><a class="header" href="#instalar-python-en-android">Instalar Python en Android</a></h2>
+<h3 id="pydroid"><a class="header" href="#pydroid"><a href="https://play.google.com/store/search?q=pydroid+3&amp;c=apps">PyDroid</a></a></h3>
+<p>Puedes usar un app famosa para instalar nuestra libreria, esta aplicacion ya viene por default con python instalado.</p>
+<ul>
+<li>
+<p>Instala la APP en la Play Store o en App Store</p>
+<p><img src="Introduccion/image-1.png" alt="alt text" /></p>
+</li>
+<li>
+<p>Ve al seccion de terminal de la app para instalar la libreria:</p>
+<p><img src="Introduccion/image-2.png" alt="alt text" /></p>
+</li>
+<li>
+<p>En el terminal escribe</p>
+<p><code>pip install --upgrade Amisynth</code></p>
+<p><img src="Introduccion/image.png" alt="alt text" /></p>
+</li>
+</ul>
+<p>Listo ya puedes usar nuestra Libreria!</p>
+<blockquote>
+<p>Esta aplicacion esta comprobada que no se puede usar en segundo plano</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tipos-de-usos"><a class="header" href="#tipos-de-usos">Tipos de usos</a></h1>
+<p>En la libreria se pueden hacer varios usos, como el hecho que he puesto a disposicion crear comandos, crear eventos, creas comando con barra digonal.</p>
+<h2 id="crear-un-comando-de-discord"><a class="header" href="#crear-un-comando-de-discord">Crear un comando de discord</a></h2>
+<pre><code class="language-python"># importa LA libreria y luego el cliente
+
+from Amisynth import AmiClient
+
+# Has la instancia
+
+bot = AmiClient("!")
+
+
+# Crea el comando :D
+
+bot.new_command(nombre="prueba",
+                tipo="text",
+                codigo="Hola $username[]!")
+
+bot.run("TOKEN DE TU BOT")
+</code></pre>
+<p><img src="Introduccion/image-3.png" alt="alt text" /></p>
+<h2 id="crea-un-evento-de-discord"><a class="header" href="#crea-un-evento-de-discord">Crea un evento de discord</a></h2>
+<pre><code class="language-python">from Amisynth import AmiClient
+
+# Has la instancia
+
+bot = AmiClient("!")
+
+
+# Crea el evento :D
+bot.new_event(name="$onMessage", 
+              code="Hola estoy respondiendo a cualquier mensaje!")
+
+bot.run("TOKEN DE TU BOT")
+</code></pre>
+<p><img src="Introduccion/image-4.png" alt="alt text" /></p>
+<blockquote>
+<p>Puedes en ver los eventos disponibles en <a href="Introduccion//Eventos/">Eventos</a></p>
+</blockquote>
+<h2 id="crea-un-comando-slash-de-discord"><a class="header" href="#crea-un-comando-slash-de-discord">Crea un comando slash de discord</a></h2>
+<pre><code class="language-python">from Amisynth import AmiClient
+
+# Has la instancia
+
+bot = AmiClient("!")
+
+
+bot.new_slash(
+    name="despedir",
+    description="Saluda a un usuario con un mensaje personalizado",
+    code="Adios!",
+    options=[ {
+            "name_option": "usuario",
+            "type": "User",
+            "required": False
+        }]
+
+# Slash Con Choices 
+
+
+bot.new_slash(
+    name="saludar",
+    description="Saluda a un usuario con un mensaje personalizado",
+    code="Hola!",
+    options=[{
+            "name_option": "mensaje",
+            "type": "Texto",
+            "required": True,
+            "choices": [
+                {"name_choice": "Opción 1", "value_choice": "op1"},
+                {"name_choice": "Opción 2", "value_choice": "op2"}
+            ]
+        }])
+
+
+
+bot.run("TOKEN DE TU BOT")
+</code></pre>
+<p><img src="Introduccion/image-5.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="general"><a class="header" href="#general">General</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="divicion-de-texto"><a class="header" href="#divicion-de-texto">Divicion de Texto</a></h1>
+<p>En esta sección, aprenderá cómo utilizar la división de texto.</p>
+<ul>
+<li>
+<p><a href="General//funciones/textSplit.html">$textSplit[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/getTextSplitLength.html">$getTextSplitLength[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/splitText.html">$splitText[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/getTextSplitIndex.html">$getTextSplitIndex[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/joinSplitText.html">$joinSplitText[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/removeSplitTextElement.html">$removeSplitTextElement[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/editSplitText.html">$editSplitText[]</a></p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="json-funciones"><a class="header" href="#json-funciones">JSON Funciones</a></h1>
+<p>Antes de leer, deberías estar familiarizado con JSON y dónde y cómo se utiliza. Puedes familiarizarte con JSON leyendo un tutorial en <a href="https://www.w3schools.com/js/js_json_intro.asp">W3Schools</a>.</p>
+<h2 id="lista-de-comandos-json-experimentales"><a class="header" href="#lista-de-comandos-json-experimentales">Lista de comandos JSON Experimentales</a></h2>
+<ul>
+<li>
+<p><a href="General//funciones/jsonParse.html">$jsonParse[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/json.html">$json[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonSet.html">$jsonSet[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonSetString.html">$jsonSetString[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonUnset.html">$jsonUnset[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonClear.html">$jsonClear[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonExists.html">$jsjsonExists[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonStringify.html">$jsonStringify[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonPretty.html">$jsonPretty[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonArray.html">$jsonArray[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonArrayCount.html">$jsonArrayCount[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonArrayIndex.html">$jsonArrayIndex[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonArrayAppend.html">$jsonArrayAppend[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonArrayPop.html">$jsonArrayPop[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonArrayShift.html">$jsonArrayShift[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonArrayUnshift.html">$jsonArrayUnshift[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonArraySort.html">$jsonArraySort[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonArrayReverse.html">$jsonArrayReverse[]</a></p>
+</li>
+<li>
+<p><a href="General//funciones/jsonJoinArray.html">$jsonJoinArray[]</a></p>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="funciones"><a class="header" href="#funciones">Funciones</a></h1>
 <p>Soon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="addbutton"><a class="header" href="#addbutton">$addButton[]</a></h1>
@@ -752,6 +950,9 @@ $roleGrant[3869969062509936;-9368562753613496]
 &gt; $splitText[2]
 </code></pre>
 <p><img src="funciones/image-29.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/divicion-texto.html">División de texto</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="gettextsplitlength"><a class="header" href="#gettextsplitlength">$getTextSplitLength[]</a></h1>
 <p>Devuelve la cantidad de fragmentos obtenidos después de dividir un texto con <code>$textSplit[]</code>.</p>
 <p><strong>Sintaxis</strong></p>
@@ -762,6 +963,9 @@ $roleGrant[3869969062509936;-9368562753613496]
 &gt; $getTextSplitLength   // Devuelve 3
 </code></pre>
 <p><img src="funciones/image-30.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/divicion-texto.html">División de texto</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="splittext"><a class="header" href="#splittext">$splitText</a></h1>
 <p>Cada fragmento de texto separado tiene un número de índice. <code>$splitText</code> es una función que devuelve uno de los elementos del texto dividido según el índice especificado o los signos <code>&lt;</code> y <code>&gt;</code> para obtener el primer o último elemento, respectivamente.</p>
 <p><strong>Sintaxis</strong></p>
@@ -785,6 +989,9 @@ $roleGrant[3869969062509936;-9368562753613496]
 &gt; $splitText[&gt;]   // Obtiene "!"
 </code></pre>
 <p><img src="funciones/image-31.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/divicion-texto.html">División de texto</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="gettextsplitindex-"><a class="header" href="#gettextsplitindex-">$getTextSplitIndex []</a></h1>
 <p>Obtiene el índice de un valor dentro del texto dividido con <code>$textSplit</code>. Devuelve <code>-1</code> si el valor no se encuentra.</p>
 <h2 id="sintaxis-6"><a class="header" href="#sintaxis-6">Sintaxis</a></h2>
@@ -800,6 +1007,9 @@ $roleGrant[3869969062509936;-9368562753613496]
 &gt; $getTextSplitIndex[$message[-1]]   // Devuelve el índice del valor en la lista dividida o -1 si no se encuentra
 </code></pre>
 <p><img src="funciones/image-32.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/divicion-texto.html">División de texto</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="joinsplittext"><a class="header" href="#joinsplittext">$joinSplitText[]</a></h1>
 <p>Esta función devuelve los elementos actuales del texto dividido, unidos con el separador especificado.</p>
 <p><strong>Sintaxis</strong></p>
@@ -814,6 +1024,9 @@ $roleGrant[3869969062509936;-9368562753613496]
 $joinSplitText[+]
 </code></pre>
 <p><img src="funciones/image-33.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/divicion-texto.html">División de texto</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="removesplittextelement"><a class="header" href="#removesplittextelement">$removeSplitTextElement[]</a></h1>
 <p>Esta función elimina un elemento del texto dividido según el índice especificado.</p>
 <p><strong>Sintaxis</strong></p>
@@ -829,6 +1042,9 @@ $removeSplitTextElement[2]
 &gt; $joinSplitText[-] 
 </code></pre>
 <p><img src="funciones/image-34.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/divicion-texto.html">División de texto</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="editsplittext"><a class="header" href="#editsplittext">$editSplitText[]</a></h1>
 <p>Esta función reemplaza el elemento en el índice especificado con un nuevo valor.</p>
 <p><strong>Sintaxis</strong></p>
@@ -849,6 +1065,9 @@ $editSplitText[2;amisynth]
 &gt; $joinSplitText[-]   // Devuelve "hello-bdfd-!"
 </code></pre>
 <p><img src="funciones/image-35.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/divicion-texto.html">División de texto</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonparse"><a class="header" href="#jsonparse">$jsonParse[]</a></h1>
 <p><code>$jsonParse</code> es la función principal utilizada cuando se trabaja con datos JSON.<br />
 Esta función analiza una cadena JSON y la convierte en un objeto que luego puede ser utilizado por otras funciones JSON.</p>
@@ -866,6 +1085,9 @@ Esta función analiza una cadena JSON y la convierte en un objeto que luego pued
 <pre><code>JSON guardado. $jsonParse[{'numero': 100}]
 </code></pre>
 <p><img src="funciones/image-36.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="json"><a class="header" href="#json">$json[]</a></h1>
 <p>La función $json recupera valores JSON de una clave especificada en el objeto JSON actual.</p>
 <blockquote>
@@ -894,6 +1116,9 @@ Etiqueta: $json[tag]
 Edad: $json[identity;age] años
 </code></pre>
 <p><img src="funciones/image-37.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonset"><a class="header" href="#jsonset">$jsonSet[]</a></h1>
 <p>La función <code>$jsonSet</code> establece o reemplaza el valor en la clave JSON especificada.</p>
 <h3 id="sintaxis-7"><a class="header" href="#sintaxis-7"><strong>Sintaxis</strong></a></h3>
@@ -927,6 +1152,9 @@ Etiqueta: $json[tag]
 Edad: $json[identity;age] años
 </code></pre>
 <p><img src="funciones/image-38.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonsetstring"><a class="header" href="#jsonsetstring">$jsonSetString[]</a></h1>
 <p>La función <code>$jsonSetString</code> establece o reemplaza el valor en la clave JSON especificada. Siempre establece el valor como una cadena.</p>
 <h3 id="sintaxis-8"><a class="header" href="#sintaxis-8"><code>Sintaxis</code></a></h3>
@@ -961,6 +1189,9 @@ $jsonSetString[balance;$message]
 
 Balance key was set to: $json[balance]
 </code></pre>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonunset"><a class="header" href="#jsonunset">$jsonUnset[]</a></h1>
 <p>La función <code>$jsonUnset</code> elimina el valor en la clave JSON especificada.<br />
 En resumen, es la función opuesta a <code>$jsonSet</code>.</p>
@@ -993,6 +1224,9 @@ Tag: $json[tag]
 Age: $json[identity;age] years old]
 </code></pre>
 <p><img src="funciones/image-44.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonclear"><a class="header" href="#jsonclear">$jsonClear[]</a></h1>
 <p>La función <code>$jsonClear</code> elimina el objeto JSON actual, restableciendo su contenido.</p>
 <p><strong>Sintaxis</strong></p>
@@ -1011,6 +1245,9 @@ $jsonClear[]
 Nombre de usuario: $json[username]
 </code></pre>
 <p><img src="funciones/image-45.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonexists--"><a class="header" href="#jsonexists--">$jsonExists  []</a></h1>
 <p>La función <code>$jsonExists</code> verifica si una clave JSON especificada existe en el objeto JSON actual.</p>
 <blockquote>
@@ -1035,6 +1272,9 @@ $jsonExists[user;name] ✅ La clave 'name' existe.
 $jsonExists[user;email] ❌ La clave 'email' no existe.
 </code></pre>
 <p><img src="funciones/image-43.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonstringify"><a class="header" href="#jsonstringify">$jsonStringify[]</a></h1>
 <p>La función <code>$jsonStringify[]</code> convierte el objeto JSON actual en una cadena de texto.</p>
 <blockquote>
@@ -1061,6 +1301,9 @@ $jsonParse[{
 $jsonStringify[]
 </code></pre>
 <p><img src="funciones/image-42.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonpretty"><a class="header" href="#jsonpretty">$jsonPretty[]</a></h1>
 <p>La función <code>$jsonPretty</code> convierte el objeto JSON actual en una cadena formateada con sangría para una mejor visualización.</p>
 <blockquote>
@@ -1092,6 +1335,9 @@ $jsonParse[{
 $jsonPretty[4]
 </code></pre>
 <p><img src="funciones/image-40.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarray-"><a class="header" href="#jsonarray-">$jsonArray []</a></h1>
 <p>La función <code>$jsonArray</code> marca una clave JSON especificada como un <strong>array</strong>.</p>
 <h3 id="sintaxis-11"><a class="header" href="#sintaxis-11"><strong>Sintaxis</strong></a></h3>
@@ -1116,6 +1362,9 @@ Clave `games` convertida en array:
 $optOff[$jsonPretty[4]]  
 </code></pre>
 <p><img src="funciones/image-39.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarraycount"><a class="header" href="#jsonarraycount">$jsonArrayCount[]</a></h1>
 <p>La función <code>$jsonArrayCount</code> cuenta los elementos en la clave JSON especificada.</p>
 <p><strong>Sintaxis</strong></p>
@@ -1145,6 +1394,9 @@ $onlyIf[$checkCondition[$jsonExists[computer;0;apps;$message[-1]]==true];¡La ca
 La cantidad de aplicaciones en `$message[-1]` es: $jsonArrayCount[computer;0;apps;$message[-1]].
 </code></pre>
 <p><img src="funciones/image-53.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarrayindex"><a class="header" href="#jsonarrayindex">$jsonArrayIndex[]</a></h1>
 <p>La función <code>$jsonArrayIndex</code> obtiene el índice de un valor dentro de un array JSON.</p>
 <blockquote>
@@ -1176,6 +1428,9 @@ La cantidad de aplicaciones en `$message[-1]` es: $jsonArrayCount[computer;0;app
 El índice de `$message[-1]` en `apps/software` es: $jsonArrayIndex[computer;0;apps;software;$message[-1]].
 </code></pre>
 <p><img src="funciones/image-46.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarrayappend"><a class="header" href="#jsonarrayappend">$jsonArrayAppend</a></h1>
 <p>La función <code>$jsonArrayAppend</code> agrega un valor al final de la clave JSON especificada.</p>
 <h3 id="sintaxis-12"><a class="header" href="#sintaxis-12"><strong>Sintaxis</strong></a></h3>
@@ -1214,6 +1469,9 @@ $jsonArrayAppend[computer;0;apps;$message[1];$get[value]]
 Aplicaciones actuales en la categoría `$message[1]`: $json[computer;0;apps;$message[1]]
 </code></pre>
 <p><img src="funciones/image-47.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarraypop-"><a class="header" href="#jsonarraypop-">$jsonArrayPop []</a></h1>
 <p>La función <code>$jsonArrayPop</code> elimina el último elemento de un array y devuelve el elemento eliminado.</p>
 <p><strong>Sintaxis</strong></p>
@@ -1234,6 +1492,9 @@ Música actual:
 &gt; $jsonJoinArray[musica;, ]
 </code></pre>
 <p><img src="funciones/image-48.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarrayshift"><a class="header" href="#jsonarrayshift">$jsonArrayShift[]</a></h1>
 <p>La función <code>$jsonArrayShift[]</code> elimina el primer elemento de un array y devuelve el elemento eliminado.</p>
 <p><strong>Sintaxis</strong></p>
@@ -1254,6 +1515,9 @@ Música actual:
 &gt; $jsonJoinArray[music;, ]
 </code></pre>
 <p><img src="funciones/image-49.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><pre><code class="language-markdown"># $jsonArrayUnshift  
 La función `$jsonArrayUnshift` agrega un valor al inicio de un array JSON.  
 
@@ -1281,6 +1545,9 @@ Música:
 &gt; $jsonJoinArray[music;, ]
 </code></pre>
 <p><img src="funciones/image-50.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarraysort"><a class="header" href="#jsonarraysort">$jsonArraySort[]</a></h1>
 <p>La función <code>$jsonArraySort</code> ordena un array JSON específico en orden ascendente.</p>
 <blockquote>
@@ -1308,6 +1575,9 @@ Después de ordenar:
 &gt; $json[data]
 </code></pre>
 <p><img src="funciones/image-51.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarrayreverse"><a class="header" href="#jsonarrayreverse">$jsonArrayReverse[]</a></h1>
 <p>La función <code>$jsonArrayReverse</code> invierte el orden de un array JSON específico.</p>
 <p><strong>Sintaxis</strong></p>
@@ -1329,6 +1599,9 @@ Después de invertir:
 &gt; $json[fruits]
 </code></pre>
 <p><img src="funciones/image-52.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonjoinarray"><a class="header" href="#jsonjoinarray">$jsonJoinArray[]</a></h1>
 <p>La función <code>$jsonJoinArray</code> une un array JSON bajo la clave especificada utilizando el separador dado.</p>
 <blockquote>
@@ -1352,6 +1625,9 @@ Music:
 &gt; $jsonJoinArray[music;, ]
 </code></pre>
 <p><img src="funciones/image-54.png" alt="alt text" /></p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="let"><a class="header" href="#let">$let[]</a></h1>
 <p>La función <code>$let[]</code> almacena un valor en una variable temporal dentro de la ejecución del comando.</p>
 <p><strong>Sintaxis</strong></p>
@@ -1417,12 +1693,24 @@ Usuario guardado: $get[user]
 </ul>
 <p><strong>Operadores</strong></p>
 <ul>
-<li><code>==</code> - Igual a</li>
-<li><code>!=</code> - Diferente de</li>
-<li><code>&lt;</code> - Menor que</li>
-<li><code>&gt;</code> - Mayor que</li>
-<li><code>&gt;=</code> - Mayor o igual a</li>
-<li><code>&lt;=</code> - Menor o igual a</li>
+<li>
+<p><code>==</code> - Igual a</p>
+</li>
+<li>
+<p><code>!=</code> - Diferente de</p>
+</li>
+<li>
+<p><code>&lt;</code> - Menor que</p>
+</li>
+<li>
+<p><code>&gt;</code> - Mayor que</p>
+</li>
+<li>
+<p><code>&gt;=</code> - Mayor o igual a</p>
+</li>
+<li>
+<p><code>&lt;=</code> - Menor o igual a</p>
+</li>
 </ul>
 <blockquote>
 <p>Estos operadores pueden variar en su significado dependiendo del orden o la intención de la declaración <code>if</code>.</p>
@@ -1439,7 +1727,45 @@ $if[$checkCondition[h==$message[-1]];Verdadero;Falso]
 $if[hola==$message[-1];Verdadero;Falso]  
 </code></pre>
 <p><img src="funciones/image-56.png" alt="alt text" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="checkcondition"><a class="header" href="#checkcondition">$checkCondition[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="checkcondition"><a class="header" href="#checkcondition">$checkCondition</a></h1>
+<p>Comprueba si una condición es verdadera o falsa.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$checkCondition[Condición]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Condición</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: La condición a comprobar.</li>
+</ul>
+<p><strong>Operadores</strong></p>
+<ul>
+<li>
+<p><code>==</code> - Igual a</p>
+</li>
+<li>
+<p><code>!=</code> - Diferente de</p>
+</li>
+<li>
+<p><code>&lt;</code> - Menor que</p>
+</li>
+<li>
+<p><code>&gt;</code> - Mayor que</p>
+</li>
+<li>
+<p><code>&gt;=</code> - Mayor o igual a</p>
+</li>
+<li>
+<p><code>&lt;=</code> - Menor o igual a</p>
+</li>
+</ul>
+<p><strong>Ejemplos</strong></p>
+<p><strong>#1</strong></p>
+<pre><code>Es verdero la condicion?: $checkCondition[$message[-1]==hola]
+</code></pre>
+<p><img src="funciones/image-57.png" alt="alt text" /></p>
+<p><strong>#2</strong></p>
+<pre><code>Es verdero la condicion?: $checkCondition[$message[-1]==2]
+</code></pre>
+<p><img src="funciones/image-58.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="eventos"><a class="header" href="#eventos">Eventos</a></h1>
 <p>Soon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onjoinmember"><a class="header" href="#onjoinmember">$onJoinMember</a></h1>

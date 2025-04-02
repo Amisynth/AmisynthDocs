@@ -6,7 +6,14 @@
 
 
 - [Guias](./guias.md)
-    - [Divicion de Texto](funciones/diviciontexto.md)
+    - [Introduccion](Introduccion/intro.md)
+       - [Comenzar](Introduccion/comenzar.md)
+       - [Tipos de usos](Introduccion/tipos.md)
+
+
+    - [General](General/general.md)
+       - [Divicion de Texto](General/divicion-texto.md)
+       - [JSON Funciones](General/json-funciones.md)
 
 - [Funciones](funciones/README.md)
      

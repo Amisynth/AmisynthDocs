@@ -18,10 +18,15 @@ $if[Condición;Bloque verdadero;Bloque Falso]
 
 **Operadores**  
 - `==` - Igual a
+
 - `!=` - Diferente de
+
 - `<` - Menor que
+
 - `>` - Mayor que
+
 - `>=` - Mayor o igual a
+
 - `<=` - Menor o igual a
 
 > Estos operadores pueden variar en su significado dependiendo del orden o la intención de la declaración `if`.

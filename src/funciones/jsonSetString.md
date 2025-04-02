@@ -34,3 +34,6 @@ $jsonSetString[balance;$message]
 
 Balance key was set to: $json[balance]
 ```
+
+
+> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).

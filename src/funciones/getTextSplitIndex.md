@@ -20,3 +20,6 @@ $textSplit[hello_world_!;_]
 ```
 
 ![alt text](image-32.png)
+
+
+> Para obtener más información, consulte la Guía de [División de texto](/General/divicion-texto.md).

@@ -25,3 +25,7 @@ $editSplitText[2;amisynth]
 ```
 
 ![alt text](image-35.png)
+
+
+
+> Para obtener más información, consulte la Guía de [División de texto](/General/divicion-texto.md).

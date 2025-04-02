@@ -7,20 +7,4 @@ Prólogo
 
 Empieza con Amisynth
 
-Indice de la Wiki
-
-Guías
-
-Recursos
-
-BDScript
-
-Premium
-
-JavaScript
-
-Callbacks
-
-¿Quieres contribuir a la wiki?
-
 ¡Visita el archivo de contribuciones del repositorio de GitHub y descubre cómo puedes ayudar!

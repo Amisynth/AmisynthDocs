@@ -19,3 +19,6 @@ $textSplit[h.o-l-a;$message[1]]
 $joinSplitText[+]
 ```
 ![alt text](image-33.png)
+
+
+> Para obtener más información, consulte la Guía de [División de texto](/General/divicion-texto.md).

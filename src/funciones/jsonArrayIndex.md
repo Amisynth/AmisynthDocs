@@ -33,3 +33,7 @@ El índice de `$message[-1]` en `apps/software` es: $jsonArrayIndex[computer;0;a
 ```  
 
 ![alt text](image-46.png)
+
+
+
+> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).

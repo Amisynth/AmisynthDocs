@@ -26,3 +26,6 @@ Música:
 
 
 ![alt text](image-50.png)
+
+
+> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).

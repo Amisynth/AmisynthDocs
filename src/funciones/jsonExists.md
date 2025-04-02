@@ -27,3 +27,7 @@ $jsonExists[user;email] ❌ La clave 'email' no existe.
 ```  
 
 ![alt text](image-43.png)
+
+
+
+> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).

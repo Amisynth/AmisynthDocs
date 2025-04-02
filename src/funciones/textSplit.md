@@ -22,3 +22,6 @@ $textSplit[hello-world-!;-]
 > $splitText[2]
 ```
 ![alt text](image-29.png)
+
+
+> Para obtener más información, consulte la Guía de [División de texto](/General/divicion-texto.md).

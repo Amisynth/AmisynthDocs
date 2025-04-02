@@ -32,3 +32,6 @@ La cantidad de aplicaciones en `$message[-1]` es: $jsonArrayCount[computer;0;app
 ```  
 
 ![alt text](image-53.png)
+
+
+> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).

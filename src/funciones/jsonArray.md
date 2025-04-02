@@ -27,3 +27,7 @@ $optOff[$jsonPretty[4]]
 ```
 
 ![alt text](image-39.png)
+
+
+
+> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).

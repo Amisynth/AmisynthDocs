@@ -38,3 +38,8 @@ Aplicaciones actuales en la categoría `$message[1]`: $json[computer;0;apps;$mes
 ```  
 
 ![alt text](image-47.png)
+
+
+
+
+> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).

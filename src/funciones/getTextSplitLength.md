@@ -15,3 +15,6 @@ $textSplit[hello%world%!;%]
 ```
 
 ![alt text](image-30.png)
+
+
+> Para obtener más información, consulte la Guía de [División de texto](/General/divicion-texto.md).
