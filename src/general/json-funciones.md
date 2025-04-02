@@ -7,40 +7,40 @@ Antes de leer, deberías estar familiarizado con JSON y dónde y cómo se utiliz
 ## Lista de comandos JSON Experimentales.
 
 
-- [$jsonParse[]](/funciones/jsonParse.md)
+[$jsonParse[]](/funciones/jsonParse.md)
 
-- [$json[]](/funciones/json.md)
+[$json[]](/funciones/json.md)
 
-- [$jsonSet[]](/funciones/jsonSet.md) 
+[$jsonSet[]](/funciones/jsonSet.md) 
 
-- [$jsonSetString[]](/funciones/jsonSetString.md)
+[$jsonSetString[]](/funciones/jsonSetString.md)
 
-- [$jsonUnset[]](/funciones/jsonUnset.md)
+[$jsonUnset[]](/funciones/jsonUnset.md)
 
-- [$jsonClear[]](/funciones/jsonClear.md)
+[$jsonClear[]](/funciones/jsonClear.md)
 
-- [$jsjsonExists[]](/funciones/jsonExists.md)
+[$jsjsonExists[]](/funciones/jsonExists.md)
 
-- [$jsonStringify[]](/funciones/jsonStringify.md)
+[$jsonStringify[]](/funciones/jsonStringify.md)
 
-- [$jsonPretty[]](/funciones/jsonPretty.md)
+[$jsonPretty[]](/funciones/jsonPretty.md)
 
-- [$jsonArray[]](/funciones/jsonArray.md)
+[$jsonArray[]](/funciones/jsonArray.md)
 
-- [$jsonArrayCount[]](/funciones/jsonArrayCount.md)
+[$jsonArrayCount[]](/funciones/jsonArrayCount.md)
 
-- [$jsonArrayIndex[]](/funciones/jsonArrayIndex.md)
+[$jsonArrayIndex[]](/funciones/jsonArrayIndex.md)
 
-- [$jsonArrayAppend[]](/funciones/jsonArrayAppend.md)
+[$jsonArrayAppend[]](/funciones/jsonArrayAppend.md)
 
-- [$jsonArrayPop[]](/funciones/jsonArrayPop.md)
+[$jsonArrayPop[]](/funciones/jsonArrayPop.md)
 
-- [$jsonArrayShift[]](/funciones/jsonArrayShift.md)
+[$jsonArrayShift[]](/funciones/jsonArrayShift.md)
 
-- [$jsonArrayUnshift[]](/funciones/jsonArrayUnshift.md)
+[$jsonArrayUnshift[]](/funciones/jsonArrayUnshift.md)
 
-- [$jsonArraySort[]](/funciones/jsonArraySort.md)
+[$jsonArraySort[]](/funciones/jsonArraySort.md)
 
-- [$jsonArrayReverse[]](/funciones/jsonArrayReverse.md)
+[$jsonArrayReverse[]](/funciones/jsonArrayReverse.md)
 
-- [$jsonJoinArray[]](/funciones/jsonJoinArray.md)
+[$jsonJoinArray[]](/funciones/jsonJoinArray.md)

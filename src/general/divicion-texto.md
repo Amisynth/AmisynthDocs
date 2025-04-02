@@ -2,16 +2,16 @@
 
 En esta sección, aprenderá cómo utilizar la división de texto.
 
-- [$textSplit[]](/funciones/textSplit.md)
+[$textSplit[]](/funciones/textSplit.md)
 
-- [$getTextSplitLength[]](/funciones/getTextSplitLength.md)  
+[$getTextSplitLength[]](/funciones/getTextSplitLength.md)  
 
-- [$splitText[]](/funciones/splitText.md)  
+[$splitText[]](/funciones/splitText.md)  
 
-- [$getTextSplitIndex[]](/funciones/getTextSplitIndex.md)  
+[$getTextSplitIndex[]](/funciones/getTextSplitIndex.md)  
 
-- [$joinSplitText[]](/funciones/joinSplitText.md)  
+[$joinSplitText[]](/funciones/joinSplitText.md)  
 
-- [$removeSplitTextElement[]](/funciones/removeSplitTextElement.md)  
+[$removeSplitTextElement[]](/funciones/removeSplitTextElement.md)  
 
-- [$editSplitText[]](/funciones/editSplitText.md)
+[$editSplitText[]](/funciones/editSplitText.md)
