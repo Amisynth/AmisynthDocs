@@ -1,27 +1,23 @@
 # menu-title
 
-[Prefacio](./prefacio.md)
-[Cambios](./cambios.md)
-[Terminos de servicio](./terminos.md)
+[Prefacio](prefacio.md)
+[Cambios](cambios.md)
+[Términos de servicio](terminos.md)
 
-
-- [Guias](./guias.md)
-    - [Introduccion](Introduccion/intro.md)
-       - [Comenzar](Introduccion/comenzar.md)
-       - [Tipos de usos](Introduccion/tipos.md)
-
+- [Guías](guias.md)
+    - [Introducción](Introduccion/intro.md)
+        - [Comenzar](Introduccion/comenzar.md)
+        - [Tipos de usos](Introduccion/tipos.md)
 
     - [General](General/general.md)
-       - [Divicion de Texto](General/divicion-texto.md)
-       - [JSON Funciones](General/json-funciones.md)
+        - [División de Texto](General/divicion-texto.md)
+        - [JSON Funciones](General/json-funciones.md)
 
 - [Funciones](funciones/README.md)
-     
     - [$addButton[]](funciones/addButton.md)
     - [$addField[]](funciones/addField.md)
     - [$title[]](funciones/title.md)
     - [$titleURL[]](funciones/titleURL.md)
-
     - [$description[]](funciones/description.md)
     - [$color[]](funciones/color.md)
     - [$image[]](funciones/image.md)
@@ -54,7 +50,7 @@
     - [$jsonSetString[]](funciones/jsonSetString.md)
     - [$jsonUnset[]](funciones/jsonUnset.md)
     - [$jsonClear[]](funciones/jsonClear.md)
-    - [$jsjsonExists[]](funciones/jsonExists.md)
+    - [$jsonExists[]](funciones/jsonExists.md)
     - [$jsonStringify[]](funciones/jsonStringify.md)
     - [$jsonPretty[]](funciones/jsonPretty.md)
     - [$jsonArray[]](funciones/jsonArray.md)
@@ -73,7 +69,6 @@
     - [$if[]](funciones/if.md)
     - [$checkCondition[]](funciones/checkCondition.md)
 
-
 - [Eventos](Eventos/README.md)
     - [$onJoinMember](Eventos/onJoinMember.md)
     - [$onLeaveMember](Eventos/onLeaveMember.md)
@@ -83,8 +78,6 @@
     - [$onReactionRemove](Eventos/onReactionRemove.md)
     - [$onReactionAdd](Eventos/onReactionAdd.md)
     - [$onInteraction](Eventos/onInteraction.md)
-
-
 
 [output.html]
 git-repository-url = "https://github.com/Amisynth/AmisynthDocs"
