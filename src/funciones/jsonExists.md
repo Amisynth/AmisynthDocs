@@ -30,4 +30,4 @@ $jsonExists[user;email] ❌ La clave 'email' no existe.
 
 
 
-> Para obtener más información, consulte la Guía de [JSON Funciones](/gen/json.md).
+> Para obtener más información, consulte la Guía de [JSON Funciones](../gen/json.md).

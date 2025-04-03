@@ -37,4 +37,4 @@ El índice de `$message[-1]` en `apps/software` es: $jsonArrayIndex[computer;0;a
 
 
 
-> Para obtener más información, consulte la Guía de [JSON Funciones](/gen/json.md).
+> Para obtener más información, consulte la Guía de [JSON Funciones](../gen/json.md).

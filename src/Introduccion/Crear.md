@@ -46,7 +46,7 @@ bot.run("TOKEN DE TU BOT")
 
 ![alt text](image-4.png)
 
-> Puedes en ver los eventos disponibles en [Eventos](/Eventos/)
+> Puedes en ver los eventos disponibles en [Eventos](../Eventos/)
 
 
 

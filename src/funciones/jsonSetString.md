@@ -37,4 +37,4 @@ Balance key was set to: $json[balance]
 ```
 ![alt text](image-60.png)
 
-> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).
+> Para obtener más información, consulte la Guía de [JSON Funciones](../gen/json.md).

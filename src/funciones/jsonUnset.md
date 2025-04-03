@@ -37,4 +37,4 @@ Age: $json[identity;age] years old]
 ![alt text](image-44.png)
 
 
-> Para obtener más información, consulte la Guía de [JSON Funciones](/gen/json.md).
+> Para obtener más información, consulte la Guía de [JSON Funciones](../gen/json.md).

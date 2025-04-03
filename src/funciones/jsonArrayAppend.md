@@ -42,4 +42,4 @@ Aplicaciones actuales en la categoría `$message[1]`: $json[computer;0;apps;$mes
 
 
 
-> Para obtener más información, consulte la Guía de [JSON Funciones](/gen/json.md).
+> Para obtener más información, consulte la Guía de [JSON Funciones](../gen/json.md).

@@ -7,11 +7,22 @@
 - [Guías](guias.md)
     - [Introducción](Introduccion/intro.md)
         - [Comenzar](Introduccion/comenzar.md)
-        - [Tipos de usos](Introduccion/tipos.md)
+        - [Crear](Introduccion/Crear.md)
 
     - [General](gen/intro_gen.md)
+        - [Interacciones](gen/Interacciones.md)
         - [Divicion Texto](gen/texto.md)
         - [JSON Funciones](gen/json.md)
+
+    - [Recusos](Recursos/README.md)
+        - [Creacion](Recursos/Creacion.md)
+        - [Indice Embeds](Recursos/Indices.md)
+        - [Disocord Tiempo UNIX](Recursos/MarcaTiempo.md)
+        - [Discord Sistema de IDs](Recursos/IDs.md)
+        - [Permisos](Recursos/Permisos.md)
+
+
+    
 
 - [Funciones](funciones/README.md)
     - [$addButton[]](funciones/addButton.md)
@@ -78,6 +89,8 @@
     - [$getServerVar[]](funciones/getServerVar.md)
     - [$gerChannelVar[]](funciones/gerChannelVar.md)
     - [$getVar[]](funciones/getVar.md)
+    - [$getLeaderboardValue[]](getLeaderboardValue/getVar.md)
+    - [$getLeaderboardPosition[]](funciones/getLeaderboardPosition.md)
     - [$setPrefix[]](funciones/setPrefix.md)
 
 - [Eventos](Eventos/README.md)

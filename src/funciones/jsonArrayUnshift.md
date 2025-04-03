@@ -28,4 +28,4 @@ Música:
 ![alt text](image-50.png)
 
 
-> Para obtener más información, consulte la Guía de [JSON Funciones](/gen/json.md).
+> Para obtener más información, consulte la Guía de [JSON Funciones](../gen/json.md).
