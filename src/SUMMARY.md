@@ -9,9 +9,9 @@
         - [Comenzar](Introduccion/comenzar.md)
         - [Tipos de usos](Introduccion/tipos.md)
 
-    - [General](General/general.md)
-        - [División de Texto](General/divicion-texto.md)
-        - [JSON Funciones](General/json-funciones.md)
+    - [General](gen/intro.md)
+        - [DiviconTexto](gen/texto.md)
+        - [JSONFunciones](gen/json.md)
 
 - [Funciones](funciones/README.md)
     - [$addButton[]](funciones/addButton.md)
@@ -68,6 +68,8 @@
     - [$reactionEvent[]](funciones/reactionEvent.md)
     - [$if[]](funciones/if.md)
     - [$checkCondition[]](funciones/checkCondition.md)
+    - [$and[]](funciones/checkCondition.md)
+    - [$or[]](funciones/checkCondition.md)
 
 - [Eventos](Eventos/README.md)
     - [$onJoinMember](Eventos/onJoinMember.md)
@@ -75,9 +77,11 @@
     - [$onMessage](Eventos/onMessage.md)
     - [$onMessageDelete](Eventos/onMessageDelete.md)
     - [$onMessageEdit](Eventos/onMessageEdit.md)
+    - [$onMessageTyping](Eventos/onMessageTyping.md)
     - [$onReactionRemove](Eventos/onReactionRemove.md)
     - [$onReactionAdd](Eventos/onReactionAdd.md)
     - [$onInteraction](Eventos/onInteraction.md)
+    
 
 [output.html]
 git-repository-url = "https://github.com/Amisynth/AmisynthDocs"
