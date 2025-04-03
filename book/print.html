@@ -324,8 +324,33 @@ bot.run("TOKEN DE TU BOT")
 </code></pre>
 <p><img src="Introduccion/image-5.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="general"><a class="header" href="#general">General</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="diviciontexto"><a class="header" href="#diviciontexto">DivicionTexto</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonfunciones"><a class="header" href="#jsonfunciones">JSONFunciones</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="divicion-de-texto"><a class="header" href="#divicion-de-texto">Divicion de Texto</a></h1>
+<p>En esta sección, aprenderá cómo utilizar la división de texto.</p>
+<h2 id="funciones-utilizadas"><a class="header" href="#funciones-utilizadas">Funciones utilizadas</a></h2>
+<ul>
+<li>
+<p><a href="gen//funciones/textSplit.html"><code>$textSplit[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/splitText.html"><code>$splitText[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/getTextSplitLength.html"><code>$getTextSplitLength[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/getTextSplitIndex.html"><code>$getTextSplitIndex[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/joinSplitText.html"><code>$joinSplitText[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/removeSplitTextElement.html"><code>$removeSplitTextElement[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/editSplitText.html"><code>$editSplitText[]</code></a></p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="json-funciones"><a class="header" href="#json-funciones">JSON Funciones</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="funciones"><a class="header" href="#funciones">Funciones</a></h1>
 <p>Soon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="addbutton"><a class="header" href="#addbutton">$addButton[]</a></h1>
@@ -1681,84 +1706,17 @@ $if[hola==$message[-1];Verdadero;Falso]
 <pre><code>Es verdero la condicion?: $checkCondition[$message[-1]==2]
 </code></pre>
 <p><img src="funciones/image-58.png" alt="alt text" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="checkcondition-1"><a class="header" href="#checkcondition-1">$checkCondition</a></h1>
-<p>Comprueba si una condición es verdadera o falsa.</p>
-<p><strong>Sintaxis</strong></p>
-<pre><code>$checkCondition[Condición]
-</code></pre>
-<p><strong>Parámetros</strong></p>
-<ul>
-<li><code>Condición</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: La condición a comprobar.</li>
-</ul>
-<p><strong>Operadores</strong></p>
-<ul>
-<li>
-<p><code>==</code> - Igual a</p>
-</li>
-<li>
-<p><code>!=</code> - Diferente de</p>
-</li>
-<li>
-<p><code>&lt;</code> - Menor que</p>
-</li>
-<li>
-<p><code>&gt;</code> - Mayor que</p>
-</li>
-<li>
-<p><code>&gt;=</code> - Mayor o igual a</p>
-</li>
-<li>
-<p><code>&lt;=</code> - Menor o igual a</p>
-</li>
-</ul>
-<p><strong>Ejemplos</strong></p>
-<p><strong>#1</strong></p>
-<pre><code>Es verdero la condicion?: $checkCondition[$message[-1]==hola]
-</code></pre>
-<p><img src="funciones/image-57.png" alt="alt text" /></p>
-<p><strong>#2</strong></p>
-<pre><code>Es verdero la condicion?: $checkCondition[$message[-1]==2]
-</code></pre>
-<p><img src="funciones/image-58.png" alt="alt text" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="checkcondition-2"><a class="header" href="#checkcondition-2">$checkCondition</a></h1>
-<p>Comprueba si una condición es verdadera o falsa.</p>
-<p><strong>Sintaxis</strong></p>
-<pre><code>$checkCondition[Condición]
-</code></pre>
-<p><strong>Parámetros</strong></p>
-<ul>
-<li><code>Condición</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: La condición a comprobar.</li>
-</ul>
-<p><strong>Operadores</strong></p>
-<ul>
-<li>
-<p><code>==</code> - Igual a</p>
-</li>
-<li>
-<p><code>!=</code> - Diferente de</p>
-</li>
-<li>
-<p><code>&lt;</code> - Menor que</p>
-</li>
-<li>
-<p><code>&gt;</code> - Mayor que</p>
-</li>
-<li>
-<p><code>&gt;=</code> - Mayor o igual a</p>
-</li>
-<li>
-<p><code>&lt;=</code> - Menor o igual a</p>
-</li>
-</ul>
-<p><strong>Ejemplos</strong></p>
-<p><strong>#1</strong></p>
-<pre><code>Es verdero la condicion?: $checkCondition[$message[-1]==hola]
-</code></pre>
-<p><img src="funciones/image-57.png" alt="alt text" /></p>
-<p><strong>#2</strong></p>
-<pre><code>Es verdero la condicion?: $checkCondition[$message[-1]==2]
-</code></pre>
-<p><img src="funciones/image-58.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="and"><a class="header" href="#and">$and[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="or"><a class="header" href="#or">$or[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="setuservar"><a class="header" href="#setuservar">$setUserVar[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="setservervar"><a class="header" href="#setservervar">$setServerVar[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="setchannelvar"><a class="header" href="#setchannelvar">$setChannelVar[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="setvar"><a class="header" href="#setvar">$setVar[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getuservar"><a class="header" href="#getuservar">$getUserVar[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getservervar"><a class="header" href="#getservervar">$getServerVar[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gerchannelvar"><a class="header" href="#gerchannelvar">$gerChannelVar[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getvar"><a class="header" href="#getvar">$getVar[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="setprefix"><a class="header" href="#setprefix">$setPrefix[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="eventos"><a class="header" href="#eventos">Eventos</a></h1>
 <p>Soon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onjoinmember"><a class="header" href="#onjoinmember">$onJoinMember</a></h1>
