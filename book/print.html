@@ -30,7 +30,6 @@
         <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="theme.css">
 
 
         <!-- Provide site root to javascript -->
@@ -325,38 +324,8 @@ bot.run("TOKEN DE TU BOT")
 </code></pre>
 <p><img src="Introduccion/image-5.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="general"><a class="header" href="#general">General</a></h1>
-<p>hola</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="divicion-de-texto"><a class="header" href="#divicion-de-texto">Divicion de Texto</a></h1>
-<p>En esta sección, aprenderá cómo utilizar la división de texto.</p>
-<p>$textSplit[]</p>
-<p>$getTextSplitLength[]</p>
-<p><a href="General//funciones/splitText.html">$splitText[]</a></p>
-<p><a href="General//funciones/getTextSplitIndex.html">$getTextSplitIndex[]</a></p>
-<p><a href="General//funciones/joinSplitText.html">$joinSplitText[]</a></p>
-<p><a href="General//funciones/removeSplitTextElement.html">$removeSplitTextElement[]</a></p>
-<p><a href="General//funciones/editSplitText.html">$editSplitText[]</a></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="json-funciones"><a class="header" href="#json-funciones">JSON Funciones</a></h1>
-<p>Antes de leer, deberías estar familiarizado con JSON y dónde y cómo se utiliza. Puedes familiarizarte con JSON leyendo un tutorial en <a href="https://www.w3schools.com/js/js_json_intro.asp">W3Schools</a>.</p>
-<h2 id="lista-de-comandos-json-experimentales"><a class="header" href="#lista-de-comandos-json-experimentales">Lista de comandos JSON Experimentales.</a></h2>
-<p><a href="General//funciones/jsonParse.html">$jsonParse[]</a></p>
-<p><a href="General//funciones/json.html">$json[]</a></p>
-<p><a href="General//funciones/jsonSet.html">$jsonSet[]</a></p>
-<p><a href="General//funciones/jsonSetString.html">$jsonSetString[]</a></p>
-<p><a href="General//funciones/jsonUnset.html">$jsonUnset[]</a></p>
-<p><a href="General//funciones/jsonClear.html">$jsonClear[]</a></p>
-<p><a href="General//funciones/jsonExists.html">$jsjsonExists[]</a></p>
-<p><a href="General//funciones/jsonStringify.html">$jsonStringify[]</a></p>
-<p><a href="General//funciones/jsonPretty.html">$jsonPretty[]</a></p>
-<p><a href="General//funciones/jsonArray.html">$jsonArray[]</a></p>
-<p><a href="General//funciones/jsonArrayCount.html">$jsonArrayCount[]</a></p>
-<p><a href="General//funciones/jsonArrayIndex.html">$jsonArrayIndex[]</a></p>
-<p><a href="General//funciones/jsonArrayAppend.html">$jsonArrayAppend[]</a></p>
-<p><a href="General//funciones/jsonArrayPop.html">$jsonArrayPop[]</a></p>
-<p><a href="General//funciones/jsonArrayShift.html">$jsonArrayShift[]</a></p>
-<p><a href="General//funciones/jsonArrayUnshift.html">$jsonArrayUnshift[]</a></p>
-<p><a href="General//funciones/jsonArraySort.html">$jsonArraySort[]</a></p>
-<p><a href="General//funciones/jsonArrayReverse.html">$jsonArrayReverse[]</a></p>
-<p><a href="General//funciones/jsonJoinArray.html">$jsonJoinArray[]</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="diviciontexto"><a class="header" href="#diviciontexto">DivicionTexto</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonfunciones"><a class="header" href="#jsonfunciones">JSONFunciones</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="funciones"><a class="header" href="#funciones">Funciones</a></h1>
 <p>Soon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="addbutton"><a class="header" href="#addbutton">$addButton[]</a></h1>
@@ -1712,6 +1681,84 @@ $if[hola==$message[-1];Verdadero;Falso]
 <pre><code>Es verdero la condicion?: $checkCondition[$message[-1]==2]
 </code></pre>
 <p><img src="funciones/image-58.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="checkcondition-1"><a class="header" href="#checkcondition-1">$checkCondition</a></h1>
+<p>Comprueba si una condición es verdadera o falsa.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$checkCondition[Condición]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Condición</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: La condición a comprobar.</li>
+</ul>
+<p><strong>Operadores</strong></p>
+<ul>
+<li>
+<p><code>==</code> - Igual a</p>
+</li>
+<li>
+<p><code>!=</code> - Diferente de</p>
+</li>
+<li>
+<p><code>&lt;</code> - Menor que</p>
+</li>
+<li>
+<p><code>&gt;</code> - Mayor que</p>
+</li>
+<li>
+<p><code>&gt;=</code> - Mayor o igual a</p>
+</li>
+<li>
+<p><code>&lt;=</code> - Menor o igual a</p>
+</li>
+</ul>
+<p><strong>Ejemplos</strong></p>
+<p><strong>#1</strong></p>
+<pre><code>Es verdero la condicion?: $checkCondition[$message[-1]==hola]
+</code></pre>
+<p><img src="funciones/image-57.png" alt="alt text" /></p>
+<p><strong>#2</strong></p>
+<pre><code>Es verdero la condicion?: $checkCondition[$message[-1]==2]
+</code></pre>
+<p><img src="funciones/image-58.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="checkcondition-2"><a class="header" href="#checkcondition-2">$checkCondition</a></h1>
+<p>Comprueba si una condición es verdadera o falsa.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$checkCondition[Condición]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Condición</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: La condición a comprobar.</li>
+</ul>
+<p><strong>Operadores</strong></p>
+<ul>
+<li>
+<p><code>==</code> - Igual a</p>
+</li>
+<li>
+<p><code>!=</code> - Diferente de</p>
+</li>
+<li>
+<p><code>&lt;</code> - Menor que</p>
+</li>
+<li>
+<p><code>&gt;</code> - Mayor que</p>
+</li>
+<li>
+<p><code>&gt;=</code> - Mayor o igual a</p>
+</li>
+<li>
+<p><code>&lt;=</code> - Menor o igual a</p>
+</li>
+</ul>
+<p><strong>Ejemplos</strong></p>
+<p><strong>#1</strong></p>
+<pre><code>Es verdero la condicion?: $checkCondition[$message[-1]==hola]
+</code></pre>
+<p><img src="funciones/image-57.png" alt="alt text" /></p>
+<p><strong>#2</strong></p>
+<pre><code>Es verdero la condicion?: $checkCondition[$message[-1]==2]
+</code></pre>
+<p><img src="funciones/image-58.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="eventos"><a class="header" href="#eventos">Eventos</a></h1>
 <p>Soon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onjoinmember"><a class="header" href="#onjoinmember">$onJoinMember</a></h1>
@@ -1930,7 +1977,6 @@ bot.run(..)
         <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="theme.js"></script>
 
         <script>
         window.addEventListener('load', function() {

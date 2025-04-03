@@ -9,9 +9,9 @@
         - [Comenzar](Introduccion/comenzar.md)
         - [Tipos de usos](Introduccion/tipos.md)
 
-    - [General](gen/intro.md)
-        - [DiviconTexto](gen/texto.md)
-        - [JSONFunciones](gen/json.md)
+    - [General](gen/intro_gen.md)
+        - [Divicion Texto](gen/texto.md)
+        - [JSON Funciones](gen/json.md)
 
 - [Funciones](funciones/README.md)
     - [$addButton[]](funciones/addButton.md)
