@@ -350,6 +350,125 @@ bot.run("TOKEN DE TU BOT")
 <p><a href="gen//funciones/editSplitText.html"><code>$editSplitText[]</code></a></p>
 </li>
 </ul>
+<h2 id="textsplit"><a class="header" href="#textsplit">$textSplit[]</a></h2>
+<p>Divide el texto proporcionado utilizando un separador y guarda el valor temporalmente.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$textSplit[Texto;Separador]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Texto</code> (Tipo: String || Opcional): El texto a dividir.</p>
+</li>
+<li>
+<p><code>Separador</code> (Tipo: String || Opcional): El carácter o cadena utilizada para dividir el texto.</p>
+<ul>
+<li>Si este parámetro está vacío, el texto se dividirá por cada carácter individualmente.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$textSplit[hello-world-!;-]
+&gt; $splitText[2]
+</code></pre>
+<p><img src="gen/../funciones/image-29.png" alt="alt text" /></p>
+<h2 id="splittext"><a class="header" href="#splittext">$splitText[]</a></h2>
+<p>Cada fragmento de texto separado tiene un número de índice. <code>$splitText</code> es una función que devuelve uno de los elementos del texto dividido según el índice especificado o los signos <code>&lt;</code> y <code>&gt;</code> para obtener el primer o último elemento, respectivamente.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$splitText[Índice]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Índice</code> (Tipo: Número o Símbolo || Obligatorio): El índice del fragmento de texto a obtener.</p>
+<ul>
+<li>Usa un número (<code>2</code>, <code>3</code>, etc.) para obtener el fragmento en esa posición.</li>
+<li>Usa <code>&lt;</code> para obtener el primer fragmento.</li>
+<li>Usa <code>&gt;</code> para obtener el último fragmento.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$textSplit[hello world !; ]
+&gt; $splitText[&lt;]   // Obtiene "hello"
+&gt; $splitText[2]   // Obtiene "world"
+&gt; $splitText[&gt;]   // Obtiene "!"
+</code></pre>
+<p><img src="gen/../funciones/image-31.png" alt="alt text" /></p>
+<h2 id="gettextsplitlength"><a class="header" href="#gettextsplitlength">$getTextSplitLength[]</a></h2>
+<p>Devuelve la cantidad de fragmentos obtenidos después de dividir un texto con <code>$textSplit[]</code>.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getTextSplitLength
+</code></pre>
+<p><strong>Ejemplo #1</strong></p>
+<pre><code class="language-plaintext">$textSplit[hello%world%!;%]
+&gt; $getTextSplitLength   // Devuelve 3
+</code></pre>
+<p><img src="gen/../funciones/image-30.png" alt="alt text" /></p>
+<h2 id="gettextsplitindex"><a class="header" href="#gettextsplitindex">$getTextSplitIndex[]</a></h2>
+<p>Obtiene el índice de un valor dentro del texto dividido con <code>$textSplit</code>. Devuelve <code>-1</code> si el valor no se encuentra.</p>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$getTextSplitIndex[Valor]
+</code></pre>
+<h2 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h2>
+<ul>
+<li><code>Valor</code> <code>(Tipo: String || Opcional)</code>: El valor a buscar dentro del texto dividido.</li>
+</ul>
+<h2 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h2>
+<h3 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo #1</a></h3>
+<pre><code class="language-plaintext">$textSplit[hello_world_!;_]
+&gt; $getTextSplitIndex[$message[-1]]   // Devuelve el índice del valor en la lista dividida o -1 si no se encuentra
+</code></pre>
+<p><img src="gen/../funciones/image-32.png" alt="alt text" /></p>
+<h2 id="joinsplittext"><a class="header" href="#joinsplittext">$joinSplitText[]</a></h2>
+<p>Esta función devuelve los elementos actuales del texto dividido, unidos con el separador especificado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$joinSplitText[Separador]
+</code></pre>
+<p><strong>Parámetro</strong></p>
+<ul>
+<li><code>Separador</code>: <code>(Tipo: String || Opcional)</code> El separador que se usará entre los valores del texto dividido.</li>
+</ul>
+<p><strong>Ejemplo #1</strong></p>
+<pre><code class="language-plaintext">$textSplit[h-o-l-a;$message[1]]
+$joinSplitText[+]
+</code></pre>
+<p><img src="gen/../funciones/image-33.png" alt="alt text" /></p>
+<h2 id="removesplittextelement"><a class="header" href="#removesplittextelement">$removeSplitTextElement[]</a></h2>
+<p>Esta función elimina un elemento del texto dividido según el índice especificado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$removeSplitTextElement[Índice]
+</code></pre>
+<p><strong>Parámetro</strong></p>
+<ul>
+<li><code>Índice</code>: <code>(Tipo: Entero || Obligatorio)</code> El índice del valor en <code>$textSplit[]</code> que se desea eliminar.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$textSplit[hola-mundo-!;-]
+$removeSplitTextElement[2]
+&gt; $joinSplitText[-] 
+</code></pre>
+<p><img src="gen/../funciones/image-34.png" alt="alt text" /></p>
+<h2 id="editsplittext"><a class="header" href="#editsplittext">$editSplitText[]</a></h2>
+<p>Esta función reemplaza el elemento en el índice especificado con un nuevo valor.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$editSplitText[Índice;Valor]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Índice</code>: <code>(Tipo: Entero || Obligatorio)</code>: El índice del elemento que se desea editar.</p>
+</li>
+<li>
+<p><code>Valor</code>: <code>(Tipo: String || Obligatorio)</code>: El nuevo valor que reemplazará al elemento en el índice proporcionado.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$textSplit[hello-world-!;-]
+$editSplitText[2;amisynth]
+&gt; $joinSplitText[-]   // Devuelve "hello-bdfd-!"
+</code></pre>
+<p><img src="gen/../funciones/image-35.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="json-funciones"><a class="header" href="#json-funciones">JSON Funciones</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="funciones"><a class="header" href="#funciones">Funciones</a></h1>
 <p>Soon</p>
@@ -686,23 +805,23 @@ $footer[&lt;- icono]
 <p><img src="funciones/image-18.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="username"><a class="header" href="#username">$username[]</a></h1>
 <p><code>$username[]</code> retorna el nombre de usuario de un miembro del servidor.</p>
-<h3 id="sintaxis"><a class="header" href="#sintaxis"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-1"><a class="header" href="#sintaxis-1"><strong>Sintaxis</strong></a></h3>
 <pre><code>$username[(ID de usuario)]
 </code></pre>
-<h3 id="parámetros"><a class="header" href="#parámetros"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-1"><a class="header" href="#parámetros-1"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>ID de usuario</code> <code>(Tipo: ID | Opcional)</code>: → Especifica el ID del usuario del que se desea obtener el nombre. Si se omite, devuelve el nombre del usuario que ejecutó el comando o activó el evento.</li>
 </ul>
-<h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-1"><a class="header" href="#ejemplo-1"><strong>Ejemplo</strong></a></h3>
 <pre><code>Tu nombre es: $username
 </code></pre>
 <p><img src="funciones/image-19.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="channelnames"><a class="header" href="#channelnames">$channelNames[]</a></h1>
 <p>$channelNames[] retornar todos los nombre de los canales del servidor</p>
-<h3 id="sintaxis-1"><a class="header" href="#sintaxis-1"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-2"><a class="header" href="#sintaxis-2"><strong>Sintaxis</strong></a></h3>
 <pre><code>$channelNames[separador;(guild opcional)]
 </code></pre>
-<h3 id="parámetros-1"><a class="header" href="#parámetros-1"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-2"><a class="header" href="#parámetros-2"><strong>Parámetros</strong></a></h3>
 <ul>
 <li>
 <p><code>Separador</code> <em>(Tipo: Cadena | Obligatorio)</em> → Especifica el carácter o texto que separará los nombres de los canales en la lista.</p>
@@ -711,17 +830,17 @@ $footer[&lt;- icono]
 <p><code>Guild ID</code> <em>(Tipo: ID | Opcional)</em> → ID del servidor del que se desean obtener los nombres de los canales. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
 </li>
 </ul>
-<h3 id="ejemplo-1"><a class="header" href="#ejemplo-1"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-2"><a class="header" href="#ejemplo-2"><strong>Ejemplo</strong></a></h3>
 <pre><code>$channelNames[|]
 </code></pre>
 <p>🔹 Devuelve algo como: <code>general, memes, música, sugerencias</code></p>
 <p><img src="funciones/image-20.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="categorynames"><a class="header" href="#categorynames">$categoryNames[]</a></h1>
 <p><code>$categoryNames[]</code> retorna todos los nombres de las categorías del servidor.</p>
-<h3 id="sintaxis-2"><a class="header" href="#sintaxis-2"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-3"><a class="header" href="#sintaxis-3"><strong>Sintaxis</strong></a></h3>
 <pre><code>$categoryNames[separador;(guild opcional)]
 </code></pre>
-<h3 id="parámetros-2"><a class="header" href="#parámetros-2"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-3"><a class="header" href="#parámetros-3"><strong>Parámetros</strong></a></h3>
 <ul>
 <li>
 <p><code>Separador</code> <code>(Tipo: Cadena | Obligatorio)</code> → Especifica el carácter o texto que separará los nombres de las categorías en la lista.</p>
@@ -730,20 +849,20 @@ $footer[&lt;- icono]
 <p><code>Guild ID</code> <code>(Tipo: ID | Opcional)</code> → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
 </li>
 </ul>
-<h3 id="ejemplo-2"><a class="header" href="#ejemplo-2"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-3"><a class="header" href="#ejemplo-3"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">$categorysNames[|]
 </code></pre>
 <p>🔹 Devuelve algo como: <code>Información, General, Juegos, Staff</code></p>
 <p><img src="funciones/image-21.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="customid"><a class="header" href="#customid">$customID[]</a></h1>
 <p><code>$customID[]</code> retorna el <strong>ID personalizado</strong> de una interacción con botones o menús desplegables en Discord.</p>
-<h3 id="sintaxis-3"><a class="header" href="#sintaxis-3"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-4"><a class="header" href="#sintaxis-4"><strong>Sintaxis</strong></a></h3>
 <pre><code>$customID[]
 </code></pre>
 <blockquote>
 <p>📌 <strong>Nota:</strong> Solo funciona dentro de eventos como <code>$onInteraction</code>.</p>
 </blockquote>
-<h3 id="ejemplo-3"><a class="header" href="#ejemplo-3"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-4"><a class="header" href="#ejemplo-4"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot = ..
 
 bot.new_event("$onInteraction", "customid: $customID[]")
@@ -755,14 +874,14 @@ bot.run(..)
 <p><img src="funciones/image-22.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="editmessageafter"><a class="header" href="#editmessageafter">$editMessageAfter[]</a></h1>
 <p><code>$editMessageAfter[]</code> devuelde el mensaje ya editado.</p>
-<h3 id="sintaxis-4"><a class="header" href="#sintaxis-4"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-5"><a class="header" href="#sintaxis-5"><strong>Sintaxis</strong></a></h3>
 <pre><code>$editMessageAfter[]
 </code></pre>
-<h3 id="parámetros-3"><a class="header" href="#parámetros-3"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-4"><a class="header" href="#parámetros-4"><strong>Parámetros</strong></a></h3>
 <blockquote>
 <p>No requiere Parametros, solo funciona en el evento <code>$onMessageEdit</code></p>
 </blockquote>
-<h3 id="ejemplo-4"><a class="header" href="#ejemplo-4"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-5"><a class="header" href="#ejemplo-5"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">Contenido Original: $editMessageBefore[]
 Contenido Nuevo: $editMessageAfter[]
 </code></pre>
@@ -782,7 +901,7 @@ Contenido Nuevo: $editMessageAfter[]
 <p><img src="funciones/image-26.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rolegrant"><a class="header" href="#rolegrant">$roleGrant[]</a></h1>
 <p>Añade o elimina roles del usuario proporcionado.</p>
-<h2 id="sintaxis-5"><a class="header" href="#sintaxis-5">Sintaxis</a></h2>
+<h2 id="sintaxis-6"><a class="header" href="#sintaxis-6">Sintaxis</a></h2>
 <pre><code>$roleGrant[ID de usuario;+/-ID de rol;...]
 </code></pre>
 <p><strong>Parámetros</strong></p>
@@ -868,7 +987,7 @@ $roleGrant[3869969062509936;-9368562753613496]
 <pre><code class="language-plaintext">$sendEmbedMessage[$channelID[];Content;Hola;;;;;;;;;false;false;prueba;test;true]
 </code></pre>
 <p><img src="funciones/image-28.png" alt="alt text" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="textsplit"><a class="header" href="#textsplit">$textSplit[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="textsplit-1"><a class="header" href="#textsplit-1">$textSplit[]</a></h1>
 <p>Divide el texto proporcionado utilizando un separador y guarda el valor temporalmente.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code>$textSplit[Texto;Separador]
@@ -891,9 +1010,9 @@ $roleGrant[3869969062509936;-9368562753613496]
 </code></pre>
 <p><img src="funciones/image-29.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/divicion-texto.html">División de texto</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/texto.html">División de texto</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="gettextsplitlength"><a class="header" href="#gettextsplitlength">$getTextSplitLength[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gettextsplitlength-1"><a class="header" href="#gettextsplitlength-1">$getTextSplitLength[]</a></h1>
 <p>Devuelve la cantidad de fragmentos obtenidos después de dividir un texto con <code>$textSplit[]</code>.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code>$getTextSplitLength
@@ -904,9 +1023,9 @@ $roleGrant[3869969062509936;-9368562753613496]
 </code></pre>
 <p><img src="funciones/image-30.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/divicion-texto.html">División de texto</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/texto.html">División de texto</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="splittext"><a class="header" href="#splittext">$splitText</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="splittext-1"><a class="header" href="#splittext-1">$splitText</a></h1>
 <p>Cada fragmento de texto separado tiene un número de índice. <code>$splitText</code> es una función que devuelve uno de los elementos del texto dividido según el índice especificado o los signos <code>&lt;</code> y <code>&gt;</code> para obtener el primer o último elemento, respectivamente.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code>$splitText[Índice]
@@ -930,27 +1049,27 @@ $roleGrant[3869969062509936;-9368562753613496]
 </code></pre>
 <p><img src="funciones/image-31.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/divicion-texto.html">División de texto</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/texto.html">División de texto</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="gettextsplitindex-"><a class="header" href="#gettextsplitindex-">$getTextSplitIndex []</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gettextsplitindex-1"><a class="header" href="#gettextsplitindex-1">$getTextSplitIndex[]</a></h1>
 <p>Obtiene el índice de un valor dentro del texto dividido con <code>$textSplit</code>. Devuelve <code>-1</code> si el valor no se encuentra.</p>
-<h2 id="sintaxis-6"><a class="header" href="#sintaxis-6">Sintaxis</a></h2>
+<h2 id="sintaxis-7"><a class="header" href="#sintaxis-7">Sintaxis</a></h2>
 <pre><code>$getTextSplitIndex[Valor]
 </code></pre>
-<h2 id="parámetros-4"><a class="header" href="#parámetros-4">Parámetros</a></h2>
+<h2 id="parámetros-5"><a class="header" href="#parámetros-5">Parámetros</a></h2>
 <ul>
 <li><code>Valor</code> <code>(Tipo: String || Opcional)</code>: El valor a buscar dentro del texto dividido.</li>
 </ul>
-<h2 id="ejemplo-5"><a class="header" href="#ejemplo-5">Ejemplo</a></h2>
-<h3 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo #1</a></h3>
+<h2 id="ejemplo-6"><a class="header" href="#ejemplo-6">Ejemplo</a></h2>
+<h3 id="ejemplo-1-1"><a class="header" href="#ejemplo-1-1">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$textSplit[hello_world_!;_]
 &gt; $getTextSplitIndex[$message[-1]]   // Devuelve el índice del valor en la lista dividida o -1 si no se encuentra
 </code></pre>
 <p><img src="funciones/image-32.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/divicion-texto.html">División de texto</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/texto.html">División de texto</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="joinsplittext"><a class="header" href="#joinsplittext">$joinSplitText[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="joinsplittext-1"><a class="header" href="#joinsplittext-1">$joinSplitText[]</a></h1>
 <p>Esta función devuelve los elementos actuales del texto dividido, unidos con el separador especificado.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$joinSplitText[Separador]
@@ -965,9 +1084,9 @@ $joinSplitText[+]
 </code></pre>
 <p><img src="funciones/image-33.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/divicion-texto.html">División de texto</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/texto.html">División de texto</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="removesplittextelement"><a class="header" href="#removesplittextelement">$removeSplitTextElement[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="removesplittextelement-1"><a class="header" href="#removesplittextelement-1">$removeSplitTextElement[]</a></h1>
 <p>Esta función elimina un elemento del texto dividido según el índice especificado.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$removeSplitTextElement[Índice]
@@ -983,9 +1102,9 @@ $removeSplitTextElement[2]
 </code></pre>
 <p><img src="funciones/image-34.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/divicion-texto.html">División de texto</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/texto.html">División de texto</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="editsplittext"><a class="header" href="#editsplittext">$editSplitText[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="editsplittext-1"><a class="header" href="#editsplittext-1">$editSplitText[]</a></h1>
 <p>Esta función reemplaza el elemento en el índice especificado con un nuevo valor.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$editSplitText[Índice;Valor]
@@ -1006,7 +1125,7 @@ $editSplitText[2;amisynth]
 </code></pre>
 <p><img src="funciones/image-35.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/divicion-texto.html">División de texto</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/texto.html">División de texto</a>.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonparse"><a class="header" href="#jsonparse">$jsonParse[]</a></h1>
 <p><code>$jsonParse</code> es la función principal utilizada cuando se trabaja con datos JSON.<br />
@@ -1061,15 +1180,15 @@ Edad: $json[identity;age] años
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonset"><a class="header" href="#jsonset">$jsonSet[]</a></h1>
 <p>La función <code>$jsonSet</code> establece o reemplaza el valor en la clave JSON especificada.</p>
-<h3 id="sintaxis-7"><a class="header" href="#sintaxis-7"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-8"><a class="header" href="#sintaxis-8"><strong>Sintaxis</strong></a></h3>
 <pre><code class="language-plaintext">$jsonSet[Key;...;Value]
 </code></pre>
-<h3 id="parámetros-5"><a class="header" href="#parámetros-5"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-6"><a class="header" href="#parámetros-6"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Obligatorio)</code>: La clave JSON donde se establecerá o reemplazará el valor.</li>
 <li><code>Value</code> <code>(Tipo: Integer, Bool, Float, String || Obligatorio)</code>: El valor que se asignará o reemplazará en la clave especificada.</li>
 </ul>
-<h3 id="ejemplo-6"><a class="header" href="#ejemplo-6"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-7"><a class="header" href="#ejemplo-7"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-plaintext">$jsonParse[{
     'username': 'Izana',
     'tag': "6700",
@@ -1097,10 +1216,10 @@ Edad: $json[identity;age] años
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonsetstring"><a class="header" href="#jsonsetstring">$jsonSetString[]</a></h1>
 <p>La función <code>$jsonSetString</code> establece o reemplaza el valor en la clave JSON especificada. Siempre establece el valor como una cadena.</p>
-<h3 id="sintaxis-8"><a class="header" href="#sintaxis-8"><code>Sintaxis</code></a></h3>
+<h3 id="sintaxis-9"><a class="header" href="#sintaxis-9"><code>Sintaxis</code></a></h3>
 <pre><code class="language-plaintext">$jsonSetString[Key;...;Value]
 </code></pre>
-<h3 id="parámetros-6"><a class="header" href="#parámetros-6"><code>Parámetros</code></a></h3>
+<h3 id="parámetros-7"><a class="header" href="#parámetros-7"><code>Parámetros</code></a></h3>
 <ul>
 <li>
 <p><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON donde se establecerá o reemplazará el valor.</p>
@@ -1112,7 +1231,7 @@ Edad: $json[identity;age] años
 <blockquote>
 <p>Esta función se recomienda principalmente para comandos relacionados con economía.</p>
 </blockquote>
-<h3 id="ejemplo-7"><a class="header" href="#ejemplo-7"><code>Ejemplo</code></a></h3>
+<h3 id="ejemplo-8"><a class="header" href="#ejemplo-8"><code>Ejemplo</code></a></h3>
 <h4 id="usando-jsonset"><a class="header" href="#usando-jsonset">Usando <code>$jsonSet</code></a></h4>
 <pre><code class="language-plaintext">$nomention
 $jsonParse[{}]
@@ -1135,14 +1254,14 @@ Balance key was set to: $json[balance]
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonunset"><a class="header" href="#jsonunset">$jsonUnset[]</a></h1>
 <p>La función <code>$jsonUnset</code> elimina el valor en la clave JSON especificada.<br />
 En resumen, es la función opuesta a <code>$jsonSet</code>.</p>
-<h3 id="sintaxis-9"><a class="header" href="#sintaxis-9"><code>Sintaxis</code></a></h3>
+<h3 id="sintaxis-10"><a class="header" href="#sintaxis-10"><code>Sintaxis</code></a></h3>
 <pre><code class="language-plaintext">$jsonUnset[Key;...]
 </code></pre>
-<h3 id="parámetros-7"><a class="header" href="#parámetros-7"><code>Parámetros</code></a></h3>
+<h3 id="parámetros-8"><a class="header" href="#parámetros-8"><code>Parámetros</code></a></h3>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON que se eliminará.</li>
 </ul>
-<h3 id="ejemplo-8"><a class="header" href="#ejemplo-8"><code>Ejemplo</code></a></h3>
+<h3 id="ejemplo-9"><a class="header" href="#ejemplo-9"><code>Ejemplo</code></a></h3>
 <pre><code class="language-plaintext">$jsonParse[{
     "username": "NightNutSky",
     "tag": "6700",
@@ -1220,10 +1339,10 @@ $jsonExists[user;email] ❌ La clave 'email' no existe.
 <blockquote>
 <p>La función <code>$jsonStringify[]</code> devolverá una cadena vacía si no se ejecutaron las funciones <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
 </blockquote>
-<h3 id="sintaxis-10"><a class="header" href="#sintaxis-10"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-11"><a class="header" href="#sintaxis-11"><strong>Sintaxis</strong></a></h3>
 <pre><code class="language-plaintext">$jsonStringify[]
 </code></pre>
-<h3 id="ejemplo-9"><a class="header" href="#ejemplo-9"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-10"><a class="header" href="#ejemplo-10"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-plaintext">
 $jsonParse[{
     'computer': [{
@@ -1280,14 +1399,14 @@ $jsonPretty[4]
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarray-"><a class="header" href="#jsonarray-">$jsonArray []</a></h1>
 <p>La función <code>$jsonArray</code> marca una clave JSON especificada como un <strong>array</strong>.</p>
-<h3 id="sintaxis-11"><a class="header" href="#sintaxis-11"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-12"><a class="header" href="#sintaxis-12"><strong>Sintaxis</strong></a></h3>
 <pre><code class="language-plaintext">$jsonArray[Key;...]
 </code></pre>
-<h3 id="parámetros-8"><a class="header" href="#parámetros-8"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-9"><a class="header" href="#parámetros-9"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Obligatorio)</code>: La clave JSON que será marcada como un array.</li>
 </ul>
-<h3 id="ejemplo-10"><a class="header" href="#ejemplo-10"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-11"><a class="header" href="#ejemplo-11"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-plaintext">
 $jsonParse[{
     'games': ''
@@ -1373,10 +1492,10 @@ El índice de `$message[-1]` en `apps/software` es: $jsonArrayIndex[computer;0;a
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarrayappend"><a class="header" href="#jsonarrayappend">$jsonArrayAppend</a></h1>
 <p>La función <code>$jsonArrayAppend</code> agrega un valor al final de la clave JSON especificada.</p>
-<h3 id="sintaxis-12"><a class="header" href="#sintaxis-12"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-13"><a class="header" href="#sintaxis-13"><strong>Sintaxis</strong></a></h3>
 <pre><code class="language-plaintext">$jsonArrayAppend[Key;...;Value]
 </code></pre>
-<h3 id="parámetros-9"><a class="header" href="#parámetros-9"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-10"><a class="header" href="#parámetros-10"><strong>Parámetros</strong></a></h3>
 <ul>
 <li>
 <p><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave JSON donde se agregará el valor.</p>
@@ -1385,7 +1504,7 @@ El índice de `$message[-1]` en `apps/software` es: $jsonArrayIndex[computer;0;a
 <p><code>value</code> <code>(Tipo: Integer, Bool, Float, String || Obligatorio)</code> El valor que se agregará al final del array.</p>
 </li>
 </ul>
-<h3 id="ejemplo-11"><a class="header" href="#ejemplo-11"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-12"><a class="header" href="#ejemplo-12"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-plaintext">$jsonParse[{
     'computer': [{
         'apps': {
@@ -1465,7 +1584,7 @@ La función `$jsonArrayUnshift` agrega un valor al inicio de un array JSON.
 ```plaintext
 $jsonArrayUnshift[Key;...;Value]
 </code></pre>
-<h3 id="parámetros-10"><a class="header" href="#parámetros-10"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-11"><a class="header" href="#parámetros-11"><strong>Parámetros</strong></a></h3>
 <ul>
 <li>
 <p><code>key</code> <code>(Tipo: String || Requerido)</code> La clave del array JSON donde se añadirá el valor.</p>
@@ -1474,7 +1593,7 @@ $jsonArrayUnshift[Key;...;Value]
 <p><code>value</code> <code>(Tipo: Float, String, Bool, Integer || Requerido)</code> El valor que se agregará al inicio del array.</p>
 </li>
 </ul>
-<h3 id="ejemplo-12"><a class="header" href="#ejemplo-12"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-13"><a class="header" href="#ejemplo-13"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-plaintext">$jsonParse[{
     'music': ['Paranoid - MADKID', 'Ping! 2 - Exyl, 'Tokyo - Leat'eq]
 }]
@@ -1604,13 +1723,13 @@ Usuario guardado: $get[user]
 <p><img src="funciones/image-23.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="reationevent"><a class="header" href="#reationevent">$reationEvent[]</a></h1>
 <p>La función <code>$reactionEvent[]</code> almacena un valor en una variable temporal dentro de la ejecución del comando.</p>
-<h3 id="sintaxis-13"><a class="header" href="#sintaxis-13"><code>Sintaxis</code></a></h3>
+<h3 id="sintaxis-14"><a class="header" href="#sintaxis-14"><code>Sintaxis</code></a></h3>
 <pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <blockquote>
 <p>Esta es una funcion compartida que retornar el emoji usado o removido en los eventos <code>$onReactionAdd</code> y <code>$onReactionRemove</code></p>
 </blockquote>
-<h3 id="ejemplo-13"><a class="header" href="#ejemplo-13"><code>Ejemplo</code></a></h3>
+<h3 id="ejemplo-14"><a class="header" href="#ejemplo-14"><code>Ejemplo</code></a></h3>
 <pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <p><img src="funciones/image-3.png" alt="alt text" /></p>
@@ -1849,13 +1968,13 @@ bot.run(..)
 <p><img src="Eventos/image-1.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onreactionadd"><a class="header" href="#onreactionadd">$onReactionAdd</a></h1>
 <p><code>$onReactionAdd</code> es un evento que se activa cuando un usuario añade una reacción a un mensaje en el servidor.</p>
-<h3 id="sintaxis-14"><a class="header" href="#sintaxis-14"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-15"><a class="header" href="#sintaxis-15"><strong>Sintaxis</strong></a></h3>
 <pre><code>$onReactionAdd
 </code></pre>
 <blockquote>
 <p>📌 <strong>Nota:</strong> Este evento se usa como un disparador, no dentro del código del comando.</p>
 </blockquote>
-<h3 id="ejemplo-14"><a class="header" href="#ejemplo-14"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-15"><a class="header" href="#ejemplo-15"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot = ..
 
 bot.new_event("$onReactionAdd", "Emoji: $reactionEvent[]")

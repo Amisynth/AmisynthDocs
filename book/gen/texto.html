@@ -178,6 +178,125 @@
 <p><a href="/funciones/editSplitText.html"><code>$editSplitText[]</code></a></p>
 </li>
 </ul>
+<h2 id="textsplit"><a class="header" href="#textsplit">$textSplit[]</a></h2>
+<p>Divide el texto proporcionado utilizando un separador y guarda el valor temporalmente.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$textSplit[Texto;Separador]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Texto</code> (Tipo: String || Opcional): El texto a dividir.</p>
+</li>
+<li>
+<p><code>Separador</code> (Tipo: String || Opcional): El carácter o cadena utilizada para dividir el texto.</p>
+<ul>
+<li>Si este parámetro está vacío, el texto se dividirá por cada carácter individualmente.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$textSplit[hello-world-!;-]
+&gt; $splitText[2]
+</code></pre>
+<p><img src="../funciones/image-29.png" alt="alt text" /></p>
+<h2 id="splittext"><a class="header" href="#splittext">$splitText[]</a></h2>
+<p>Cada fragmento de texto separado tiene un número de índice. <code>$splitText</code> es una función que devuelve uno de los elementos del texto dividido según el índice especificado o los signos <code>&lt;</code> y <code>&gt;</code> para obtener el primer o último elemento, respectivamente.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$splitText[Índice]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Índice</code> (Tipo: Número o Símbolo || Obligatorio): El índice del fragmento de texto a obtener.</p>
+<ul>
+<li>Usa un número (<code>2</code>, <code>3</code>, etc.) para obtener el fragmento en esa posición.</li>
+<li>Usa <code>&lt;</code> para obtener el primer fragmento.</li>
+<li>Usa <code>&gt;</code> para obtener el último fragmento.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$textSplit[hello world !; ]
+&gt; $splitText[&lt;]   // Obtiene "hello"
+&gt; $splitText[2]   // Obtiene "world"
+&gt; $splitText[&gt;]   // Obtiene "!"
+</code></pre>
+<p><img src="../funciones/image-31.png" alt="alt text" /></p>
+<h2 id="gettextsplitlength"><a class="header" href="#gettextsplitlength">$getTextSplitLength[]</a></h2>
+<p>Devuelve la cantidad de fragmentos obtenidos después de dividir un texto con <code>$textSplit[]</code>.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getTextSplitLength
+</code></pre>
+<p><strong>Ejemplo #1</strong></p>
+<pre><code class="language-plaintext">$textSplit[hello%world%!;%]
+&gt; $getTextSplitLength   // Devuelve 3
+</code></pre>
+<p><img src="../funciones/image-30.png" alt="alt text" /></p>
+<h2 id="gettextsplitindex"><a class="header" href="#gettextsplitindex">$getTextSplitIndex[]</a></h2>
+<p>Obtiene el índice de un valor dentro del texto dividido con <code>$textSplit</code>. Devuelve <code>-1</code> si el valor no se encuentra.</p>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$getTextSplitIndex[Valor]
+</code></pre>
+<h2 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h2>
+<ul>
+<li><code>Valor</code> <code>(Tipo: String || Opcional)</code>: El valor a buscar dentro del texto dividido.</li>
+</ul>
+<h2 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h2>
+<h3 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo #1</a></h3>
+<pre><code class="language-plaintext">$textSplit[hello_world_!;_]
+&gt; $getTextSplitIndex[$message[-1]]   // Devuelve el índice del valor en la lista dividida o -1 si no se encuentra
+</code></pre>
+<p><img src="../funciones/image-32.png" alt="alt text" /></p>
+<h2 id="joinsplittext"><a class="header" href="#joinsplittext">$joinSplitText[]</a></h2>
+<p>Esta función devuelve los elementos actuales del texto dividido, unidos con el separador especificado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$joinSplitText[Separador]
+</code></pre>
+<p><strong>Parámetro</strong></p>
+<ul>
+<li><code>Separador</code>: <code>(Tipo: String || Opcional)</code> El separador que se usará entre los valores del texto dividido.</li>
+</ul>
+<p><strong>Ejemplo #1</strong></p>
+<pre><code class="language-plaintext">$textSplit[h-o-l-a;$message[1]]
+$joinSplitText[+]
+</code></pre>
+<p><img src="../funciones/image-33.png" alt="alt text" /></p>
+<h2 id="removesplittextelement"><a class="header" href="#removesplittextelement">$removeSplitTextElement[]</a></h2>
+<p>Esta función elimina un elemento del texto dividido según el índice especificado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$removeSplitTextElement[Índice]
+</code></pre>
+<p><strong>Parámetro</strong></p>
+<ul>
+<li><code>Índice</code>: <code>(Tipo: Entero || Obligatorio)</code> El índice del valor en <code>$textSplit[]</code> que se desea eliminar.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$textSplit[hola-mundo-!;-]
+$removeSplitTextElement[2]
+&gt; $joinSplitText[-] 
+</code></pre>
+<p><img src="../funciones/image-34.png" alt="alt text" /></p>
+<h2 id="editsplittext"><a class="header" href="#editsplittext">$editSplitText[]</a></h2>
+<p>Esta función reemplaza el elemento en el índice especificado con un nuevo valor.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$editSplitText[Índice;Valor]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Índice</code>: <code>(Tipo: Entero || Obligatorio)</code>: El índice del elemento que se desea editar.</p>
+</li>
+<li>
+<p><code>Valor</code>: <code>(Tipo: String || Obligatorio)</code>: El nuevo valor que reemplazará al elemento en el índice proporcionado.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$textSplit[hello-world-!;-]
+$editSplitText[2;amisynth]
+&gt; $joinSplitText[-]   // Devuelve "hello-bdfd-!"
+</code></pre>
+<p><img src="../funciones/image-35.png" alt="alt text" /></p>
 
                     </main>
 

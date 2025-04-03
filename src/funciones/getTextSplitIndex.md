@@ -1,4 +1,4 @@
-# $getTextSplitIndex [] 
+# $getTextSplitIndex[] 
 
 Obtiene el índice de un valor dentro del texto dividido con `$textSplit`. Devuelve `-1` si el valor no se encuentra.  
 
@@ -22,4 +22,4 @@ $textSplit[hello_world_!;_]
 ![alt text](image-32.png)
 
 
-> Para obtener más información, consulte la Guía de [División de texto](/General/divicion-texto.md).
+> Para obtener más información, consulte la Guía de [División de texto](/gen/texto.md).

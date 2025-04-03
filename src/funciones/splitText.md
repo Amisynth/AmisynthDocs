@@ -27,4 +27,4 @@ $textSplit[hello world !; ]
 ![alt text](image-31.png)
 
 
-> Para obtener más información, consulte la Guía de [División de texto](/General/divicion-texto.md).
+> Para obtener más información, consulte la Guía de [División de texto](/gen/texto.md).
