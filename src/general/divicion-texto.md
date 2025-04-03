@@ -2,9 +2,9 @@
 
 En esta sección, aprenderá cómo utilizar la división de texto.
 
-[$textSplit[]](/funciones/textSplit.md)
+$textSplit[]
 
-[$getTextSplitLength[]](/funciones/getTextSplitLength.md)  
+$getTextSplitLength[]
 
 [$splitText[]](/funciones/splitText.md)  
 
