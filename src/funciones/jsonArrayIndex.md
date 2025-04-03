@@ -11,6 +11,7 @@ $jsonArrayIndex[Key;...;Value]
 
 **Parámetros**  
 - `key` `(Tipo: String || Obligatorio)` La clave JSON donde se buscará el valor.  
+
 - `value` `(Tipo: String, Integer, Float || Obligatorio)` El valor a buscar dentro del array.  
 
 **Ejemplo**  
@@ -36,4 +37,4 @@ El índice de `$message[-1]` en `apps/software` es: $jsonArrayIndex[computer;0;a
 
 
 
-> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).
+> Para obtener más información, consulte la Guía de [JSON Funciones](/gen/json.md).

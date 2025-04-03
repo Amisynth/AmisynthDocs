@@ -4,12 +4,12 @@ La función `$jsonStringify[]` convierte el objeto JSON actual en una cadena de 
 
 > La función `$jsonStringify[]` devolverá una cadena vacía si no se ejecutaron las funciones `$jsonParse` o `$jsonSet`, o si se ejecutó `$jsonClear`.  
 
-### **Sintaxis**  
+**Sintaxis**  
 ```plaintext
 $jsonStringify[]
 ```
 
-### **Ejemplo**  
+**Ejemplo**  
 ```plaintext
 
 $jsonParse[{

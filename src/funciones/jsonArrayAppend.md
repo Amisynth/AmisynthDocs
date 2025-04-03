@@ -1,18 +1,18 @@
 
-# $jsonArrayAppend  
+# $jsonArrayAppend[]
 La función `$jsonArrayAppend` agrega un valor al final de la clave JSON especificada.  
 
-### **Sintaxis**  
+**Sintaxis**  
 ```plaintext
 $jsonArrayAppend[Key;...;Value]
 ```
 
-### **Parámetros**  
+**Parámetros**  
 - `key` `(Tipo: String || Obligatorio)` La clave JSON donde se agregará el valor.  
 
 - `value` `(Tipo: Integer, Bool, Float, String || Obligatorio)` El valor que se agregará al final del array.  
 
-### **Ejemplo**  
+**Ejemplo**  
 ```plaintext
 $jsonParse[{
     'computer': [{
@@ -42,4 +42,4 @@ Aplicaciones actuales en la categoría `$message[1]`: $json[computer;0;apps;$mes
 
 
 
-> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).
+> Para obtener más información, consulte la Guía de [JSON Funciones](/gen/json.md).

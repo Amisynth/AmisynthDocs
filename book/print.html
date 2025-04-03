@@ -470,6 +470,573 @@ $editSplitText[2;amisynth]
 </code></pre>
 <p><img src="gen/../funciones/image-35.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="json-funciones"><a class="header" href="#json-funciones">JSON Funciones</a></h1>
+<p>Antes de leer esta guía, deberías estar familiarizado con JSON y dónde y cómo se utiliza. Puedes familiarizarte con JSON leyendo un tutorial en <a href="https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/JSON">Mozzilla</a>.</p>
+<h2 id="funciones-utilizadas-1"><a class="header" href="#funciones-utilizadas-1">Funciones utilizadas</a></h2>
+<ul>
+<li>
+<p><a href="gen//funciones/jsonParse.html"><code>$jsonParse[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/json.html"><code>$json[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonSet.html"><code>$jsonSet[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonSetString.html"><code>$jsonSetString[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonUnSet.html"><code>$jsonUnSet[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonClear.html"><code>$jsonClear[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonExists.html"><code>$jsonExists[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonStringify.html"><code>$jsonStringify[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonPretty.html"><code>$jsonPretty[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonArray.html"><code>$jsonArray[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonArrayCount.html"><code>$jsonArrayCount[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonArrayIndex.html"><code>$jsonArrayIndex[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonArrayAppend.html"><code>$jsonArrayAppend[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonArrayPop.html"><code>$jsonArrayPop[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonArrayShift.html"><code>$jsonArrayShift[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonArrayUnShift.html"><code>$jsonArrayUnShift[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonArraySort.html"><code>$jsonArraySort[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonArrayReverse.html"><code>$jsonArrayReverse[]</code></a></p>
+</li>
+<li>
+<p><a href="gen//funciones/jsonJoinArray.html"><code>$jsonJoinArray[]</code></a></p>
+</li>
+</ul>
+<h2 id="jsonparse"><a class="header" href="#jsonparse">$jsonParse[]</a></h2>
+<p><code>$jsonParse</code> es la función principal utilizada cuando se trabaja con datos JSON.<br />
+Esta función analiza una cadena JSON y la convierte en un objeto que luego puede ser utilizado por otras funciones JSON.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonParse[JSON string]
+</code></pre>
+<blockquote>
+<p>Solo puede usar para claves y valores en str este tipo de comilla: <code>'</code></p>
+</blockquote>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>JSON string</code> <em>(Tipo: String || Obligatorio)</em>: La cadena JSON que se analizará y convertirá en un objeto.</li>
+</ul>
+<p><strong>Ejemplo:</strong></p>
+<pre><code>JSON guardado. $jsonParse[{'numero': 100}]
+</code></pre>
+<p><img src="gen/../funciones/image-36.png" alt="alt text" /></p>
+<h2 id="json"><a class="header" href="#json">$json[]</a></h2>
+<p>La función $json recupera valores JSON de una clave especificada en el objeto JSON actual.</p>
+<blockquote>
+<p>La función $json devolverá una cadena vacía si el valor es nulo, la clave no existe, no se ejecutaron las funciones $jsonParse o $jsonSet, o se ejecutó $jsonClear.</p>
+</blockquote>
+<p>Sintaxis</p>
+<pre><code>$json[Key;...]
+</code></pre>
+<p>Parámetros</p>
+<ul>
+<li><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON que se recuperará.</li>
+</ul>
+<p>Ejemplos</p>
+<pre><code># Sin arrays
+
+$jsonParse[{
+    'username': 'Izana',
+    'tag': '6700',
+    'identity': {
+        'age': 16
+        }
+    }]
+
+Nombre de usuario: $json[username]
+Etiqueta: $json[tag]
+Edad: $json[identity;age] años
+</code></pre>
+<p><img src="gen/../funciones/image-37.png" alt="alt text" /></p>
+<h2 id="jsonset"><a class="header" href="#jsonset">$jsonSet[]</a></h2>
+<p>La función <code>$jsonSet</code> establece o reemplaza el valor en la clave JSON especificada.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonSet[Key;...;Value]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Key</code> <code>(Tipo: String || Obligatorio)</code>: La clave JSON donde se establecerá o reemplazará el valor.</li>
+<li><code>Value</code> <code>(Tipo: Integer, Bool, Float, String || Obligatorio)</code>: El valor que se asignará o reemplazará en la clave especificada.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$jsonParse[{
+    'username': 'Izana',
+    'tag': "6700",
+    'identity': {
+        'age': 16
+    }
+}]
+
+Nombre de usuario: $json[username]  
+Etiqueta: $json[tag]  
+Edad: $json[identity;age] años  
+
+$jsonSet[username;Priyanuj]  
+$jsonSet[tag;2626]  
+$jsonSet[identity;age;19]  
+
+
+Nombre de usuario: $json[username]  
+Etiqueta: $json[tag]  
+Edad: $json[identity;age] años
+</code></pre>
+<p><img src="gen/../funciones/image-38.png" alt="alt text" /></p>
+<h2 id="jsonsetstring"><a class="header" href="#jsonsetstring">$jsonSetString[]</a></h2>
+<p>La función <code>$jsonSetString</code> establece o reemplaza el valor en la clave JSON especificada. Siempre establece el valor como una cadena.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonSetString[Key;...;Value]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON donde se establecerá o reemplazará el valor.</p>
+</li>
+<li>
+<p><code>Value</code> <code>(Tipo: String || Flag: Required)</code>: El valor a establecer o reemplazar.</p>
+</li>
+</ul>
+<blockquote>
+<p>Esta función se recomienda principalmente para comandos relacionados con economía.</p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$nomention
+$jsonParse[{}]
+
+$jsonSet[balance;$message]
+
+Balance key was set to: $json[balance]
+</code></pre>
+<p><img src="gen/../funciones/image-59.png" alt="alt text" /></p>
+<p>Usando <code>$jsonSetString</code></p>
+<pre><code class="language-plaintext">$nomention
+$jsonParse[{}]
+
+$jsonSetString[balance;$message]
+
+Balance key was set to: $json[balance]
+</code></pre>
+<p><img src="gen/../funciones/image-60.png" alt="alt text" /></p>
+<h2 id="jsonunset"><a class="header" href="#jsonunset">$jsonUnset[]</a></h2>
+<p>La función <code>$jsonUnset</code> elimina el valor en la clave JSON especificada.<br />
+En resumen, es la función opuesta a <code>$jsonSet</code>.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonUnset[Key;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON que se eliminará.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$jsonParse[{
+    "username": "NightNutSky",
+    "tag": "6700",
+    "identity": {
+        "age": 16
+    }
+}]
+
+Username: $json[username]
+Tag: $json[tag]
+Age: $json[identity;age] years old
+
+$jsonUnset[username]
+$jsonUnset[tag]
+$jsonUnset[identity;age]
+
+$optOff[Username: $json[username]
+Tag: $json[tag]
+Age: $json[identity;age] years old]
+</code></pre>
+<p><img src="gen/../funciones/image-44.png" alt="alt text" /></p>
+<h2 id="jsonclear"><a class="header" href="#jsonclear">$jsonClear[]</a></h2>
+<p>La función <code>$jsonClear</code> elimina el objeto JSON actual, restableciendo su contenido.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonClear[]
+</code></pre>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$jsonParse[{
+    'username': 'Izana',
+    'tag': '6700',
+    'identity': {
+        'age': 16
+        }
+    }]
+Nombre de usuario: $json[username]  
+$jsonClear[]
+Nombre de usuario: $json[username]
+</code></pre>
+<p><img src="gen/../funciones/image-45.png" alt="alt text" /></p>
+<h2 id="jsonexists"><a class="header" href="#jsonexists">$jsonExists[]</a></h2>
+<p>La función <code>$jsonExists</code> verifica si una clave JSON especificada existe en el objeto JSON actual.</p>
+<blockquote>
+<p>Devuelve un resultado vacío si no se ejecutaron las funciones <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonExists[Key;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON que se verificará.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$jsonParse[{
+    'user': {
+        'name': 'Amisadai',
+        'age': 20
+    }
+}]
+
+$jsonExists[user;name] ✅ La clave 'name' existe.
+$jsonExists[user;email] ❌ La clave 'email' no existe.
+</code></pre>
+<p><img src="gen/../funciones/image-43.png" alt="alt text" /></p>
+<h2 id="jsonstringify"><a class="header" href="#jsonstringify">$jsonStringify[]</a></h2>
+<p>La función <code>$jsonStringify[]</code> convierte el objeto JSON actual en una cadena de texto.</p>
+<blockquote>
+<p>La función <code>$jsonStringify[]</code> devolverá una cadena vacía si no se ejecutaron las funciones <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonStringify[]
+</code></pre>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">
+$jsonParse[{
+    'computer': [{
+        'apps': {
+            'software': ['BlueStacks', 'Krita', 'Visual Studio Code'],
+            'games': ['GTA 5', 'RDR 2', 'CS:GO', 'Cyberpunk 2077']
+        }
+    },{
+        'cpu': 'Intel',
+        'gpu': 'NVIDIA',
+        'ram': 'XPG'
+    }]
+}]
+
+$jsonStringify[]
+</code></pre>
+<p><img src="gen/../funciones/image-42.png" alt="alt text" /></p>
+<h2 id="jsonpretty"><a class="header" href="#jsonpretty">$jsonPretty[]</a></h2>
+<p>La función <code>$jsonPretty</code> convierte el objeto JSON actual en una cadena formateada con sangría para una mejor visualización.</p>
+<blockquote>
+<p>La función <code>$jsonPretty</code> devolverá un resultado vacío si no se ejecutaron las funciones <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonPretty[Indent length]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Indent length</code> <code>(Tipo: Integer || Flag: Required)</code>: La cantidad de espacios usados para la indentación. Generalmente es <code>2</code> o <code>4</code>.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$nomention
+$disableInnerSpaceRemoval
+$jsonParse[{
+    'ordenador': [{
+        'aplicaciones': {
+            'software': ['BlueStacks', 'Krita', 'Visual Studio Code'],
+            'games': ['GTA 5', 'RDR 2', 'CS:GO', 'Cyberpunk 2077']
+        }
+    },{
+        'cpu': 'Intel',
+        'gpu': 'NVIDIA',
+        'ram': 'XPG'
+    }]
+}]
+
+$jsonPretty[4]
+</code></pre>
+<p><img src="gen/../funciones/image-40.png" alt="alt text" /></p>
+<h2 id="jsonarray-"><a class="header" href="#jsonarray-">$jsonArray []</a></h2>
+<p>La función <code>$jsonArray</code> marca una clave JSON especificada como un <strong>array</strong>.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonArray[Key;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Key</code> <code>(Tipo: String || Obligatorio)</code>: La clave JSON que será marcada como un array.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">
+$jsonParse[{
+    'games': ''
+}]
+
+Clave `games` sin array:  
+$jsonPretty[4]  
+
+$jsonArray[games]  
+
+Clave `games` convertida en array:  
+$jsonPretty[4]  
+</code></pre>
+<p><img src="gen/../funciones/image-39.png" alt="alt text" /></p>
+<h2 id="jsonarraycount"><a class="header" href="#jsonarraycount">$jsonArrayCount[]</a></h2>
+<p>La función <code>$jsonArrayCount</code> cuenta los elementos en la clave JSON especificada.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonArrayCount[Key;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave JSON donde se contarán los elementos.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">
+$jsonParse[{
+    'computer': [{
+        'apps': {
+            'software': ['BlueStacks', 'Krita', 'Visual Studio Code'],
+            "games": ['GTA 5', 'RDR 2', 'CS:GO', 'Cyberpunk 2077']
+        }
+    },{
+        'cpu': 'Intel',
+        'gpu': 'NVIDIA',
+        'ram': 'XPG'
+    }]
+}]
+
+$onlyIf[$checkCondition[$jsonExists[computer;0;apps;$message[-1]]==true];¡La categoría especificada no existe! Categorías disponibles: `software` y `games`]
+
+La cantidad de aplicaciones en `$message[-1]` es: $jsonArrayCount[computer;0;apps;$message[-1]].
+</code></pre>
+<p><img src="gen/../funciones/image-53.png" alt="alt text" /></p>
+<h2 id="jsonarrayindex"><a class="header" href="#jsonarrayindex">$jsonArrayIndex[]</a></h2>
+<p>La función <code>$jsonArrayIndex</code> obtiene el índice de un valor dentro de un array JSON.</p>
+<blockquote>
+<p>La función <code>$jsonArrayIndex</code> devolverá <code>-1</code> si el valor no se encuentra y devolverá un resultado vacío si no se ejecutaron <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonArrayIndex[Key;...;Value]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave JSON donde se buscará el valor.</p>
+</li>
+<li>
+<p><code>value</code> <code>(Tipo: String, Integer, Float || Obligatorio)</code> El valor a buscar dentro del array.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$jsonParse[{
+    'computer': [{
+        'apps': {
+            'software': ['BlueStacks', 'Krita', 'Visual Studio Code'],
+            "games": ['GTA 5', 'RDR 2', 'CS:GO', 'Cyberpunk 2077']
+        }
+    },{
+        'cpu': 'Intel',
+        'gpu': 'NVIDIA',
+        'ram': 'XPG'
+    }]
+}]
+
+
+El índice de `$message[-1]` en `apps/software` es: $jsonArrayIndex[computer;0;apps;software;$message[-1]].
+</code></pre>
+<p><img src="gen/../funciones/image-46.png" alt="alt text" /></p>
+<h2 id="jsonarrayappend"><a class="header" href="#jsonarrayappend">$jsonArrayAppend[]</a></h2>
+<p>La función <code>$jsonArrayAppend</code> agrega un valor al final de la clave JSON especificada.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonArrayAppend[Key;...;Value]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave JSON donde se agregará el valor.</p>
+</li>
+<li>
+<p><code>value</code> <code>(Tipo: Integer, Bool, Float, String || Obligatorio)</code> El valor que se agregará al final del array.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$jsonParse[{
+    'computer': [{
+        'apps': {
+            'software': ['BlueStacks', 'Krita', 'Visual Studio Code'],
+            'games': ['GTA 5', 'RDR 2', 'CS:GO', 'Cyberpunk 2077']
+        }
+    },{
+        'cpu': 'Intel',
+        'gpu': 'NVIDIA',
+        'ram': 'XPG'
+    }]
+}]
+
+$onlyIf[$checkCondtion[$jsonExists[computer;0;apps;$message[1]]==true];¡La categoría especificada no existe! Categorías disponibles: `software` y `games`]
+
+$let[value;$replaceText[$message[-1];$message[1];]]
+
+$jsonArrayAppend[computer;0;apps;$message[1];$get[value]]
+
+¡Se agregó una nueva aplicación a la categoría `$message[1]`!  
+Aplicaciones actuales en la categoría `$message[1]`: $json[computer;0;apps;$message[1]]
+</code></pre>
+<p><img src="gen/../funciones/image-47.png" alt="alt text" /></p>
+<h2 id="jsonarraypop"><a class="header" href="#jsonarraypop">$jsonArrayPop[]</a></h2>
+<p>La función <code>$jsonArrayPop</code> elimina el último elemento de un array y devuelve el elemento eliminado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonArrayPop[Key;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave del array del cual se eliminará un elemento.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$jsonParse[{
+    'music': ['Paranoid - MADKID', 'Ping! 2 - Exyl', 'Tokyo - Leat'eq']
+}]
+
+Eliminado: $jsonArrayPop[musica]
+
+Música actual:
+&gt; $jsonJoinArray[musica;, ]
+</code></pre>
+<p><img src="gen/../funciones/image-48.png" alt="alt text" /></p>
+<h2 id="jsonarrayshift"><a class="header" href="#jsonarrayshift">$jsonArrayShift[]</a></h2>
+<p>La función <code>$jsonArrayShift[]</code> elimina el primer elemento de un array y devuelve el elemento eliminado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonArrayShift[Key;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave del array del cual se eliminará un elemento.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$jsonParse[{
+    'music': ['Paranoid - MADKID', 'Ping! 2 - Exyl', 'Tokyo - Leateq']
+}]
+
+Eliminado: $jsonArrayShift[music]
+
+Música actual:
+&gt; $jsonJoinArray[music;, ]
+</code></pre>
+<p><img src="gen/../funciones/image-49.png" alt="alt text" /></p>
+<h2 id="jsonarrayunshift"><a class="header" href="#jsonarrayunshift">$jsonArrayUnshift[]</a></h2>
+<p>La función <code>$jsonArrayUnshift</code> agrega un valor al inicio de un array JSON.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonArrayUnshift[Key;...;Value]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>key</code> <code>(Tipo: String || Requerido)</code> La clave del array JSON donde se añadirá el valor.</p>
+</li>
+<li>
+<p><code>value</code> <code>(Tipo: Float, String, Bool, Integer || Requerido)</code> El valor que se agregará al inicio del array.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$jsonParse[{
+    'music': ['Paranoid - MADKID', 'Ping! 2 - Exyl, 'Tokyo - Leat'eq]
+}]
+
+$jsonArrayUnshift[music;Side Character - Cloudfodder]
+
+Música:
+&gt; $jsonJoinArray[music;, ]
+</code></pre>
+<p><img src="gen/../funciones/image-50.png" alt="alt text" /></p>
+<h2 id="jsonarraysort"><a class="header" href="#jsonarraysort">$jsonArraySort[]</a></h2>
+<p>La función <code>$jsonArraySort</code> ordena un array JSON específico en orden ascendente.</p>
+<blockquote>
+<p>La función ordena los elementos en el siguiente orden:</p>
+<ol>
+<li>Números enteros de menor a mayor.</li>
+<li>Cadenas de texto basadas en sus valores ASCII/Unicode.</li>
+</ol>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonArraySort[Key;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>key</code> <code>(Tipo: String || Opcional)</code> La clave del array JSON que se ordenará.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">$jsonParse[{
+  'data': ['Oranges', 'banana', 10, 'apple', 'Apples', 2, 30]
+}]
+
+$jsonArraySort[data]
+
+Después de ordenar:
+&gt; $json[data]
+</code></pre>
+<p><img src="gen/../funciones/image-51.png" alt="alt text" /></p>
+<h2 id="jsonarrayreverse"><a class="header" href="#jsonarrayreverse">$jsonArrayReverse[]</a></h2>
+<p>La función <code>$jsonArrayReverse</code> invierte el orden de un array JSON específico.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonArrayReverse[Key;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>key</code> <code>(Tipo: String || Opcional)</code> La clave del array JSON que se invertirá.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">
+$jsonParse[{
+  'fruits': ['apple', 'orange', 'banana', 'grape']
+}]
+
+$jsonArrayReverse[fruits]
+
+Después de invertir:
+&gt; $json[fruits]
+</code></pre>
+<p><img src="gen/../funciones/image-52.png" alt="alt text" /></p>
+<h2 id="jsonjoinarray"><a class="header" href="#jsonjoinarray">$jsonJoinArray[]</a></h2>
+<p>La función <code>$jsonJoinArray</code> une un array JSON bajo la clave especificada utilizando el separador dado.</p>
+<blockquote>
+<p>La función <code>$jsonJoinArray</code> devolverá una cadena vacía si el valor es <code>null</code>, la clave no existe, no se ejecutaron las funciones <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonJoinArray[Key;...;Separator]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON que apunta a un array que será recuperado.</li>
+<li><code>Separator</code> <code>(Tipo: String || Flag: Required)</code>: El separador que se utilizará para unir los elementos del array.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-plaintext">
+$jsonParse[{
+    'music': ['Paranoid - MADKID', 'Ping! 2 - Exyl', 'Tokyo - Leat\'eq']
+}]
+
+Music:
+&gt; $jsonJoinArray[music;, ]
+</code></pre>
+<p><img src="gen/../funciones/image-54.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="funciones"><a class="header" href="#funciones">Funciones</a></h1>
 <p>Soon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="addbutton"><a class="header" href="#addbutton">$addButton[]</a></h1>
@@ -1127,7 +1694,7 @@ $editSplitText[2;amisynth]
 <blockquote>
 <p>Para obtener más información, consulte la Guía de <a href="funciones//gen/texto.html">División de texto</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonparse"><a class="header" href="#jsonparse">$jsonParse[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonparse-1"><a class="header" href="#jsonparse-1">$jsonParse[]</a></h1>
 <p><code>$jsonParse</code> es la función principal utilizada cuando se trabaja con datos JSON.<br />
 Esta función analiza una cadena JSON y la convierte en un objeto que luego puede ser utilizado por otras funciones JSON.</p>
 <p><strong>Sintaxis</strong></p>
@@ -1145,9 +1712,9 @@ Esta función analiza una cadena JSON y la convierte en un objeto que luego pued
 </code></pre>
 <p><img src="funciones/image-36.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="json"><a class="header" href="#json">$json[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="json-1"><a class="header" href="#json-1">$json[]</a></h1>
 <p>La función $json recupera valores JSON de una clave especificada en el objeto JSON actual.</p>
 <blockquote>
 <p>La función $json devolverá una cadena vacía si el valor es nulo, la clave no existe, no se ejecutaron las funciones $jsonParse o $jsonSet, o se ejecutó $jsonClear.</p>
@@ -1176,19 +1743,19 @@ Edad: $json[identity;age] años
 </code></pre>
 <p><img src="funciones/image-37.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonset"><a class="header" href="#jsonset">$jsonSet[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonset-1"><a class="header" href="#jsonset-1">$jsonSet[]</a></h1>
 <p>La función <code>$jsonSet</code> establece o reemplaza el valor en la clave JSON especificada.</p>
-<h3 id="sintaxis-8"><a class="header" href="#sintaxis-8"><strong>Sintaxis</strong></a></h3>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonSet[Key;...;Value]
 </code></pre>
-<h3 id="parámetros-6"><a class="header" href="#parámetros-6"><strong>Parámetros</strong></a></h3>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Obligatorio)</code>: La clave JSON donde se establecerá o reemplazará el valor.</li>
 <li><code>Value</code> <code>(Tipo: Integer, Bool, Float, String || Obligatorio)</code>: El valor que se asignará o reemplazará en la clave especificada.</li>
 </ul>
-<h3 id="ejemplo-7"><a class="header" href="#ejemplo-7"><strong>Ejemplo</strong></a></h3>
+<p><strong>Ejemplo</strong></p>
 <pre><code class="language-plaintext">$jsonParse[{
     'username': 'Izana',
     'tag': "6700",
@@ -1214,12 +1781,12 @@ Edad: $json[identity;age] años
 <blockquote>
 <p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonsetstring"><a class="header" href="#jsonsetstring">$jsonSetString[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonsetstring-1"><a class="header" href="#jsonsetstring-1">$jsonSetString[]</a></h1>
 <p>La función <code>$jsonSetString</code> establece o reemplaza el valor en la clave JSON especificada. Siempre establece el valor como una cadena.</p>
-<h3 id="sintaxis-9"><a class="header" href="#sintaxis-9"><code>Sintaxis</code></a></h3>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonSetString[Key;...;Value]
 </code></pre>
-<h3 id="parámetros-7"><a class="header" href="#parámetros-7"><code>Parámetros</code></a></h3>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li>
 <p><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON donde se establecerá o reemplazará el valor.</p>
@@ -1231,8 +1798,7 @@ Edad: $json[identity;age] años
 <blockquote>
 <p>Esta función se recomienda principalmente para comandos relacionados con economía.</p>
 </blockquote>
-<h3 id="ejemplo-8"><a class="header" href="#ejemplo-8"><code>Ejemplo</code></a></h3>
-<h4 id="usando-jsonset"><a class="header" href="#usando-jsonset">Usando <code>$jsonSet</code></a></h4>
+<p><strong>Ejemplo</strong></p>
 <pre><code class="language-plaintext">$nomention
 $jsonParse[{}]
 
@@ -1240,6 +1806,7 @@ $jsonSet[balance;$message]
 
 Balance key was set to: $json[balance]
 </code></pre>
+<p><img src="funciones/image-59.png" alt="alt text" /></p>
 <p>Usando <code>$jsonSetString</code></p>
 <pre><code class="language-plaintext">$nomention
 $jsonParse[{}]
@@ -1248,20 +1815,21 @@ $jsonSetString[balance;$message]
 
 Balance key was set to: $json[balance]
 </code></pre>
+<p><img src="funciones/image-60.png" alt="alt text" /></p>
 <blockquote>
 <p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonunset"><a class="header" href="#jsonunset">$jsonUnset[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonunset-1"><a class="header" href="#jsonunset-1">$jsonUnset[]</a></h1>
 <p>La función <code>$jsonUnset</code> elimina el valor en la clave JSON especificada.<br />
 En resumen, es la función opuesta a <code>$jsonSet</code>.</p>
-<h3 id="sintaxis-10"><a class="header" href="#sintaxis-10"><code>Sintaxis</code></a></h3>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonUnset[Key;...]
 </code></pre>
-<h3 id="parámetros-8"><a class="header" href="#parámetros-8"><code>Parámetros</code></a></h3>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON que se eliminará.</li>
 </ul>
-<h3 id="ejemplo-9"><a class="header" href="#ejemplo-9"><code>Ejemplo</code></a></h3>
+<p><strong>Ejemplo</strong></p>
 <pre><code class="language-plaintext">$jsonParse[{
     "username": "NightNutSky",
     "tag": "6700",
@@ -1284,9 +1852,9 @@ Age: $json[identity;age] years old]
 </code></pre>
 <p><img src="funciones/image-44.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonclear"><a class="header" href="#jsonclear">$jsonClear[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonclear-1"><a class="header" href="#jsonclear-1">$jsonClear[]</a></h1>
 <p>La función <code>$jsonClear</code> elimina el objeto JSON actual, restableciendo su contenido.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonClear[]
@@ -1305,9 +1873,9 @@ Nombre de usuario: $json[username]
 </code></pre>
 <p><img src="funciones/image-45.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonexists--"><a class="header" href="#jsonexists--">$jsonExists  []</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonexists-1"><a class="header" href="#jsonexists-1">$jsonExists[]</a></h1>
 <p>La función <code>$jsonExists</code> verifica si una clave JSON especificada existe en el objeto JSON actual.</p>
 <blockquote>
 <p>Devuelve un resultado vacío si no se ejecutaron las funciones <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
@@ -1332,17 +1900,17 @@ $jsonExists[user;email] ❌ La clave 'email' no existe.
 </code></pre>
 <p><img src="funciones/image-43.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonstringify"><a class="header" href="#jsonstringify">$jsonStringify[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonstringify-1"><a class="header" href="#jsonstringify-1">$jsonStringify[]</a></h1>
 <p>La función <code>$jsonStringify[]</code> convierte el objeto JSON actual en una cadena de texto.</p>
 <blockquote>
 <p>La función <code>$jsonStringify[]</code> devolverá una cadena vacía si no se ejecutaron las funciones <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
 </blockquote>
-<h3 id="sintaxis-11"><a class="header" href="#sintaxis-11"><strong>Sintaxis</strong></a></h3>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonStringify[]
 </code></pre>
-<h3 id="ejemplo-10"><a class="header" href="#ejemplo-10"><strong>Ejemplo</strong></a></h3>
+<p><strong>Ejemplo</strong></p>
 <pre><code class="language-plaintext">
 $jsonParse[{
     'computer': [{
@@ -1363,7 +1931,7 @@ $jsonStringify[]
 <blockquote>
 <p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonpretty"><a class="header" href="#jsonpretty">$jsonPretty[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonpretty-1"><a class="header" href="#jsonpretty-1">$jsonPretty[]</a></h1>
 <p>La función <code>$jsonPretty</code> convierte el objeto JSON actual en una cadena formateada con sangría para una mejor visualización.</p>
 <blockquote>
 <p>La función <code>$jsonPretty</code> devolverá un resultado vacío si no se ejecutaron las funciones <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
@@ -1395,18 +1963,18 @@ $jsonPretty[4]
 </code></pre>
 <p><img src="funciones/image-40.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarray-"><a class="header" href="#jsonarray-">$jsonArray []</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarray--1"><a class="header" href="#jsonarray--1">$jsonArray []</a></h1>
 <p>La función <code>$jsonArray</code> marca una clave JSON especificada como un <strong>array</strong>.</p>
-<h3 id="sintaxis-12"><a class="header" href="#sintaxis-12"><strong>Sintaxis</strong></a></h3>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonArray[Key;...]
 </code></pre>
-<h3 id="parámetros-9"><a class="header" href="#parámetros-9"><strong>Parámetros</strong></a></h3>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Obligatorio)</code>: La clave JSON que será marcada como un array.</li>
 </ul>
-<h3 id="ejemplo-11"><a class="header" href="#ejemplo-11"><strong>Ejemplo</strong></a></h3>
+<p><strong>Ejemplo</strong></p>
 <pre><code class="language-plaintext">
 $jsonParse[{
     'games': ''
@@ -1422,9 +1990,9 @@ $optOff[$jsonPretty[4]]
 </code></pre>
 <p><img src="funciones/image-39.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarraycount"><a class="header" href="#jsonarraycount">$jsonArrayCount[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarraycount-1"><a class="header" href="#jsonarraycount-1">$jsonArrayCount[]</a></h1>
 <p>La función <code>$jsonArrayCount</code> cuenta los elementos en la clave JSON especificada.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonArrayCount[Key;...]
@@ -1454,9 +2022,9 @@ La cantidad de aplicaciones en `$message[-1]` es: $jsonArrayCount[computer;0;app
 </code></pre>
 <p><img src="funciones/image-53.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarrayindex"><a class="header" href="#jsonarrayindex">$jsonArrayIndex[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarrayindex-1"><a class="header" href="#jsonarrayindex-1">$jsonArrayIndex[]</a></h1>
 <p>La función <code>$jsonArrayIndex</code> obtiene el índice de un valor dentro de un array JSON.</p>
 <blockquote>
 <p>La función <code>$jsonArrayIndex</code> devolverá <code>-1</code> si el valor no se encuentra y devolverá un resultado vacío si no se ejecutaron <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
@@ -1466,8 +2034,12 @@ La cantidad de aplicaciones en `$message[-1]` es: $jsonArrayCount[computer;0;app
 </code></pre>
 <p><strong>Parámetros</strong></p>
 <ul>
-<li><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave JSON donde se buscará el valor.</li>
-<li><code>value</code> <code>(Tipo: String, Integer, Float || Obligatorio)</code> El valor a buscar dentro del array.</li>
+<li>
+<p><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave JSON donde se buscará el valor.</p>
+</li>
+<li>
+<p><code>value</code> <code>(Tipo: String, Integer, Float || Obligatorio)</code> El valor a buscar dentro del array.</p>
+</li>
 </ul>
 <p><strong>Ejemplo</strong></p>
 <pre><code class="language-plaintext">$jsonParse[{
@@ -1488,14 +2060,14 @@ El índice de `$message[-1]` en `apps/software` es: $jsonArrayIndex[computer;0;a
 </code></pre>
 <p><img src="funciones/image-46.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarrayappend"><a class="header" href="#jsonarrayappend">$jsonArrayAppend</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarrayappend-1"><a class="header" href="#jsonarrayappend-1">$jsonArrayAppend[]</a></h1>
 <p>La función <code>$jsonArrayAppend</code> agrega un valor al final de la clave JSON especificada.</p>
-<h3 id="sintaxis-13"><a class="header" href="#sintaxis-13"><strong>Sintaxis</strong></a></h3>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonArrayAppend[Key;...;Value]
 </code></pre>
-<h3 id="parámetros-10"><a class="header" href="#parámetros-10"><strong>Parámetros</strong></a></h3>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li>
 <p><code>key</code> <code>(Tipo: String || Obligatorio)</code> La clave JSON donde se agregará el valor.</p>
@@ -1504,7 +2076,7 @@ El índice de `$message[-1]` en `apps/software` es: $jsonArrayIndex[computer;0;a
 <p><code>value</code> <code>(Tipo: Integer, Bool, Float, String || Obligatorio)</code> El valor que se agregará al final del array.</p>
 </li>
 </ul>
-<h3 id="ejemplo-12"><a class="header" href="#ejemplo-12"><strong>Ejemplo</strong></a></h3>
+<p><strong>Ejemplo</strong></p>
 <pre><code class="language-plaintext">$jsonParse[{
     'computer': [{
         'apps': {
@@ -1529,9 +2101,9 @@ Aplicaciones actuales en la categoría `$message[1]`: $json[computer;0;apps;$mes
 </code></pre>
 <p><img src="funciones/image-47.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarraypop-"><a class="header" href="#jsonarraypop-">$jsonArrayPop []</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarraypop-1"><a class="header" href="#jsonarraypop-1">$jsonArrayPop[]</a></h1>
 <p>La función <code>$jsonArrayPop</code> elimina el último elemento de un array y devuelve el elemento eliminado.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonArrayPop[Key;...]
@@ -1552,9 +2124,9 @@ Música actual:
 </code></pre>
 <p><img src="funciones/image-48.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarrayshift"><a class="header" href="#jsonarrayshift">$jsonArrayShift[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarrayshift-1"><a class="header" href="#jsonarrayshift-1">$jsonArrayShift[]</a></h1>
 <p>La función <code>$jsonArrayShift[]</code> elimina el primer elemento de un array y devuelve el elemento eliminado.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonArrayShift[Key;...]
@@ -1575,16 +2147,14 @@ Música actual:
 </code></pre>
 <p><img src="funciones/image-49.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><pre><code class="language-markdown"># $jsonArrayUnshift  
-La función `$jsonArrayUnshift` agrega un valor al inicio de un array JSON.  
-
-### **Sintaxis**  
-```plaintext
-$jsonArrayUnshift[Key;...;Value]
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarrayunshift-1"><a class="header" href="#jsonarrayunshift-1">$jsonArrayUnshift[]</a></h1>
+<p>La función <code>$jsonArrayUnshift</code> agrega un valor al inicio de un array JSON.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$jsonArrayUnshift[Key;...;Value]
 </code></pre>
-<h3 id="parámetros-11"><a class="header" href="#parámetros-11"><strong>Parámetros</strong></a></h3>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li>
 <p><code>key</code> <code>(Tipo: String || Requerido)</code> La clave del array JSON donde se añadirá el valor.</p>
@@ -1593,7 +2163,7 @@ $jsonArrayUnshift[Key;...;Value]
 <p><code>value</code> <code>(Tipo: Float, String, Bool, Integer || Requerido)</code> El valor que se agregará al inicio del array.</p>
 </li>
 </ul>
-<h3 id="ejemplo-13"><a class="header" href="#ejemplo-13"><strong>Ejemplo</strong></a></h3>
+<p><strong>Ejemplo</strong></p>
 <pre><code class="language-plaintext">$jsonParse[{
     'music': ['Paranoid - MADKID', 'Ping! 2 - Exyl, 'Tokyo - Leat'eq]
 }]
@@ -1605,9 +2175,9 @@ Música:
 </code></pre>
 <p><img src="funciones/image-50.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarraysort"><a class="header" href="#jsonarraysort">$jsonArraySort[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarraysort-1"><a class="header" href="#jsonarraysort-1">$jsonArraySort[]</a></h1>
 <p>La función <code>$jsonArraySort</code> ordena un array JSON específico en orden ascendente.</p>
 <blockquote>
 <p>La función ordena los elementos en el siguiente orden:</p>
@@ -1635,9 +2205,9 @@ Después de ordenar:
 </code></pre>
 <p><img src="funciones/image-51.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarrayreverse"><a class="header" href="#jsonarrayreverse">$jsonArrayReverse[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarrayreverse-1"><a class="header" href="#jsonarrayreverse-1">$jsonArrayReverse[]</a></h1>
 <p>La función <code>$jsonArrayReverse</code> invierte el orden de un array JSON específico.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonArrayReverse[Key;...]
@@ -1659,9 +2229,9 @@ Después de invertir:
 </code></pre>
 <p><img src="funciones/image-52.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonjoinarray"><a class="header" href="#jsonjoinarray">$jsonJoinArray[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jsonjoinarray-1"><a class="header" href="#jsonjoinarray-1">$jsonJoinArray[]</a></h1>
 <p>La función <code>$jsonJoinArray</code> une un array JSON bajo la clave especificada utilizando el separador dado.</p>
 <blockquote>
 <p>La función <code>$jsonJoinArray</code> devolverá una cadena vacía si el valor es <code>null</code>, la clave no existe, no se ejecutaron las funciones <code>$jsonParse</code> o <code>$jsonSet</code>, o si se ejecutó <code>$jsonClear</code>.</p>
@@ -1685,7 +2255,9 @@ Music:
 </code></pre>
 <p><img src="funciones/image-54.png" alt="alt text" /></p>
 <blockquote>
-<p>Para obtener más información, consulte la Guía de <a href="funciones//General/json-funciones.html">JSON Funciones</a>.</p>
+<blockquote>
+<p>Para obtener más información, consulte la Guía de <a href="funciones//gen/json.html">JSON Funciones</a>.</p>
+</blockquote>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="let"><a class="header" href="#let">$let[]</a></h1>
 <p>La función <code>$let[]</code> almacena un valor en una variable temporal dentro de la ejecución del comando.</p>
@@ -1723,13 +2295,13 @@ Usuario guardado: $get[user]
 <p><img src="funciones/image-23.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="reationevent"><a class="header" href="#reationevent">$reationEvent[]</a></h1>
 <p>La función <code>$reactionEvent[]</code> almacena un valor en una variable temporal dentro de la ejecución del comando.</p>
-<h3 id="sintaxis-14"><a class="header" href="#sintaxis-14"><code>Sintaxis</code></a></h3>
+<h3 id="sintaxis-8"><a class="header" href="#sintaxis-8"><code>Sintaxis</code></a></h3>
 <pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <blockquote>
 <p>Esta es una funcion compartida que retornar el emoji usado o removido en los eventos <code>$onReactionAdd</code> y <code>$onReactionRemove</code></p>
 </blockquote>
-<h3 id="ejemplo-14"><a class="header" href="#ejemplo-14"><code>Ejemplo</code></a></h3>
+<h3 id="ejemplo-7"><a class="header" href="#ejemplo-7"><code>Ejemplo</code></a></h3>
 <pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <p><img src="funciones/image-3.png" alt="alt text" /></p>
@@ -1968,13 +2540,13 @@ bot.run(..)
 <p><img src="Eventos/image-1.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onreactionadd"><a class="header" href="#onreactionadd">$onReactionAdd</a></h1>
 <p><code>$onReactionAdd</code> es un evento que se activa cuando un usuario añade una reacción a un mensaje en el servidor.</p>
-<h3 id="sintaxis-15"><a class="header" href="#sintaxis-15"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-9"><a class="header" href="#sintaxis-9"><strong>Sintaxis</strong></a></h3>
 <pre><code>$onReactionAdd
 </code></pre>
 <blockquote>
 <p>📌 <strong>Nota:</strong> Este evento se usa como un disparador, no dentro del código del comando.</p>
 </blockquote>
-<h3 id="ejemplo-15"><a class="header" href="#ejemplo-15"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-8"><a class="header" href="#ejemplo-8"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot = ..
 
 bot.new_event("$onReactionAdd", "Emoji: $reactionEvent[]")

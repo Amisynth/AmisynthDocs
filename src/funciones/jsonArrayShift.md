@@ -24,5 +24,4 @@ Música actual:
 
 ![alt text](image-49.png)
 
-
-> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).
+> Para obtener más información, consulte la Guía de [JSON Funciones](/gen/json.md).

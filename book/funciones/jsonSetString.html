@@ -154,10 +154,10 @@
                     <main>
                         <h1 id="jsonsetstring"><a class="header" href="#jsonsetstring">$jsonSetString[]</a></h1>
 <p>La función <code>$jsonSetString</code> establece o reemplaza el valor en la clave JSON especificada. Siempre establece el valor como una cadena.</p>
-<h3 id="sintaxis"><a class="header" href="#sintaxis"><code>Sintaxis</code></a></h3>
+<p><strong>Sintaxis</strong></p>
 <pre><code class="language-plaintext">$jsonSetString[Key;...;Value]
 </code></pre>
-<h3 id="parámetros"><a class="header" href="#parámetros"><code>Parámetros</code></a></h3>
+<p><strong>Parámetros</strong></p>
 <ul>
 <li>
 <p><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON donde se establecerá o reemplazará el valor.</p>
@@ -169,8 +169,7 @@
 <blockquote>
 <p>Esta función se recomienda principalmente para comandos relacionados con economía.</p>
 </blockquote>
-<h3 id="ejemplo"><a class="header" href="#ejemplo"><code>Ejemplo</code></a></h3>
-<h4 id="usando-jsonset"><a class="header" href="#usando-jsonset">Usando <code>$jsonSet</code></a></h4>
+<p><strong>Ejemplo</strong></p>
 <pre><code class="language-plaintext">$nomention
 $jsonParse[{}]
 
@@ -178,6 +177,7 @@ $jsonSet[balance;$message]
 
 Balance key was set to: $json[balance]
 </code></pre>
+<p><img src="image-59.png" alt="alt text" /></p>
 <p>Usando <code>$jsonSetString</code></p>
 <pre><code class="language-plaintext">$nomention
 $jsonParse[{}]
@@ -186,6 +186,7 @@ $jsonSetString[balance;$message]
 
 Balance key was set to: $json[balance]
 </code></pre>
+<p><img src="image-60.png" alt="alt text" /></p>
 <blockquote>
 <p>Para obtener más información, consulte la Guía de <a href="/General/json-funciones.html">JSON Funciones</a>.</p>
 </blockquote>

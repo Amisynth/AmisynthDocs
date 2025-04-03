@@ -1,5 +1,5 @@
 
-# $jsonArrayPop []
+# $jsonArrayPop[]
 La función `$jsonArrayPop` elimina el último elemento de un array y devuelve el elemento eliminado.  
 
 **Sintaxis**  
@@ -25,4 +25,4 @@ Música actual:
 ![alt text](image-48.png)
 
 
-> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).
+> Para obtener más información, consulte la Guía de [JSON Funciones](/gen/json.md).

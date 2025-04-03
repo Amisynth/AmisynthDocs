@@ -30,4 +30,4 @@ Después de ordenar:
 ![alt text](image-51.png)
 
 
-> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).
+> Para obtener más información, consulte la Guía de [JSON Funciones](/gen/json.md).

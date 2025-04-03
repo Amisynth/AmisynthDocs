@@ -3,15 +3,15 @@
 La función `$jsonUnset` elimina el valor en la clave JSON especificada.  
 En resumen, es la función opuesta a `$jsonSet`.  
 
-### `Sintaxis`  
+**Sintaxis**
 ```plaintext
 $jsonUnset[Key;...]
 ```
 
-### `Parámetros`  
+**Parámetros**
 - `Key` `(Tipo: String || Flag: Required)`: La clave JSON que se eliminará.  
 
-### `Ejemplo`  
+**Ejemplo**
 ```plaintext
 $jsonParse[{
     "username": "NightNutSky",
@@ -37,4 +37,4 @@ Age: $json[identity;age] years old]
 ![alt text](image-44.png)
 
 
-> Para obtener más información, consulte la Guía de [JSON Funciones](/General/json-funciones.md).
+> Para obtener más información, consulte la Guía de [JSON Funciones](/gen/json.md).
