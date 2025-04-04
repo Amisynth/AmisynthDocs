@@ -153,6 +153,29 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="getvar"><a class="header" href="#getvar">$getVar[]</a></h1>
+<p>Obtiene el valor de una variable global o de usuario global.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getVar[Nombre de la variable;(ID de usuario)]
+</code></pre>
+<blockquote>
+<p>🧙‍♂️ Para una variable global, no es necesario proporcionar un <code>ID de usuario</code>. Para una variable de usuario global, sí es necesario.</p>
+</blockquote>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Nombre de la variable</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: El nombre de la variable de la que se obtiene el valor.</p>
+</li>
+<li>
+<p><code>ID de usuario</code> <code>(Tipo: Copo de nieve, Cadena || Indicador: Vacantable)</code>: El usuario del que se obtiene el valor (si es un usuario global).</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>¡Tienes $getVar[Money;$mentioned[1]] monedas!
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/69215413/126073974-8fbd707f-aaeb-4500-9db2-7ac923b3df74.png" alt="ejemplo" /></p>
+<blockquote>
+<p>Para más información, consulta la <a href="../gen/variables.html">Guía de variables</a>.</p>
+</blockquote>
 
                     </main>
 
@@ -162,7 +185,7 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../getLeaderboardValue/getVar.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../funciones/getLeaderboardValue.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -176,7 +199,7 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../getLeaderboardValue/getVar.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../funciones/getLeaderboardValue.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

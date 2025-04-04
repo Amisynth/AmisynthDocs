@@ -153,6 +153,33 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="setprefix"><a class="header" href="#setprefix">$setPrefix[]</a></h1>
+<p>Establece el nuevo prefijo del bot por servidor.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$setPrefix[Prefijo;(ID de servidor)]
+</code></pre>
+<p><strong>Argumentos</strong></p>
+<ul>
+<li>
+<p><code>Prefijo</code>  <code>(Tipo: Copo de nieve || Marca: Obligatorio)</code>: Establece el nuevo prefijo del bot al servidor unicamente.</p>
+</li>
+<li>
+<p><code>ID del servidor</code> <code>(Tipo: Copo de nieve || Marca: Opcional)</code>: El servidor al que se asignará el nuevo valor. Si no se proporciona ningún "ID del servidor", se utiliza el servidor actual.</p>
+</li>
+</ul>
+<p><strong>Ejemplos</strong></p>
+<pre><code class="language-python">bot = AmiClient("!")
+
+bot.new_command(name="etc", 
+                type="text",
+                code="""hola""")
+
+bot.new_command(nane="prefix",
+                type="text",
+                code"""ok $setPrefix[$;$guildID[]]""")
+
+bot.run(..)
+</code></pre>
+<p><img src="image-61.png" alt="alt text" /></p>
 
                     </main>
 

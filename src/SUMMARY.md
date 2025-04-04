@@ -13,6 +13,7 @@
         - [Interacciones](gen/Interacciones.md)
         - [Divicion Texto](gen/texto.md)
         - [JSON Funciones](gen/json.md)
+        - [Variables](gen/variables.md)
 
     - [Recusos](Recursos/README.md)
         - [Creacion](Recursos/Creacion.md)
@@ -89,7 +90,7 @@
     - [$getServerVar[]](funciones/getServerVar.md)
     - [$gerChannelVar[]](funciones/gerChannelVar.md)
     - [$getVar[]](funciones/getVar.md)
-    - [$getLeaderboardValue[]](getLeaderboardValue/getVar.md)
+    - [$getLeaderboardValue[]](funciones/getLeaderboardValue.md)
     - [$getLeaderboardPosition[]](funciones/getLeaderboardPosition.md)
     - [$setPrefix[]](funciones/setPrefix.md)
 

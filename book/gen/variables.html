@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>$getLeaderboardPosition[] - AmisynthDocs</title>
+        <title>Variables - AmisynthDocs</title>
 
 
         <!-- Custom HTML head -->
@@ -152,54 +152,146 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="getleaderboardposition"><a class="header" href="#getleaderboardposition">$getLeaderboardPosition[]</a></h1>
-<p>Obtener la posición en una tabla de clasificación para una variable dada.</p>
-<p><strong>Sintaxis</strong></p>
-<pre><code>$getLeaderboardPosition[Tipo de variable;Nombre de variable;Tipo de ordenación;(ID de usuario)]
+                        <h1 id="variables"><a class="header" href="#variables">Variables</a></h1>
+<p>Las variables son la forma en que almacenamos los datos en Amisynth. Los datos se pueden asignar a usuarios, servidores, canales y globalmente. Cada variable tiene dos elementos, que desglosaremos en esta sección.</p>
+<p>Elementos de la variable</p>
+<p><code>Nombre</code>: El nombre de la variable. El bot no puede modificarlo; se utiliza para llamar a la variable actual.</p>
+<p><code>Valor</code>: El valor de la variable. El bot puede modificarlo y se devuelve cuando se llama al nombre de la variable en <code>$getVar</code>/<code>$getUserVar</code>/<code>$getServerVar</code>/<code>$getChannelVar</code>.</p>
+<p><strong>Como iniciar</strong></p>
+<pre><code class="language-python"># Establesca el parametro variables_json como True
+
+bot = AmiClient(prefix="..", variables_json=True)
 </code></pre>
-<p><strong>Parámetros</strong></p>
+<p>Ahora podra usar variables y almacenar datos mediante un JSON.</p>
+<blockquote>
+<p>Antes de leer la guia de abajo, recuerde que cuando establesca un valor de variable de cualquier tipo estara creando la variable al mismo tiempo.</p>
+</blockquote>
+<blockquote>
+<p>Recuerde que por el momento las variables se manejan en su propio entorno mediante en un archivo JSON creado automaticamente.</p>
+</blockquote>
+<h2 id="variables-globales-de-usuario---funciones"><a class="header" href="#variables-globales-de-usuario---funciones">Variables globales de usuario - Funciones</a></h2>
+<p><a href="../../funciones/setVar.html"><code>$setVar</code></a>/<a href="../../funciones/getVar.html"><code>$getVar</code></a> son funciones de variables globales, lo que significa que se aplican universalmente (es decir, no cambian por servidor, canal ni usuario).
+Sin embargo, si se proporciona un ID de usuario en el parámetro opcional <code>User ID</code>, se convierte en una variable de usuario global.</p>
+<p>El valor de las variables de usuario globales se mantiene igual para el usuario en todos los servidores. El uso de las variables globales de usuario se ve así:</p>
 <ul>
 <li>
-<p><code>Tipo de variable</code> <code>(Tipo: Enumeración || Indicador: Obligatorio)</code>: El tipo de variable. Tipos de variable:</p>
-<ul>
-<li><code>users</code> - <a href="../gen/variables.html#user-variables">Variable de usuario</a></li>
-<li><code>guilds</code> - <a href="../gen/variables.html#server-variables">Variable de servidor</a></li>
-<li><code>channels</code> - <a href="../gen/variables.html#server-variables">Variable de canal por servidor</a></li>
-<li><code>global</code> - <a href="../gen//variables.html#globalglobal-user-variables">Variable global</a></li>
-<li><code>global_users</code> - <a href="../gen//variables.html#globalglobal-user-variables">Variable de usuario global</a></li>
+<p><code>$setVar[Nombre de la variable;Nuevo valor;ID del usuario]</code></p>
+</li>
+<li>
+<p><code>$getVar[Nombre de la variable;ID del usuario]</code></p>
+</li>
 </ul>
-</li>
-<li>
-<p><code>Nombre de variable</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: El nombre de la variable para la que se generará la tabla de clasificación.</p>
-</li>
-<li>
-<p><code>Tipo de ordenamiento</code> <code>(Tipo: Enumeración || Indicador: Obligatorio)</code>: El tipo de ordenamiento. Tipos de ordenamiento:</p>
+<h2 id="variables-globales---funciones"><a class="header" href="#variables-globales---funciones">Variables globales - Funciones</a></h2>
 <ul>
 <li>
-<p><code>asc</code> - Ordena los valores en orden ascendente.</p>
+<p><code>$setVar[Nombre de la variable;Nuevo valor]</code>: Cambia el valor de la variable global proporcionada a 'Nuevo valor'.</p>
 </li>
 <li>
-<p><code>desc</code> - Ordena los valores en orden descendente.</p>
+<p><code>$getVar[Nombre de la variable]</code>: Obtiene el valor actual de la variable global proporcionada.</p>
 </li>
 </ul>
+<blockquote>
+<p>📌 Las variables globales son universales, lo que significa que si la variable se modifica, la modificación se aplica a todos.</p>
+</blockquote>
+<h2 id="variables-de-usuario-por-servidor---funciones"><a class="header" href="#variables-de-usuario-por-servidor---funciones">Variables de usuario por servidor - Funciones</a></h2>
+<p>Las variables de usuario son únicas para cada usuario y varían según el servidor.</p>
+<ul>
+<li>
+<p><code>$setUserVar[Variable Name;New Value;(User ID;Guild ID)]</code>: Establece el valor de la variable proporcionada para el "New Value" del "User ID" y el "Guild ID" especificados, o el autor del comando si no se proporciona el "User ID" y el guild actual si no se proporciona el "Guild ID".</p>
 </li>
 <li>
-<p><code>ID de usuario</code>: <code>(Tipo: Copo de nieve || Indicador: Opcional)</code>: El ID del usuario del que desea obtener una posición en la tabla de clasificación.</p>
+<p><code>$getUserVar[Variable Name;(User ID;Guild ID)]</code>: Obtiene el valor actual de la variable de usuario proporcionada. Devuelve el valor de la variable del autor si no se proporciona el "User ID" y utiliza el guild actual si no se proporciona el "Guild ID".</p>
 </li>
 </ul>
-<p><strong>Ejemplo</strong></p>
-<pre><code>Su posición en la tabla de clasificación: $getLeaderboardPosition[usuario;Monedas;desc]
+<h2 id="variables-por-servidor---funciones"><a class="header" href="#variables-por-servidor---funciones">Variables por servidor - Funciones</a></h2>
+<p>Las variables del servidor son únicas para cada servidor.</p>
+<ul>
+<li>
+<p><code>$setServerVar[Variable Name;New Value;(Server ID)]</code>: Establece la variable proporcionada como 'New Value' para el 'Server ID' especificado o para el servidor en el que se ejecutó el comando si no se proporcionó ningún 'Server ID'.</p>
+</li>
+<li>
+<p><code>$getServerVar[Variable Name;(Server ID)]</code>: Obtiene el valor actual de la variable del servidor proporcionada. Si no se proporcionó ningún 'Server ID', devuelve el valor actual de la variable del servidor.</p>
+</li>
+</ul>
+<h2 id="variables-de-canal-por-servidor---funciones"><a class="header" href="#variables-de-canal-por-servidor---funciones">Variables de canal por servidor - Funciones</a></h2>
+<ul>
+<li>
+<p><code>$setChannelVar[Variable Name;New Value;(Channel ID)]</code>: Establece la variable proporcionada en 'New Value' para el 'Channel ID' proporcionado, o el canal en el que se ejecutó el comando; si no se proporcionó ningún 'Channel ID'.</p>
+</li>
+<li>
+<p><code>$getChannelVar[Variable Name;(Channel ID)]</code>: Obtiene el valor actual de la variable de canal proporcionada. Devuelve el valor actual de la variable de canal si no se proporcionó ningún 'Channel ID'.</p>
+</li>
+</ul>
+<h2 id="economía"><a class="header" href="#economía">Economía</a></h2>
+<h3 id="local-vs-global"><a class="header" href="#local-vs-global">Local vs. Global</a></h3>
+<ul>
+<li>
+<p><strong>Economía Local</strong>: Cambia por servidor. Si un usuario tiene 10,000 monedas en un servidor, en otro tendrá una cantidad diferente. Por ejemplo, Unbelievaboat tiene una economía local. <em>(La economía local usa variables de usuario)</em></p>
+</li>
+<li>
+<p><strong>Economía Global</strong>: No cambia por servidor. Si un usuario tiene 10,000 monedas en un servidor, en otro tendrá la misma cantidad. Por ejemplo, Dank Memer tiene una economía global. <em>(La economía global usa variables de usuario globales)</em></p>
+</li>
+</ul>
+<h3 id="economía-local"><a class="header" href="#economía-local">Economía Local</a></h3>
+<ul>
+<li>Reemplaza "Dinero" con tu variable de efectivo/dinero. Si "Dinero" es el nombre de tu variable de dinero, ¡déjala como está!</li>
+<li>Reemplaza "Cantidad" con la cantidad de dinero que quieres añadir/quitar al usuario. Así: <code>100</code>, <code>$random[1;11]</code>, <code>$random[100;1001]</code>, <code>10000</code>.</li>
+</ul>
+<p>Obtiene el saldo actual del usuario. Si se menciona a un usuario, el bot devolverá el saldo de ese usuario:</p>
+<pre><code>$getUserVar[Money;$mentioned[1]]
 </code></pre>
+<p>Añade dinero al usuario mencionado:</p>
+<pre><code>$setUserVar[Money;$sum[Amount;$getUserVar[Money;$mentioned[1]]];$mentioned[1]]
+</code></pre>
+<p>Añade dinero al usuario que ejecuta el comando:</p>
+<pre><code>$setUserVar[Money;$sum[Amount;$getUserVar[Money]]]
+</code></pre>
+<p>Retira dinero al usuario mencionado:</p>
+<pre><code>$setUserVar[Money;$sub[Amount;$getUserVar[Money;$mentioned[1]]];$mentioned[1]]
+</code></pre>
+<p>Retira dinero al usuario que ejecuta el comando Comando:</p>
+<pre><code>$setUserVar[Money;$sub[Amount;$getUserVar[Money]]]
+</code></pre>
+<h3 id="economía-global"><a class="header" href="#economía-global">Economía global</a></h3>
+<ul>
+<li>
+<p>Reemplaza "Money" por tu variable de efectivo/dinero. Si "Money" es el nombre de tu variable de dinero, ¡déjala como está!</p>
+</li>
+<li>
+<p>Reemplaza "Amount" por la cantidad de dinero que quieres añadir/quitar al usuario. Por ejemplo: <code>100</code>, <code>$random[1;11]</code>, <code>$random[100;1001]</code>, <code>10000</code>.</p>
+</li>
+</ul>
+<p>Obtiene el saldo/cantidad de dinero actual del usuario. Si se menciona a un usuario, el bot devolverá el saldo de ese usuario:</p>
+<pre><code>$getVar[Money;$mentioned[1]]
+</code></pre>
+<p>Añade dinero al usuario mencionado:</p>
+<pre><code>$setVar[Money;$sum[Amount;$getVar[Money;$mentioned[1]]];$mentioned[1]]
+</code></pre>
+<p>Añade dinero al usuario que ejecuta el comando:</p>
+<pre><code>$setVar[Money;$sum[Amount;$getVar[Money;$authorID[]]];$authorID[]]
+</code></pre>
+<p>Retira dinero al usuario mencionado:</p>
+<pre><code>$setVar[Money;$sub[Amount;$getVar[Money;$mentioned[1]]];$mentioned[1]]
+</code></pre>
+<p>Retira dinero al usuario que ejecuta el comando Comando:</p>
+<pre><code>$setVar[Money;$sub[Amount;$getVar[Money;$authorID[]]];$authorID[][]]
+</code></pre>
+<h2 id="clasificaciones"><a class="header" href="#clasificaciones">Clasificaciones</a></h2>
+<p>Puede generar clasificaciones de variables utilizando las siguientes funciones:</p>
+<ul>
+<li><a href="../funciones/getLeaderboardValue.html">$getLeaderboardValue</a> - Obtiene el valor de la tabla de clasificación.</li>
+<li><a href="../funciones/getLeaderboardPosition.html">$getLeaderboardPosition</a> - Obtiene la posicion de un usuario en la tabla (solo valida en numeros).</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../funciones/getLeaderboardValue.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../gen/json.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../funciones/setPrefix.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../Recursos/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -209,11 +301,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../funciones/getLeaderboardValue.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../gen/json.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../funciones/setPrefix.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../Recursos/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

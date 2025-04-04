@@ -1039,6 +1039,136 @@ Music:
 &gt; $jsonJoinArray[music;, ]
 </code></pre>
 <p><img src="gen/../funciones/image-54.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="variables"><a class="header" href="#variables">Variables</a></h1>
+<p>Las variables son la forma en que almacenamos los datos en Amisynth. Los datos se pueden asignar a usuarios, servidores, canales y globalmente. Cada variable tiene dos elementos, que desglosaremos en esta sección.</p>
+<p>Elementos de la variable</p>
+<p><code>Nombre</code>: El nombre de la variable. El bot no puede modificarlo; se utiliza para llamar a la variable actual.</p>
+<p><code>Valor</code>: El valor de la variable. El bot puede modificarlo y se devuelve cuando se llama al nombre de la variable en <code>$getVar</code>/<code>$getUserVar</code>/<code>$getServerVar</code>/<code>$getChannelVar</code>.</p>
+<p><strong>Como iniciar</strong></p>
+<pre><code class="language-python"># Establesca el parametro variables_json como True
+
+bot = AmiClient(prefix="..", variables_json=True)
+</code></pre>
+<p>Ahora podra usar variables y almacenar datos mediante un JSON.</p>
+<blockquote>
+<p>Antes de leer la guia de abajo, recuerde que cuando establesca un valor de variable de cualquier tipo estara creando la variable al mismo tiempo.</p>
+</blockquote>
+<blockquote>
+<p>Recuerde que por el momento las variables se manejan en su propio entorno mediante en un archivo JSON creado automaticamente.</p>
+</blockquote>
+<h2 id="variables-globales-de-usuario---funciones"><a class="header" href="#variables-globales-de-usuario---funciones">Variables globales de usuario - Funciones</a></h2>
+<p><a href="gen/../../funciones/setVar.html"><code>$setVar</code></a>/<a href="gen/../../funciones/getVar.html"><code>$getVar</code></a> son funciones de variables globales, lo que significa que se aplican universalmente (es decir, no cambian por servidor, canal ni usuario).
+Sin embargo, si se proporciona un ID de usuario en el parámetro opcional <code>User ID</code>, se convierte en una variable de usuario global.</p>
+<p>El valor de las variables de usuario globales se mantiene igual para el usuario en todos los servidores. El uso de las variables globales de usuario se ve así:</p>
+<ul>
+<li>
+<p><code>$setVar[Nombre de la variable;Nuevo valor;ID del usuario]</code></p>
+</li>
+<li>
+<p><code>$getVar[Nombre de la variable;ID del usuario]</code></p>
+</li>
+</ul>
+<h2 id="variables-globales---funciones"><a class="header" href="#variables-globales---funciones">Variables globales - Funciones</a></h2>
+<ul>
+<li>
+<p><code>$setVar[Nombre de la variable;Nuevo valor]</code>: Cambia el valor de la variable global proporcionada a 'Nuevo valor'.</p>
+</li>
+<li>
+<p><code>$getVar[Nombre de la variable]</code>: Obtiene el valor actual de la variable global proporcionada.</p>
+</li>
+</ul>
+<blockquote>
+<p>📌 Las variables globales son universales, lo que significa que si la variable se modifica, la modificación se aplica a todos.</p>
+</blockquote>
+<h2 id="variables-de-usuario-por-servidor---funciones"><a class="header" href="#variables-de-usuario-por-servidor---funciones">Variables de usuario por servidor - Funciones</a></h2>
+<p>Las variables de usuario son únicas para cada usuario y varían según el servidor.</p>
+<ul>
+<li>
+<p><code>$setUserVar[Variable Name;New Value;(User ID;Guild ID)]</code>: Establece el valor de la variable proporcionada para el "New Value" del "User ID" y el "Guild ID" especificados, o el autor del comando si no se proporciona el "User ID" y el guild actual si no se proporciona el "Guild ID".</p>
+</li>
+<li>
+<p><code>$getUserVar[Variable Name;(User ID;Guild ID)]</code>: Obtiene el valor actual de la variable de usuario proporcionada. Devuelve el valor de la variable del autor si no se proporciona el "User ID" y utiliza el guild actual si no se proporciona el "Guild ID".</p>
+</li>
+</ul>
+<h2 id="variables-por-servidor---funciones"><a class="header" href="#variables-por-servidor---funciones">Variables por servidor - Funciones</a></h2>
+<p>Las variables del servidor son únicas para cada servidor.</p>
+<ul>
+<li>
+<p><code>$setServerVar[Variable Name;New Value;(Server ID)]</code>: Establece la variable proporcionada como 'New Value' para el 'Server ID' especificado o para el servidor en el que se ejecutó el comando si no se proporcionó ningún 'Server ID'.</p>
+</li>
+<li>
+<p><code>$getServerVar[Variable Name;(Server ID)]</code>: Obtiene el valor actual de la variable del servidor proporcionada. Si no se proporcionó ningún 'Server ID', devuelve el valor actual de la variable del servidor.</p>
+</li>
+</ul>
+<h2 id="variables-de-canal-por-servidor---funciones"><a class="header" href="#variables-de-canal-por-servidor---funciones">Variables de canal por servidor - Funciones</a></h2>
+<ul>
+<li>
+<p><code>$setChannelVar[Variable Name;New Value;(Channel ID)]</code>: Establece la variable proporcionada en 'New Value' para el 'Channel ID' proporcionado, o el canal en el que se ejecutó el comando; si no se proporcionó ningún 'Channel ID'.</p>
+</li>
+<li>
+<p><code>$getChannelVar[Variable Name;(Channel ID)]</code>: Obtiene el valor actual de la variable de canal proporcionada. Devuelve el valor actual de la variable de canal si no se proporcionó ningún 'Channel ID'.</p>
+</li>
+</ul>
+<h2 id="economía"><a class="header" href="#economía">Economía</a></h2>
+<h3 id="local-vs-global"><a class="header" href="#local-vs-global">Local vs. Global</a></h3>
+<ul>
+<li>
+<p><strong>Economía Local</strong>: Cambia por servidor. Si un usuario tiene 10,000 monedas en un servidor, en otro tendrá una cantidad diferente. Por ejemplo, Unbelievaboat tiene una economía local. <em>(La economía local usa variables de usuario)</em></p>
+</li>
+<li>
+<p><strong>Economía Global</strong>: No cambia por servidor. Si un usuario tiene 10,000 monedas en un servidor, en otro tendrá la misma cantidad. Por ejemplo, Dank Memer tiene una economía global. <em>(La economía global usa variables de usuario globales)</em></p>
+</li>
+</ul>
+<h3 id="economía-local"><a class="header" href="#economía-local">Economía Local</a></h3>
+<ul>
+<li>Reemplaza "Dinero" con tu variable de efectivo/dinero. Si "Dinero" es el nombre de tu variable de dinero, ¡déjala como está!</li>
+<li>Reemplaza "Cantidad" con la cantidad de dinero que quieres añadir/quitar al usuario. Así: <code>100</code>, <code>$random[1;11]</code>, <code>$random[100;1001]</code>, <code>10000</code>.</li>
+</ul>
+<p>Obtiene el saldo actual del usuario. Si se menciona a un usuario, el bot devolverá el saldo de ese usuario:</p>
+<pre><code>$getUserVar[Money;$mentioned[1]]
+</code></pre>
+<p>Añade dinero al usuario mencionado:</p>
+<pre><code>$setUserVar[Money;$sum[Amount;$getUserVar[Money;$mentioned[1]]];$mentioned[1]]
+</code></pre>
+<p>Añade dinero al usuario que ejecuta el comando:</p>
+<pre><code>$setUserVar[Money;$sum[Amount;$getUserVar[Money]]]
+</code></pre>
+<p>Retira dinero al usuario mencionado:</p>
+<pre><code>$setUserVar[Money;$sub[Amount;$getUserVar[Money;$mentioned[1]]];$mentioned[1]]
+</code></pre>
+<p>Retira dinero al usuario que ejecuta el comando Comando:</p>
+<pre><code>$setUserVar[Money;$sub[Amount;$getUserVar[Money]]]
+</code></pre>
+<h3 id="economía-global"><a class="header" href="#economía-global">Economía global</a></h3>
+<ul>
+<li>
+<p>Reemplaza "Money" por tu variable de efectivo/dinero. Si "Money" es el nombre de tu variable de dinero, ¡déjala como está!</p>
+</li>
+<li>
+<p>Reemplaza "Amount" por la cantidad de dinero que quieres añadir/quitar al usuario. Por ejemplo: <code>100</code>, <code>$random[1;11]</code>, <code>$random[100;1001]</code>, <code>10000</code>.</p>
+</li>
+</ul>
+<p>Obtiene el saldo/cantidad de dinero actual del usuario. Si se menciona a un usuario, el bot devolverá el saldo de ese usuario:</p>
+<pre><code>$getVar[Money;$mentioned[1]]
+</code></pre>
+<p>Añade dinero al usuario mencionado:</p>
+<pre><code>$setVar[Money;$sum[Amount;$getVar[Money;$mentioned[1]]];$mentioned[1]]
+</code></pre>
+<p>Añade dinero al usuario que ejecuta el comando:</p>
+<pre><code>$setVar[Money;$sum[Amount;$getVar[Money;$authorID[]]];$authorID[]]
+</code></pre>
+<p>Retira dinero al usuario mencionado:</p>
+<pre><code>$setVar[Money;$sub[Amount;$getVar[Money;$mentioned[1]]];$mentioned[1]]
+</code></pre>
+<p>Retira dinero al usuario que ejecuta el comando Comando:</p>
+<pre><code>$setVar[Money;$sub[Amount;$getVar[Money;$authorID[]]];$authorID[][]]
+</code></pre>
+<h2 id="clasificaciones"><a class="header" href="#clasificaciones">Clasificaciones</a></h2>
+<p>Puede generar clasificaciones de variables utilizando las siguientes funciones:</p>
+<ul>
+<li><a href="gen/../funciones/getLeaderboardValue.html">$getLeaderboardValue</a> - Obtiene el valor de la tabla de clasificación.</li>
+<li><a href="gen/../funciones/getLeaderboardPosition.html">$getLeaderboardPosition</a> - Obtiene la posicion de un usuario en la tabla (solo valida en numeros).</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="recusos"><a class="header" href="#recusos">Recusos</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="creación-de-bdfd"><a class="header" href="#creación-de-bdfd">Creación de BDFD</a></h1>
 <p><em>Cómo Bot Amisynth se convirtió en lo que es hoy.</em></p>
@@ -2592,16 +2722,302 @@ $if[hola==$message[-1];Verdadero;Falso]
 <div style="break-before: page; page-break-before: always;"></div><h1 id="and"><a class="header" href="#and">$and[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="or"><a class="header" href="#or">$or[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="setuservar"><a class="header" href="#setuservar">$setUserVar[]</a></h1>
+<p>Actualiza el valor de una variable para un usuario.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$setUserVar[Nombre de la variable;Nuevo valor;(ID de usuario;ID del servidor)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Nombre de la variable</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: La variable que se actualizará.</p>
+</li>
+<li>
+<p><code>Nuevo valor</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El nuevo valor de la variable.</p>
+</li>
+<li>
+<p><code>ID de usuario</code> <code>(Tipo: Copo de nieve || Marca: Opcional)</code>: El usuario al que se asignará el nuevo valor. Si no se proporciona el "ID de usuario", se usa el autor.</p>
+</li>
+<li>
+<p><code>ID del servidor</code> <code>(Tipo: Copo de nieve || Marca: Opcional)</code>: El servidor al que se asignará el nuevo valor. Si no se proporciona el "ID del servidor", se usa el gremio actual.</p>
+</li>
+</ul>
+<blockquote>
+<p>📝 Los valores de las variables de usuario tienen no tienen limite caracteres!.</p>
+</blockquote>
+<blockquote>
+<p>Para más información, consulta la <a href="funciones/../gen/variables.html">Guía de Variables</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="setservervar"><a class="header" href="#setservervar">$setServerVar[]</a></h1>
+<p>Actualiza el valor de una variable para un servidor.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$setServerVar[Nombre de la variable;Nuevo valor;(ID del servidor)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Nombre de la variable</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: La variable que se actualizará.</p>
+</li>
+<li>
+<p><code>Nuevo valor</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El nuevo valor de la variable.</p>
+</li>
+<li>
+<p><code>ID del servidor</code> <code>(Tipo: Copo de nieve || Marca: Opcional)</code>: El servidor al que se asignará el nuevo valor. Si no se proporciona ningún "ID del servidor", se utiliza el servidor actual.</p>
+</li>
+</ul>
+<blockquote>
+<p>📝 Los valores de las variables del servidor no tienen un límite de caracteres).</p>
+</blockquote>
+<blockquote>
+<p>Para más información, consulta la <a href="funciones/../gen/variables.html">Guía de Variables</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="setchannelvar"><a class="header" href="#setchannelvar">$setChannelVar[]</a></h1>
+<p>Actualiza el valor de una variable para un canal.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$setChannelVar[Nombre de la variable;Nuevo valor;(ID del canal)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Nombre de la variable</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: La variable que se actualizará.</p>
+</li>
+<li>
+<p><code>Nuevo valor</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El nuevo valor de la variable.</p>
+</li>
+<li>
+<p><code>ID del canal</code> <code>(Tipo: Copo de nieve || Marca: Opcional)</code>: El canal al que se asignará el nuevo valor. Si no hay "ID del canal", se usará el canal actual.</p>
+</li>
+</ul>
+<blockquote>
+<p>📝 Los valores de las variables de canal no tienen un límite de caracteres!*.</p>
+</blockquote>
+<blockquote>
+<p>Para obtener más información, consulte la <a href="funciones/../gen/variables.html">Guía de variables</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="setvar"><a class="header" href="#setvar">$setVar[]</a></h1>
+<p>Establece el valor de una variable globalmente o para un usuario globalmente.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$setVar[Nombre de la variable;Nuevo valor;(ID de usuario)]
+</code></pre>
+<h3 id="parámetros-6"><a class="header" href="#parámetros-6">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>Nombre de la variable</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: La variable que se actualizará.</p>
+</li>
+<li>
+<p><code>Nuevo valor</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El nuevo valor de la variable.</p>
+</li>
+<li>
+<p><code>ID de usuario</code> <code>(Tipo: Copo de nieve || Marca: Opcional)</code>: El usuario al que se asignará globalmente el nuevo valor. Establece el tipo de variable como usuario global si "ID de usuario" está presente.</p>
+</li>
+</ul>
+<blockquote>
+<p>📝 Los valores de las variables globales no tienen un límite de caracteres.</p>
+</blockquote>
+<blockquote>
+<p>Para obtener más información, consulte la <a href="funciones/../gen/variables.html">Guía de variables</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getuservar"><a class="header" href="#getuservar">$getUserVar[]</a></h1>
+<p>Devuelve el valor de una variable de usuario local.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getUserVar[Nombre de la variable;(ID del usuario;ID del servidor)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Nombre de la variable</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: El nombre de la variable que se obtendrá.</p>
+</li>
+<li>
+<p><code>ID del usuario</code> <code>(Tipo: Cadena, Copo de nieve || Indicador: Vacante)</code>: El usuario para el que se obtendrá el valor de la variable. Si no se proporciona ningún usuario, se utiliza el autor.</p>
+</li>
+<li>
+<p><code>ID del servidor</code> <code>(Tipo: Copo de nieve || Indicador: Opcional)</code>: El servidor para el que se obtendrá el valor de la variable. Si no se proporciona ningún gremio, se utiliza el gremio actual.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>&lt;@$mentioned[1]&gt; tiene $getUserVar[Money;$mentioned[1]] monedas.
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/69215413/123357288-40157e00-d537-11eb-84bc-71f81764434f.png" alt="ejemplo" /></p>
+<blockquote>
+<p>Para más información, consulta la <a href="funciones/../gen/variables.html">Guía de variables</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getservervar"><a class="header" href="#getservervar">$getServerVar[]</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="gerchannelvar"><a class="header" href="#gerchannelvar">$gerChannelVar[]</a></h1>
+<p>Devuelve el valor de la variable de servidor proporcionada.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getServerVar[Nombre de la variable;(ID del servidor)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Nombre de la variable</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: El nombre de la variable que se obtendrá.</p>
+</li>
+<li>
+<p><code>ID del servidor</code> <code>(Tipo: Copo de nieve, Cadena || Indicador: Opcional)</code>: El servidor para el que se obtendrá el valor. Si no se introduce ningún ID del gremio, se utiliza el servidor actual.</p>
+</li>
+</ul>
+<blockquote>
+<p>Para más información, consulte la <a href="funciones/../gen/variables.html">Guía de variables</a>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getservervar-1"><a class="header" href="#getservervar-1">$getServerVar[]</a></h1>
+<p>Devuelve el valor de la variable de servidor proporcionada.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getServerVar[Nombre de la variable;(ID del servidor)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Nombre de la variable</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: El nombre de la variable que se obtendrá.</p>
+</li>
+<li>
+<p><code>ID del servidor</code> <code>(Tipo: Copo de nieve, Cadena || Indicador: Opcional)</code>: El servidor para el que se obtendrá el valor. Si no se introduce ningún ID del gremio, se utiliza el servidor actual.</p>
+</li>
+</ul>
+<blockquote>
+<p>Para más información, consulte la <a href="funciones/../gen/variables.html">Guía de variables</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getvar"><a class="header" href="#getvar">$getVar[]</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="getleaderboardvalue"><a class="header" href="#getleaderboardvalue">$getLeaderboardValue[]</a></h1>
+<p>Obtiene el valor de una variable global o de usuario global.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getVar[Nombre de la variable;(ID de usuario)]
+</code></pre>
+<blockquote>
+<p>🧙‍♂️ Para una variable global, no es necesario proporcionar un <code>ID de usuario</code>. Para una variable de usuario global, sí es necesario.</p>
+</blockquote>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Nombre de la variable</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: El nombre de la variable de la que se obtiene el valor.</p>
+</li>
+<li>
+<p><code>ID de usuario</code> <code>(Tipo: Copo de nieve, Cadena || Indicador: Vacantable)</code>: El usuario del que se obtiene el valor (si es un usuario global).</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>¡Tienes $getVar[Money;$mentioned[1]] monedas!
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/69215413/126073974-8fbd707f-aaeb-4500-9db2-7ac923b3df74.png" alt="ejemplo" /></p>
+<blockquote>
+<p>Para más información, consulta la <a href="funciones/../gen/variables.html">Guía de variables</a>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getleaderboardvalue"><a class="header" href="#getleaderboardvalue">$getLeaderboardValue</a></h1>
+<p>Obtiene un valor de la tabla de clasificación.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getLeaderboardValue[Tipo de variable;Nombre de la variable;Tipo de ordenación;Posición;(Tipo de retorno)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Tipo de variable</code> <code>(Tipo: Enum || Indicador: Obligatorio)</code>: El tipo de la variable. Tipos de variable:</p>
+<ul>
+<li><code>users</code> - <a href="funciones/../gen/variables.html#user-variables">Variable de usuario</a></li>
+<li><code>guilds</code> - <a href="funciones/../gen/variables.html#server-variables">Variable de servidor</a></li>
+<li><code>channels</code> - <a href="funciones/../gen/variables.html#server-variables">Variable de canal por servidor</a></li>
+<li><code>global</code> - <a href="funciones/../gen//variables.html#globalglobal-user-variables">Variable global</a></li>
+<li><code>global_users</code> - <a href="funciones/../gen//variables.html#globalglobal-user-variables">Variable de usuario global</a></li>
+</ul>
+</li>
+<li>
+<p><code>Variable name</code> <code>(Type: String || Flag: Required)</code>: El nombre de la variable para la que se generará la tabla de clasificación.</p>
+</li>
+<li>
+<p><code>Sort type</code> <code>(Type: Enum || Flag: Required)</code>: El tipo de ordenación. Tipos de ordenación:</p>
+<ul>
+<li><code>asc</code> - Ordena los valores en orden ascendente.</li>
+<li><code>desc</code> - Ordena los valores en orden descendente.</li>
+</ul>
+</li>
+<li>
+<p><code>Posición</code> <code>(Tipo: Cuántos || Indicador: Obligatorio)</code>: La posición en la tabla de clasificación que se obtendrá, p. ej., <code>1</code>, <code>3</code>, etc.</p>
+</li>
+<li>
+<p><code>Tipo de retorno</code> <code>(Tipo: Enumeración || Indicador: Opcional)</code>: El tipo de retorno. Tipos de retorno:</p>
+<ul>
+<li><code>id</code> - Devuelve el ID del usuario que pertenece a esta posición.</li>
+<li><code>value</code> - Devuelve el valor de la variable de esta posición.</li>
+<li><code>ninguno</code> - Si se excluye este campo, se devolverá <code>Nombre de usuario - Valor</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$title[**Clasificación global**]
+$description[#1 - $getLeaderboardValue[globalUser;Money;asc;1]
+#2 - $getLeaderboardValue[globalUser;Money;asc;2]
+#3 - $getLeaderboardValue[globalUser;Money;asc;3]
+#4 - $getLeaderboardValue[globalUser;Money;asc;4]
+#5 - $getLeaderboardValue[globalUser;Money;asc;5]
+#6 - $getLeaderboardValue[globalUser;Money;asc;6]
+#7 - $getLeaderboardValue[globalUser;Money;asc;7]
+#8 - $getLeaderboardValue[globalUser;Money;asc;8]
+#9 - $getLeaderboardValue[globalUser;Money;asc;9]
+#10 - $getLeaderboardValue[globalUser;Money;asc;10]]
+$color[FFFF00]
+$c[Esto es para variables de usuario globales.]
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getleaderboardposition"><a class="header" href="#getleaderboardposition">$getLeaderboardPosition[]</a></h1>
+<p>Obtener la posición en una tabla de clasificación para una variable dada.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getLeaderboardPosition[Tipo de variable;Nombre de variable;Tipo de ordenación;(ID de usuario)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Tipo de variable</code> <code>(Tipo: Enumeración || Indicador: Obligatorio)</code>: El tipo de variable. Tipos de variable:</p>
+<ul>
+<li><code>users</code> - <a href="funciones/../gen/variables.html#user-variables">Variable de usuario</a></li>
+<li><code>guilds</code> - <a href="funciones/../gen/variables.html#server-variables">Variable de servidor</a></li>
+<li><code>channels</code> - <a href="funciones/../gen/variables.html#server-variables">Variable de canal por servidor</a></li>
+<li><code>global</code> - <a href="funciones/../gen//variables.html#globalglobal-user-variables">Variable global</a></li>
+<li><code>global_users</code> - <a href="funciones/../gen//variables.html#globalglobal-user-variables">Variable de usuario global</a></li>
+</ul>
+</li>
+<li>
+<p><code>Nombre de variable</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: El nombre de la variable para la que se generará la tabla de clasificación.</p>
+</li>
+<li>
+<p><code>Tipo de ordenamiento</code> <code>(Tipo: Enumeración || Indicador: Obligatorio)</code>: El tipo de ordenamiento. Tipos de ordenamiento:</p>
+<ul>
+<li>
+<p><code>asc</code> - Ordena los valores en orden ascendente.</p>
+</li>
+<li>
+<p><code>desc</code> - Ordena los valores en orden descendente.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>ID de usuario</code>: <code>(Tipo: Copo de nieve || Indicador: Opcional)</code>: El ID del usuario del que desea obtener una posición en la tabla de clasificación.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>Su posición en la tabla de clasificación: $getLeaderboardPosition[usuario;Monedas;desc]
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="setprefix"><a class="header" href="#setprefix">$setPrefix[]</a></h1>
+<p>Establece el nuevo prefijo del bot por servidor.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$setPrefix[Prefijo;(ID de servidor)]
+</code></pre>
+<p><strong>Argumentos</strong></p>
+<ul>
+<li>
+<p><code>Prefijo</code>  <code>(Tipo: Copo de nieve || Marca: Obligatorio)</code>: Establece el nuevo prefijo del bot al servidor unicamente.</p>
+</li>
+<li>
+<p><code>ID del servidor</code> <code>(Tipo: Copo de nieve || Marca: Opcional)</code>: El servidor al que se asignará el nuevo valor. Si no se proporciona ningún "ID del servidor", se utiliza el servidor actual.</p>
+</li>
+</ul>
+<p><strong>Ejemplos</strong></p>
+<pre><code class="language-python">bot = AmiClient("!")
+
+bot.new_command(name="etc", 
+                type="text",
+                code="""hola""")
+
+bot.new_command(nane="prefix",
+                type="text",
+                code"""ok $setPrefix[$;$guildID[]]""")
+
+bot.run(..)
+</code></pre>
+<p><img src="funciones/image-61.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="eventos"><a class="header" href="#eventos">Eventos</a></h1>
 <p>Soon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onjoinmember"><a class="header" href="#onjoinmember">$onJoinMember</a></h1>

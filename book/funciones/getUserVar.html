@@ -153,6 +153,29 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="getuservar"><a class="header" href="#getuservar">$getUserVar[]</a></h1>
+<p>Devuelve el valor de una variable de usuario local.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getUserVar[Nombre de la variable;(ID del usuario;ID del servidor)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Nombre de la variable</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: El nombre de la variable que se obtendrá.</p>
+</li>
+<li>
+<p><code>ID del usuario</code> <code>(Tipo: Cadena, Copo de nieve || Indicador: Vacante)</code>: El usuario para el que se obtendrá el valor de la variable. Si no se proporciona ningún usuario, se utiliza el autor.</p>
+</li>
+<li>
+<p><code>ID del servidor</code> <code>(Tipo: Copo de nieve || Indicador: Opcional)</code>: El servidor para el que se obtendrá el valor de la variable. Si no se proporciona ningún gremio, se utiliza el gremio actual.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>&lt;@$mentioned[1]&gt; tiene $getUserVar[Money;$mentioned[1]] monedas.
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/69215413/123357288-40157e00-d537-11eb-84bc-71f81764434f.png" alt="ejemplo" /></p>
+<blockquote>
+<p>Para más información, consulta la <a href="../gen/variables.html">Guía de variables</a>.</p>
+</blockquote>
 
                     </main>
 

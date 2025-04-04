@@ -152,7 +152,60 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="getleaderboardvalue"><a class="header" href="#getleaderboardvalue">$getLeaderboardValue[]</a></h1>
+                        <h1 id="getleaderboardvalue"><a class="header" href="#getleaderboardvalue">$getLeaderboardValue</a></h1>
+<p>Obtiene un valor de la tabla de clasificación.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getLeaderboardValue[Tipo de variable;Nombre de la variable;Tipo de ordenación;Posición;(Tipo de retorno)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Tipo de variable</code> <code>(Tipo: Enum || Indicador: Obligatorio)</code>: El tipo de la variable. Tipos de variable:</p>
+<ul>
+<li><code>users</code> - <a href="../gen/variables.html#user-variables">Variable de usuario</a></li>
+<li><code>guilds</code> - <a href="../gen/variables.html#server-variables">Variable de servidor</a></li>
+<li><code>channels</code> - <a href="../gen/variables.html#server-variables">Variable de canal por servidor</a></li>
+<li><code>global</code> - <a href="../gen//variables.html#globalglobal-user-variables">Variable global</a></li>
+<li><code>global_users</code> - <a href="../gen//variables.html#globalglobal-user-variables">Variable de usuario global</a></li>
+</ul>
+</li>
+<li>
+<p><code>Variable name</code> <code>(Type: String || Flag: Required)</code>: El nombre de la variable para la que se generará la tabla de clasificación.</p>
+</li>
+<li>
+<p><code>Sort type</code> <code>(Type: Enum || Flag: Required)</code>: El tipo de ordenación. Tipos de ordenación:</p>
+<ul>
+<li><code>asc</code> - Ordena los valores en orden ascendente.</li>
+<li><code>desc</code> - Ordena los valores en orden descendente.</li>
+</ul>
+</li>
+<li>
+<p><code>Posición</code> <code>(Tipo: Cuántos || Indicador: Obligatorio)</code>: La posición en la tabla de clasificación que se obtendrá, p. ej., <code>1</code>, <code>3</code>, etc.</p>
+</li>
+<li>
+<p><code>Tipo de retorno</code> <code>(Tipo: Enumeración || Indicador: Opcional)</code>: El tipo de retorno. Tipos de retorno:</p>
+<ul>
+<li><code>id</code> - Devuelve el ID del usuario que pertenece a esta posición.</li>
+<li><code>value</code> - Devuelve el valor de la variable de esta posición.</li>
+<li><code>ninguno</code> - Si se excluye este campo, se devolverá <code>Nombre de usuario - Valor</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$title[**Clasificación global**]
+$description[#1 - $getLeaderboardValue[globalUser;Money;asc;1]
+#2 - $getLeaderboardValue[globalUser;Money;asc;2]
+#3 - $getLeaderboardValue[globalUser;Money;asc;3]
+#4 - $getLeaderboardValue[globalUser;Money;asc;4]
+#5 - $getLeaderboardValue[globalUser;Money;asc;5]
+#6 - $getLeaderboardValue[globalUser;Money;asc;6]
+#7 - $getLeaderboardValue[globalUser;Money;asc;7]
+#8 - $getLeaderboardValue[globalUser;Money;asc;8]
+#9 - $getLeaderboardValue[globalUser;Money;asc;9]
+#10 - $getLeaderboardValue[globalUser;Money;asc;10]]
+$color[FFFF00]
+$c[Esto es para variables de usuario globales.]
+</code></pre>
 
                     </main>
 
