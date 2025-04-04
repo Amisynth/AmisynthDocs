@@ -1,6 +1,6 @@
 # $setUserVar[]
 
-Actualiza el valor de una variable para un usuario.
+Crea y Actualiza el valor de una variable para un usuario.
 
 **Sintaxis**
 ```
@@ -16,6 +16,17 @@ $setUserVar[Nombre de la variable;Nuevo valor;(ID de usuario;ID del servidor)]
 
 - `ID del servidor` `(Tipo: Copo de nieve || Marca: Opcional)`: El servidor al que se asignará el nuevo valor. Si no se proporciona el "ID del servidor", se usa el gremio actual.
 
-> 📝 Los valores de las variables de usuario tienen no tienen limite caracteres!.
+> 📝 Los valores de las variables de usuario tienen no tienen limite caracteres!
+
+
+**Ejemplo**
+
+```python
+Variable creada y establecida correctamente
+$setUserVar[dinero;0;$authorID[]]
+```
+
+![alt text](image-64.png)
+
 
 > Para más información, consulta la [Guía de Variables](../gen/variables.md).

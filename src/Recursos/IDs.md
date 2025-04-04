@@ -41,7 +41,7 @@ Tomemos `$deleteChannels` como ejemplo. Para eliminar un canal, necesitamos la I
 $deleteChannels[320949943877437847]
 $c[Elimina la ID de canal personalizada proporcionada.]
 
-$deleteChannels[$channelID]
+$deleteChannels[$channelID[]]
 $c[Elimina el canal donde se ejecutó el comando.]
 
 $deleteChannels[$mentionedChannels[1]]
@@ -51,14 +51,14 @@ $c[Elimina el canal mencionado.]
 > ⚠️ Ten cuidado de no mezclar tipos de ID. Por ejemplo, no puedes hacer `$deleteChannels[$authorID]`. Esto es porque `$authorID` devuelve una ID de usuario, no una ID de canal.
 
 ### Funciones que devuelven IDs
-- `$authorID`/`$userID`/`$roleID`/`$channelID`
-- `$findUser`/`$findChannel`/`$findRole`
-- `$mentioned`/`$mentionedChannels`/`$mentionedRoles`
+- `$authorID[]`/`$userID[]`/`$roleID[]`/`$channelID[]`
+- `$findUser[]`/`$findChannel[]`/`$findRole[]`
+- `$mentioned[]`/`$mentionedChannels[]`/`$mentionedRoles[]`
 - ... *(algunas otras)*
 
 ### Usando IDs para Menciones
-- Mencionando a un usuario - `<@userID>`
-- Mencionando un rol - `<@&roleID>`
+- Mencionando a un usuario - `<@userID[]>`
+- Mencionando un rol - `<@&roleID[]>`
 - Mencionando un canal - `<#channelID>`
 - Usando un emoji
     - Estático - `<:emojiName:emojiID>`

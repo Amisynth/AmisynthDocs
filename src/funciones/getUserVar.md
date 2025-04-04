@@ -15,9 +15,10 @@ $getUserVar[Nombre de la variable;(ID del usuario;ID del servidor)]
 
 **Ejemplo**
 ```
-<@$mentioned[1]> tiene $getUserVar[Money;$mentioned[1]] monedas.
+Tu dinero es $getUserVar[dinero;$authorID[]]
 ```
 
-![ejemplo](https://user-images.githubusercontent.com/69215413/123357288-40157e00-d537-11eb-84bc-71f81764434f.png)
+![alt text](image-68.png)
+
 
 > Para más información, consulta la [Guía de variables](../gen/variables.md).

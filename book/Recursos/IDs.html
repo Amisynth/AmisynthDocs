@@ -185,7 +185,7 @@
 <pre><code>$deleteChannels[320949943877437847]
 $c[Elimina la ID de canal personalizada proporcionada.]
 
-$deleteChannels[$channelID]
+$deleteChannels[$channelID[]]
 $c[Elimina el canal donde se ejecutó el comando.]
 
 $deleteChannels[$mentionedChannels[1]]
@@ -196,15 +196,15 @@ $c[Elimina el canal mencionado.]
 </blockquote>
 <h3 id="funciones-que-devuelven-ids"><a class="header" href="#funciones-que-devuelven-ids">Funciones que devuelven IDs</a></h3>
 <ul>
-<li><code>$authorID</code>/<code>$userID</code>/<code>$roleID</code>/<code>$channelID</code></li>
-<li><code>$findUser</code>/<code>$findChannel</code>/<code>$findRole</code></li>
-<li><code>$mentioned</code>/<code>$mentionedChannels</code>/<code>$mentionedRoles</code></li>
+<li><code>$authorID[]</code>/<code>$userID[]</code>/<code>$roleID[]</code>/<code>$channelID[]</code></li>
+<li><code>$findUser[]</code>/<code>$findChannel[]</code>/<code>$findRole[]</code></li>
+<li><code>$mentioned[]</code>/<code>$mentionedChannels[]</code>/<code>$mentionedRoles[]</code></li>
 <li>... <em>(algunas otras)</em></li>
 </ul>
 <h3 id="usando-ids-para-menciones"><a class="header" href="#usando-ids-para-menciones">Usando IDs para Menciones</a></h3>
 <ul>
-<li>Mencionando a un usuario - <code>&lt;@userID&gt;</code></li>
-<li>Mencionando un rol - <code>&lt;@&amp;roleID&gt;</code></li>
+<li>Mencionando a un usuario - <code>&lt;@userID[]&gt;</code></li>
+<li>Mencionando un rol - <code>&lt;@&amp;roleID[]&gt;</code></li>
 <li>Mencionando un canal - <code>&lt;#channelID&gt;</code></li>
 <li>Usando un emoji
 <ul>

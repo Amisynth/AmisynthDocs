@@ -14,4 +14,12 @@ $getServerVar[Nombre de la variable;(ID del servidor)]
 
 - `ID del servidor` `(Tipo: Copo de nieve, Cadena || Indicador: Opcional)`: El servidor para el que se obtendrá el valor. Si no se introduce ningún ID del gremio, se utiliza el servidor actual.
 
+**Ejemplo**
+
+```
+El contador del canal esta en $getChannelVar[contador;$channelID[]]
+```
+
+![alt text](image-70.png)
+
 > Para más información, consulte la [Guía de variables](../gen/variables.md).

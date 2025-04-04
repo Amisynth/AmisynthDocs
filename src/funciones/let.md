@@ -14,7 +14,6 @@ $let[Nombre;Valor]
 
 **Ejemplo**
 ```plaintext
-
 $let[user;Izana]
 Usuario guardado: $get[user]
 ```

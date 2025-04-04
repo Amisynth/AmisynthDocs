@@ -16,4 +16,13 @@ $setVar[Nombre de la variable;Nuevo valor;(ID de usuario)]
 
 > 📝 Los valores de las variables globales no tienen un límite de caracteres.
 
+**Ejemplo**
+
+```
+Variable global creada y establecida correctamente
+$setVar[contador;1]
+```
+
+![alt text](image-67.png)
+
 > Para obtener más información, consulte la [Guía de variables](../gen/variables.md).

@@ -80,7 +80,7 @@
     - [$reactionEvent[]](funciones/reactionEvent.md)
     - [$if[]](funciones/if.md)
     - [$checkCondition[]](funciones/checkCondition.md)
-    - [$and[]](funciones/funciones.md)
+    - [$and[]](funciones/and.md)
     - [$or[]](funciones/or.md)
     - [$setUserVar[]](funciones/setUserVar.md)
     - [$setServerVar[]](funciones/setServerVar.md)

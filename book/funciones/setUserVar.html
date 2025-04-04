@@ -153,7 +153,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="setuservar"><a class="header" href="#setuservar">$setUserVar[]</a></h1>
-<p>Actualiza el valor de una variable para un usuario.</p>
+<p>Crea y Actualiza el valor de una variable para un usuario.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code>$setUserVar[Nombre de la variable;Nuevo valor;(ID de usuario;ID del servidor)]
 </code></pre>
@@ -173,8 +173,13 @@
 </li>
 </ul>
 <blockquote>
-<p>📝 Los valores de las variables de usuario tienen no tienen limite caracteres!.</p>
+<p>📝 Los valores de las variables de usuario tienen no tienen limite caracteres!</p>
 </blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-python">Variable creada y establecida correctamente
+$setUserVar[dinero;0;$authorID[]]
+</code></pre>
+<p><img src="image-64.png" alt="alt text" /></p>
 <blockquote>
 <p>Para más información, consulta la <a href="../gen/variables.html">Guía de Variables</a>.</p>
 </blockquote>

@@ -13,4 +13,11 @@ $getServerVar[Nombre de la variable;(ID del servidor)]
 
 - `ID del servidor` `(Tipo: Copo de nieve, Cadena || Indicador: Opcional)`: El servidor para el que se obtendrá el valor. Si no se introduce ningún ID del gremio, se utiliza el servidor actual.
 
+
+```
+El canal de bienvenidas es: <#$getServerVar[bievenidas_canal;$guildID[]]>
+```
+
+![alt text](image-69.png)
+
 > Para más información, consulte la [Guía de variables](../gen/variables.md).

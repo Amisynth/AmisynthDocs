@@ -1266,7 +1266,7 @@ $description[Descripción #3;3]
 <pre><code>$deleteChannels[320949943877437847]
 $c[Elimina la ID de canal personalizada proporcionada.]
 
-$deleteChannels[$channelID]
+$deleteChannels[$channelID[]]
 $c[Elimina el canal donde se ejecutó el comando.]
 
 $deleteChannels[$mentionedChannels[1]]
@@ -1277,15 +1277,15 @@ $c[Elimina el canal mencionado.]
 </blockquote>
 <h3 id="funciones-que-devuelven-ids"><a class="header" href="#funciones-que-devuelven-ids">Funciones que devuelven IDs</a></h3>
 <ul>
-<li><code>$authorID</code>/<code>$userID</code>/<code>$roleID</code>/<code>$channelID</code></li>
-<li><code>$findUser</code>/<code>$findChannel</code>/<code>$findRole</code></li>
-<li><code>$mentioned</code>/<code>$mentionedChannels</code>/<code>$mentionedRoles</code></li>
+<li><code>$authorID[]</code>/<code>$userID[]</code>/<code>$roleID[]</code>/<code>$channelID[]</code></li>
+<li><code>$findUser[]</code>/<code>$findChannel[]</code>/<code>$findRole[]</code></li>
+<li><code>$mentioned[]</code>/<code>$mentionedChannels[]</code>/<code>$mentionedRoles[]</code></li>
 <li>... <em>(algunas otras)</em></li>
 </ul>
 <h3 id="usando-ids-para-menciones"><a class="header" href="#usando-ids-para-menciones">Usando IDs para Menciones</a></h3>
 <ul>
-<li>Mencionando a un usuario - <code>&lt;@userID&gt;</code></li>
-<li>Mencionando un rol - <code>&lt;@&amp;roleID&gt;</code></li>
+<li>Mencionando a un usuario - <code>&lt;@userID[]&gt;</code></li>
+<li>Mencionando un rol - <code>&lt;@&amp;roleID[]&gt;</code></li>
 <li>Mencionando un canal - <code>&lt;#channelID&gt;</code></li>
 <li>Usando un emoji
 <ul>
@@ -2596,8 +2596,7 @@ Music:
 </li>
 </ul>
 <p><strong>Ejemplo</strong></p>
-<pre><code class="language-plaintext">
-$let[user;Izana]
+<pre><code class="language-plaintext">$let[user;Izana]
 Usuario guardado: $get[user]
 </code></pre>
 <p><img src="funciones/image-23.png" alt="alt text" /></p>
@@ -2720,9 +2719,55 @@ $if[hola==$message[-1];Verdadero;Falso]
 </code></pre>
 <p><img src="funciones/image-58.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="and"><a class="header" href="#and">$and[]</a></h1>
+<p>Devuelve <code>True</code> si todas las condiciones proporcionadas son verdaderas; de lo contrario, devuelve <code>False</code>.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$and[Condiciones;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Condiciones</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: Comprobaciones que se realizarán. Todas las condiciones deben ser verdaderas para que esta función devuelva <code>true</code>. Separe las condiciones con <code>;</code>.</li>
+</ul>
+<p><strong>Signos</strong>
+<code>==</code> - Igual</p>
+<p><code>!=</code> - Distinto</p>
+<p><code>&lt;</code> - Menor que</p>
+<p><code>&gt;</code> - Mayor que</p>
+<p><code>&gt;=</code> - Mayor o igual que</p>
+<p><code>&lt;=</code> - Menor o igual que</p>
+<ul>
+<li>El significado de estos signos puede variar según el orden o la intención de la sentencia if.</li>
+<li>Si usa texto como <code>x</code> o <code>y</code>, no puede usar otros signos además de <code>==</code> y <code>!=</code>. Sin embargo, para los números, puedes usar cualquier signo de la lista anterior.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$and[$nickname[]==Saul;$message[-1]==Prueba]
+</code></pre>
+<p><img src="funciones/image-63.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="or"><a class="header" href="#or">$or[]</a></h1>
+<p>Devuelve <code>True</code> si al menos una de las condiciones proporcionadas es <code>True</code>; de lo contrario, devuelve <code>False</code>.</p>
+<h2 id="sintaxis-10"><a class="header" href="#sintaxis-10">Sintaxis</a></h2>
+<pre><code>$or[Condiciones;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Condiciones</code> <code>(Tipo: Cadena || Flag: Requerido)</code>: La condición a comprobar. Separe las condiciones con <code>;</code>.</li>
+</ul>
+<p><strong>Signos</strong>
+<code>==</code> - Igual</p>
+<p><code>!=</code> - No igual</p>
+<p><code>&lt;</code> - Menor que</p>
+<p><code>&gt;</code> - Mayor que</p>
+<p><code>&gt;=</code> - Mayor o igual que</p>
+<p><code>&lt;=</code> - Menor o igual que</p>
+<ul>
+<li>El significado de estos signos puede variar según el orden o la intención de la sentencia if.</li>
+<li>Si usa texto como <code>x</code> o <code>y</code>, no puede usar otros signos además de <code>==</code> y <code>!=</code>. Sin embargo, para los números, puedes usar cualquier signo de la lista anterior.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$or[$nickname[]==Saul;$message[-1]==Actualizar]
+</code></pre>
+<p><img src="funciones/image-62.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="setuservar"><a class="header" href="#setuservar">$setUserVar[]</a></h1>
-<p>Actualiza el valor de una variable para un usuario.</p>
+<p>Crea y Actualiza el valor de una variable para un usuario.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code>$setUserVar[Nombre de la variable;Nuevo valor;(ID de usuario;ID del servidor)]
 </code></pre>
@@ -2742,13 +2787,18 @@ $if[hola==$message[-1];Verdadero;Falso]
 </li>
 </ul>
 <blockquote>
-<p>📝 Los valores de las variables de usuario tienen no tienen limite caracteres!.</p>
+<p>📝 Los valores de las variables de usuario tienen no tienen limite caracteres!</p>
 </blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-python">Variable creada y establecida correctamente
+$setUserVar[dinero;0;$authorID[]]
+</code></pre>
+<p><img src="funciones/image-64.png" alt="alt text" /></p>
 <blockquote>
 <p>Para más información, consulta la <a href="funciones/../gen/variables.html">Guía de Variables</a>.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="setservervar"><a class="header" href="#setservervar">$setServerVar[]</a></h1>
-<p>Actualiza el valor de una variable para un servidor.</p>
+<p>Actualiza y crea el valor de una variable para un servidor.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code>$setServerVar[Nombre de la variable;Nuevo valor;(ID del servidor)]
 </code></pre>
@@ -2767,6 +2817,11 @@ $if[hola==$message[-1];Verdadero;Falso]
 <blockquote>
 <p>📝 Los valores de las variables del servidor no tienen un límite de caracteres).</p>
 </blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-python">Variable de servidor creada y establecida correctamente
+$setServerVar[bievenidas_canal;135499761223467422;$guildID[]]
+</code></pre>
+<p><img src="funciones/image-65.png" alt="alt text" /></p>
 <blockquote>
 <p>Para más información, consulta la <a href="funciones/../gen/variables.html">Guía de Variables</a>.</p>
 </blockquote>
@@ -2788,8 +2843,13 @@ $if[hola==$message[-1];Verdadero;Falso]
 </li>
 </ul>
 <blockquote>
-<p>📝 Los valores de las variables de canal no tienen un límite de caracteres!*.</p>
+<p>📝 Los valores de las variables de canal no tienen un límite de caracteres!</p>
 </blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-ruby">Variable de canal por servidor creada y establecida correctamente
+$setChannelVar[contador;1;$channelID[]]
+</code></pre>
+<p><img src="funciones/image-66.png" alt="alt text" /></p>
 <blockquote>
 <p>Para obtener más información, consulte la <a href="funciones/../gen/variables.html">Guía de variables</a>.</p>
 </blockquote>
@@ -2813,6 +2873,11 @@ $if[hola==$message[-1];Verdadero;Falso]
 <blockquote>
 <p>📝 Los valores de las variables globales no tienen un límite de caracteres.</p>
 </blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code>Variable global creada y establecida correctamente
+$setVar[contador;1]
+</code></pre>
+<p><img src="funciones/image-67.png" alt="alt text" /></p>
 <blockquote>
 <p>Para obtener más información, consulte la <a href="funciones/../gen/variables.html">Guía de variables</a>.</p>
 </blockquote>
@@ -2834,9 +2899,9 @@ $if[hola==$message[-1];Verdadero;Falso]
 </li>
 </ul>
 <p><strong>Ejemplo</strong></p>
-<pre><code>&lt;@$mentioned[1]&gt; tiene $getUserVar[Money;$mentioned[1]] monedas.
+<pre><code>Tu dinero es $getUserVar[dinero;$authorID[]]
 </code></pre>
-<p><img src="https://user-images.githubusercontent.com/69215413/123357288-40157e00-d537-11eb-84bc-71f81764434f.png" alt="ejemplo" /></p>
+<p><img src="funciones/image-68.png" alt="alt text" /></p>
 <blockquote>
 <p>Para más información, consulta la <a href="funciones/../gen/variables.html">Guía de variables</a>.</p>
 </blockquote>
@@ -2854,6 +2919,9 @@ $if[hola==$message[-1];Verdadero;Falso]
 <p><code>ID del servidor</code> <code>(Tipo: Copo de nieve, Cadena || Indicador: Opcional)</code>: El servidor para el que se obtendrá el valor. Si no se introduce ningún ID del gremio, se utiliza el servidor actual.</p>
 </li>
 </ul>
+<pre><code>El canal de bienvenidas es: &lt;#$getServerVar[bievenidas_canal;$guildID[]]&gt;
+</code></pre>
+<p><img src="funciones/image-69.png" alt="alt text" /></p>
 <blockquote>
 <p>Para más información, consulte la <a href="funciones/../gen/variables.html">Guía de variables</a>.</p>
 </blockquote>
@@ -2871,6 +2939,10 @@ $if[hola==$message[-1];Verdadero;Falso]
 <p><code>ID del servidor</code> <code>(Tipo: Copo de nieve, Cadena || Indicador: Opcional)</code>: El servidor para el que se obtendrá el valor. Si no se introduce ningún ID del gremio, se utiliza el servidor actual.</p>
 </li>
 </ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>El contador del canal esta en $getChannelVar[contador;$channelID[]]
+</code></pre>
+<p><img src="funciones/image-70.png" alt="alt text" /></p>
 <blockquote>
 <p>Para más información, consulte la <a href="funciones/../gen/variables.html">Guía de variables</a>.</p>
 </blockquote>
@@ -2892,9 +2964,9 @@ $if[hola==$message[-1];Verdadero;Falso]
 </li>
 </ul>
 <p><strong>Ejemplo</strong></p>
-<pre><code>¡Tienes $getVar[Money;$mentioned[1]] monedas!
+<pre><code>El contador global esra en $getVar[contador]
 </code></pre>
-<p><img src="https://user-images.githubusercontent.com/69215413/126073974-8fbd707f-aaeb-4500-9db2-7ac923b3df74.png" alt="ejemplo" /></p>
+<p><img src="funciones/image-71.png" alt="alt text" /></p>
 <blockquote>
 <p>Para más información, consulta la <a href="funciones/../gen/variables.html">Guía de variables</a>.</p>
 </blockquote>
@@ -2939,16 +3011,16 @@ $if[hola==$message[-1];Verdadero;Falso]
 </ul>
 <p><strong>Ejemplo</strong></p>
 <pre><code>$title[**Clasificación global**]
-$description[#1 - $getLeaderboardValue[globalUser;Money;asc;1]
-#2 - $getLeaderboardValue[globalUser;Money;asc;2]
-#3 - $getLeaderboardValue[globalUser;Money;asc;3]
-#4 - $getLeaderboardValue[globalUser;Money;asc;4]
-#5 - $getLeaderboardValue[globalUser;Money;asc;5]
-#6 - $getLeaderboardValue[globalUser;Money;asc;6]
-#7 - $getLeaderboardValue[globalUser;Money;asc;7]
-#8 - $getLeaderboardValue[globalUser;Money;asc;8]
-#9 - $getLeaderboardValue[globalUser;Money;asc;9]
-#10 - $getLeaderboardValue[globalUser;Money;asc;10]]
+$description[#1 - $getLeaderboardValue[global_users;Money;asc;1]
+#2 - $getLeaderboardValue[global_users;Money;asc;2]
+#3 - $getLeaderboardValue[global_users;Money;asc;3]
+#4 - $getLeaderboardValue[global_users;Money;asc;4]
+#5 - $getLeaderboardValue[global_users;Money;asc;5]
+#6 - $getLeaderboardValue[global_users;Money;asc;6]
+#7 - $getLeaderboardValue[global_users;Money;asc;7]
+#8 - $getLeaderboardValue[global_users;Money;asc;8]
+#9 - $getLeaderboardValue[global_users;Money;asc;9]
+#10 - $getLeaderboardValue[global_users;Money;asc;10]]
 $color[FFFF00]
 $c[Esto es para variables de usuario globales.]
 </code></pre>
@@ -3150,7 +3222,7 @@ bot.run(..)
 <p><img src="Eventos/image-1.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onreactionadd"><a class="header" href="#onreactionadd">$onReactionAdd</a></h1>
 <p><code>$onReactionAdd</code> es un evento que se activa cuando un usuario añade una reacción a un mensaje en el servidor.</p>
-<h3 id="sintaxis-10"><a class="header" href="#sintaxis-10"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-11"><a class="header" href="#sintaxis-11"><strong>Sintaxis</strong></a></h3>
 <pre><code>$onReactionAdd
 </code></pre>
 <blockquote>

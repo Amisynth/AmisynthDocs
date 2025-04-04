@@ -153,6 +153,29 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="and"><a class="header" href="#and">$and[]</a></h1>
+<p>Devuelve <code>True</code> si todas las condiciones proporcionadas son verdaderas; de lo contrario, devuelve <code>False</code>.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$and[Condiciones;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Condiciones</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: Comprobaciones que se realizarán. Todas las condiciones deben ser verdaderas para que esta función devuelva <code>true</code>. Separe las condiciones con <code>;</code>.</li>
+</ul>
+<p><strong>Signos</strong>
+<code>==</code> - Igual</p>
+<p><code>!=</code> - Distinto</p>
+<p><code>&lt;</code> - Menor que</p>
+<p><code>&gt;</code> - Mayor que</p>
+<p><code>&gt;=</code> - Mayor o igual que</p>
+<p><code>&lt;=</code> - Menor o igual que</p>
+<ul>
+<li>El significado de estos signos puede variar según el orden o la intención de la sentencia if.</li>
+<li>Si usa texto como <code>x</code> o <code>y</code>, no puede usar otros signos además de <code>==</code> y <code>!=</code>. Sin embargo, para los números, puedes usar cualquier signo de la lista anterior.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$and[$nickname[]==Saul;$message[-1]==Prueba]
+</code></pre>
+<p><img src="image-63.png" alt="alt text" /></p>
 
                     </main>
 

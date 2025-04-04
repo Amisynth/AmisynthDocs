@@ -153,12 +153,35 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="or"><a class="header" href="#or">$or[]</a></h1>
+<p>Devuelve <code>True</code> si al menos una de las condiciones proporcionadas es <code>True</code>; de lo contrario, devuelve <code>False</code>.</p>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$or[Condiciones;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Condiciones</code> <code>(Tipo: Cadena || Flag: Requerido)</code>: La condición a comprobar. Separe las condiciones con <code>;</code>.</li>
+</ul>
+<p><strong>Signos</strong>
+<code>==</code> - Igual</p>
+<p><code>!=</code> - No igual</p>
+<p><code>&lt;</code> - Menor que</p>
+<p><code>&gt;</code> - Mayor que</p>
+<p><code>&gt;=</code> - Mayor o igual que</p>
+<p><code>&lt;=</code> - Menor o igual que</p>
+<ul>
+<li>El significado de estos signos puede variar según el orden o la intención de la sentencia if.</li>
+<li>Si usa texto como <code>x</code> o <code>y</code>, no puede usar otros signos además de <code>==</code> y <code>!=</code>. Sin embargo, para los números, puedes usar cualquier signo de la lista anterior.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$or[$nickname[]==Saul;$message[-1]==Actualizar]
+</code></pre>
+<p><img src="image-62.png" alt="alt text" /></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../funciones/funciones.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../funciones/and.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -172,7 +195,7 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../funciones/funciones.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../funciones/and.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 

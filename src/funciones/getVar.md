@@ -17,9 +17,9 @@ $getVar[Nombre de la variable;(ID de usuario)]
 
 **Ejemplo**
 ```
-¡Tienes $getVar[Money;$mentioned[1]] monedas!
+El contador global esra en $getVar[contador]
 ```
 
-![ejemplo](https://user-images.githubusercontent.com/69215413/126073974-8fbd707f-aaeb-4500-9db2-7ac923b3df74.png)
+![alt text](image-71.png)
 
 > Para más información, consulta la [Guía de variables](../gen/variables.md).
