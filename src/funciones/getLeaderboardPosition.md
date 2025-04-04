@@ -28,5 +28,11 @@ $getLeaderboardPosition[Tipo de variable;Nombre de variable;Tipo de ordenación;
 
 **Ejemplo**
 ```
-Su posición en la tabla de clasificación: $getLeaderboardPosition[usuario;Monedas;desc]
+Tu ID: $authorID[]
+Tu Posicion: $getLeaderboardPosition[users;dinero;asc;$authorID[]]
 ```
+
+![alt text](image-73.png)
+
+
+> Para más información, consulta la [Guía de Variables](../gen/variables.md).

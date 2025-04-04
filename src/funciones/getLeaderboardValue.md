@@ -31,17 +31,21 @@ $getLeaderboardValue[Tipo de variable;Nombre de la variable;Tipo de ordenación;
 
 **Ejemplo**
 ```
-$title[**Clasificación global**]
-$description[#1 - $getLeaderboardValue[global_users;Money;asc;1]
-#2 - $getLeaderboardValue[global_users;Money;asc;2]
-#3 - $getLeaderboardValue[global_users;Money;asc;3]
-#4 - $getLeaderboardValue[global_users;Money;asc;4]
-#5 - $getLeaderboardValue[global_users;Money;asc;5]
-#6 - $getLeaderboardValue[global_users;Money;asc;6]
-#7 - $getLeaderboardValue[global_users;Money;asc;7]
-#8 - $getLeaderboardValue[global_users;Money;asc;8]
-#9 - $getLeaderboardValue[global_users;Money;asc;9]
-#10 - $getLeaderboardValue[global_users;Money;asc;10]]
+$title[**Clasificación de usuario**]
+$description[#1 - $getLeaderboardValue[users;dinero;asc;1]
+#2 - $getLeaderboardValue[users;dinero;asc;2]
+#3 - $getLeaderboardValue[users;dinero;asc;3]
+#4 - $getLeaderboardValue[users;dinero;asc;4]
+#5 - $getLeaderboardValue[users;dinero;asc;5]
+#6 - $getLeaderboardValue[users;dinero;asc;6]
+#7 - $getLeaderboardValue[users;dinero;asc;7]
+#8 - $getLeaderboardValue[users;dinero;asc;8]
+#9 - $getLeaderboardValue[users;dinero;asc;9]
+#10 - $getLeaderboardValue[users;dinero;asc;10]]
 $color[FFFF00]
-$c[Esto es para variables de usuario globales.]
+
 ```
+
+![alt text](image-72.png)
+
+> Para más información, consulta la [Guía de Variables](../gen/variables.md).

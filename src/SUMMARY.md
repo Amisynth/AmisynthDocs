@@ -42,6 +42,7 @@
     - [$sendMessage[]](funciones/sendMessage.md)
     - [$channelID[]](funciones/channelID.md)
     - [$username[]](funciones/username.md)
+    - [$nickname[]](funciones/nickname.md)
     - [$channelNames[]](funciones/channelNames.md)
     - [$categoryNames[]](funciones/categoryNames.md)
     - [$customID[]](funciones/customID.md)
@@ -93,6 +94,8 @@
     - [$getLeaderboardValue[]](funciones/getLeaderboardValue.md)
     - [$getLeaderboardPosition[]](funciones/getLeaderboardPosition.md)
     - [$setPrefix[]](funciones/setPrefix.md)
+    - [$sum[]](funciones/sum.md)
+    - [$divide[]](funciones/dividie.md)
 
 - [Eventos](Eventos/README.md)
     - [$onJoinMember](Eventos/onJoinMember.md)
