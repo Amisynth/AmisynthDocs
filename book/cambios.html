@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="dark sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -34,7 +34,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "dark";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc.js"></script>
@@ -63,7 +63,7 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             const html = document.documentElement;
-            html.classList.remove('light')
+            html.classList.remove('dark')
             html.classList.add(theme);
             html.classList.add("js");
         </script>
@@ -153,6 +153,52 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="cambios"><a class="header" href="#cambios">Cambios</a></h1>
+<h1 id="2025"><a class="header" href="#2025">2025</a></h1>
+<h2 id="marzo"><a class="header" href="#marzo">Marzo</a></h2>
+<ul>
+<li>Add <code>$abs[]</code></li>
+<li>Add <code>$average[]</code></li>
+<li>Add <code>$divide[]</code></li>
+<li>Add <code>$multi[]</code></li>
+<li>Add <code>$porcent[]</code></li>
+<li>Add <code>$power[]</code></li>
+<li>Add <code>$round[]</code></li>
+<li>Add <code>$sqtr[]</code></li>
+<li>Add <code>$sub[]</code></li>
+<li>Add <code>$sum[]</code></li>
+<li>Add <code>$getCreateSlash[]</code></li>
+<li>Add <code>$getSlashID[]</code></li>
+<li>Add <code>$getTypeSlash[]</code></li>
+<li>Add <code>$messageSlash[]</code></li>
+<li>Add <code>$getTimestamp[]</code></li>
+<li>Add <code>$findUser[]</code></li>
+<li>Add <code>$findRole[]</code></li>
+<li>Add <code>$findChannel[]</code></li>
+<li>Add <code>$replaceText[]</code></li>
+<li>Add <code>$repeatMessage[]</code></li>
+<li>Add <code>$clear[]</code></li>
+</ul>
+<h2 id="abril"><a class="header" href="#abril">Abril</a></h2>
+<ul>
+<li>Add <code>$httpResult[]</code></li>
+<li>Add <code>$httpGet[]</code></li>
+<li>Add <code>$httpPatch[]</code></li>
+<li>Add <code>$httpPost[]</code></li>
+<li>Add <code>$httpPut[]</code></li>
+<li>Add <code>$httpDelete[]</code></li>
+<li>Add <code>$httpAddHeader[]</code></li>
+<li>Add <code>$removeComponent[]</code></li>
+<li>Add <code>$removeButtons[]</code></li>
+<li>Add <code>$editButton[]</code></li>
+<li>Add <code>$newSelectMenu[]</code></li>
+<li>Add <code>$addSelectMenuOption[]</code></li>
+<li>Add <code>$getMenuValueOption[]</code></li>
+<li>Add <code>$getSelectMenuID[]</code></li>
+<li>Add <code>$roleGrant[]</code></li>
+<li>Add <code>$mentionedRoles[]</code></li>
+<li>Add <code>$mentioned[]</code></li>
+<li>Add <code>$mentionedChannels[]</code></li>
+</ul>
 
                     </main>
 

@@ -1,0 +1,440 @@
+<!DOCTYPE HTML>
+<html lang="en" class="dark sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Botones - AmisynthDocs</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "dark";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('dark')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AmisynthDocs</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="botones"><a class="header" href="#botones">Botones</a></h1>
+<p>En esta sección, aprenderá a usar el componente de botón.</p>
+<h2 id="contenido"><a class="header" href="#contenido">Contenido</a></h2>
+<p><a href="#functions-used"><strong>Funciones utilizadas</strong></a> &gt; <a href="#button-style"><strong>Estilo de botón</strong></a> &gt; <a href="#button-type"><strong>Tipo de botón</strong></a> &gt; <a href="#addbutton"><strong>$addButton[]</strong></a> &gt; <a href="#editbutton"><strong>$editButton[]</strong></a> &gt; <a href="#removebuttons-1"><strong>$removeButtons[]</strong></a> &gt; <a href="#removecomponent"><strong>$removeComponent[]</strong></a> &gt; <a href="#create-interaction"><strong>Crear interacción</strong></a></p>
+<h2 id="funciones-utilizadas"><a class="header" href="#funciones-utilizadas">Funciones utilizadas</a></h2>
+<ul>
+<li>
+<p><a href="../funciones/addButton.html"><code>$addButton[]</code></a></p>
+</li>
+<li>
+<p><a href="../funciones/editButton.html"><code>$editButton[]</code></a></p>
+</li>
+<li>
+<p><a href="../funciones/removeButtonsComplex.html"><code>$removeButtons[]</code></a></p>
+</li>
+<li>
+<p><a href="../funciones/removeComponent.html"><code>$removeComponent[]</code></a></p>
+</li>
+<li>
+<p><a href="../Eventos//callbacks/onInteraction.html"><code>$onInteraction</code></a></p>
+</li>
+</ul>
+<h2 id="estilo-de-botón"><a class="header" href="#estilo-de-botón">Estilo de botón</a></h2>
+<p>Los botones pueden tener diferentes estilos <em>(colores de fondo)</em>.
+Aquí se muestran todos los valores posibles para el argumento de la función <code>style</code>.</p>
+<ul>
+<li>
+<p><code>primary</code> - Botón azul</p>
+</li>
+<li>
+<p><code>secondary</code> - Botón gris</p>
+</li>
+<li>
+<p><code>success</code> - Botón verde</p>
+</li>
+<li>
+<p><code>danger</code> - Botón rojo</p>
+</li>
+<li>
+<p><code>link</code> - Botón de redirección</p>
+</li>
+</ul>
+<p><img src="image.png" alt="alt text" /></p>
+<p><img src="image-1.png" alt="alt text" /></p>
+<blockquote>
+<p>Si se usa el estilo <code>link</code>, el botón <strong>no enviará</strong> ninguna interacción.</p>
+</blockquote>
+<h2 id="tipo-de-botón"><a class="header" href="#tipo-de-botón">Tipo de botón</a></h2>
+<p>Existen dos tipos de botones: <code>interactivo</code> y <code>link</code>.</p>
+<p>Al pulsar un botón interactivo, se envía una interacción que puede usarse junto con <code>$onInteraction</code>.</p>
+<p>Cada botón interactivo tiene un <code>ID</code>. Una devolución de llamada <code>$onInteraction</code> solo se activará al presionar el botón con el mismo <code>ID</code>.
+Los botones interactivos pueden usar todos los <code>style</code> excepto <code>link</code>.</p>
+<blockquote>
+<p>Los botones de enlace <strong>no envían</strong> interacciones. Al presionarlos, redirigen al usuario a un sitio web.</p>
+<p>Los botones de enlace <strong>deben</strong> establecer el valor del argumento <code>style</code> en <code>link</code>.</p>
+</blockquote>
+<h1 id="addbutton"><a class="header" href="#addbutton">$addButton[]</a></h1>
+<p>Agrega un botón al mensaje de respuesta.</p>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$addButton[¿Nueva fila?;ID/URL de interacción;Etiqueta;Estilo;(¿Deshabilitar?;Emoji;ID del mensaje)]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<ul>
+<li><code>¿Nueva fila?</code> <code>(Tipo: Bool || Marca: Obligatorio)</code>: Si se establece en <code>yes</code>, el botón aparecerá en una nueva fila. Si se establece en <code>no</code>, el botón aparecerá en la misma fila que el botón anterior.</li>
+</ul>
+<p>Un mensaje puede tener un máximo de 25 botones (5 filas de 5 botones).</p>
+<ul>
+<li><code>ID de interacción/URL</code> <code>(Tipo: Cadena, URL || Indicador: Obligatorio)</code>: Según el tipo de botón, se puede configurar como <code>ID de interacción</code>, que se utiliza en la devolución de llamada  <code>$onInteraction</code>, o como <code>URL</code> si se trata de un botón de enlace.</li>
+</ul>
+<p>No se necesita <code>$onInteraction</code> para la URL.</p>
+<ul>
+<li>
+<p><code>Etiqueta</code> <code>(Tipo: Cadena || Indicador: Vaciable)</code>: El texto visible en el botón.</p>
+</li>
+<li>
+<p><code>Estilo</code> <code>(Tipo: Enumeración || Indicador: Obligatorio)</code>: Se utiliza para especificar el color de fondo del botón. Si el botón tiene un enlace/URL, <strong>debe</strong> configurar este valor como <code>link</code>. Consulte <a href="#button-style">esta sección</a> para obtener más información. - <code>¿Desactivar?</code> <code>(Tipo: Bool || Marca: Vacantable)</code>: Si se establece en <code>sí</code>, el botón no se puede presionar. El valor predeterminado es <code>no</code>.</p>
+</li>
+<li>
+<p><code>Emoji</code> <code>(Tipo: Emoji || Marca: Vacantable)</code>: Agrega un emoji dentro del botón. Los emojis deben pegarse como <em>unicode</em> o tener el siguiente formato <code>&lt;:emoji name:emoji ID&gt;</code>.</p>
+</li>
+<li>
+<p><code>ID de mensaje</code> <code>(Tipo: Copo de nieve || Marca: Vacantable)</code>: Agrega un botón al ID de mensaje proporcionado. Es importante tener en cuenta que el autor del ID de mensaje proporcionado <strong>debe</strong> ser el bot.</p>
+</li>
+</ul>
+<blockquote>
+<p>Los botones interactivos no pueden tener <code>ID</code> duplicados en el mismo mensaje. Por ejemplo, no se pueden tener dos botones con el ID establecido en <code>test</code>.</p>
+</blockquote>
+<p>Si se usa <code>URL</code> en el argumento <code>ID de interacción/URL</code>, <strong>debe</strong> empezar con <code>http://</code> o <code>https://</code></p>
+<p><strong>Ejemplo</strong></p>
+<pre><code>Test
+$addButton[false;value;Prueba de boton;primary;false]
+</code></pre>
+<p><img src="../funciones/image-2.png" alt="alt text" /></p>
+<h1 id="editbutton"><a class="header" href="#editbutton">$editButton[]</a></h1>
+<p>Edita un botón existente.</p>
+<h2 id="sintaxis-1"><a class="header" href="#sintaxis-1">Sintaxis</a></h2>
+<pre><code>$editButton[ID/URL de interacción; Etiqueta; Estilo; (¿Deshabilitar?; Emoji; ID del mensaje)]
+</code></pre>
+<h3 id="parámetros-1"><a class="header" href="#parámetros-1">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>ID/URL de interacción</code> <code>(Tipo: Cadena, URL || Marca: Obligatorio)</code>: Según el tipo de botón, se establece como un <code>ID de interacción</code>, que se utiliza en la devolución de llamada <code>$onInteraction[ID de interacción]</code>, o como una <code>URL</code> si se trata de un botón de enlace.</p>
+</li>
+<li>
+<p><code>Etiqueta</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El texto visible en el botón.</p>
+</li>
+<li>
+<p><code>Style</code> <code>(Type: Enum || Flag: Required)</code>: Se utiliza para especificar el color de fondo del botón. Si el botón tiene un enlace/URL, <strong>debe</strong> establecer este valor en <code>link</code>. Consulte <a href="#button-style">esta sección</a> para obtener más detalles.</p>
+</li>
+<li>
+<p><code>Disable?</code> <code>(Type: Bool || Flag: Vacantable)</code>: Si se establece en <code>yes</code>, el botón no se puede presionar. El valor predeterminado es <code>no</code>. <em>(Opcional)</em></p>
+</li>
+<li>
+<p><code>Emoji</code> <code>(Type: Emoji || Flag: Vacantable)</code>: Edita un emoji dentro del botón. Los emojis deben pegarse como <em>unicode</em> o tener el siguiente formato <code>&lt;:emoji name:emoji ID&gt;</code>. <em>(Opcional)</em></p>
+</li>
+<li>
+<p><code>Message ID</code> <code>(Type: Snowflake || Flag: Vacantable)</code>: Edita un botón en un mensaje con el ID proporcionado. Es importante tener en cuenta que el autor del ID del mensaje proporcionado <strong>debe</strong> ser el bot. <em>(Opcional)</em></p>
+</li>
+</ul>
+<h2 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h2>
+<h4 id="desencadenador-oninteraction"><a class="header" href="#desencadenador-oninteraction">Desencadenador: <code>$onInteraction</code></a></h4>
+<pre><code>$editButton[test;Nuevo Texto;success;true;🔥;1358169514323480982]
+</code></pre>
+<p><img src="image-2.png" alt="alt text" /></p>
+<p><img src="image-3.png" alt="alt text" /></p>
+<h1 id="removebuttons"><a class="header" href="#removebuttons">$removeButtons[]</a></h1>
+<p>Elimina todos los botones del mensaje especificado. ## Sintaxis</p>
+<pre><code>$removeButtons[ID del mensaje]
+</code></pre>
+<h3 id="parámetros-2"><a class="header" href="#parámetros-2">Parámetros</a></h3>
+<ul>
+<li><code>ID del mensaje</code> <code>(Tipo: Copo de nieve || Marca: Obligatorio)</code>: Elimina los botones del mensaje con el ID proporcionado. Es importante tener en cuenta que el autor del ID del mensaje <strong>debe</strong> ser el bot.</li>
+</ul>
+<h2 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo</a></h2>
+<pre><code>$removeButtons[1358169514323480982]
+</code></pre>
+<p><img src="image-4.png" alt="alt text" /></p>
+<h1 id="removecomponent"><a class="header" href="#removecomponent">$removeComponent[]</a></h1>
+<p>Elimina un componente específico de un mensaje. ## Sintaxis</p>
+<pre><code>$removeComponent[ID/URL de interacción;(ID del mensaje)]
+</code></pre>
+<blockquote>
+<p>Esta función admite <a href="../selectMenus/aboutSelectMenu.html">select-menu</a> y <a href="../gen/Botones.html">button</a>.</p>
+</blockquote>
+<h3 id="parámetros-3"><a class="header" href="#parámetros-3">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>ID/URL de interacción</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: El ID de interacción del botón que se eliminará del mensaje, establece <code>-1</code> para eliminar todos los compenentes (Incluye Select Menus).</p>
+</li>
+<li>
+<p><code>ID del mensaje</code> <code>(Tipo: Copo de nieve || Marca: Vacante)</code>: Elimina el botón del mensaje con el ID proporcionado. Es importante tener en cuenta que el autor del ID del mensaje <strong>debe</strong> ser el bot. <em>(Opcional)</em></p>
+</li>
+</ul>
+<h2 id="ejemplo-2"><a class="header" href="#ejemplo-2">Ejemplo</a></h2>
+<pre><code>$removeComponent[-1;1358169514323480982]
+</code></pre>
+<p><img src="image-4.png" alt="alt text" /></p>
+<h1 id="crear-interacción"><a class="header" href="#crear-interacción">Crear interacción</a></h1>
+<h3 id="ejemplo-con-la-devolución-de-llamada-oninteraction"><a class="header" href="#ejemplo-con-la-devolución-de-llamada-oninteraction">Ejemplo con la devolución de llamada <code>$onInteraction</code>:</a></h3>
+<ol>
+<li>
+<p>Cree dos comandos con los activadores <code>!example</code> y <code>$onInteraction</code>.</p>
+</li>
+<li>
+<p>Pegue el siguiente código:
+Código del comando con el disparador <code>!example</code>:</p>
+</li>
+</ol>
+<pre><code>$nomention
+¡Haga clic en el botón de abajo!
+$addButton[no;test;Click;primary]
+$addButton[no;button;Button disabled;secondary;yes]
+$addButton[yes;https://botdesignerdiscord.com/;Link;link]
+</code></pre>
+<p>Código del comando con el disparador <code>$onInteraction</code>:</p>
+<pre><code>$editButton[test;Clicked;danger;yes]
+$sendMessage[$username hello!]
+</code></pre>
+<p><img src="image-5.png" alt="alt text" /></p>
+<blockquote>
+<p>Tenga en cuenta que el ID de interacción proporcionado en <code>$onInteraction</code> es el mismo que el proporcionado en <code>$addButton[]</code>.</p>
+<p>En <code>$addButton[]</code>, <code>true</code> se usa para el argumento <code>new row?</code> para que el botón aparezca en la siguiente fila. 3. Ejecuta el comando <code>!example</code></p>
+</blockquote>
+<h3 id="ejemplo-con-la-devolución-de-llamada-oninteraction-1"><a class="header" href="#ejemplo-con-la-devolución-de-llamada-oninteraction-1">Ejemplo con la devolución de llamada <code>$onInteraction</code>:</a></h3>
+<ol>
+<li>Crea dos comandos con los disparadores <code>!test</code> y <code>$onInteraction</code>.</li>
+<li>Pega el siguiente código:
+Código para el comando con el disparador <code>!test</code>:</li>
+</ol>
+<pre><code>Haz clic en el botón de abajo.
+$addButton[false;prueba;Clic;primary]
+$addButton[false;botón;Botón deshabilitado;secondary;true]
+$addButton[true;https://botdesignerdiscord.com/;Enlace;link]
+</code></pre>
+<p>Código para el nombre del evento <code>$onInteraction</code>:</p>
+<pre><code class="language-python">bot = ..
+
+bot.new_event("$onInteraction", 
+              """
+$if[$checkCondition[$customID[]==prueba];
+$editButton[prueba;Clicked;danger;true;;$messageID[]]
+$sendMessage[$username ¡hola!]
+;]
+               """)
+
+bot.run(..)
+</code></pre>
+<blockquote>
+<p>Tenga en cuenta que el ID de interacción devuelto por <code>$customID[]</code> será tEl mismo que el proporcionado en <code>$addButton[]</code></p>
+<p>En <code>$addButton[]</code>, se usa <code>true</code> para el argumento <code>new row?</code> para que el botón aparezca en la siguiente fila.</p>
+</blockquote>
+<ol start="3">
+<li>Ejecutar el comando <code>!test</code></li>
+</ol>
+<p><img src="image-5.png" alt="alt text" /></p>
+<blockquote>
+<p>¿Cómo funcionan <a href="../Eventos/onInteraction.html"><code>$onInteraction</code></a>?</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../gen/Interacciones.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../gen/texto.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../gen/Interacciones.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../gen/texto.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

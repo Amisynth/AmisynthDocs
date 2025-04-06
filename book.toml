@@ -4,5 +4,7 @@ multilingual = true
 src = "src"
 title = "AmisynthDocs"
 
+
 [output.html]
-favicon = "https://ibb.co/s9ptHDhY"
+default-theme = "dark"  
+preferred-dark-theme = "navy"

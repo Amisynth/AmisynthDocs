@@ -11,9 +11,12 @@
 
     - [General](gen/intro_gen.md)
         - [Interacciones](gen/Interacciones.md)
+            - [Botones](gen/Botones.md)
+
         - [Divicion Texto](gen/texto.md)
         - [JSON Funciones](gen/json.md)
         - [Variables](gen/variables.md)
+        - [HTTP Funciones](gen/https.md)
 
     - [Recusos](Recursos/README.md)
         - [Creacion](Recursos/Creacion.md)
@@ -95,7 +98,18 @@
     - [$getLeaderboardPosition[]](funciones/getLeaderboardPosition.md)
     - [$setPrefix[]](funciones/setPrefix.md)
     - [$sum[]](funciones/sum.md)
-    - [$divide[]](funciones/dividie.md)
+    - [$divide[]](funciones/divide.md)
+    - [$sub[]](funciones/sub.md)
+    - [$multi[]](funciones/multi.md)
+    - [$replaceText[]](funciones/replaceText.md)
+    - [$argsCheck[]](funciones/argsCheck.md)
+    - [$eval[]](funciones/eval.md)
+    - [$message[]](funciones/message.md)
+    - [$removeButtons[]](funciones/removeButtons.md)
+    - [$removeComponents[]](funciones/removeComponents.md)
+    - [$editButton[]](funciones/editButton.md)
+    - [$repeatMessage[]](funciones/editButton.md)
+
 
 - [Eventos](Eventos/README.md)
     - [$onJoinMember](Eventos/onJoinMember.md)
