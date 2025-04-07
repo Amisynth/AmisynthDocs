@@ -1,4 +1,5 @@
-# $suma
+# $sum[]
+
 Devuelve la suma de los números proporcionados.
 
 **Sintaxis**

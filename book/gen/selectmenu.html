@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Divicion Texto - AmisynthDocs</title>
+        <title>Select Menus - AmisynthDocs</title>
 
 
         <!-- Custom HTML head -->
@@ -152,161 +152,163 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="divicion-de-texto"><a class="header" href="#divicion-de-texto">Divicion de Texto</a></h1>
-<p>En esta sección, aprenderá cómo utilizar la división de texto.</p>
-<h2 id="funciones-utilizadas"><a class="header" href="#funciones-utilizadas">Funciones utilizadas</a></h2>
+                        <h1 id="menú-de-selección"><a class="header" href="#menú-de-selección">Menú de selección</a></h1>
+<p>En esta sección, aprenderá a usar el componente Menú de selección.</p>
+<h2 id="contenido"><a class="header" href="#contenido">Contenido</a></h2>
+<p><a href="#newSelectMenu"><strong>$newSelectMenu[]</strong></a> &gt; <a href="#addSelectMenuOption"><strong>$addSelectMenuOption[]</strong></a> &gt; <a href="#editSelectMenuOption"><strong>$editSelectMenuOption[]</strong></a> &gt; <a href="#getSelectMenuID"><strong>$getSelectMenuID[]</strong></a> &gt; <a href="#getMenuValueOption"><strong>$getMenuValueOption[]</strong></a></p>
+<h2 id="funciones-utilizadas"><a class="header" href="#funciones-utilizadas">Funciones Utilizadas</a></h2>
 <ul>
 <li>
-<p><a href="../funciones/textSplit.html"><code>$textSplit[]</code></a></p>
+<p><a href="../funciones/newSelectMenu.html"><code>$newSelectMenu[]</code></a></p>
 </li>
 <li>
-<p><a href="../funciones/splitText.html"><code>$splitText[]</code></a></p>
+<p><a href="../funciones/addSelectMenuOption.html"><code>$addSelectMenuOption[]</code></a></p>
 </li>
 <li>
-<p><a href="../funciones/getTextSplitLength.html"><code>$getTextSplitLength[]</code></a></p>
+<p><a href="../funciones/editSelectMenu.html"><code>$editSelectMenu[]</code></a></p>
 </li>
 <li>
-<p><a href="../funciones/getTextSplitIndex.html"><code>$getTextSplitIndex[]</code></a></p>
+<p><a href="../funciones/editSelectMenuOption.html"><code>$editSelectMenuOption[]</code></a></p>
 </li>
 <li>
-<p><a href="../funciones/joinSplitText.html"><code>$joinSplitText[]</code></a></p>
+<p><a href="../funciones/getSelectMenuID.html"><code>$getSelectMenuID[]</code></a></p>
 </li>
 <li>
-<p><a href="../funciones/removeSplitTextElement.html"><code>$removeSplitTextElement[]</code></a></p>
+<p><a href="../Eventos//callbacks/getMenuValueOption.html"><code>$getMenuValueOption[]</code></a></p>
 </li>
 <li>
-<p><a href="../funciones/editSplitText.html"><code>$editSplitText[]</code></a></p>
+<p><a href="../Eventos/onInteraction.html"><code>$onInteraction</code></a></p>
 </li>
 </ul>
-<h2 id="textsplit"><a class="header" href="#textsplit">$textSplit[]</a></h2>
-<p>Divide el texto proporcionado utilizando un separador y guarda el valor temporalmente.</p>
-<p><strong>Sintaxis</strong></p>
-<pre><code>$textSplit[Texto;Separador]
+<h2 id="muestras"><a class="header" href="#muestras">Muestras</a></h2>
+<p><img src="https://user-images.githubusercontent.com/70456337/194143249-eb32bed6-5fc9-4d7b-b88c-65b37dfcbfc9.png" alt="Vista previa 1" />
+<img src="https://user-images.githubusercontent.com/70456337/194143111-bf128046-3428-4226-840d-9ea4b0569677.png" alt="Vista previa 2" /></p>
+<h2 id="creación-de-un-menú-de-selección"><a class="header" href="#creación-de-un-menú-de-selección">Creación de un menú de selección</a></h2>
+<pre><code>$newSelectMenu[Menu ID;Min;Max;(Placeholder;Message ID)]
 </code></pre>
-<p><strong>Parámetros</strong></p>
 <ul>
-<li>
-<p><code>Texto</code> (Tipo: String || Opcional): El texto a dividir.</p>
-</li>
-<li>
-<p><code>Separador</code> (Tipo: String || Opcional): El carácter o cadena utilizada para dividir el texto.</p>
-<ul>
-<li>Si este parámetro está vacío, el texto se dividirá por cada carácter individualmente.</li>
+<li><code>Menu ID</code> - Se utiliza para la retrollamada <code>$onInteraction[ID]</code>. Funciona de la misma manera que <a href="../buttons/aboutButtons.html">buttons</a>.</li>
+<li><code>Mín</code>: cantidad mínima de valores que se pueden seleccionar.</li>
+<li><code>Máx</code>: cantidad máxima de valores que se pueden seleccionar.</li>
+<li><code>Marcador de posición</code>: texto que aparece si no se selecciona ninguna opción.</li>
+<li><code>ID del mensaje</code>: ID de un mensaje al que se debe añadir el menú de selección. Por defecto, es la respuesta del bot.</li>
 </ul>
-</li>
-</ul>
-<p><strong>Ejemplo</strong></p>
-<pre><code class="language-plaintext">$textSplit[hello-world-!;-]
-&gt; $splitText[2]
+<h2 id="añadir-una-opción"><a class="header" href="#añadir-una-opción">Añadir una opción</a></h2>
+<pre><code>$addSelectMenuOption[ID de la opción del menú;Etiqueta;Valor;Descripción;(Predeterminado;Emoji;ID del mensaje)]
 </code></pre>
-<p><img src="../funciones/image-29.png" alt="alt text" /></p>
-<h2 id="splittext"><a class="header" href="#splittext">$splitText[]</a></h2>
-<p>Cada fragmento de texto separado tiene un número de índice. <code>$splitText</code> es una función que devuelve uno de los elementos del texto dividido según el índice especificado o los signos <code>&lt;</code> y <code>&gt;</code> para obtener el primer o último elemento, respectivamente.</p>
-<p><strong>Sintaxis</strong></p>
-<pre><code>$splitText[Índice]
-</code></pre>
-<p><strong>Parámetros</strong></p>
 <ul>
-<li>
-<p><code>Índice</code> (Tipo: Número o Símbolo || Obligatorio): El índice del fragmento de texto a obtener.</p>
-<ul>
-<li>Usa un número (<code>2</code>, <code>3</code>, etc.) para obtener el fragmento en esa posición.</li>
-<li>Usa <code>&lt;</code> para obtener el primer fragmento.</li>
-<li>Usa <code>&gt;</code> para obtener el último fragmento.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Ejemplo</strong></p>
-<pre><code class="language-plaintext">$textSplit[hello world !; ]
-&gt; $splitText[&lt;]   // Obtiene "hello"
-&gt; $splitText[2]   // Obtiene "world"
-&gt; $splitText[&gt;]   // Obtiene "!"
-</code></pre>
-<p><img src="../funciones/image-31.png" alt="alt text" /></p>
-<h2 id="gettextsplitlength"><a class="header" href="#gettextsplitlength">$getTextSplitLength[]</a></h2>
-<p>Devuelve la cantidad de fragmentos obtenidos después de dividir un texto con <code>$textSplit[]</code>.</p>
-<p><strong>Sintaxis</strong></p>
-<pre><code>$getTextSplitLength
-</code></pre>
-<p><strong>Ejemplo #1</strong></p>
-<pre><code class="language-plaintext">$textSplit[hello%world%!;%]
-&gt; $getTextSplitLength   // Devuelve 3
-</code></pre>
-<p><img src="../funciones/image-30.png" alt="alt text" /></p>
-<h2 id="gettextsplitindex"><a class="header" href="#gettextsplitindex">$getTextSplitIndex[]</a></h2>
-<p>Obtiene el índice de un valor dentro del texto dividido con <code>$textSplit</code>. Devuelve <code>-1</code> si el valor no se encuentra.</p>
-<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
-<pre><code>$getTextSplitIndex[Valor]
-</code></pre>
-<h2 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h2>
-<ul>
-<li><code>Valor</code> <code>(Tipo: String || Opcional)</code>: El valor a buscar dentro del texto dividido.</li>
+<li><code>ID de la opción del menú</code>: debe ser el mismo que el ID usado en <code>$newSelectMenu[]</code>.</li>
+<li><code>Etiqueta</code>: nombre de la opción. - <code>Valor</code>: son los datos que se pasan a la función <code>$onInteraction[]</code>. <strong>¡El valor debe ser único en el menú de selección!</strong></li>
+<li><code>Descripción</code>: aparece debajo de <code>etiqueta</code>.</li>
+<li><code>Predeterminado</code>: si la opción está seleccionada por defecto. <strong>¡Solo puede haber una opción por defecto!</strong></li>
+<li><code>Emoji</code>: aparece junto a <code>etiqueta</code>.</li>
+<li><code>ID del mensaje</code>: igual que en <code>$newSelectMenu[]</code>.</li>
 </ul>
 <h2 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h2>
-<h3 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo #1</a></h3>
-<pre><code class="language-plaintext">$textSplit[hello_world_!;_]
-&gt; $getTextSplitIndex[$message[-1]]   // Devuelve el índice del valor en la lista dividida o -1 si no se encuentra
+<h3 id="código-de-selección-de-menú"><a class="header" href="#código-de-selección-de-menú">Código de selección de menú</a></h3>
+<pre><code class="language-python">$newSelectMenu[Ejemplo;1;1;Elegir una opción]
+$addSelectMenuOption[Ejemplo;Primera;primera-opción;La primera opción]
+$addSelectMenuOption[Ejemplo;Segunda;segunda-opción;La segunda opción]
+$addSelectMenuOption[Ejemplo;Tercera;tercera-opción;La tercera opción]
 </code></pre>
-<p><img src="../funciones/image-32.png" alt="alt text" /></p>
-<h2 id="joinsplittext"><a class="header" href="#joinsplittext">$joinSplitText[]</a></h2>
-<p>Esta función devuelve los elementos actuales del texto dividido, unidos con el separador especificado.</p>
-<p><strong>Sintaxis</strong></p>
-<pre><code class="language-plaintext">$joinSplitText[Separador]
+<h3 id="código-de-interacción"><a class="header" href="#código-de-interacción">Código de interacción</a></h3>
+<blockquote>
+<p><code>$onInteraction</code></p>
+</blockquote>
+<pre><code class="language-python">bot = ..
+
+bot.new_event("$onInteraction",
+               """
+$if[$checCondition[$getSelectMenuID[]==Ejemplo];
+
+$if[$checkCondition[$getMenuValueOption[]==primera-opcion];
+Ha elegido la primera opción;]
+
+$if[$checkCondition[$getMenuValueOption[]==segunda-opcion];
+Ha elegido la primera opción;]
+
+$if[$checkCondition[$getMenuValueOption[]==tercera-opcion];
+Ha elegido la primera opción;]
+
+;] """)
+
+bot.run(..)
 </code></pre>
-<p><strong>Parámetro</strong></p>
-<ul>
-<li><code>Separador</code>: <code>(Tipo: String || Opcional)</code> El separador que se usará entre los valores del texto dividido.</li>
-</ul>
-<p><strong>Ejemplo #1</strong></p>
-<pre><code class="language-plaintext">$textSplit[h-o-l-a;$message[1]]
-$joinSplitText[+]
+<h3 id="uso"><a class="header" href="#uso">Uso</a></h3>
+<p><img src="https://user-images.githubusercontent.com/70456337/194143799-a48e72cb-5947-4657-99d3-d4bafaef5eb5.png" alt="Uso 1" /></p>
+<h1 id="menú-de-selección-múltiple"><a class="header" href="#menú-de-selección-múltiple">Menú de selección múltiple</a></h1>
+<p>En el menú de selección, puede elegir no solo una opción, sino varias a la vez.
+Esto se puede entender por la presencia de los argumentos «Mín» y «Máx».</p>
+<h2 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo</a></h2>
+<h3 id="código-del-menú-select"><a class="header" href="#código-del-menú-select">Código del menú Select</a></h3>
+<blockquote>
+<p>Aquí cambiaremos el argumento <code>Máx.</code> a 3.</p>
+</blockquote>
+<pre><code>$newSelectMenu[Ejemplo;1;3;Elegir una opción]
+$addSelectMenuOption[Ejemplo;Primero;primera opción;La primera opción]
+$addSelectMenuOption[Ejemplo;Segundo;segunda opción;La segunda opción]
+$addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
 </code></pre>
-<p><img src="../funciones/image-33.png" alt="alt text" /></p>
-<h2 id="removesplittextelement"><a class="header" href="#removesplittextelement">$removeSplitTextElement[]</a></h2>
-<p>Esta función elimina un elemento del texto dividido según el índice especificado.</p>
-<p><strong>Sintaxis</strong></p>
-<pre><code class="language-plaintext">$removeSplitTextElement[Índice]
+<h3 id="interacción-código"><a class="header" href="#interacción-código">Interacción Código</a></h3>
+<pre><code class="language-python">$if[$checkContains[$getMenuValueOption[];first-option];
+$addCmdReactions[1️⃣]
+;]
+
+$if[$checkContains[$getMenuValueOption[];second-option];
+$addCmdReactions[2️⃣]
+;]
+
+$if[$checkContains[$getMenuValueOption[];third-option];
+$addCmdReactions[3️⃣]
+;]
 </code></pre>
-<p><strong>Parámetro</strong></p>
-<ul>
-<li><code>Índice</code>: <code>(Tipo: Entero || Obligatorio)</code> El índice del valor en <code>$textSplit[]</code> que se desea eliminar.</li>
-</ul>
-<p><strong>Ejemplo</strong></p>
-<pre><code>$textSplit[hola-mundo-!;-]
-$removeSplitTextElement[2]
-&gt; $joinSplitText[-] 
+<blockquote>
+<p>Si elegimos varias opciones, se añadirán varias reacciones.</p>
+</blockquote>
+<h3 id="uso-1"><a class="header" href="#uso-1">Uso</a></h3>
+<p><img src="https://user-images.githubusercontent.com/70456337/194145414-33fa645f-c3ac-4105-95d9-4edc89fcfae5.png" alt="Uso 2.1" />
+<img src="https://user-images.githubusercontent.com/70456337/194145159-6c2996f1-7dbc-4fa3-90e0-9a0b8f5c2d9e.png" alt="Uso 2.2" /></p>
+<h1 id="edición-de-un-menú-de-selección"><a class="header" href="#edición-de-un-menú-de-selección">Edición de un menú de selección</a></h1>
+<p>Puede editar el menú de selección, así como sus opciones. ## $editSelectMenu</p>
+<h3 id="uso-2"><a class="header" href="#uso-2">Uso</a></h3>
+<pre><code>$editSelectMenu[ID del menú;Mín;Máx;(Marcador de posición;ID del mensaje)]
 </code></pre>
-<p><img src="../funciones/image-34.png" alt="alt text" /></p>
-<h2 id="editsplittext"><a class="header" href="#editsplittext">$editSplitText[]</a></h2>
-<p>Esta función reemplaza el elemento en el índice especificado con un nuevo valor.</p>
-<p><strong>Sintaxis</strong></p>
-<pre><code class="language-plaintext">$editSplitText[Índice;Valor]
+<h2 id="editselectmenuoption"><a class="header" href="#editselectmenuoption">$editSelectMenuOption</a></h2>
+<h3 id="uso-3"><a class="header" href="#uso-3">Uso</a></h3>
+<pre><code>$editSelectMenuOption[ID de la opción del menú;Etiqueta;Valor;Descripción;(Predeterminado;Emoji;ID del mensaje)]
 </code></pre>
-<p><strong>Parámetros</strong></p>
-<ul>
-<li>
-<p><code>Índice</code>: <code>(Tipo: Entero || Obligatorio)</code>: El índice del elemento que se desea editar.</p>
-</li>
-<li>
-<p><code>Valor</code>: <code>(Tipo: String || Obligatorio)</code>: El nuevo valor que reemplazará al elemento en el índice proporcionado.</p>
-</li>
-</ul>
-<p><strong>Ejemplo</strong></p>
-<pre><code class="language-plaintext">$textSplit[hello-world-!;-]
-$editSplitText[2;amisynth]
-&gt; $joinSplitText[-]   // Devuelve "hello-bdfd-!"
+<blockquote>
+<p>Como puede observar, los argumentos son exactamente los mismos.</p>
+</blockquote>
+<h2 id="ejemplo-2"><a class="header" href="#ejemplo-2">Ejemplo</a></h2>
+<h3 id="código-de-menú-de-selección"><a class="header" href="#código-de-menú-de-selección">Código de menú de selección</a></h3>
+<pre><code>$newSelectMenu[Ejemplo;1;1;Elegir una opción]
+$addSelectMenuOption[Ejemplo;Primero;primera opción;La primera opción]
+$addSelectMenuOption[Ejemplo;Segundo;segunda opción;La segunda opción]
+$addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
 </code></pre>
-<p><img src="../funciones/image-35.png" alt="alt text" /></p>
+<h3 id="código-de-interacción-1"><a class="header" href="#código-de-interacción-1">Código de interacción</a></h3>
+<h4 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo 1</a></h4>
+<pre><code>$editSelectMenuOption[Ejemplo;Primero;primera opción;La primera opción;false;1️⃣]
+$editSelectMenuOption[Ejemplo;Segundo;segunda opción;La segunda opción;false;2️⃣]
+$editSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción;false;3️⃣]
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/70456337/194148923-a25962f8-544d-4744-8a5c-876d9455eaa3.png" alt="Ejemplo 1" />
+<img src="https://user-images.githubusercontent.com/70456337/194149283-42724349-84d1-4d70-b8e6-d4b58e8c365f.png" alt="Ejemplo 1" />
+<img src="https://user-images.githubusercontent.com/70456337/194149485-750c15e8-2a3c-46d0-857b-493178b9468c.png" alt="Ejemplo 1" /></p>
+<blockquote>
+<p>Acabamos de añadir emojis a nuestras opciones después de seleccionar cualquier opción.</p>
+</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../gen/selectmenu.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../gen/Botones.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../gen/json.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../gen/texto.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -316,11 +318,11 @@ $editSplitText[2;amisynth]
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../gen/selectmenu.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../gen/Botones.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../gen/json.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../gen/texto.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

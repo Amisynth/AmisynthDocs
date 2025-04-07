@@ -296,7 +296,7 @@ Si tienes alguna pregunta o inquietud sobre estos Términos de Servicio, puedes 
 <h2 id="crear-un-comando-de-discord"><a class="header" href="#crear-un-comando-de-discord">Crear un comando de discord</a></h2>
 <pre><code class="language-python"># importa LA libreria y luego el cliente
 
-from Amisynth import AmiClient
+from Amisynth.client import AmiClient
 
 # Has la instancia
 
@@ -305,15 +305,15 @@ bot = AmiClient("!")
 
 # Crea el comando :D
 
-bot.new_command(nombre="prueba",
-                tipo="text",
-                codigo="Hola $username[]!")
+bot.new_command(name)="prueba",
+                type="text",
+                code="Hola $username[]!")
 
 bot.run("TOKEN DE TU BOT")
 </code></pre>
 <p><img src="Introduccion/image-3.png" alt="alt text" /></p>
 <h2 id="crea-un-evento-de-discord"><a class="header" href="#crea-un-evento-de-discord">Crea un evento de discord</a></h2>
-<pre><code class="language-python">from Amisynth import AmiClient
+<pre><code class="language-python">from Amisynth.client import AmiClient
 
 # Has la instancia
 
@@ -331,7 +331,7 @@ bot.run("TOKEN DE TU BOT")
 <p>Puedes en ver los eventos disponibles en <a href="Introduccion/../Eventos/">Eventos</a></p>
 </blockquote>
 <h2 id="crea-un-comando-slash-de-discord"><a class="header" href="#crea-un-comando-slash-de-discord">Crea un comando slash de discord</a></h2>
-<pre><code class="language-python">from Amisynth import AmiClient
+<pre><code class="language-python">from Amisynth.client import AmiClient
 
 # Has la instancia
 
@@ -581,7 +581,7 @@ bot.new_event("$onInteraction",
               """
 $if[$checkCondition[$customID[]==prueba];
 $editButton[prueba;Clicked;danger;true;;$messageID[]]
-$sendMessage[$username ¡hola!]
+$sendMessage[Hola $username[]!]
 ;]
                """)
 
@@ -598,9 +598,156 @@ bot.run(..)
 <blockquote>
 <p>¿Cómo funcionan <a href="gen/../Eventos/onInteraction.html"><code>$onInteraction</code></a>?</p>
 </blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="menú-de-selección"><a class="header" href="#menú-de-selección">Menú de selección</a></h1>
+<p>En esta sección, aprenderá a usar el componente Menú de selección.</p>
+<h2 id="contenido-1"><a class="header" href="#contenido-1">Contenido</a></h2>
+<p><a href="gen/selectmenu.html#newSelectMenu"><strong>$newSelectMenu[]</strong></a> &gt; <a href="gen/selectmenu.html#addSelectMenuOption"><strong>$addSelectMenuOption[]</strong></a> &gt; <a href="gen/selectmenu.html#editSelectMenuOption"><strong>$editSelectMenuOption[]</strong></a> &gt; <a href="gen/selectmenu.html#getSelectMenuID"><strong>$getSelectMenuID[]</strong></a> &gt; <a href="gen/selectmenu.html#getMenuValueOption"><strong>$getMenuValueOption[]</strong></a></p>
+<h2 id="funciones-utilizadas-1"><a class="header" href="#funciones-utilizadas-1">Funciones Utilizadas</a></h2>
+<ul>
+<li>
+<p><a href="gen/../funciones/newSelectMenu.html"><code>$newSelectMenu[]</code></a></p>
+</li>
+<li>
+<p><a href="gen/../funciones/addSelectMenuOption.html"><code>$addSelectMenuOption[]</code></a></p>
+</li>
+<li>
+<p><a href="gen/../funciones/editSelectMenu.html"><code>$editSelectMenu[]</code></a></p>
+</li>
+<li>
+<p><a href="gen/../funciones/editSelectMenuOption.html"><code>$editSelectMenuOption[]</code></a></p>
+</li>
+<li>
+<p><a href="gen/../funciones/getSelectMenuID.html"><code>$getSelectMenuID[]</code></a></p>
+</li>
+<li>
+<p><a href="gen/../Eventos//callbacks/getMenuValueOption.html"><code>$getMenuValueOption[]</code></a></p>
+</li>
+<li>
+<p><a href="gen/../Eventos/onInteraction.html"><code>$onInteraction</code></a></p>
+</li>
+</ul>
+<h2 id="muestras"><a class="header" href="#muestras">Muestras</a></h2>
+<p><img src="https://user-images.githubusercontent.com/70456337/194143249-eb32bed6-5fc9-4d7b-b88c-65b37dfcbfc9.png" alt="Vista previa 1" />
+<img src="https://user-images.githubusercontent.com/70456337/194143111-bf128046-3428-4226-840d-9ea4b0569677.png" alt="Vista previa 2" /></p>
+<h2 id="creación-de-un-menú-de-selección"><a class="header" href="#creación-de-un-menú-de-selección">Creación de un menú de selección</a></h2>
+<pre><code>$newSelectMenu[Menu ID;Min;Max;(Placeholder;Message ID)]
+</code></pre>
+<ul>
+<li><code>Menu ID</code> - Se utiliza para la retrollamada <code>$onInteraction[ID]</code>. Funciona de la misma manera que <a href="gen/../buttons/aboutButtons.html">buttons</a>.</li>
+<li><code>Mín</code>: cantidad mínima de valores que se pueden seleccionar.</li>
+<li><code>Máx</code>: cantidad máxima de valores que se pueden seleccionar.</li>
+<li><code>Marcador de posición</code>: texto que aparece si no se selecciona ninguna opción.</li>
+<li><code>ID del mensaje</code>: ID de un mensaje al que se debe añadir el menú de selección. Por defecto, es la respuesta del bot.</li>
+</ul>
+<h2 id="añadir-una-opción"><a class="header" href="#añadir-una-opción">Añadir una opción</a></h2>
+<pre><code>$addSelectMenuOption[ID de la opción del menú;Etiqueta;Valor;Descripción;(Predeterminado;Emoji;ID del mensaje)]
+</code></pre>
+<ul>
+<li><code>ID de la opción del menú</code>: debe ser el mismo que el ID usado en <code>$newSelectMenu[]</code>.</li>
+<li><code>Etiqueta</code>: nombre de la opción. - <code>Valor</code>: son los datos que se pasan a la función <code>$onInteraction[]</code>. <strong>¡El valor debe ser único en el menú de selección!</strong></li>
+<li><code>Descripción</code>: aparece debajo de <code>etiqueta</code>.</li>
+<li><code>Predeterminado</code>: si la opción está seleccionada por defecto. <strong>¡Solo puede haber una opción por defecto!</strong></li>
+<li><code>Emoji</code>: aparece junto a <code>etiqueta</code>.</li>
+<li><code>ID del mensaje</code>: igual que en <code>$newSelectMenu[]</code>.</li>
+</ul>
+<h2 id="ejemplo-3"><a class="header" href="#ejemplo-3">Ejemplo</a></h2>
+<h3 id="código-de-selección-de-menú"><a class="header" href="#código-de-selección-de-menú">Código de selección de menú</a></h3>
+<pre><code class="language-python">$newSelectMenu[Ejemplo;1;1;Elegir una opción]
+$addSelectMenuOption[Ejemplo;Primera;primera-opción;La primera opción]
+$addSelectMenuOption[Ejemplo;Segunda;segunda-opción;La segunda opción]
+$addSelectMenuOption[Ejemplo;Tercera;tercera-opción;La tercera opción]
+</code></pre>
+<h3 id="código-de-interacción"><a class="header" href="#código-de-interacción">Código de interacción</a></h3>
+<blockquote>
+<p><code>$onInteraction</code></p>
+</blockquote>
+<pre><code class="language-python">bot = ..
+
+bot.new_event("$onInteraction",
+               """
+$if[$checCondition[$getSelectMenuID[]==Ejemplo];
+
+$if[$checkCondition[$getMenuValueOption[]==primera-opcion];
+Ha elegido la primera opción;]
+
+$if[$checkCondition[$getMenuValueOption[]==segunda-opcion];
+Ha elegido la primera opción;]
+
+$if[$checkCondition[$getMenuValueOption[]==tercera-opcion];
+Ha elegido la primera opción;]
+
+;] """)
+
+bot.run(..)
+</code></pre>
+<h3 id="uso"><a class="header" href="#uso">Uso</a></h3>
+<p><img src="https://user-images.githubusercontent.com/70456337/194143799-a48e72cb-5947-4657-99d3-d4bafaef5eb5.png" alt="Uso 1" /></p>
+<h1 id="menú-de-selección-múltiple"><a class="header" href="#menú-de-selección-múltiple">Menú de selección múltiple</a></h1>
+<p>En el menú de selección, puede elegir no solo una opción, sino varias a la vez.
+Esto se puede entender por la presencia de los argumentos «Mín» y «Máx».</p>
+<h2 id="ejemplo-4"><a class="header" href="#ejemplo-4">Ejemplo</a></h2>
+<h3 id="código-del-menú-select"><a class="header" href="#código-del-menú-select">Código del menú Select</a></h3>
+<blockquote>
+<p>Aquí cambiaremos el argumento <code>Máx.</code> a 3.</p>
+</blockquote>
+<pre><code>$newSelectMenu[Ejemplo;1;3;Elegir una opción]
+$addSelectMenuOption[Ejemplo;Primero;primera opción;La primera opción]
+$addSelectMenuOption[Ejemplo;Segundo;segunda opción;La segunda opción]
+$addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
+</code></pre>
+<h3 id="interacción-código"><a class="header" href="#interacción-código">Interacción Código</a></h3>
+<pre><code class="language-python">$if[$checkContains[$getMenuValueOption[];first-option];
+$addCmdReactions[1️⃣]
+;]
+
+$if[$checkContains[$getMenuValueOption[];second-option];
+$addCmdReactions[2️⃣]
+;]
+
+$if[$checkContains[$getMenuValueOption[];third-option];
+$addCmdReactions[3️⃣]
+;]
+</code></pre>
+<blockquote>
+<p>Si elegimos varias opciones, se añadirán varias reacciones.</p>
+</blockquote>
+<h3 id="uso-1"><a class="header" href="#uso-1">Uso</a></h3>
+<p><img src="https://user-images.githubusercontent.com/70456337/194145414-33fa645f-c3ac-4105-95d9-4edc89fcfae5.png" alt="Uso 2.1" />
+<img src="https://user-images.githubusercontent.com/70456337/194145159-6c2996f1-7dbc-4fa3-90e0-9a0b8f5c2d9e.png" alt="Uso 2.2" /></p>
+<h1 id="edición-de-un-menú-de-selección"><a class="header" href="#edición-de-un-menú-de-selección">Edición de un menú de selección</a></h1>
+<p>Puede editar el menú de selección, así como sus opciones. ## $editSelectMenu</p>
+<h3 id="uso-2"><a class="header" href="#uso-2">Uso</a></h3>
+<pre><code>$editSelectMenu[ID del menú;Mín;Máx;(Marcador de posición;ID del mensaje)]
+</code></pre>
+<h2 id="editselectmenuoption"><a class="header" href="#editselectmenuoption">$editSelectMenuOption</a></h2>
+<h3 id="uso-3"><a class="header" href="#uso-3">Uso</a></h3>
+<pre><code>$editSelectMenuOption[ID de la opción del menú;Etiqueta;Valor;Descripción;(Predeterminado;Emoji;ID del mensaje)]
+</code></pre>
+<blockquote>
+<p>Como puede observar, los argumentos son exactamente los mismos.</p>
+</blockquote>
+<h2 id="ejemplo-5"><a class="header" href="#ejemplo-5">Ejemplo</a></h2>
+<h3 id="código-de-menú-de-selección"><a class="header" href="#código-de-menú-de-selección">Código de menú de selección</a></h3>
+<pre><code>$newSelectMenu[Ejemplo;1;1;Elegir una opción]
+$addSelectMenuOption[Ejemplo;Primero;primera opción;La primera opción]
+$addSelectMenuOption[Ejemplo;Segundo;segunda opción;La segunda opción]
+$addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
+</code></pre>
+<h3 id="código-de-interacción-1"><a class="header" href="#código-de-interacción-1">Código de interacción</a></h3>
+<h4 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo 1</a></h4>
+<pre><code>$editSelectMenuOption[Ejemplo;Primero;primera opción;La primera opción;false;1️⃣]
+$editSelectMenuOption[Ejemplo;Segundo;segunda opción;La segunda opción;false;2️⃣]
+$editSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción;false;3️⃣]
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/70456337/194148923-a25962f8-544d-4744-8a5c-876d9455eaa3.png" alt="Ejemplo 1" />
+<img src="https://user-images.githubusercontent.com/70456337/194149283-42724349-84d1-4d70-b8e6-d4b58e8c365f.png" alt="Ejemplo 1" />
+<img src="https://user-images.githubusercontent.com/70456337/194149485-750c15e8-2a3c-46d0-857b-493178b9468c.png" alt="Ejemplo 1" /></p>
+<blockquote>
+<p>Acabamos de añadir emojis a nuestras opciones después de seleccionar cualquier opción.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="divicion-de-texto-1"><a class="header" href="#divicion-de-texto-1">Divicion de Texto</a></h1>
 <p>En esta sección, aprenderá cómo utilizar la división de texto.</p>
-<h2 id="funciones-utilizadas-1"><a class="header" href="#funciones-utilizadas-1">Funciones utilizadas</a></h2>
+<h2 id="funciones-utilizadas-2"><a class="header" href="#funciones-utilizadas-2">Funciones utilizadas</a></h2>
 <ul>
 <li>
 <p><a href="gen/../funciones/textSplit.html"><code>$textSplit[]</code></a></p>
@@ -688,8 +835,8 @@ bot.run(..)
 <ul>
 <li><code>Valor</code> <code>(Tipo: String || Opcional)</code>: El valor a buscar dentro del texto dividido.</li>
 </ul>
-<h2 id="ejemplo-3"><a class="header" href="#ejemplo-3">Ejemplo</a></h2>
-<h3 id="ejemplo-1"><a class="header" href="#ejemplo-1">Ejemplo #1</a></h3>
+<h2 id="ejemplo-6"><a class="header" href="#ejemplo-6">Ejemplo</a></h2>
+<h3 id="ejemplo-1-1"><a class="header" href="#ejemplo-1-1">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$textSplit[hello_world_!;_]
 &gt; $getTextSplitIndex[$message[-1]]   // Devuelve el índice del valor en la lista dividida o -1 si no se encuentra
 </code></pre>
@@ -745,7 +892,7 @@ $editSplitText[2;amisynth]
 <p><img src="gen/../funciones/image-35.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="json-funciones-2"><a class="header" href="#json-funciones-2">JSON Funciones</a></h1>
 <p>Antes de leer esta guía, deberías estar familiarizado con JSON y dónde y cómo se utiliza. Puedes familiarizarte con JSON leyendo un tutorial en <a href="https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/JSON">Mozzilla</a>.</p>
-<h2 id="funciones-utilizadas-2"><a class="header" href="#funciones-utilizadas-2">Funciones utilizadas</a></h2>
+<h2 id="funciones-utilizadas-3"><a class="header" href="#funciones-utilizadas-3">Funciones utilizadas</a></h2>
 <ul>
 <li>
 <p><a href="gen/../funciones/jsonParse.html"><code>$jsonParse[]</code></a></p>
@@ -1574,7 +1721,7 @@ $httpResult[-1]
 <blockquote>
 <p>📝 La longitud total de caracteres de la respuesta completa no debe superar los 6,000. Si lo hace, el bot no enviará el mensaje.</p>
 </blockquote>
-<h3 id="ejemplo-4"><a class="header" href="#ejemplo-4">Ejemplo</a></h3>
+<h3 id="ejemplo-7"><a class="header" href="#ejemplo-7">Ejemplo</a></h3>
 <pre><code>$nomention
 
 $title[Título #1]
@@ -1611,7 +1758,7 @@ $description[Descripción #3;3]
 <ul>
 <li><a href="Recursos/../funciones/getTimestamp.html"><code>$getTimestamp</code></a></li>
 </ul>
-<h3 id="ejemplo-5"><a class="header" href="#ejemplo-5">Ejemplo</a></h3>
+<h3 id="ejemplo-8"><a class="header" href="#ejemplo-8">Ejemplo</a></h3>
 <pre><code>$nomention
 &lt;t:$getTimestamp:D&gt;
 </code></pre>
@@ -2084,7 +2231,7 @@ $footer[&lt;- icono]
 <ul>
 <li><code>ID de usuario</code> <code>(Tipo: ID | Opcional)</code>: → Especifica el ID del usuario del que se desea obtener el nombre. Si se omite, devuelve el nombre del usuario que ejecutó el comando o activó el evento.</li>
 </ul>
-<h3 id="ejemplo-6"><a class="header" href="#ejemplo-6"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-9"><a class="header" href="#ejemplo-9"><strong>Ejemplo</strong></a></h3>
 <pre><code>Tu nombre es: $username
 </code></pre>
 <p><img src="funciones/image-19.png" alt="alt text" /></p>
@@ -2118,7 +2265,7 @@ $footer[&lt;- icono]
 <p><code>Guild ID</code> <em>(Tipo: ID | Opcional)</em> → ID del servidor del que se desean obtener los nombres de los canales. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
 </li>
 </ul>
-<h3 id="ejemplo-7"><a class="header" href="#ejemplo-7"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-10"><a class="header" href="#ejemplo-10"><strong>Ejemplo</strong></a></h3>
 <pre><code>$channelNames[|]
 </code></pre>
 <p>🔹 Devuelve algo como: <code>general, memes, música, sugerencias</code></p>
@@ -2137,7 +2284,7 @@ $footer[&lt;- icono]
 <p><code>Guild ID</code> <code>(Tipo: ID | Opcional)</code> → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
 </li>
 </ul>
-<h3 id="ejemplo-8"><a class="header" href="#ejemplo-8"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-11"><a class="header" href="#ejemplo-11"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">$categorysNames[|]
 </code></pre>
 <p>🔹 Devuelve algo como: <code>Información, General, Juegos, Staff</code></p>
@@ -2150,7 +2297,7 @@ $footer[&lt;- icono]
 <blockquote>
 <p>📌 <strong>Nota:</strong> Solo funciona dentro de eventos como <code>$onInteraction</code>.</p>
 </blockquote>
-<h3 id="ejemplo-9"><a class="header" href="#ejemplo-9"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-12"><a class="header" href="#ejemplo-12"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot = ..
 
 bot.new_event("$onInteraction", "customid: $customID[]")
@@ -2169,7 +2316,7 @@ bot.run(..)
 <blockquote>
 <p>No requiere Parametros, solo funciona en el evento <code>$onMessageEdit</code></p>
 </blockquote>
-<h3 id="ejemplo-10"><a class="header" href="#ejemplo-10"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-13"><a class="header" href="#ejemplo-13"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">Contenido Original: $editMessageBefore[]
 Contenido Nuevo: $editMessageAfter[]
 </code></pre>
@@ -2348,8 +2495,8 @@ $roleGrant[3869969062509936;-9368562753613496]
 <ul>
 <li><code>Valor</code> <code>(Tipo: String || Opcional)</code>: El valor a buscar dentro del texto dividido.</li>
 </ul>
-<h2 id="ejemplo-11"><a class="header" href="#ejemplo-11">Ejemplo</a></h2>
-<h3 id="ejemplo-1-1"><a class="header" href="#ejemplo-1-1">Ejemplo #1</a></h3>
+<h2 id="ejemplo-14"><a class="header" href="#ejemplo-14">Ejemplo</a></h2>
+<h3 id="ejemplo-1-2"><a class="header" href="#ejemplo-1-2">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$textSplit[hello_world_!;_]
 &gt; $getTextSplitIndex[$message[-1]]   // Devuelve el índice del valor en la lista dividida o -1 si no se encuentra
 </code></pre>
@@ -3021,7 +3168,7 @@ Usuario guardado: $get[user]
 <blockquote>
 <p>Esta es una funcion compartida que retornar el emoji usado o removido en los eventos <code>$onReactionAdd</code> y <code>$onReactionRemove</code></p>
 </blockquote>
-<h3 id="ejemplo-12"><a class="header" href="#ejemplo-12"><code>Ejemplo</code></a></h3>
+<h3 id="ejemplo-15"><a class="header" href="#ejemplo-15"><code>Ejemplo</code></a></h3>
 <pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <p><img src="funciones/image-3.png" alt="alt text" /></p>
@@ -3498,7 +3645,7 @@ bot.new_command(nane="prefix",
 bot.run(..)
 </code></pre>
 <p><img src="funciones/image-61.png" alt="alt text" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="suma"><a class="header" href="#suma">$suma</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sum"><a class="header" href="#sum">$sum[]</a></h1>
 <p>Devuelve la suma de los números proporcionados.</p>
 <p><strong>Sintaxis</strong></p>
 <pre><code>$sum[Número;...]
@@ -3512,8 +3659,45 @@ bot.run(..)
 </code></pre>
 <p><img src="funciones/image-74.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="divide"><a class="header" href="#divide">$divide[]</a></h1>
+<p>Divide los números proporcionados.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$divide[Números]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Números</code> <code>(Tipo: Entero, Flotante || Indicador: Obligatorio)</code>: Los números a dividir. Separe los números con <code>;</code>.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>Respuesta: $divide[10;$message[-1]]
+</code></pre>
+<p><img src="funciones/image-87.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="sub"><a class="header" href="#sub">$sub[]</a></h1>
+<p>Devuelve la resta de los números proporcionados.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$sub[Número;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Número</code> <code>(Tipo: Entero, Flotante || Indicador: Obligatorio)</code>: Los números a restar. Separe los valores múltiples con <code>;</code>.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>Resultado: $sub[20;10;6]
+</code></pre>
+<p><img src="funciones/image-86.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="multi"><a class="header" href="#multi">$multi[]</a></h1>
+<p>Multiplica los números proporcionados.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$multi[Número;..]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Número</code> <code>(Tipo: Coma flotante, Entero || Indicador: Obligatorio)</code>: Los números a multiplicar. Use punto y coma <code>;</code> como separador para separar varios números.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$argsCheck[&gt;2;❌ Uso no válido. Uso: `!multiplicar (número1) (número2)`]
+$multi[$mensaje[1];$mensaje[2]]
+</code></pre>
+<p><img src="funciones/image-85.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="replacetext"><a class="header" href="#replacetext">$replaceText[]</a></h1>
 <p>Reemplaza "Muestra" por "Nueva" de "Texto". Puedes elegir cuántas "Muestras" se reemplazan introduciendo "Cantidad".</p>
 <p><strong>Sintaxis</strong></p>
@@ -3619,10 +3803,118 @@ $eval[$message[-1]]
 <pre><code>$message[-1]
 </code></pre>
 <p><img src="funciones/image-82.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="messageslash"><a class="header" href="#messageslash">$messageSlash[]</a></h1>
+<p>Devuelve el mensaje del usuario <em>(sin el disparador de comando)</em>.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$messageSlash[Opcion]
+</code></pre>
+<ul>
+<li><code>Opcion</code>: <code>(Tipo: Texto || Marca: Obligatorio)</code>: Obtiene el contenido que se le pasa por la opcion.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$messageSlash[texto]
+</code></pre>
+<p><img src="funciones/image-89.png" alt="alt text" /></p>
+<p><img src="funciones/image-88.png" alt="alt text" /></p>
+<p><img src="funciones/image-91.png" alt="alt text" /></p>
+<p><img src="funciones/image-90.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="removebuttons-1"><a class="header" href="#removebuttons-1">$removeButtons[]</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="removecomponents"><a class="header" href="#removecomponents">$removeComponents[]</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="editbutton-1"><a class="header" href="#editbutton-1">$editButton[]</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="editbutton-2"><a class="header" href="#editbutton-2">$editButton[]</a></h1>
+<p>Elimina todos los botones de un mensaje.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$removeButtons[ID del mensaje]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>ID del mensaje</code> <code>(Tipo: Copo de nieve || Marca: Obligatorio)</code>: El mensaje del que se eliminarán todos los botones.</li>
+</ul>
+<blockquote>
+<p>📝 Al proporcionar el "ID del mensaje", asegúrese de que el autor del mensaje sea el bot.</p>
+</blockquote>
+<h2 id="ejemplo-16"><a class="header" href="#ejemplo-16">Ejemplo</a></h2>
+<pre><code>$removeButtons[$message[1]]
+Se eliminaron todos los botones del mensaje correctamente. 
+</code></pre>
+<p><img src="funciones/../gen/image-4.png" alt="alt text" /></p>
+<blockquote>
+<p>Para más información, consulta la <a href="funciones/../gen/Botones.html">Guía de Botones</a>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="removecomponent-1"><a class="header" href="#removecomponent-1">$removeComponent[]</a></h1>
+<p>Elimina un componente específico de un mensaje.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$removeComponent[ID personalizado;(ID del mensaje)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>ID personalizado</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: El ID personalizado del menú/botón de selección que se eliminará del mensaje, si establece <code>-1</code> borra todos los componentes.</p>
+</li>
+<li>
+<p><code>ID del mensaje</code> <code>(Tipo: Copo de nieve || Marca: Vacante)</code>: El mensaje del que se eliminará el componente; usa el mensaje actual del bot si no se proporciona el <code>ID del mensaje</code>.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$removeComponent[-1;1358629564787724399]
+</code></pre>
+<p><img src="funciones/../gen/image-4.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="editbutton-1"><a class="header" href="#editbutton-1">$editButton</a></h1>
+<p>Edita un botón existente.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$editButton[ID/URL del botón;Etiqueta;Estilo;(Deshabilitado;Emoji;ID del mensaje)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>ID/URL del botón</code> <code>(Tipo: Cadena, URL || Marca: Obligatorio)</code>: El ID o la URL del botón que se desea editar.</p>
+</li>
+<li>
+<p><code>Etiqueta</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: La nueva etiqueta que se muestra en el botón.</p>
+</li>
+<li>
+<p><code>Estilo</code> <code>(Tipo: Enumeración || Marca: Obligatorio)</code>: El estilo del botón. Todos los estilos se listan <a href="funciones/editButton.html#button-style">a continuación</a>.</p>
+</li>
+<li>
+<p><code>Deshabilitado</code> <code>(Tipo: Bool || Marca: Vaciable)</code>: Si se establece en <code>sí</code>, el botón no se puede presionar. El valor predeterminado es <code>no</code>. - <code>Emoji</code> <code>(Tipo: Emoji || Bandera: Vacante)</code>: Edita o añade un emoji dentro del botón. Los emojis deben pegarse como <em>Unicode</em> o tener el siguiente formato <code>&lt;:emoji name:emoji ID&gt;</code>.</p>
+</li>
+<li>
+<p><code>ID de mensaje</code> <code>(Tipo: Copo de nieve || Bandera: Vacante)</code>: Añade un botón al ID de mensaje proporcionado. Es importante tener en cuenta que el autor del ID de mensaje <strong>debe</strong> ser el bot.</p>
+</li>
+</ul>
+<p><strong>Estilo del botón</strong>
+Los botones pueden tener diferentes estilos (colores de fondo).
+Aquí se muestran todos los valores posibles para el argumento de la función</p>
+<ul>
+<li><code>primary</code> - Botón azul</li>
+<li><code>secondary</code> - Botón gris</li>
+<li><code>sucess</code> - Botón verde</li>
+<li><code>danger</code> - Botón rojo</li>
+<li><code>link</code> - Botón de redirección</li>
+</ul>
+<p><img src="funciones/../gen/image.png" alt="alt text" /></p>
+<p><img src="funciones/../gen/image-1.png" alt="alt text" /></p>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$nomention
+$username[] dijo hola!
+$editButton[test;¡Saluda!;primary;true;]
+$addButton[false;http://botdesignerdiscord.com;Visita nuestra web;link;false;👀]
+</code></pre>
+<p><img src="funciones/image-84.png" alt="alt text" /></p>
+<blockquote>
+<p>Para más información, consulta la <a href="funciones/../gen/Botones.html">Guía de Botones</a>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="repeatmessage"><a class="header" href="#repeatmessage">$repeatMessage</a></h1>
+<p>Repite el texto proporcionado una cantidad determinada de veces.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$repeatMessage[Cantidad;Mensaje]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Cantidad</code> <code>(Tipo: Entero || Marca: Obligatorio)</code>: El número de veces que se repetirá el texto dado (máximo <code>10</code> veces).</li>
+<li><code>Mensaje</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El texto que se repetirá.</li>
+</ul>
+<p><strong>Ejemplo 1</strong></p>
+<pre><code>$repeatMessage[10;Hola]
+</code></pre>
+<p><img src="funciones/image-83.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="eventos"><a class="header" href="#eventos">Eventos</a></h1>
 <p>Soon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onjoinmember"><a class="header" href="#onjoinmember">$onJoinMember</a></h1>
@@ -3761,7 +4053,7 @@ bot.run(..)
 <blockquote>
 <p>📌 <strong>Nota:</strong> Este evento se usa como un disparador, no dentro del código del comando.</p>
 </blockquote>
-<h3 id="ejemplo-13"><a class="header" href="#ejemplo-13"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-17"><a class="header" href="#ejemplo-17"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot = ..
 
 bot.new_event("$onReactionAdd", "Emoji: $reactionEvent[]")

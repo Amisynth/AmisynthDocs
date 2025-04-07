@@ -153,12 +153,31 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="removebuttons"><a class="header" href="#removebuttons">$removeButtons[]</a></h1>
+<p>Elimina todos los botones de un mensaje.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$removeButtons[ID del mensaje]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>ID del mensaje</code> <code>(Tipo: Copo de nieve || Marca: Obligatorio)</code>: El mensaje del que se eliminarán todos los botones.</li>
+</ul>
+<blockquote>
+<p>📝 Al proporcionar el "ID del mensaje", asegúrese de que el autor del mensaje sea el bot.</p>
+</blockquote>
+<h2 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h2>
+<pre><code>$removeButtons[$message[1]]
+Se eliminaron todos los botones del mensaje correctamente. 
+</code></pre>
+<p><img src="../gen/image-4.png" alt="alt text" /></p>
+<blockquote>
+<p>Para más información, consulta la <a href="../gen/Botones.html">Guía de Botones</a>.</p>
+</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../funciones/message.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../funciones/messageSlash.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -172,7 +191,7 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../funciones/message.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../funciones/messageSlash.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 

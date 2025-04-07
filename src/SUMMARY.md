@@ -12,6 +12,7 @@
     - [General](gen/intro_gen.md)
         - [Interacciones](gen/Interacciones.md)
             - [Botones](gen/Botones.md)
+            - [Select Menus](gen/selectmenu.md)
 
         - [Divicion Texto](gen/texto.md)
         - [JSON Funciones](gen/json.md)
@@ -105,10 +106,11 @@
     - [$argsCheck[]](funciones/argsCheck.md)
     - [$eval[]](funciones/eval.md)
     - [$message[]](funciones/message.md)
+    - [$messageSlash[]](funciones/messageSlash.md)
     - [$removeButtons[]](funciones/removeButtons.md)
     - [$removeComponents[]](funciones/removeComponents.md)
     - [$editButton[]](funciones/editButton.md)
-    - [$repeatMessage[]](funciones/editButton.md)
+    - [$repeatMessage[]](funciones/repeatMessage.md)
 
 
 - [Eventos](Eventos/README.md)

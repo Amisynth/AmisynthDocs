@@ -7,7 +7,7 @@ En la libreria se pueden hacer varios usos, como el hecho que he puesto a dispos
 ```python
 # importa LA libreria y luego el cliente
 
-from Amisynth import AmiClient
+from Amisynth.client import AmiClient
 
 # Has la instancia
 
@@ -16,9 +16,9 @@ bot = AmiClient("!")
 
 # Crea el comando :D
 
-bot.new_command(nombre="prueba",
-                tipo="text",
-                codigo="Hola $username[]!")
+bot.new_command(name)="prueba",
+                type="text",
+                code="Hola $username[]!")
 
 bot.run("TOKEN DE TU BOT")
 ```
@@ -30,7 +30,7 @@ bot.run("TOKEN DE TU BOT")
 
 
 ```python
-from Amisynth import AmiClient
+from Amisynth.client import AmiClient
 
 # Has la instancia
 
@@ -54,7 +54,7 @@ bot.run("TOKEN DE TU BOT")
 
 
 ```python
-from Amisynth import AmiClient
+from Amisynth.client import AmiClient
 
 # Has la instancia
 

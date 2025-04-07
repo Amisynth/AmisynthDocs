@@ -203,7 +203,7 @@ bot.new_event("$onInteraction",
               """
 $if[$checkCondition[$customID[]==prueba];
 $editButton[prueba;Clicked;danger;true;;$messageID[]]
-$sendMessage[$username ¡hola!]
+$sendMessage[Hola $username[]!]
 ;]
                """)
 

@@ -153,6 +153,19 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="multi"><a class="header" href="#multi">$multi[]</a></h1>
+<p>Multiplica los números proporcionados.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$multi[Número;..]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Número</code> <code>(Tipo: Coma flotante, Entero || Indicador: Obligatorio)</code>: Los números a multiplicar. Use punto y coma <code>;</code> como separador para separar varios números.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$argsCheck[&gt;2;❌ Uso no válido. Uso: `!multiplicar (número1) (número2)`]
+$multi[$mensaje[1];$mensaje[2]]
+</code></pre>
+<p><img src="image-85.png" alt="alt text" /></p>
 
                     </main>
 

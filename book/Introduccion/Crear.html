@@ -157,7 +157,7 @@
 <h2 id="crear-un-comando-de-discord"><a class="header" href="#crear-un-comando-de-discord">Crear un comando de discord</a></h2>
 <pre><code class="language-python"># importa LA libreria y luego el cliente
 
-from Amisynth import AmiClient
+from Amisynth.client import AmiClient
 
 # Has la instancia
 
@@ -166,15 +166,15 @@ bot = AmiClient("!")
 
 # Crea el comando :D
 
-bot.new_command(nombre="prueba",
-                tipo="text",
-                codigo="Hola $username[]!")
+bot.new_command(name)="prueba",
+                type="text",
+                code="Hola $username[]!")
 
 bot.run("TOKEN DE TU BOT")
 </code></pre>
 <p><img src="image-3.png" alt="alt text" /></p>
 <h2 id="crea-un-evento-de-discord"><a class="header" href="#crea-un-evento-de-discord">Crea un evento de discord</a></h2>
-<pre><code class="language-python">from Amisynth import AmiClient
+<pre><code class="language-python">from Amisynth.client import AmiClient
 
 # Has la instancia
 
@@ -192,7 +192,7 @@ bot.run("TOKEN DE TU BOT")
 <p>Puedes en ver los eventos disponibles en <a href="../Eventos/">Eventos</a></p>
 </blockquote>
 <h2 id="crea-un-comando-slash-de-discord"><a class="header" href="#crea-un-comando-slash-de-discord">Crea un comando slash de discord</a></h2>
-<pre><code class="language-python">from Amisynth import AmiClient
+<pre><code class="language-python">from Amisynth.client import AmiClient
 
 # Has la instancia
 
