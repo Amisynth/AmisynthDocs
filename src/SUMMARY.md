@@ -8,6 +8,7 @@
     - [Introducción](Introduccion/intro.md)
         - [Comenzar](Introduccion/comenzar.md)
         - [Crear](Introduccion/Crear.md)
+        - [Funciones Anotomia](Introduccion/anotomia.md)
 
     - [General](gen/intro_gen.md)
         - [Interacciones](gen/Interacciones.md)
@@ -25,6 +26,7 @@
         - [Disocord Tiempo UNIX](Recursos/MarcaTiempo.md)
         - [Discord Sistema de IDs](Recursos/IDs.md)
         - [Permisos](Recursos/Permisos.md)
+        - [Hiper Links](Recursos/hiperlink.md)
 
 
     

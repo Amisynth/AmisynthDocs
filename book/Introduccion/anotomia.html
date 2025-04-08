@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>General - AmisynthDocs</title>
+        <title>Funciones Anotomia - AmisynthDocs</title>
 
 
         <!-- Custom HTML head -->
@@ -152,23 +152,42 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="general"><a class="header" href="#general">General</a></h1>
-<p>Las secciones estan listas, eligue cual desea experimentarte!</p>
-<h2 id="interacciones"><a class="header" href="#interacciones"><a href="../interacciones.html"><code>Interacciones</code></a></a></h2>
-<h2 id="divicion-de-texto"><a class="header" href="#divicion-de-texto"><a href="../texto.html"><code>Divicion de Texto</code></a></a></h2>
-<h2 id="json-funciones"><a class="header" href="#json-funciones"><a href="../json.html"><code>JSON Funciones</code></a></a></h2>
-<h2 id="json-funciones-1"><a class="header" href="#json-funciones-1"><a href="../variables.html"><code>JSON Funciones</code></a></a></h2>
-<h2 id="http-funciones"><a class="header" href="#http-funciones"><a href="../https.html"><code>HTTP Funciones</code></a></a></h2>
+                        <h1 id="anatomía-de-comandos"><a class="header" href="#anatomía-de-comandos">Anatomía de Comandos</a></h1>
+<ol>
+<li>
+<p><strong>Comando Básico</strong>: <code>$funcion[...]</code></p>
+<p>Cada comando comienza con el signo <code>$</code>, seguido por el nombre de la función o comando que se desea ejecutar. Este símbolo indica que el bot debe realizar una acción basada en la solicitud. Los comandos se procesan en el siguiente formato:</p>
+<pre><code>$funcion[argumento1;argumento2;...]
+</code></pre>
+</li>
+<li>
+<p><strong>Argumentos del Comando</strong>: <code>[argumento1;argumento2;...]</code></p>
+<p>Los argumentos son los parámetros que el comando necesita para ejecutar una acción. Estos se separan por un punto y coma (<code>;</code>). Los argumentos son esenciales porque permiten al bot identificar lo que se debe hacer y sobre qué se debe hacer.</p>
+<p><strong>Tipos de Argumentos</strong>:</p>
+<ul>
+<li>
+<p><code>Obligatorios</code>: Son los que siempre deben ser proporcionados por el usuario para ejecutar el comando correctamente.</p>
+</li>
+<li>
+<p><code>Opcionales</code>: Son aquellos que pueden ser omitidos. En este caso, el sistema usará valores predeterminados o el contexto para procesar la solicitud.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Separador de Argumentos</strong>: <code>;</code></p>
+<p>El punto y coma (<code>;</code>) es el delimitador que separa los diferentes argumentos dentro del comando. Todos los argumentos se incluyen en el mismo bloque de corchetes (<code>[]</code>), pero se separan por punto y coma para facilitar su interpretación.</p>
+</li>
+</ol>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../Introduccion/anotomia.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../Introduccion/Crear.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../gen/Interacciones.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../gen/intro_gen.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -178,11 +197,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../Introduccion/anotomia.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../Introduccion/Crear.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../gen/Interacciones.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../gen/intro_gen.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

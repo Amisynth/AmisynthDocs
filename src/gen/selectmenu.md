@@ -21,6 +21,8 @@ En esta sección, aprenderá a usar el componente Menú de selección.
 
 - [`$getMenuValueOption[]`](../Eventos//callbacks/getMenuValueOption.md)
 
+- [`$removeSelectMenus[]`](../Eventos//callbacks/removeSelectMenus.md)
+
 - [`$onInteraction`](../Eventos/onInteraction.md)
 
 

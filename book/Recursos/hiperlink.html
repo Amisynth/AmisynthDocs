@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>General - AmisynthDocs</title>
+        <title>Hiper Links - AmisynthDocs</title>
 
 
         <!-- Custom HTML head -->
@@ -152,23 +152,37 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="general"><a class="header" href="#general">General</a></h1>
-<p>Las secciones estan listas, eligue cual desea experimentarte!</p>
-<h2 id="interacciones"><a class="header" href="#interacciones"><a href="../interacciones.html"><code>Interacciones</code></a></a></h2>
-<h2 id="divicion-de-texto"><a class="header" href="#divicion-de-texto"><a href="../texto.html"><code>Divicion de Texto</code></a></a></h2>
-<h2 id="json-funciones"><a class="header" href="#json-funciones"><a href="../json.html"><code>JSON Funciones</code></a></a></h2>
-<h2 id="json-funciones-1"><a class="header" href="#json-funciones-1"><a href="../variables.html"><code>JSON Funciones</code></a></a></h2>
-<h2 id="http-funciones"><a class="header" href="#http-funciones"><a href="../https.html"><code>HTTP Funciones</code></a></a></h2>
+                        <h1 id="hipervínculos"><a class="header" href="#hipervínculos">Hipervínculos</a></h1>
+<p>Un hipervínculo es texto clicable. Al hacer clic en él, el usuario accede a una URL específica.</p>
+<h2 id="hipervínculos-generales"><a class="header" href="#hipervínculos-generales">Hipervínculos generales</a></h2>
+<p>Puede usar hipervínculos dentro de <a href="../funciones/description.html"><code>$description[]</code></a>, <a href="../funciones/addField.html"><code>$addField[]</code></a>, <a href="../../guides/general/webhooks.html">webhook</a> content/description, <a href="../../guides/general/interactions/slashCommands/aboutSlashCommands.html">slash command</a> contenido de respuesta y contenido de respuesta efímero <a href="../../callbacks/onInteraction.html"><code>$onInteraction</code></a>.</p>
+<h3 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h3>
+<pre><code>[texto\\](enlace)
+</code></pre>
+<blockquote>
+<p><strong>Nota:</strong> Esta es la sintaxis para BDScript 2 y BDScript Unstable. Para BDScript, la sintaxis es <code>[texto](enlace)</code>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Nota:</strong> Si se usan hipervínculos dentro del contenido de respuesta de comando con barra diagonal o del contenido de respuesta efímera <code>$onInteraction</code>, se debe usar la sintaxis de BDScript. No aplica a hipervínculos dentro de funciones que los admiten.</p>
+</blockquote>
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code>$description[Este bot está creado con [Amisynth Paquete\\](https://pypi.org/project/Amisynth/)]
+</code></pre>
+<p><img src="image.png" alt="alt text" /></p>
+<h3 id="hipervínculos-de-título"><a class="header" href="#hipervínculos-de-título">Hipervínculos de título</a></h3>
+<p>Usa la función <a href="../funciones/titleURL.html">$titleURL</a> para agregar un hipervínculo en <a href="../funciones//title.html">$title</a>.</p>
+<h3 id="hipervínculos-de-autor"><a class="header" href="#hipervínculos-de-autor">Hipervínculos de autor</a></h3>
+<p>Usa la función <a href="../funciones/authorURL.html">$authorURL</a> para agregar un hipervínculo en <a href="../funciones/author.html">$author</a>.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../Introduccion/anotomia.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../Recursos/Permisos.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../gen/Interacciones.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../funciones/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -178,11 +192,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../Introduccion/anotomia.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../Recursos/Permisos.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../gen/Interacciones.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../funciones/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
