@@ -113,6 +113,14 @@
     - [$removeComponents[]](funciones/removeComponents.md)
     - [$editButton[]](funciones/editButton.md)
     - [$repeatMessage[]](funciones/repeatMessage.md)
+    - [$newSelectMenu[]](funciones/newSelectMenu.md)
+    - [$addSelectMenuOption[]](funciones/addSelectMenuOption.md)
+    - [$editSelectMenu[]](funciones/editSelectMenu.md)
+    - [$editSelectMenuOption[]](funciones/editSelectMenuOption.md)
+    - [$getSelectMenuID[]](funciones/getSelectMenuID.md)
+    - [$getMenuValueOption[]](funciones/getMenuValueOption.md)
+    - [$removeSelectMenus[]](funciones/removeSelectMenus.md)
+
 
 
 - [Eventos](Eventos/README.md)

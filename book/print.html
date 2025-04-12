@@ -3965,6 +3965,201 @@ $addButton[false;http://botdesignerdiscord.com;Visita nuestra web;link;false;�
 <pre><code>$repeatMessage[10;Hola]
 </code></pre>
 <p><img src="funciones/image-83.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="newselectmenu"><a class="header" href="#newselectmenu">$newSelectMenu</a></h1>
+<p>Añade un menú de selección a un mensaje.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$newSelectMenu[ID del menú; Mín; Máx; (Marcador de posición; ID del mensaje)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>ID del menú</code> <code>(Tipo: Cadena || Marcador: Obligatorio)</code>: El ID del menú que se utiliza en la devolución de llamada <code>$onInteraction[]</code> y dentro del primer argumento de <code>$addSelectMenuOption[]</code>.</p>
+</li>
+<li>
+<p><code>Mín</code> <code>(Tipo: Entero || Marcador: Obligatorio)</code>: La cantidad mínima de valores que se pueden seleccionar.</p>
+</li>
+<li>
+<p><code>Máx</code> <code>(Tipo: Entero || Marcador: Obligatorio)</code>: La cantidad máxima de valores que se pueden seleccionar.</p>
+</li>
+<li>
+<p><code>Marcador de posición</code> <code>(Tipo: Cadena || Marcador: Vacante)</code>: El texto que aparece si no se selecciona ninguna opción. - <code>ID del mensaje</code> <code>(Tipo: Copo de nieve || Marca: Vacante)</code>: El ID de un mensaje al que se le debe añadir un menú de selección. Por defecto, es la respuesta del bot.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>Holax1
+$newSelectMenu[Ejemplo;1;1;Elige una opción]
+$addSelectMenuOption[Ejemplo;Primero;primera opción;La primera opción]
+$addSelectMenuOption[Ejemplo;Segundo;segunda opción;La segunda opción]
+$addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
+</code></pre>
+<p><img src="funciones/image-92.png" alt="alt text" /></p>
+<blockquote>
+<p>Para más información, consulta la <a href="funciones/../gen/selectmenu.md.html">Guía del Menú Select</a>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="addselectmenuoption"><a class="header" href="#addselectmenuoption">$addSelectMenuOption[]</a></h1>
+<p>Añade una nueva opción de menú de selección a un menú de selección existente.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$addSelectMenuOption[ID de opción de menú;Etiqueta;Valor;Descripción;(¿Predeterminado?;Emoji;ID de mensaje)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>ID de opción de menú</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: El ID utilizado en <a href="funciones/../funciones/newSelectMenu.html"><code>$newSelectMenu[]</code></a>.</p>
+</li>
+<li>
+<p><code>Etiqueta</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: El nombre de la opción.</p>
+</li>
+<li>
+<p><code>Valor</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: Son los datos que se pasan a la retrollamada <code>$onInteraction[]</code>. <strong>¡El valor debe ser único en el menú de selección!</strong></p>
+</li>
+<li>
+<p><code>Description</code> <code>(Type: String || Flag: Vacantable)</code>: Un texto que aparece debajo de <code>Label</code>.</p>
+</li>
+<li>
+<p><code>Default?</code> <code>(Type: Bool || Flag: Vacantable)</code>: Si la opción debe seleccionarse por defecto o no. El valor predeterminado es <code>no</code>. (<code>yes</code>/<code>no</code>) <strong>¡Solo puede haber una opción predeterminada!</strong></p>
+</li>
+<li>
+<p><code>Emoji</code> <code>(Type: Emoji || Flag: Vacantable)</code>: El emoji que aparece junto a <code>Label</code>.</p>
+</li>
+<li>
+<p><code>Message ID</code> <code>(Type: String || Flag: Vacantable)</code>: El ID de un mensaje al que se debe añadir una nueva opción del menú de selección a un menú de selección existente. Por defecto, es la respuesta del bot.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$nomention
+$newSelectMenu[Ejemplo;1;1;Elegir una opción]
+$addSelectMenuOption[Ejemplo;Primero;primera-opcion;La primera opción]
+$addSelectMenuOption[Ejemplo;Segundo;segunda-opcion;La segunda opción]
+$addSelectMenuOption[Ejemplo;Tercero;tercera-opcion;La tercera [opción]
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/113303649/209933666-9ec8ecfc-e666-4caa-b7cb-b0b3c4cdea02.png" alt="ejemplo" /><br />
+<img src="https://user-images.githubusercontent.com/113303649/209933373-978c8ade-157f-4991-bb93-929430b4a4eb.png" alt="ejemplo" /></p>
+<blockquote>
+<p>Para más información, consulta la <a href="funciones/../guides/general/interactions/selectMenus/aboutSelectMenu.html">Guía del Menú Seleccionar</a>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="editselectmenu"><a class="header" href="#editselectmenu">$editSelectMenu[]</a></h1>
+<p>Edita un menú de selección.</p>
+<blockquote>
+<p>Puede editar la opción del menú de selección con <a href="funciones/../funciones/editSelectMenuOption.html"><code>$editSelectMenuOption[]</code></a>.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$editSelectMenu[ID del menú; Mín; Máx; (Marcador de posición; ID del mensaje)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>ID del menú</code> <code>(Tipo: Cadena || Marcador: Obligatorio)</code>: El ID del menú de selección que desea editar.</p>
+</li>
+<li>
+<p><code>Mín</code> <code>(Tipo: Entero || Marcador: Obligatorio)</code>: La cantidad mínima de valores que se pueden seleccionar.</p>
+</li>
+<li>
+<p><code>Máx</code> <code>(Tipo: Entero || Marcador: Obligatorio)</code>: La cantidad máxima de valores que se pueden seleccionar.</p>
+</li>
+<li>
+<p><code>Marcador de posición</code> <code>(Tipo: Cadena || Marcador: Vacante)</code>: El texto que aparece si no se selecciona ninguna opción. - <code>ID del mensaje</code> <code>(Tipo: Copo de nieve || Marca: Opcional)</code>: El mensaje para el cual se editará un menú de selección.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$editSelectMenu[Ejemplo;1;1;Elige una opción 😀]
+$addSelectMenuOption[Ejemplo;Primero;primera opción;La primera opción]
+$addSelectMenuOption[Ejemplo;Segundo;segunda opción;La segunda opción]
+$addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera [opción]
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/70456337/194151805-879cca9b-e970-4e32-bd70-fb5f9010fd97.png" alt="Uso" /><br />
+<img src="https://user-images.githubusercontent.com/70456337/194151852-70c8d754-e6cd-4269-982c-af03c6c3ba3c.png" alt="Uso" /></p>
+<blockquote>
+<p>Para más información, consulta la <a href="funciones/../gen/selectmenu.md.html">Guía del Menú Seleccionar</a>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="editselectmenuoption-1"><a class="header" href="#editselectmenuoption-1">$editSelectMenuOption[]</a></h1>
+<p>Edita una opción del menú de selección.</p>
+<blockquote>
+<p>Puede editar el menú de selección principal con <a href="funciones/./editSelectMenu.html"><code>$editSelectMenu[]</code></a>.</p>
+</blockquote>
+<h2 id="sintaxis-15"><a class="header" href="#sintaxis-15">Sintaxis</a></h2>
+<pre><code>$editSelectMenuOption[ID de la opción del menú;Etiqueta;Valor;Descripción;(Predeterminado;Emoji;ID del mensaje)]
+</code></pre>
+<h3 id="parámetros-11"><a class="header" href="#parámetros-11">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>ID de la opción del menú</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: El ID del menú de selección. Debe ser el mismo que el ID utilizado en su <code>$newSelectMenu[]</code>.</p>
+</li>
+<li>
+<p><code>Etiqueta</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: El nombre de la opción.</p>
+</li>
+<li>
+<p><code>Valor</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: El valor de la opción. Son los datos que se pasan a la función <code>$onInteraction[]</code>. <strong>¡El valor debe ser único en el menú de selección!</strong></p>
+</li>
+<li>
+<p><code>Description</code> <code>(Type: String || Flag: Vacantable)</code>: La descripción de la opción. Se muestra debajo de <code>Label</code>.</p>
+</li>
+<li>
+<p><code>Default</code> <code>(Type: Bool || Flag: Vacantable)</code>: Decide si la opción debe seleccionarse por defecto. <strong>¡Solo puede haber una opción por defecto!</strong></p>
+</li>
+<li>
+<p><code>Emoji</code> <code>(Type: Emoji || Flag: Vacantable)</code>: El emoji de la opción. Se muestra junto a <code>Label</code>
+.</p>
+</li>
+<li>
+<p><code>Message ID</code> <code>(Type: Snowflake || Flag: Optional)</code>: El ID del mensaje, menú asociado.</p>
+</li>
+</ul>
+<h3 id="código-de-interacción-2"><a class="header" href="#código-de-interacción-2">Código de interacción</a></h3>
+<pre><code>$editSelectMenuOption[Ejemplo;Primero;primera opción;La primera opción;false;1️⃣]
+$editSelectMenuOption[Ejemplo;Segundo;segunda opción;La segunda opción;false;2️⃣]
+$editSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción;false;3️⃣]
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/70456337/194148923-a25962f8-544d-4744-8a5c-876d9455eaa3.png" alt="ejemplo1" /></p>
+<h3 id="salida"><a class="header" href="#salida">Salida</a></h3>
+<p><strong>Antes</strong></p>
+<p><img src="https://user-images.githubusercontent.com/70456337/194149283-42724349-84d1-4d70-b8e6-d4b58e8c365f.png" alt="ejemplo2" /></p>
+<p><strong>Después</strong></p>
+<p><img src="https://user-images.githubusercontent.com/70456337/194149485-750c15e8-2a3c-46d0-857b-493178b9468c.png" alt="ejemplo3" /></p>
+<blockquote>
+<p>Para más información, consulta la <a href="funciones/../guides/general/interactions/selectMenus/aboutSelectMenu.html">Guía del Menú Seleccionar</a>.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getselectmenuid"><a class="header" href="#getselectmenuid">$getSelectMenuID[]</a></h1>
+<p>Recupera el ID de un menú de selección.</p>
+<h3 id="sintaxis-16"><a class="header" href="#sintaxis-16">Sintaxis</a></h3>
+<pre><code>$getSelectMenuID[]
+</code></pre>
+<p>Ejemplo de uso</p>
+<pre><code>bot = ..
+
+bot.new_event("$onInteraction", "$getSelectMenuID[]")
+
+bot.run(..)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getmenuvalueoption"><a class="header" href="#getmenuvalueoption">$getMenuValueOption[]</a></h1>
+<p>Recupera el ID de opcion de un menú de selección.</p>
+<h3 id="sintaxis-17"><a class="header" href="#sintaxis-17">Sintaxis</a></h3>
+<pre><code>$getMenuValueOption[]
+</code></pre>
+<p>Ejemplo de uso</p>
+<pre><code class="language-python">bot = ..
+
+bot.new_event("$onInteraction", "Elegiste la opcion: $getMenuValueOption[]")
+
+bot.run(..)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="removeselectmenus"><a class="header" href="#removeselectmenus">$removeSelectMenus[]</a></h1>
+<p>Elimina todos los menú de selección.</p>
+<h2 id="sintaxis-18"><a class="header" href="#sintaxis-18">Sintaxis</a></h2>
+<pre><code>$removeSelectMenus[]
+</code></pre>
+<h3 id="ejemplo-de-uso"><a class="header" href="#ejemplo-de-uso">Ejemplo de uso</a></h3>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onInteraction", 
+"""
+Menus Eliminados
+$removeSelectMenus[]
+""")}
+
+
+bot.run(..)
+</code></pre>
+<p>Este comando eliminará el menú de selección con el ID especificado, junto con todas sus opciones asociadas.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="eventos"><a class="header" href="#eventos">Eventos</a></h1>
 <p>Soon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onjoinmember"><a class="header" href="#onjoinmember">$onJoinMember</a></h1>
@@ -4097,7 +4292,7 @@ bot.run(..)
 <p><img src="Eventos/image-1.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onreactionadd"><a class="header" href="#onreactionadd">$onReactionAdd</a></h1>
 <p><code>$onReactionAdd</code> es un evento que se activa cuando un usuario añade una reacción a un mensaje en el servidor.</p>
-<h3 id="sintaxis-15"><a class="header" href="#sintaxis-15"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-19"><a class="header" href="#sintaxis-19"><strong>Sintaxis</strong></a></h3>
 <pre><code>$onReactionAdd
 </code></pre>
 <blockquote>

@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Eventos - AmisynthDocs</title>
+        <title>$newSelectMenu[] - AmisynthDocs</title>
 
 
         <!-- Custom HTML head -->
@@ -152,18 +152,47 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="eventos"><a class="header" href="#eventos">Eventos</a></h1>
-<p>Soon</p>
+                        <h1 id="newselectmenu"><a class="header" href="#newselectmenu">$newSelectMenu</a></h1>
+<p>Añade un menú de selección a un mensaje.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$newSelectMenu[ID del menú; Mín; Máx; (Marcador de posición; ID del mensaje)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>ID del menú</code> <code>(Tipo: Cadena || Marcador: Obligatorio)</code>: El ID del menú que se utiliza en la devolución de llamada <code>$onInteraction[]</code> y dentro del primer argumento de <code>$addSelectMenuOption[]</code>.</p>
+</li>
+<li>
+<p><code>Mín</code> <code>(Tipo: Entero || Marcador: Obligatorio)</code>: La cantidad mínima de valores que se pueden seleccionar.</p>
+</li>
+<li>
+<p><code>Máx</code> <code>(Tipo: Entero || Marcador: Obligatorio)</code>: La cantidad máxima de valores que se pueden seleccionar.</p>
+</li>
+<li>
+<p><code>Marcador de posición</code> <code>(Tipo: Cadena || Marcador: Vacante)</code>: El texto que aparece si no se selecciona ninguna opción. - <code>ID del mensaje</code> <code>(Tipo: Copo de nieve || Marca: Vacante)</code>: El ID de un mensaje al que se le debe añadir un menú de selección. Por defecto, es la respuesta del bot.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>Holax1
+$newSelectMenu[Ejemplo;1;1;Elige una opción]
+$addSelectMenuOption[Ejemplo;Primero;primera opción;La primera opción]
+$addSelectMenuOption[Ejemplo;Segundo;segunda opción;La segunda opción]
+$addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
+</code></pre>
+<p><img src="image-92.png" alt="alt text" /></p>
+<blockquote>
+<p>Para más información, consulta la <a href="../gen/selectmenu.md.html">Guía del Menú Select</a>.</p>
+</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../funciones/removeSelectMenus.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../funciones/repeatMessage.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../Eventos/onJoinMember.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../funciones/addSelectMenuOption.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -173,11 +202,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../funciones/removeSelectMenus.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../funciones/repeatMessage.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../Eventos/onJoinMember.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../funciones/addSelectMenuOption.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
