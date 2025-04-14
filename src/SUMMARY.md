@@ -15,6 +15,7 @@
             - [Botones](gen/Botones.md)
             - [Select Menus](gen/selectmenu.md)
             - [Slash Commands](gen/slashcommands.md)
+            
 
         - [Divicion Texto](gen/texto.md)
         - [JSON Funciones](gen/json.md)
