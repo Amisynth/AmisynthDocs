@@ -153,6 +153,44 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="editchannelafter"><a class="header" href="#editchannelafter">$editChannelAfter[]</a></h1>
+<p>Obtiene el estado <strong>después de la edición</strong> de un canal de servidor de Discord. Esta función es útil cuando quieres acceder a atributos específicos del canal <em>después</em> de que haya sido modificado (por ejemplo, cambio de nombre, tema, permisos, etc.).</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$editChannelAfter[Atributo]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Atributo</code> <code>(Tipo: Cadena|| Marca: Obligatorio)</code>: El nombre del atributo del canal que deseas obtener después de la edición.</li>
+</ul>
+<blockquote>
+<p>Devuelve el valor del atributo solicitado del canal editado. Si el atributo no existe o no se encuentra disponible, devuelve una cadena vacía (<code>""</code>).</p>
+</blockquote>
+<p><strong>Ejemplo de uso</strong></p>
+<pre><code class="language-js">Canal cambiado de nombre, antes: #$editChannelBefore[name] $url[decode;%0A]
+Canal cambiado de nombre, Despues #$editChannelAfter[name]
+</code></pre>
+<h3 id="-atributos-comunes-disponibles"><a class="header" href="#-atributos-comunes-disponibles">🔎 Atributos comunes disponibles</a></h3>
+<blockquote>
+<p>Dependiendo del tipo de canal (texto, voz, foro, etc.), los siguientes atributos pueden estar disponibles:</p>
+</blockquote>
+<div class="table-wrapper"><table><thead><tr><th>Atributo</th><th>Descripción</th></tr></thead><tbody>
+<tr><td><code>id</code></td><td>ID del canal</td></tr>
+<tr><td><code>name</code></td><td>Nombre del canal</td></tr>
+<tr><td><code>type</code></td><td>Tipo de canal (texto, voz, etc.)</td></tr>
+<tr><td><code>position</code></td><td>Posición en la lista de canales</td></tr>
+<tr><td><code>topic</code></td><td>Tema del canal (solo canales de texto)</td></tr>
+<tr><td><code>nsfw</code></td><td>Si el canal está marcado como NSFW</td></tr>
+<tr><td><code>bitrate</code></td><td>Calidad de audio (solo canales de voz)</td></tr>
+<tr><td><code>user_limit</code></td><td>Límite de usuarios (solo canales de voz)</td></tr>
+<tr><td><code>slowmode_delay</code></td><td>Modo lento en segundos (canales de texto)</td></tr>
+<tr><td><code>category_id</code></td><td>ID de la categoría a la que pertenece</td></tr>
+<tr><td><code>created_at</code></td><td>Fecha de creación del canal</td></tr>
+<tr><td><code>permissions_synced</code></td><td>Si hereda permisos de su categoría</td></tr>
+</tbody></table>
+</div>
+<blockquote>
+<p>Este comando solo funciona en contextos donde se está procesando un evento de edición de canal (<code>$onChannelEdit</code>)</p>
+</blockquote>
+<p><img src="image-112.png" alt="alt text" /></p>
 
                     </main>
 

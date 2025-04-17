@@ -17,7 +17,7 @@ $onReactionAdd
 ```python
 bot = ..
 
-bot.new_event("$onReactionAdd", "Emoji: $reactionEvent[]")
+bot.new_event("$onReactionAdd", "Emoji: $editReaction[]")
 
 bot.run(..)
 ```

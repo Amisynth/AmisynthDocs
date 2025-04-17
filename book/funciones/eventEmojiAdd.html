@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>$emojiAdd[] - AmisynthDocs</title>
+        <title>$eventEmojiAdd[] - AmisynthDocs</title>
 
 
         <!-- Custom HTML head -->
@@ -152,7 +152,16 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="emojiadd"><a class="header" href="#emojiadd">$emojiAdd[]</a></h1>
+                        <h1 id="eventemojiadd"><a class="header" href="#eventemojiadd">$eventEmojiAdd[]</a></h1>
+<p>Devuelve el <strong>emoji</strong> que fue agregado en un evento de reacción (usado dentro de eventos como <code>$onReactionAdd</code> o <code>$onReactionRemove</code>).</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code class="language-plaintext">$eventEmojiAdd[]
+</code></pre>
+<h3 id="-retorna"><a class="header" href="#-retorna">🔄 Retorna:</a></h3>
+<ul>
+<li>El emoji en formato texto o unicode (por ejemplo: <code>😊</code>, <code>🔥</code>).</li>
+<li>Si es un emoji personalizado, devolverá algo como <code>&lt;:nombre:id&gt;</code> o <code>&lt;a:nombre:id&gt;</code> si es animado.</li>
+</ul>
 
                     </main>
 

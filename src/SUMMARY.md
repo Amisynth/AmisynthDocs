@@ -69,7 +69,7 @@
     - [$editChannelBefore[]](funciones/editChannelBefore.md)
     - [$editSelectMenu[]](funciones/editSelectMenu.md)
     - [$editSelectMenuOption[]](funciones/editSelectMenuOption.md)
-    - [$emojiAdd[]](funciones/emojiAdd.md)
+    - [$eventEmojiAdd[]](funciones/eventEmojiAdd.md)
     - [$eval[]](funciones/eval.md)
     - [$exe[]](funciones/exe.md)
     - [$for[]](funciones/for.md)]
