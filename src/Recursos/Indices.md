@@ -25,4 +25,4 @@ $title[Título #3;3]
 $description[Descripción #3;3]
 ```
 
-![example](https://user-images.githubusercontent.com/69215413/125877770-c2bbc30e-95f4-4859-9343-bce65ad633c5.png)
+![alt text](image-1.png)

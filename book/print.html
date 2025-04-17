@@ -341,12 +341,9 @@ bot = AmiClient("!")
 bot.new_slash(
     name="despedir",
     description="Saluda a un usuario con un mensaje personalizado",
-    code="Adios!",
-    options=[ {
-            "name_option": "usuario",
-            "type": "User",
-            "required": False
-        }]
+    code="""
+     $addSlashOption[usuario;..;Usuario;True;False]
+    Adios!""")
 
 # Slash Con Choices 
 
@@ -354,16 +351,11 @@ bot.new_slash(
 bot.new_slash(
     name="saludar",
     description="Saluda a un usuario con un mensaje personalizado",
-    code="Hola!",
-    options=[{
-            "name_option": "mensaje",
-            "type": "Texto",
-            "required": True,
-            "choices": [
-                {"name_choice": "Opción 1", "value_choice": "op1"},
-                {"name_choice": "Opción 2", "value_choice": "op2"}
-            ]
-        }])
+    code="""
+    $addSlashOption[mensaje;..;Texto;True;False]
+    $addSlashChoiceOption[mensaje;Opcion 1;op1]
+    $addSlashChoiceOption[mensaje;Opcion 2;op2]
+    Hola!""")
 
 
 
@@ -1801,7 +1793,7 @@ Sin embargo, si se proporciona un ID de usuario en el parámetro opcional <code>
 </code></pre>
 <h2 id="resultados-http"><a class="header" href="#resultados-http">Resultados HTTP</a></h2>
 <ul>
-<li>Para devolver el resultado de una función de un método HTTP, puede usar <code>$httpResult</code>/<code>$httpResult[]</code>.</li>
+<li>Para devolver el resultado de una función de un método HTTP, puede usar <code>$httpResult[-1]</code>/<code>$httpResult[clave;..]</code>.</li>
 </ul>
 <h3 id="uso-n-1"><a class="header" href="#uso-n-1">Uso n.° 1</a></h3>
 <pre><code>$httpResult[-1]
@@ -1891,7 +1883,7 @@ $description[Descripción #2;2]
 $title[Título #3;3]
 $description[Descripción #3;3]
 </code></pre>
-<p><img src="https://user-images.githubusercontent.com/69215413/125877770-c2bbc30e-95f4-4859-9343-bce65ad633c5.png" alt="example" /></p>
+<p><img src="Recursos/image-1.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="marca-de-tiempo-en-discord"><a class="header" href="#marca-de-tiempo-en-discord">Marca de Tiempo en Discord</a></h1>
 <p>Los timestamps en Discord se utilizan para mostrar la hora en múltiples formatos. La información se ajusta automáticamente a la zona horaria y el idioma del usuario. Los timestamps en Discord están basados en el sistema de Tiempo Unix, lo que significa que son dinámicos. Pueden ser utilizados por cualquier persona, incluidos usuarios, webhooks y aplicaciones.</p>
 <h2 id="sintaxis-3"><a class="header" href="#sintaxis-3">Sintaxis</a></h2>
@@ -2185,7 +2177,33 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera-opcion;La tercera [opción]
 <p>Para más información, consulta la <a href="funciones/../guides/general/interactions/selectMenus/aboutSelectMenu.html">Guía del Menú Seleccionar</a>.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="average"><a class="header" href="#average">$average[]</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="abc"><a class="header" href="#abc">$abc[]</a></h1>
+<p>Calcula el promedio (media aritmética) de los números proporcionados.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$average[Número;..]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Número</code> <code>(Tipo: Coma flotante, Entero || Indicador: Obligatorio)</code>: Los números a promediar. Use punto y coma <code>;</code> como separador para pasar varios números.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$argsCheck[&gt;2;❌ Uso no válido. Uso: `!promedio (número1) (número2)`]
+$average[$message[1];$message[2]]
+</code></pre>
+<p><img src="funciones/image-94.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="abs"><a class="header" href="#abs">$abs[]</a></h1>
+<p>Devuelve el numero absoluto proporcionado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$adbc[Número]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Número</code> <code>(Tipo: Coma flotante, Entero || Indicador: Obligatorio)</code>: Devuelve el valor absoluto prporcionado.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$argsCheck[&gt;2;❌ Uso no válido. Uso: `!promediar (número1)`]
+$abs[$message[1]]
+</code></pre>
+<p><img src="funciones/image-96.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="and"><a class="header" href="#and">$and[]</a></h1>
 <p>Devuelve <code>True</code> si todas las condiciones proporcionadas son verdaderas; de lo contrario, devuelve <code>False</code>.</p>
 <p><strong>Sintaxis</strong></p>
@@ -2291,26 +2309,45 @@ $author[Texto de author con URL]
 </code></pre>
 <p><img src="funciones/image-14.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="addtimestamp"><a class="header" href="#addtimestamp">$addTimestamp[]</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ban"><a class="header" href="#ban">$ban[]</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="categorynames"><a class="header" href="#categorynames">$categoryNames[]</a></h1>
-<p><code>$categoryNames[]</code> retorna todos los nombres de las categorías del servidor.</p>
-<h3 id="sintaxis-6"><a class="header" href="#sintaxis-6"><strong>Sintaxis</strong></a></h3>
-<pre><code>$categoryNames[separador;(guild opcional)]
+<p>Añade una marca de tiempo a una incrustación.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$addTimestamp[(Indice)]
 </code></pre>
-<h3 id="parámetros-5"><a class="header" href="#parámetros-5"><strong>Parámetros</strong></a></h3>
+<p><strong>Parámetros</strong></p>
 <ul>
-<li>
-<p><code>Separador</code> <code>(Tipo: Cadena | Obligatorio)</code> → Especifica el carácter o texto que separará los nombres de las categorías en la lista.</p>
-</li>
-<li>
-<p><code>Guild ID</code> <code>(Tipo: ID | Opcional)</code> → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
-</li>
+<li><code>Índice</code> <code>(Tipo: Entero || Marca: Opcional)</code>: A qué incrustación se añadirá el texto del autor. (Más información)</li>
 </ul>
-<h3 id="ejemplo-12"><a class="header" href="#ejemplo-12"><strong>Ejemplo</strong></a></h3>
-<pre><code class="language-python">$categorysNames[|]
+<p><strong>Ejemplo</strong></p>
+<pre><code>$description[¡Hola!]
+$footer[Esa es la marca de tiempo =&gt;]
+$addTimestamp[]
 </code></pre>
-<p>🔹 Devuelve algo como: <code>Información, General, Juegos, Staff</code></p>
-<p><img src="funciones/image-21.png" alt="alt text" /></p>
+<p><img src="funciones/image-97.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ban"><a class="header" href="#ban">$ban[]</a></h1>
+<p>Banea a un usuario del servidor mediante su ID y registra una razón.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$ban[ID de usuario; Razón del baneo]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>ID de usuario</code> <code>(Tipo: Entero || Indicador: Obligatorio)</code>: El ID del usuario que será baneado del servidor.</li>
+<li><code>Razón del baneo</code> <code>(Tipo: Texto || Indicador: Opcional)</code>: El motivo por el cual el usuario fue baneado. Si se omite, se registrará "sin razón específica".</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$argsCheck[&gt;2;❌ Uso incorrecto. Uso: `!ban (ID del usuario) (razón)`]
+Usuario Baneado: $message[1]
+$ban[$mensaje[1];$message[2]]
+</code></pre>
+<p><img src="funciones/image-98.png" alt="alt text" /></p>
+<blockquote>
+<p>El bot debe tener el permiso <code>Ban Members</code>.</p>
+</blockquote>
+<blockquote>
+<p>Asegúrate de que el ID sea válido y que el usuario esté en el servidor (según las capacidades de tu sistema).</p>
+</blockquote>
+<blockquote>
+<p>La razón se guarda si tu sistema o bot la admite para registros o auditoría.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="channelid"><a class="header" href="#channelid">$channelID[]</a></h1>
 <p>Devuelve el ID del canal para el nombre del canal especificado.</p>
 <p>Sintaxis</p>
@@ -2324,25 +2361,6 @@ $author[Texto de author con URL]
 <pre><code>Canal ID: $channelID[]
 </code></pre>
 <p><img src="funciones/image-18.png" alt="alt text" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="channelnames"><a class="header" href="#channelnames">$channelNames[]</a></h1>
-<p>$channelNames[] retornar todos los nombre de los canales del servidor</p>
-<h3 id="sintaxis-7"><a class="header" href="#sintaxis-7"><strong>Sintaxis</strong></a></h3>
-<pre><code>$channelNames[separador;(guild opcional)]
-</code></pre>
-<h3 id="parámetros-6"><a class="header" href="#parámetros-6"><strong>Parámetros</strong></a></h3>
-<ul>
-<li>
-<p><code>Separador</code> <em>(Tipo: Cadena | Obligatorio)</em> → Especifica el carácter o texto que separará los nombres de los canales en la lista.</p>
-</li>
-<li>
-<p><code>Guild ID</code> <em>(Tipo: ID | Opcional)</em> → ID del servidor del que se desean obtener los nombres de los canales. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
-</li>
-</ul>
-<h3 id="ejemplo-13"><a class="header" href="#ejemplo-13"><strong>Ejemplo</strong></a></h3>
-<pre><code>$channelNames[|]
-</code></pre>
-<p>🔹 Devuelve algo como: <code>general, memes, música, sugerencias</code></p>
-<p><img src="funciones/image-20.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="checkcondition"><a class="header" href="#checkcondition">$checkCondition</a></h1>
 <p>Comprueba si una condición es verdadera o falsa.</p>
 <p><strong>Sintaxis</strong></p>
@@ -2383,6 +2401,23 @@ $author[Texto de author con URL]
 </code></pre>
 <p><img src="funciones/image-58.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="checkcontains"><a class="header" href="#checkcontains">$checkContains[]</a></h1>
+<p>Comprueba si el texto contiene al menos una de las frases proporcionadas.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$checkContains[Texto;Frases;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Texto</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El texto que se comprobará.</p>
+</li>
+<li>
+<p><code>Frases</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: Las frases/palabras que el bot comprobará en <code>Texto</code>. Separa las frases con <code>;</code>.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$checkContains[hola;$message[1]]
+</code></pre>
+<p><img src="funciones/image-99.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="color"><a class="header" href="#color">$color[]</a></h1>
 <p>$color Establece el color del borde de la incrustación.</p>
 <p><strong>Sintaxis</strong></p>
@@ -2401,24 +2436,195 @@ $author[Texto de author con URL]
 $description[&lt;- Este es el color]
 </code></pre>
 <p><img src="funciones/image-9.png" alt="alt text" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="channelsids"><a class="header" href="#channelsids">$channelsIDs[]</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="channelsnames"><a class="header" href="#channelsnames">$channelsNames[]</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="channelsname"><a class="header" href="#channelsname">$channelsName[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="channelids"><a class="header" href="#channelids">$channelIDs[]</a></h1>
+<p>Enumera todos los nombres de canales separados por un separador.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$channelIDs[Separador;(ID del gremio)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Separador</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El separador utilizado para separar los nombres de los canales.</p>
+</li>
+<li>
+<p><code>ID del gremio</code> <code>(Tipo: Copo de nieve || Marca: Opcional)</code>: El gremio del que se devuelven los nombres de los canales. <em>(Predeterminado: el gremio actual)</em></p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$channelIDs[-;$guildID[]]
+</code></pre>
+<p><img src="funciones/image-100.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="channelnames"><a class="header" href="#channelnames">$channelNames[]</a></h1>
+<p><code>$channelNames[]</code> retornar todos los nombre de los canales del servidor</p>
+<h3 id="sintaxis-6"><a class="header" href="#sintaxis-6"><strong>Sintaxis</strong></a></h3>
+<pre><code>$channelNames[separador;(guild opcional)]
+</code></pre>
+<h3 id="parámetros-5"><a class="header" href="#parámetros-5"><strong>Parámetros</strong></a></h3>
+<ul>
+<li>
+<p><code>Separador</code> <em>(Tipo: Cadena | Obligatorio)</em> → Especifica el carácter o texto que separará los nombres de los canales en la lista.</p>
+</li>
+<li>
+<p><code>Guild ID</code> <em>(Tipo: ID | Opcional)</em> → ID del servidor del que se desean obtener los nombres de los canales. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
+</li>
+</ul>
+<h3 id="ejemplo-12"><a class="header" href="#ejemplo-12"><strong>Ejemplo</strong></a></h3>
+<pre><code>$channelNames[|]
+</code></pre>
+<p>🔹 Devuelve algo como: <code>general, memes, música, sugerencias</code></p>
+<p><img src="funciones/image-20.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="channelname"><a class="header" href="#channelname">$channelName[]</a></h1>
+<p>Devuelve el nombre del ID del canal proporcionado.
+<strong>Sintaxis</strong></p>
+<pre><code>$channelName[ID del canal]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>ID del canal</code> <code>(Tipo: Copo de nieve || Marca: Obligatorio)</code>: El canal cuyo nombre se devolverá.</li>
+</ul>
+<blockquote>
+<p>🧙‍♂️ <a href="https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-">¿Cómo encuentro los ID de los canales? (Haz clic aquí)</a></p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$channelName[$channelID[]]
+</code></pre>
+<p><img src="funciones/image-101.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="channelsystem"><a class="header" href="#channelsystem">$channelSystem[]</a></h1>
+<p>Devuelve el ID del canal del sistema del servidor</p>
+<blockquote>
+<p>No requiere parametros</p>
+</blockquote>
+<p><strong>Codigo de ejemplo</strong></p>
+<pre><code>$eval[$message[1]]
+</code></pre>
+<p><img src="funciones/image-102.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="channelposition"><a class="header" href="#channelposition">$channelPosition[]</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="categorysids"><a class="header" href="#categorysids">$categorysIDs[]</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="categorysnames"><a class="header" href="#categorysnames">$categorysNames[]</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="categorysnames-1"><a class="header" href="#categorysnames-1">$categorysNames[]</a></h1>
+<p>Devuelve la posicion del canal ID del canal proporcionado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$channelPosition[ID del canal]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>ID del canal</code> <code>(Tipo: Copo de nieve || Marca: Obligatorio)</code>: El canal cuyo nombre se devolverá.</li>
+</ul>
+<blockquote>
+<p>🧙‍♂️ <a href="https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-">¿Cómo encuentro los ID de los canales? (Haz clic aquí)</a></p>
+</blockquote>
+<p><strong>Codigo de ejemplo</strong></p>
+<pre><code>Posicion del canal $channelPosition[1354997612234674226]
+</code></pre>
+<p><img src="funciones/image-103.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="categoryids"><a class="header" href="#categoryids">$categoryIDs[]</a></h1>
+<p><code>$categoryIDs[]</code> retorna todos los nombres de las categorías del servidor.</p>
+<h3 id="sintaxis-7"><a class="header" href="#sintaxis-7"><strong>Sintaxis</strong></a></h3>
+<pre><code>$categoryIDs[separador;(guild opcional)]
+</code></pre>
+<h3 id="parámetros-6"><a class="header" href="#parámetros-6"><strong>Parámetros</strong></a></h3>
+<ul>
+<li>
+<p><code>Separador</code> <code>(Tipo: Cadena | Obligatorio)</code> → Especifica el carácter o texto que separará los nombres de las categorías en la lista.</p>
+</li>
+<li>
+<p><code>Guild ID</code> <code>(Tipo: ID | Opcional)</code> → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
+</li>
+</ul>
+<h3 id="ejemplo-13"><a class="header" href="#ejemplo-13"><strong>Ejemplo</strong></a></h3>
+<pre><code class="language-python">$categoryIDs[|]
+</code></pre>
+<p>🔹 Devuelve algo como: <code>1171903881001832591|1171903881001832595|1171903881442242634</code></p>
+<p><img src="funciones/image-104.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="categorynames"><a class="header" href="#categorynames">$categoryNames[]</a></h1>
+<p><code>$categoryNames[]</code> retorna todos los nombres de las categorías del servidor.</p>
+<h3 id="sintaxis-8"><a class="header" href="#sintaxis-8"><strong>Sintaxis</strong></a></h3>
+<pre><code>$categoryNames[separador;(guild opcional)]
+</code></pre>
+<h3 id="parámetros-7"><a class="header" href="#parámetros-7"><strong>Parámetros</strong></a></h3>
+<ul>
+<li>
+<p><code>Separador</code> <code>(Tipo: Cadena | Obligatorio)</code> → Especifica el carácter o texto que separará los nombres de las categorías en la lista.</p>
+</li>
+<li>
+<p><code>Guild ID</code> <code>(Tipo: ID | Opcional)</code> → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
+</li>
+</ul>
+<h3 id="ejemplo-14"><a class="header" href="#ejemplo-14"><strong>Ejemplo</strong></a></h3>
+<pre><code class="language-python">$categorysNames[|]
+</code></pre>
+<p>🔹 Devuelve algo como: <code>Información, General, Juegos, Staff</code></p>
+<p><img src="funciones/image-21.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="createchannel"><a class="header" href="#createchannel">$createChannel[]</a></h1>
+<p>Crea un nuevo canal.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$createChannel[Nombre;Tipo;(ID de categoría)]
+</code></pre>
+<blockquote>
+<p>Discord permite a los usuarios crear hasta 500 canales por servidor. Esto incluye todos los tipos de canales.</p>
+</blockquote>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Nombre</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: El nombre del nuevo canal.</li>
+</ul>
+<blockquote>
+<p>Los nombres de los canales pueden tener un máximo de 100 caracteres.</p>
+</blockquote>
+<ul>
+<li><code>Tipo</code> <code>(Tipo: Enumeración || Indicador: Obligatorio)</code>: El tipo de canal. Tipos de canal:
+<ul>
+<li><code>categoría</code></li>
+<li><code>texto</code></li>
+<li><code>voz</code></li>
+<li><code>escenario</code></li>
+<li><code>foro</code></li>
+<li><code>ID de categoría</code> <code>(Tipo: Copo de nieve || Indicador: Opcional)</code>: La categoría a la que se asignará el canal (si corresponde).</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-">Guía para obtener la ID de categoría.</a></p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$eval[$message[-1]]
+</code></pre>
+<p><img src="funciones/image-107.png" alt="alt text" /></p>
+<p><img src="funciones/image-106.png" alt="alt text" /></p>
+<p><img src="funciones/image-108.png" alt="alt text" /></p>
+<blockquote>
+<p><a href="funciones/./authorIDComplex.html">Puede usar <code>$channelID[]</code> para obtener el ID del canal.</a></p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="calculate"><a class="header" href="#calculate">$calculate[]</a></h1>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$calculate[Expresión]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Expresión</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: La expresión matemática a resolver.</li>
+</ul>
+<p><strong>Signos</strong></p>
+<ul>
+<li><code>+</code> - Suma.</li>
+<li><code>-</code> - Resta.</li>
+<li><code>/</code> - División.</li>
+<li><code>*</code> - Multiplicación.</li>
+<li><code>%</code> - Módulo.</li>
+<li><code>**</code> - Potencia.</li>
+<li><code>()</code> - Paréntesis para insertar ecuaciones.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$calculate[$message[-1]] 🧠
+</code></pre>
+<p><img src="funciones/image-111.png" alt="alt text" /></p>
+<blockquote>
+<p><a href="funciones/../funciones/decimals.html">¿Cómo funciona <code>$enableDecimals[]</code>?</a></p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="customid"><a class="header" href="#customid">$customID[]</a></h1>
 <p><code>$customID[]</code> retorna el <strong>ID personalizado</strong> de una interacción con botones o menús desplegables en Discord.</p>
-<h3 id="sintaxis-8"><a class="header" href="#sintaxis-8"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-9"><a class="header" href="#sintaxis-9"><strong>Sintaxis</strong></a></h3>
 <pre><code>$customID[]
 </code></pre>
 <blockquote>
 <p>📌 <strong>Nota:</strong> Solo funciona dentro de eventos como <code>$onInteraction</code>.</p>
 </blockquote>
-<h3 id="ejemplo-14"><a class="header" href="#ejemplo-14"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-15"><a class="header" href="#ejemplo-15"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot = ..
 
 bot.new_event("$onInteraction", "customid: $customID[]")
@@ -2513,14 +2719,14 @@ $addButton[false;http://botdesignerdiscord.com;Visita nuestra web;link;false;�
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="editmessageafter"><a class="header" href="#editmessageafter">$editMessageAfter[]</a></h1>
 <p><code>$editMessageAfter[]</code> devuelde el mensaje ya editado.</p>
-<h3 id="sintaxis-9"><a class="header" href="#sintaxis-9"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-10"><a class="header" href="#sintaxis-10"><strong>Sintaxis</strong></a></h3>
 <pre><code>$editMessageAfter[]
 </code></pre>
-<h3 id="parámetros-7"><a class="header" href="#parámetros-7"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-8"><a class="header" href="#parámetros-8"><strong>Parámetros</strong></a></h3>
 <blockquote>
 <p>No requiere Parametros, solo funciona en el evento <code>$onMessageEdit</code></p>
 </blockquote>
-<h3 id="ejemplo-15"><a class="header" href="#ejemplo-15"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-16"><a class="header" href="#ejemplo-16"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">Contenido Original: $editMessageBefore[]
 Contenido Nuevo: $editMessageAfter[]
 </code></pre>
@@ -2579,10 +2785,10 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera [opción]
 <blockquote>
 <p>Puede editar el menú de selección principal con <a href="funciones/./editSelectMenu.html"><code>$editSelectMenu[]</code></a>.</p>
 </blockquote>
-<h2 id="sintaxis-10"><a class="header" href="#sintaxis-10">Sintaxis</a></h2>
+<h2 id="sintaxis-11"><a class="header" href="#sintaxis-11">Sintaxis</a></h2>
 <pre><code>$editSelectMenuOption[ID de la opción del menú;Etiqueta;Valor;Descripción;(Predeterminado;Emoji;ID del mensaje)]
 </code></pre>
-<h3 id="parámetros-8"><a class="header" href="#parámetros-8">Parámetros</a></h3>
+<h3 id="parámetros-9"><a class="header" href="#parámetros-9">Parámetros</a></h3>
 <ul>
 <li>
 <p><code>ID de la opción del menú</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: El ID del menú de selección. Debe ser el mismo que el ID utilizado en su <code>$newSelectMenu[]</code>.</p>
@@ -2845,7 +3051,7 @@ $color[FFFF00]
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getmenuvalueoption"><a class="header" href="#getmenuvalueoption">$getMenuValueOption[]</a></h1>
 <p>Recupera el ID de opcion de un menú de selección.</p>
-<h3 id="sintaxis-11"><a class="header" href="#sintaxis-11">Sintaxis</a></h3>
+<h3 id="sintaxis-12"><a class="header" href="#sintaxis-12">Sintaxis</a></h3>
 <pre><code>$getMenuValueOption[]
 </code></pre>
 <p>Ejemplo de uso</p>
@@ -2857,7 +3063,7 @@ bot.run(..)
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getselectmenuid"><a class="header" href="#getselectmenuid">$getSelectMenuID[]</a></h1>
 <p>Recupera el ID de un menú de selección.</p>
-<h3 id="sintaxis-12"><a class="header" href="#sintaxis-12">Sintaxis</a></h3>
+<h3 id="sintaxis-13"><a class="header" href="#sintaxis-13">Sintaxis</a></h3>
 <pre><code>$getSelectMenuID[]
 </code></pre>
 <p>Ejemplo de uso</p>
@@ -2889,14 +3095,14 @@ bot.run(..)
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="gettextsplitindex-1"><a class="header" href="#gettextsplitindex-1">$getTextSplitIndex[]</a></h1>
 <p>Obtiene el índice de un valor dentro del texto dividido con <code>$textSplit</code>. Devuelve <code>-1</code> si el valor no se encuentra.</p>
-<h2 id="sintaxis-13"><a class="header" href="#sintaxis-13">Sintaxis</a></h2>
+<h2 id="sintaxis-14"><a class="header" href="#sintaxis-14">Sintaxis</a></h2>
 <pre><code>$getTextSplitIndex[Valor]
 </code></pre>
-<h2 id="parámetros-9"><a class="header" href="#parámetros-9">Parámetros</a></h2>
+<h2 id="parámetros-10"><a class="header" href="#parámetros-10">Parámetros</a></h2>
 <ul>
 <li><code>Valor</code> <code>(Tipo: String || Opcional)</code>: El valor a buscar dentro del texto dividido.</li>
 </ul>
-<h2 id="ejemplo-16"><a class="header" href="#ejemplo-16">Ejemplo</a></h2>
+<h2 id="ejemplo-17"><a class="header" href="#ejemplo-17">Ejemplo</a></h2>
 <h3 id="ejemplo-1-2"><a class="header" href="#ejemplo-1-2">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$textSplit[hello_world_!;_]
 &gt; $getTextSplitIndex[$message[-1]]   // Devuelve el índice del valor en la lista dividida o -1 si no se encuentra
@@ -3729,7 +3935,7 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
 <p><img src="funciones/image-76.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="or"><a class="header" href="#or">$or[]</a></h1>
 <p>Devuelve <code>True</code> si al menos una de las condiciones proporcionadas es <code>True</code>; de lo contrario, devuelve <code>False</code>.</p>
-<h2 id="sintaxis-14"><a class="header" href="#sintaxis-14">Sintaxis</a></h2>
+<h2 id="sintaxis-15"><a class="header" href="#sintaxis-15">Sintaxis</a></h2>
 <pre><code>$or[Condiciones;...]
 </code></pre>
 <p><strong>Parámetros</strong></p>
@@ -3756,13 +3962,13 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
 <div style="break-before: page; page-break-before: always;"></div><h1 id="power"><a class="header" href="#power">$power[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="reationevent"><a class="header" href="#reationevent">$reationEvent[]</a></h1>
 <p>La función <code>$reactionEvent[]</code> almacena un valor en una variable temporal dentro de la ejecución del comando.</p>
-<h3 id="sintaxis-15"><a class="header" href="#sintaxis-15"><code>Sintaxis</code></a></h3>
+<h3 id="sintaxis-16"><a class="header" href="#sintaxis-16"><code>Sintaxis</code></a></h3>
 <pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <blockquote>
 <p>Esta es una funcion compartida que retornar el emoji usado o removido en los eventos <code>$onReactionAdd</code> y <code>$onReactionRemove</code></p>
 </blockquote>
-<h3 id="ejemplo-17"><a class="header" href="#ejemplo-17"><code>Ejemplo</code></a></h3>
+<h3 id="ejemplo-18"><a class="header" href="#ejemplo-18"><code>Ejemplo</code></a></h3>
 <pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <p><img src="funciones/image-3.png" alt="alt text" /></p>
@@ -3778,7 +3984,7 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
 <blockquote>
 <p>📝 Al proporcionar el "ID del mensaje", asegúrese de que el autor del mensaje sea el bot.</p>
 </blockquote>
-<h2 id="ejemplo-18"><a class="header" href="#ejemplo-18">Ejemplo</a></h2>
+<h2 id="ejemplo-19"><a class="header" href="#ejemplo-19">Ejemplo</a></h2>
 <pre><code>$removeButtons[$message[1]]
 Se eliminaron todos los botones del mensaje correctamente. 
 </code></pre>
@@ -3806,7 +4012,7 @@ Se eliminaron todos los botones del mensaje correctamente.
 <p><img src="funciones/../gen/image-4.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="removeselectmenus"><a class="header" href="#removeselectmenus">$removeSelectMenus[]</a></h1>
 <p>Elimina todos los menú de selección.</p>
-<h2 id="sintaxis-16"><a class="header" href="#sintaxis-16">Sintaxis</a></h2>
+<h2 id="sintaxis-17"><a class="header" href="#sintaxis-17">Sintaxis</a></h2>
 <pre><code>$removeSelectMenus[]
 </code></pre>
 <h3 id="ejemplo-de-uso"><a class="header" href="#ejemplo-de-uso">Ejemplo de uso</a></h3>
@@ -3897,7 +4103,7 @@ $removeSplitTextElement[2]
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rolegrant"><a class="header" href="#rolegrant">$roleGrant[]</a></h1>
 <p>Añade o elimina roles del usuario proporcionado.</p>
-<h2 id="sintaxis-17"><a class="header" href="#sintaxis-17">Sintaxis</a></h2>
+<h2 id="sintaxis-18"><a class="header" href="#sintaxis-18">Sintaxis</a></h2>
 <pre><code>$roleGrant[ID de usuario;+/-ID de rol;...]
 </code></pre>
 <p><strong>Parámetros</strong></p>
@@ -4126,7 +4332,7 @@ $setUserVar[dinero;0;$authorID[]]
 <p><strong>Sintaxis</strong></p>
 <pre><code>$setVar[Nombre de la variable;Nuevo valor;(ID de usuario)]
 </code></pre>
-<h3 id="parámetros-10"><a class="header" href="#parámetros-10">Parámetros</a></h3>
+<h3 id="parámetros-11"><a class="header" href="#parámetros-11">Parámetros</a></h3>
 <ul>
 <li>
 <p><code>Nombre de la variable</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: La variable que se actualizará.</p>
@@ -4298,14 +4504,14 @@ $titleURL[https:/example.com]
 <p><img src="funciones/image-7.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="username"><a class="header" href="#username">$username[]</a></h1>
 <p><code>$username[]</code> retorna el nombre de usuario de un miembro del servidor.</p>
-<h3 id="sintaxis-18"><a class="header" href="#sintaxis-18"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-19"><a class="header" href="#sintaxis-19"><strong>Sintaxis</strong></a></h3>
 <pre><code>$username[(ID de usuario)]
 </code></pre>
-<h3 id="parámetros-11"><a class="header" href="#parámetros-11"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-12"><a class="header" href="#parámetros-12"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>ID de usuario</code> <code>(Tipo: ID | Opcional)</code>: → Especifica el ID del usuario del que se desea obtener el nombre. Si se omite, devuelve el nombre del usuario que ejecutó el comando o activó el evento.</li>
 </ul>
-<h3 id="ejemplo-19"><a class="header" href="#ejemplo-19"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-20"><a class="header" href="#ejemplo-20"><strong>Ejemplo</strong></a></h3>
 <pre><code>Tu nombre es: $username
 </code></pre>
 <p><img src="funciones/image-19.png" alt="alt text" /></p>
@@ -4450,13 +4656,13 @@ bot.run(..)
 <p><img src="Eventos/image-1.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onreactionadd"><a class="header" href="#onreactionadd">$onReactionAdd</a></h1>
 <p><code>$onReactionAdd</code> es un evento que se activa cuando un usuario añade una reacción a un mensaje en el servidor.</p>
-<h3 id="sintaxis-19"><a class="header" href="#sintaxis-19"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-20"><a class="header" href="#sintaxis-20"><strong>Sintaxis</strong></a></h3>
 <pre><code>$onReactionAdd
 </code></pre>
 <blockquote>
 <p>📌 <strong>Nota:</strong> Este evento se usa como un disparador, no dentro del código del comando.</p>
 </blockquote>
-<h3 id="ejemplo-20"><a class="header" href="#ejemplo-20"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-21"><a class="header" href="#ejemplo-21"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot = ..
 
 bot.new_event("$onReactionAdd", "Emoji: $reactionEvent[]")

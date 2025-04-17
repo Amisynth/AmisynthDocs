@@ -153,6 +153,23 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="checkcontains"><a class="header" href="#checkcontains">$checkContains[]</a></h1>
+<p>Comprueba si el texto contiene al menos una de las frases proporcionadas.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$checkContains[Texto;Frases;...]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Texto</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El texto que se comprobará.</p>
+</li>
+<li>
+<p><code>Frases</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: Las frases/palabras que el bot comprobará en <code>Texto</code>. Separa las frases con <code>;</code>.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$checkContains[hola;$message[1]]
+</code></pre>
+<p><img src="image-99.png" alt="alt text" /></p>
 
                     </main>
 

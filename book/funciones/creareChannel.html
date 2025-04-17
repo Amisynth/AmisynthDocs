@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>$channelsIDs[] - AmisynthDocs</title>
+        <title>$createChannel[] - AmisynthDocs</title>
 
 
         <!-- Custom HTML head -->
@@ -152,17 +152,55 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="channelsids"><a class="header" href="#channelsids">$channelsIDs[]</a></h1>
+                        <h1 id="createchannel"><a class="header" href="#createchannel">$createChannel[]</a></h1>
+<p>Crea un nuevo canal.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$createChannel[Nombre;Tipo;(ID de categoría)]
+</code></pre>
+<blockquote>
+<p>Discord permite a los usuarios crear hasta 500 canales por servidor. Esto incluye todos los tipos de canales.</p>
+</blockquote>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Nombre</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: El nombre del nuevo canal.</li>
+</ul>
+<blockquote>
+<p>Los nombres de los canales pueden tener un máximo de 100 caracteres.</p>
+</blockquote>
+<ul>
+<li><code>Tipo</code> <code>(Tipo: Enumeración || Indicador: Obligatorio)</code>: El tipo de canal. Tipos de canal:
+<ul>
+<li><code>categoría</code></li>
+<li><code>texto</code></li>
+<li><code>voz</code></li>
+<li><code>escenario</code></li>
+<li><code>foro</code></li>
+<li><code>ID de categoría</code> <code>(Tipo: Copo de nieve || Indicador: Opcional)</code>: La categoría a la que se asignará el canal (si corresponde).</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-">Guía para obtener la ID de categoría.</a></p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$eval[$message[-1]]
+</code></pre>
+<p><img src="image-107.png" alt="alt text" /></p>
+<p><img src="image-106.png" alt="alt text" /></p>
+<p><img src="image-108.png" alt="alt text" /></p>
+<blockquote>
+<p><a href="./authorIDComplex.html">Puede usar <code>$channelID[]</code> para obtener el ID del canal.</a></p>
+</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../funciones/color.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../funciones/categoryNames.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../funciones/channelsNames.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../funciones/calculate.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -172,11 +210,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../funciones/color.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../funciones/categoryNames.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../funciones/channelsNames.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../funciones/calculate.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

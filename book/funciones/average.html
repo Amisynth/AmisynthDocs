@@ -153,6 +153,19 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="average"><a class="header" href="#average">$average[]</a></h1>
+<p>Calcula el promedio (media aritmética) de los números proporcionados.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$average[Número;..]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Número</code> <code>(Tipo: Coma flotante, Entero || Indicador: Obligatorio)</code>: Los números a promediar. Use punto y coma <code>;</code> como separador para pasar varios números.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$argsCheck[&gt;2;❌ Uso no válido. Uso: `!promedio (número1) (número2)`]
+$average[$message[1];$message[2]]
+</code></pre>
+<p><img src="image-94.png" alt="alt text" /></p>
 
                     </main>
 

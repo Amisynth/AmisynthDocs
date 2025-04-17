@@ -50,7 +50,7 @@ $httpStatus
 ```
 
 ## Resultados HTTP
-- Para devolver el resultado de una función de un método HTTP, puede usar `$httpResult`/`$httpResult[]`.
+- Para devolver el resultado de una función de un método HTTP, puede usar `$httpResult[-1]`/`$httpResult[clave;..]`.
 
 ### Uso n.° 1
 ```

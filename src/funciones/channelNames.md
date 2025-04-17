@@ -1,6 +1,6 @@
 # $channelNames[]
 
-$channelNames[] retornar todos los nombre de los canales del servidor
+`$channelNames[]` retornar todos los nombre de los canales del servidor
 
 
 ### **Sintaxis**  

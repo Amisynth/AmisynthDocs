@@ -153,6 +153,30 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="ban"><a class="header" href="#ban">$ban[]</a></h1>
+<p>Banea a un usuario del servidor mediante su ID y registra una razón.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$ban[ID de usuario; Razón del baneo]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>ID de usuario</code> <code>(Tipo: Entero || Indicador: Obligatorio)</code>: El ID del usuario que será baneado del servidor.</li>
+<li><code>Razón del baneo</code> <code>(Tipo: Texto || Indicador: Opcional)</code>: El motivo por el cual el usuario fue baneado. Si se omite, se registrará "sin razón específica".</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$argsCheck[&gt;2;❌ Uso incorrecto. Uso: `!ban (ID del usuario) (razón)`]
+Usuario Baneado: $message[1]
+$ban[$mensaje[1];$message[2]]
+</code></pre>
+<p><img src="image-98.png" alt="alt text" /></p>
+<blockquote>
+<p>El bot debe tener el permiso <code>Ban Members</code>.</p>
+</blockquote>
+<blockquote>
+<p>Asegúrate de que el ID sea válido y que el usuario esté en el servidor (según las capacidades de tu sistema).</p>
+</blockquote>
+<blockquote>
+<p>La razón se guarda si tu sistema o bot la admite para registros o auditoría.</p>
+</blockquote>
 
                     </main>
 
@@ -162,7 +186,7 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../funciones/categoryNames.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../funciones/channelID.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -176,7 +200,7 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../funciones/categoryNames.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../funciones/channelID.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

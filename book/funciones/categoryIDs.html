@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>$channelsName[] - AmisynthDocs</title>
+        <title>$categoryIDs[] - AmisynthDocs</title>
 
 
         <!-- Custom HTML head -->
@@ -152,17 +152,35 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="channelsname"><a class="header" href="#channelsname">$channelsName[]</a></h1>
+                        <h1 id="categoryids"><a class="header" href="#categoryids">$categoryIDs[]</a></h1>
+<p><code>$categoryIDs[]</code> retorna todos los nombres de las categorías del servidor.</p>
+<h3 id="sintaxis"><a class="header" href="#sintaxis"><strong>Sintaxis</strong></a></h3>
+<pre><code>$categoryIDs[separador;(guild opcional)]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros"><strong>Parámetros</strong></a></h3>
+<ul>
+<li>
+<p><code>Separador</code> <code>(Tipo: Cadena | Obligatorio)</code> → Especifica el carácter o texto que separará los nombres de las categorías en la lista.</p>
+</li>
+<li>
+<p><code>Guild ID</code> <code>(Tipo: ID | Opcional)</code> → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
+</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo"><strong>Ejemplo</strong></a></h3>
+<pre><code class="language-python">$categoryIDs[|]
+</code></pre>
+<p>🔹 Devuelve algo como: <code>1171903881001832591|1171903881001832595|1171903881442242634</code></p>
+<p><img src="image-104.png" alt="alt text" /></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../funciones/channelsNames.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../funciones/channelPosition.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../funciones/channelSystem.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../funciones/categoryNames.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -172,11 +190,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../funciones/channelsNames.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../funciones/channelPosition.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../funciones/channelSystem.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../funciones/categoryNames.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

@@ -202,12 +202,9 @@ bot = AmiClient("!")
 bot.new_slash(
     name="despedir",
     description="Saluda a un usuario con un mensaje personalizado",
-    code="Adios!",
-    options=[ {
-            "name_option": "usuario",
-            "type": "User",
-            "required": False
-        }]
+    code="""
+     $addSlashOption[usuario;..;Usuario;True;False]
+    Adios!""")
 
 # Slash Con Choices 
 
@@ -215,16 +212,11 @@ bot.new_slash(
 bot.new_slash(
     name="saludar",
     description="Saluda a un usuario con un mensaje personalizado",
-    code="Hola!",
-    options=[{
-            "name_option": "mensaje",
-            "type": "Texto",
-            "required": True,
-            "choices": [
-                {"name_choice": "Opción 1", "value_choice": "op1"},
-                {"name_choice": "Opción 2", "value_choice": "op2"}
-            ]
-        }])
+    code="""
+    $addSlashOption[mensaje;..;Texto;True;False]
+    $addSlashChoiceOption[mensaje;Opcion 1;op1]
+    $addSlashChoiceOption[mensaje;Opcion 2;op2]
+    Hola!""")
 
 
 
