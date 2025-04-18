@@ -2348,6 +2348,7 @@ $ban[$mensaje[1];$message[2]]
 <blockquote>
 <p>La razón se guarda si tu sistema o bot la admite para registros o auditoría.</p>
 </blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="break"><a class="header" href="#break">$break[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="channelid"><a class="header" href="#channelid">$channelID[]</a></h1>
 <p>Devuelve el ID del canal para el nombre del canal especificado.</p>
 <p>Sintaxis</p>
@@ -2585,7 +2586,7 @@ $description[&lt;- Este es el color]
 <p><strong>Ejemplo</strong></p>
 <pre><code>$eval[$message[-1]]
 </code></pre>
-<p><img src="funciones/image-107.png" alt="alt text" /></p>
+<p><img src="funciones/image-120.png" alt="alt text" /></p>
 <p><img src="funciones/image-106.png" alt="alt text" /></p>
 <p><img src="funciones/image-108.png" alt="alt text" /></p>
 <blockquote>
@@ -2913,6 +2914,16 @@ $editSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción;false;3
 <li>El emoji en formato texto o unicode (por ejemplo: <code>😊</code>, <code>🔥</code>).</li>
 <li>Si es un emoji personalizado, devolverá algo como <code>&lt;:nombre:id&gt;</code> o <code>&lt;a:nombre:id&gt;</code> si es animado.</li>
 </ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-python">bot = ..
+
+bot.new_event("$onReactionAdd", "Emoji agregado: $eventEmojiAdd[]")
+
+bot.run(..)
+</code></pre>
+<p>🔹 Si un usuario llamado "Saul" reacciona con "✅" en el canal <code>#general</code>, el bot enviará:</p>
+<p><img src="funciones/image-114.png" alt="alt text" /></p>
+<p><img src="funciones/image-115.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="eval"><a class="header" href="#eval">$eval[]</a></h1>
 <p>Evalúa el código proporcionado.</p>
 <blockquote>
@@ -2944,8 +2955,44 @@ $eval[$message[-1]]
 <blockquote>
 <p>¿Cómo funcionan <a href="funciones/../funciones/onlyForIDs.html"><code>$onlyForIDs[]</code></a> y <a href="funciones/../funciones/botOwnerID.html"><code>$botOwnerID[]</code></a>?</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="exe"><a class="header" href="#exe">$exe[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="exec"><a class="header" href="#exec">$exec[]</a></h1>
+<p>Ejecuta código Python si se cumple una condición booleana.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$exec[condición_booleana;Código python]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>condición_booleana</code> <code>(Tipo: Bool || Marca: Obligatorio)</code>: Expresión booleana que debe evaluarse como <code>True</code> para ejecutar el código.</p>
+</li>
+<li>
+<p><code>código_python</code> <code>(Tipo: Código || Marca: Obligatorio)</code>: Código Python que se ejecutará si la condición es verdadera. Puede incluir llamadas como <code>print()</code>, operaciones, etc.</p>
+</li>
+</ul>
+<pre><code>$eval[$message[-1]]
+</code></pre>
+<p><img src="funciones/image-121.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="for"><a class="header" href="#for">$for[]</a></h1>
+<p>Ejecuta un bloque repetidamente dentro de un rango definido.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$foor[inicio..fin; código]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Inicio..fin</code> <code>(Tipo: Rango || Marca: Obligatorio)</code>: Define el rango numérico (inclusive) en el que se ejecutará el código repetidamente.<br />
+Ejemplo: <code>1..5</code> ejecuta el bloque 5 veces, con valores del 1 al 5.</p>
+</li>
+<li>
+<p><code>Código</code> <code>(Tipo: Código || Marca: Obligatorio)</code>: Código que se ejecutará en cada iteración. Puede incluir <code>$get[iterador]</code> para acceder al número actual del ciclo.</p>
+</li>
+</ul>
+<p>¿Quieres que esta estructura soporte anidación de ciclos <code>$foor</code> dentro de otros? También puedo ayudarte a implementar la lógica Python detrás si estás armando el evaluador.</p>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$eval[$message[-1]]
+</code></pre>
+<p><img src="funciones/image-122.png" alt="alt text" /></p>
+<p><img src="funciones/image-123.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="footer"><a class="header" href="#footer">$footer[]</a></h1>
 <p>$footer Establece el texto del pie de página incrustado.</p>
 <p><strong>Sintaxis</strong></p>
@@ -2987,6 +3034,25 @@ $footer[&lt;- icono]
 </code></pre>
 <p><img src="funciones/image-16.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="finduser"><a class="header" href="#finduser">$findUser[]</a></h1>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$findUser[User;(¿Devolver el ID del autor?)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>User</code> <code>(Tipo: String || Flag: Emptyable)</code>: El nombre de usuario, el ID o la mención del usuario que se buscará.</p>
+</li>
+<li>
+<p><code>¿Devolver el ID del autor?</code> <code>(Tipo: Bool || Flag: Optional)</code>: Si se devuelve el ID del autor si no se encontró ningún usuario. El valor predeterminado es <code>yes</code>.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$findUser[Saul]
+</code></pre>
+<p><img src="funciones/image-124.png" alt="alt text" /></p>
+<blockquote>
+<p><a href="funciones/../funciones/message.html">¿Cómo funciona <code>$message[]</code>?</a></p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="findchannel"><a class="header" href="#findchannel">$findChannel[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="findrole"><a class="header" href="#findrole">$findRole[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="findemails"><a class="header" href="#findemails">$findEmails[]</a></h1>
@@ -3939,6 +4005,17 @@ Usuario guardado: $get[user]
 </code></pre>
 <p><img src="funciones/image-82.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="messageid"><a class="header" href="#messageid">$messageID[]</a></h1>
+<p>Devuelve el ID del mensaje del autor.</p>
+<blockquote>
+<p>📝 Si se escribe <code>$messageID[]</code> en los comandos <code>$onInteraction</code>, devolverá el ID del mensaje del bot.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$messageID[]
+</code></pre>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$messageID[]
+</code></pre>
+<p><img src="funciones/image-116.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="messageslash"><a class="header" href="#messageslash">$messageSlash[]</a></h1>
 <p>Devuelve el mensaje del usuario <em>(sin el disparador de comando)</em>.</p>
 <p><strong>Sintaxis</strong></p>
@@ -3969,8 +4046,54 @@ $multi[$mensaje[1];$mensaje[2]]
 </code></pre>
 <p><img src="funciones/image-85.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="mentioned"><a class="header" href="#mentioned">$mentioned[]</a></h1>
+<p>Devuelve el ID del usuario mencionado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$mentioned[Número de mención]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Número de mención</code> <code>(Tipo: HowMany || Indicador: Obligatorio)</code>: La mención del usuario que se obtiene del mensaje del autor (<code>1</code> = primera mención, <code>2</code> = segunda, etc.).</p>
+</li>
+<li>
+<p><code>¿Devolver autor?</code> <code>(Tipo: Bool || Bandera: Opcional)</code>: Si se debe devolver el ID del autor si no se menciona ningún usuario o no.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$eval[$message[-1]]
+</code></pre>
+<p><img src="funciones/image-117.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="mentionedroles"><a class="header" href="#mentionedroles">$mentionedRoles[]</a></h1>
+<p>Devuelve el ID del rol mencionado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$mentionedRoles[Número de mención]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Número de mención</code> <code>(Tipo: HowMany || Marca: Obligatorio)</code>: La mención del rol que se obtiene del mensaje del autor (<code>1</code> = primera mención del rol, <code>2</code> = segunda, etc.).</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$eval[$message[-1]]
+</code></pre>
+<p><img src="funciones/image-118.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="mentionedchannels"><a class="header" href="#mentionedchannels">$mentionedChannels[]</a></h1>
+<p>Devuelve el ID del canal mencionado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$mentionedChannels[Número de mención;(¿Devolver actual?)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Número de mención</code> <code>(Tipo: HowMany || Indicador: Obligatorio)</code>: La mención del canal que se obtiene del mensaje del autor (<code>1</code> = primera mención del canal, <code>2</code> = segunda, etc.).</p>
+</li>
+<li>
+<p><code>¿Devolver actual?</code> <code>(Tipo: Bool || Indicador: Opcional)</code>: Si se devuelve el ID del canal actual si no se menciona ningún canal.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>Canal mencionado $mentionedChannels[1]
+</code></pre>
+<p><img src="funciones/image-119.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="newselectmenu"><a class="header" href="#newselectmenu">$newSelectMenu</a></h1>
 <p>Añade un menú de selección a un mensaje.</p>
 <p><strong>Sintaxis</strong></p>

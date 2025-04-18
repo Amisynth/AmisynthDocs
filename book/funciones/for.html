@@ -153,12 +153,32 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="for"><a class="header" href="#for">$for[]</a></h1>
+<p>Ejecuta un bloque repetidamente dentro de un rango definido.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$foor[inicio..fin; código]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Inicio..fin</code> <code>(Tipo: Rango || Marca: Obligatorio)</code>: Define el rango numérico (inclusive) en el que se ejecutará el código repetidamente.<br />
+Ejemplo: <code>1..5</code> ejecuta el bloque 5 veces, con valores del 1 al 5.</p>
+</li>
+<li>
+<p><code>Código</code> <code>(Tipo: Código || Marca: Obligatorio)</code>: Código que se ejecutará en cada iteración. Puede incluir <code>$get[iterador]</code> para acceder al número actual del ciclo.</p>
+</li>
+</ul>
+<p>¿Quieres que esta estructura soporte anidación de ciclos <code>$foor</code> dentro de otros? También puedo ayudarte a implementar la lógica Python detrás si estás armando el evaluador.</p>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$eval[$message[-1]]
+</code></pre>
+<p><img src="image-122.png" alt="alt text" /></p>
+<p><img src="image-123.png" alt="alt text" /></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../funciones/exe.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../funciones/exec.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -172,7 +192,7 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../funciones/exe.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../funciones/exec.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 

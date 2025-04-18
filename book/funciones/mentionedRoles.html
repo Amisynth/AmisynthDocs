@@ -153,6 +153,18 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="mentionedroles"><a class="header" href="#mentionedroles">$mentionedRoles[]</a></h1>
+<p>Devuelve el ID del rol mencionado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$mentionedRoles[Número de mención]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Número de mención</code> <code>(Tipo: HowMany || Marca: Obligatorio)</code>: La mención del rol que se obtiene del mensaje del autor (<code>1</code> = primera mención del rol, <code>2</code> = segunda, etc.).</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$eval[$message[-1]]
+</code></pre>
+<p><img src="image-118.png" alt="alt text" /></p>
 
                     </main>
 

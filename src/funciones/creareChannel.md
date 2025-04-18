@@ -27,7 +27,7 @@ $createChannel[Nombre;Tipo;(ID de categoría)]
 ```
 $eval[$message[-1]]
 ```
-![alt text](image-107.png)
+![alt text](image-120.png)
 
 ![alt text](image-106.png)
 

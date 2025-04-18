@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>$exe[] - AmisynthDocs</title>
+        <title>$exec[] - AmisynthDocs</title>
 
 
         <!-- Custom HTML head -->
@@ -152,7 +152,23 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="exe"><a class="header" href="#exe">$exe[]</a></h1>
+                        <h1 id="exec"><a class="header" href="#exec">$exec[]</a></h1>
+<p>Ejecuta código Python si se cumple una condición booleana.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$exec[condición_booleana;Código python]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>condición_booleana</code> <code>(Tipo: Bool || Marca: Obligatorio)</code>: Expresión booleana que debe evaluarse como <code>True</code> para ejecutar el código.</p>
+</li>
+<li>
+<p><code>código_python</code> <code>(Tipo: Código || Marca: Obligatorio)</code>: Código Python que se ejecutará si la condición es verdadera. Puede incluir llamadas como <code>print()</code>, operaciones, etc.</p>
+</li>
+</ul>
+<pre><code>$eval[$message[-1]]
+</code></pre>
+<p><img src="image-121.png" alt="alt text" /></p>
 
                     </main>
 

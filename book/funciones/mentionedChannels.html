@@ -153,6 +153,23 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="mentionedchannels"><a class="header" href="#mentionedchannels">$mentionedChannels[]</a></h1>
+<p>Devuelve el ID del canal mencionado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$mentionedChannels[Número de mención;(¿Devolver actual?)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Número de mención</code> <code>(Tipo: HowMany || Indicador: Obligatorio)</code>: La mención del canal que se obtiene del mensaje del autor (<code>1</code> = primera mención del canal, <code>2</code> = segunda, etc.).</p>
+</li>
+<li>
+<p><code>¿Devolver actual?</code> <code>(Tipo: Bool || Indicador: Opcional)</code>: Si se devuelve el ID del canal actual si no se menciona ningún canal.</p>
+</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>Canal mencionado $mentionedChannels[1]
+</code></pre>
+<p><img src="image-119.png" alt="alt text" /></p>
 
                     </main>
 
