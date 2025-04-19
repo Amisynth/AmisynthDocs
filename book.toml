@@ -8,3 +8,9 @@ title = "AmisynthDocs"
 [output.html]
 default-theme = "dark"  
 preferred-dark-theme = "navy"
+
+
+[preprocessor.mdbook-discord-components]
+after = ["links"]
+command = "mdbook-discord-components"
+embed-script = false

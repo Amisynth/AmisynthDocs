@@ -20,7 +20,9 @@ es una llamada de retorno, lo que significa que se utiliza en el disparador del 
 ```python
 bot = ...
 
-bot.new_event("$onMessage", "Hola $username[]!")
+bot.new_event("$onMessage", "Hola $username[] estoy respondiendo cualquier mensae!")
 
 bot.run(..)
 ```
+
+<img src="https://i.ibb.co/qFBWMFCH/tutorial123.gif" alt="tutorial123" border="0">

@@ -3054,10 +3054,79 @@ $footer[&lt;- icono]
 <p><a href="funciones/../funciones/message.html">¿Cómo funciona <code>$message[]</code>?</a></p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="findchannel"><a class="header" href="#findchannel">$findChannel[]</a></h1>
+<p>Busca el ID de un canal a partir del nombre, ID o mención del canal.</p>
+<blockquote>
+<p>Esta función solo puede encontrar canales del servidor <strong>actual</strong>.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$findChannel[Channel]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Channel</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El nombre, ID o mención del canal que se buscará.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$findChannel[$channelID[]]
+</code></pre>
+<p><img src="funciones/image-128.png" alt="alt text" /></p>
+<blockquote>
+<p><a href="funciones/../funciones/mentionedChannels.html">¿Cómo funciona <code>$mentionedChannels[]</code>?</a></p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="findrole"><a class="header" href="#findrole">$findRole[]</a></h1>
+<p>Busca el ID de un rol usando el nombre, ID o mención del rol.</p>
+<blockquote>
+<p>Esta función solo puede encontrar roles del servidor <strong>actual</strong>.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$findRole[Role]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Role</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El nombre, ID o mención del rol que se buscará.</li>
+</ul>
+<h2 id="ejemplo-17"><a class="header" href="#ejemplo-17">Ejemplo</a></h2>
+<pre><code>$findRole[RoleVerde]
+</code></pre>
+<p><img src="funciones/image-128.png" alt="alt text" /></p>
+<blockquote>
+<p><a href="funciones/../funciones/message.html">¿Cómo funciona <code>$message[]</code>?</a></p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="findemails"><a class="header" href="#findemails">$findEmails[]</a></h1>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$findEmails[Texto]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Texto</code> <code>(Tipo: String || Flag: Emptyable)</code>: El texto que se buscará, los Gmails.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$findEmails[hola@gmail.com hola]
+</code></pre>
+<p><img src="funciones/image-125.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="findnumbers"><a class="header" href="#findnumbers">$findNumbers[]</a></h1>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$findNumbers[Texto]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Texto</code> <code>(Tipo: String || Flag: Emptyable)</code>: El texto que se buscará, los numeros.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$findNumbers[123 adadad1334s2]
+</code></pre>
+<p><img src="funciones/image-126.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="findurls"><a class="header" href="#findurls">$findURLs[]</a></h1>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$findURLs[Texto]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Texto</code> <code>(Tipo: String || Flag: Emptyable)</code>: El texto que se buscará, los numeros.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$findURLs[https://hello.com adada https://example.com]
+</code></pre>
+<p><img src="funciones/image-127.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getmessagedelete"><a class="header" href="#getmessagedelete">$getMessageDelete[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getmessagedata"><a class="header" href="#getmessagedata">$getMessageData[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getcreateslash"><a class="header" href="#getcreateslash">$getCreateSlash[]</a></h1>
@@ -3253,7 +3322,7 @@ bot.run(..)
 <ul>
 <li><code>Valor</code> <code>(Tipo: String || Opcional)</code>: El valor a buscar dentro del texto dividido.</li>
 </ul>
-<h2 id="ejemplo-17"><a class="header" href="#ejemplo-17">Ejemplo</a></h2>
+<h2 id="ejemplo-18"><a class="header" href="#ejemplo-18">Ejemplo</a></h2>
 <h3 id="ejemplo-1-2"><a class="header" href="#ejemplo-1-2">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$textSplit[hello_world_!;_]
 &gt; $getTextSplitIndex[$message[-1]]   // Devuelve el índice del valor en la lista dividida o -1 si no se encuentra
@@ -4176,7 +4245,7 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
 <blockquote>
 <p>Esta es una funcion compartida que retornar el emoji usado o removido en los eventos <code>$onReactionAdd</code> y <code>$onReactionRemove</code></p>
 </blockquote>
-<h3 id="ejemplo-18"><a class="header" href="#ejemplo-18"><code>Ejemplo</code></a></h3>
+<h3 id="ejemplo-19"><a class="header" href="#ejemplo-19"><code>Ejemplo</code></a></h3>
 <pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <p><img src="funciones/image-3.png" alt="alt text" /></p>
@@ -4192,7 +4261,7 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
 <blockquote>
 <p>📝 Al proporcionar el "ID del mensaje", asegúrese de que el autor del mensaje sea el bot.</p>
 </blockquote>
-<h2 id="ejemplo-19"><a class="header" href="#ejemplo-19">Ejemplo</a></h2>
+<h2 id="ejemplo-20"><a class="header" href="#ejemplo-20">Ejemplo</a></h2>
 <pre><code>$removeButtons[$message[1]]
 Se eliminaron todos los botones del mensaje correctamente. 
 </code></pre>
@@ -4719,7 +4788,7 @@ $titleURL[https:/example.com]
 <ul>
 <li><code>ID de usuario</code> <code>(Tipo: ID | Opcional)</code>: → Especifica el ID del usuario del que se desea obtener el nombre. Si se omite, devuelve el nombre del usuario que ejecutó el comando o activó el evento.</li>
 </ul>
-<h3 id="ejemplo-20"><a class="header" href="#ejemplo-20"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-21"><a class="header" href="#ejemplo-21"><strong>Ejemplo</strong></a></h3>
 <pre><code>Tu nombre es: $username
 </code></pre>
 <p><img src="funciones/image-19.png" alt="alt text" /></p>
@@ -4786,10 +4855,11 @@ bot.run(..)
 <p><strong>Ejemplo</strong></p>
 <pre><code class="language-python">bot = ...
 
-bot.new_event("$onMessage", "Hola $username[]!")
+bot.new_event("$onMessage", "Hola $username[] estoy respondiendo cualquier mensae!")
 
 bot.run(..)
 </code></pre>
+<img src="https://i.ibb.co/qFBWMFCH/tutorial123.gif" alt="tutorial123" border="0">
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onmessagedelete"><a class="header" href="#onmessagedelete">$onMessageDelete</a></h1>
 <p><code>$onMessageDelete</code> se activa cuando un mensaje es eliminado en el servidor.</p>
 <pre><code>$onMessageDelete
@@ -4870,7 +4940,7 @@ bot.run(..)
 <blockquote>
 <p>📌 <strong>Nota:</strong> Este evento se usa como un disparador, no dentro del código del comando.</p>
 </blockquote>
-<h3 id="ejemplo-21"><a class="header" href="#ejemplo-21"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-22"><a class="header" href="#ejemplo-22"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot = ..
 
 bot.new_event("$onReactionAdd", "Emoji: $editReaction[]")
