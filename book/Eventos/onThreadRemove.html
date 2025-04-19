@@ -153,6 +153,24 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="onthreadremove"><a class="header" href="#onthreadremove">$onThreadRemove</a></h1>
+<p><code>$onThreadRemove</code> se activa cuando un hilo (thread) es eliminado o removido de un servidor.</p>
+<pre><code>$onThreadRemove
+</code></pre>
+<p>Este evento se ejecuta <strong>cuando un hilo es eliminado</strong> de un canal, ya sea de manera manual o automática (por inactividad o por configuraciones del servidor).</p>
+<blockquote>
+<p>📌 Se recomienda tener solo uno o pocos <code>$onThreadRemove</code> por bot para mantener la organización y evitar conflictos.</p>
+</blockquote>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<blockquote>
+<p>No requiere parámetros específicos. Puedes utilizar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$channelID[]</code> o <code>$channelType[]</code> para obtener detalles sobre el hilo eliminado.</p>
+</blockquote>
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onThreadRemove", "🗑️ El hilo `$threadName[]` ha sido eliminado del canal &lt;#$channelID[]&gt;.")
+
+bot.run(...)
+</code></pre>
 
                     </main>
 

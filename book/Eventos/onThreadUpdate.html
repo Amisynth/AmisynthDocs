@@ -153,6 +153,26 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="onthreadupdate"><a class="header" href="#onthreadupdate">$onThreadUpdate</a></h1>
+<p><code>$onThreadUpdate</code> se activa cuando un hilo (thread) es editado.</p>
+<pre><code>$onThreadUpdate
+</code></pre>
+<p>Este evento se dispara <strong>cuando se modifica algún aspecto de un hilo</strong>, como el nombre, el estado de archivo, la duración de auto-archivo, la invocación lenta (slowmode), entre otros atributos del hilo.</p>
+<blockquote>
+<p>📌 Es útil para monitorear cambios en la configuración de hilos o detectar acciones administrativas.</p>
+</blockquote>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<blockquote>
+<p>No requiere parámetros. Puedes usar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$oldThreadName[]</code>, <code>$newThreadName[]</code>, <code>$channelID[]</code>, entre otras, según el sistema que estés utilizando.</p>
+</blockquote>
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onThreadUpdate", "✏️ El hilo `$threadName[]` ha sido actualizado en el canal &lt;#$channelID[]&gt;.")
+
+bot.run(...)
+</code></pre>
+<hr />
+<p>¿Te gustaría que prepare una tabla o lista de variables útiles disponibles dentro del evento, como <code>$oldThreadName[]</code>, <code>$threadArchiveStatus[]</code>, etc.? Eso podría ayudarte a personalizar más tus respuestas.</p>
 
                     </main>
 

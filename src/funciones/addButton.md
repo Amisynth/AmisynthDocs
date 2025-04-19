@@ -2,13 +2,13 @@
 
 Añade un botón a un mensaje.
 
-**Sintaxis**
+## Sintaxis
 
 ```
 $addButton[¿Nueva fila?;ID/URL de interacción;Etiqueta;Estilo;(¿Deshabilitar?;Emoji;ID del mensaje)]
 ```
 
-**Parámetros**
+### Parámetros
 
 - `¿Nueva fila?` `(Tipo: Bool || Marca: Obligatorio)`: Si se establece en sí, el botón aparecerá en una nueva fila. Si se establece en no, el botón aparecerá en la misma fila que el botón anterior.
 
@@ -27,7 +27,7 @@ Un mensaje puede tener un máximo de 25 botones (5 filas de 5 botones).
 - `ID de mensaje` `(Tipo: Copo de nieve || Indicador: Vacante)`: Agrega el botón al ID de mensaje proporcionado. Es importante tener en cuenta que el autor del ID de mensaje proporcionado debe ser el bot.
 
 
-**Ejemplo**
+### Ejemplo
 
 ```
 Test

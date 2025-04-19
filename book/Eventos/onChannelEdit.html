@@ -153,6 +153,24 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="onchanneledit"><a class="header" href="#onchanneledit">$onChannelEdit</a></h1>
+<p><code>$onChannelEdit</code> se activa cuando un canal del servidor es editado.</p>
+<pre><code>$onChannelEdit
+</code></pre>
+<p>Este evento se dispara <strong>cuando se cambia el nombre, tipo, posición, permisos o cualquier otra propiedad de un canal</strong>.</p>
+<blockquote>
+<p>📌 Se recomienda tener solo uno o pocos <code>$onChannelEdit</code> por bot para una mejor organización.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<blockquote>
+<p>No requiere parámetros. Puedes usar funciones como <code>$channelID[]</code>, <code>$channelName[]</code>, <code>$newChannelName[]</code>, entre otras (dependiendo del sistema que estés usando).</p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onChannelEdit", "🔧 El canal `$channelName[$channelID[]]` ha sido editado.")
+
+bot.run(...)
+</code></pre>
 
                     </main>
 

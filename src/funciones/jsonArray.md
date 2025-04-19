@@ -2,15 +2,15 @@
 # $jsonArray []
 La función `$jsonArray` marca una clave JSON especificada como un **array**.  
 
-**Sintaxis**  
+## Sintaxis 
 ```plaintext
 $jsonArray[Key;...]
 ```
 
-**Parámetros**  
+### Parámetros
 - `Key` `(Tipo: String || Obligatorio)`: La clave JSON que será marcada como un array.  
 
-**Ejemplo**  
+### Ejemplo
 ```plaintext
 
 $jsonParse[{

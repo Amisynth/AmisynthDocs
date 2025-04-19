@@ -153,6 +153,24 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="onthreadjoin"><a class="header" href="#onthreadjoin">$onThreadJoin</a></h1>
+<p><code>$onThreadJoin</code> se activa cuando el <strong>bot</strong> se une a un hilo (thread).</p>
+<pre><code>$onThreadJoin
+</code></pre>
+<p>Este evento se ejecuta <strong>cuando el bot se añade a un hilo</strong>, ya sea automáticamente al ser mencionado, al recibir permisos, o manualmente.</p>
+<blockquote>
+<p>📌 Este evento solo se activa para el bot, <strong>no para otros miembros</strong>. Para detectar cuando un usuario se une a un hilo, usa <code>$onThreadJoinMember</code>.</p>
+</blockquote>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<blockquote>
+<p>No requiere parámetros específicos. Puedes usar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$channelID[]</code> para obtener información del hilo.</p>
+</blockquote>
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onThreadJoin", "🤖 Me he unido al hilo `$threadName[]` en el canal &lt;#$channelID[]&gt;.")
+
+bot.run(...)
+</code></pre>
 
                     </main>
 

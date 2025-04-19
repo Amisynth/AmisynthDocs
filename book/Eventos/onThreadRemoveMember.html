@@ -153,6 +153,24 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="onthreadremovemember"><a class="header" href="#onthreadremovemember">$onThreadRemoveMember</a></h1>
+<p><code>$onThreadMemberRemove</code> se activa cuando un usuario es eliminado o abandona un hilo (thread).</p>
+<pre><code>$onThreadMemberRemove
+</code></pre>
+<p>Este evento se ejecuta <strong>cuando un miembro abandona o es removido de un hilo</strong>, ya sea manualmente o por otras razones como inactividad o permisos.</p>
+<blockquote>
+<p>📌 Puedes tener varios <code>$onThreadRemoveMember</code> por bot, pero se recomienda mantener una sola instancia para mejor control.</p>
+</blockquote>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<blockquote>
+<p>No requiere parámetros. Puedes usar funciones como: <code>$authorID[]</code> y <code>$username[]</code> para obtener información sobre el hilo y el usuario afectado.</p>
+</blockquote>
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onThreadRemoveMember", "👋 El usuario $username[] ha salido o fue removido del hilo `$threadName[]`.")
+
+bot.run(...)
+</code></pre>
 
                     </main>
 

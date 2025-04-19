@@ -153,6 +153,24 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="onthreadcreate"><a class="header" href="#onthreadcreate">$onThreadCreate</a></h1>
+<p><code>$onThreadCreate</code> se activa cuando se crea un nuevo hilo (thread) dentro de un canal del servidor.</p>
+<pre><code>$onThreadCreate
+</code></pre>
+<p>Este evento se dispara <strong>cuando un usuario crea un nuevo hilo</strong>, ya sea a partir de un mensaje existente o como un hilo sin mensaje inicial.</p>
+<blockquote>
+<p>📌 Puedes tener varios <code>$onThreadCreate</code> por bot, aunque se recomienda mantenerlo organizado para evitar conflictos.</p>
+</blockquote>
+<h3 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h3>
+<blockquote>
+<p>No requiere parámetros. Para responder al evento, puedes usar funciones como <code>$sendMessage[]</code>, <code>$channelID[]</code>, entre otras relacionadas con hilos y canales.</p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onThreadCreate", "🧵 Se ha creado un nuevo hilo, en el canal &lt;#$channelID[]&gt;")
+
+bot.run(...)
+</code></pre>
 
                     </main>
 

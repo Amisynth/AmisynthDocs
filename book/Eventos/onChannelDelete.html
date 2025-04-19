@@ -153,6 +153,24 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="onchanneldelete"><a class="header" href="#onchanneldelete">$onChannelDelete</a></h1>
+<p><code>$onChannelDelete</code> se activa cuando un canal del servidor es eliminado.</p>
+<pre><code>$onChannelDelete
+</code></pre>
+<p>Es una llamada de retorno que se usa como disparador de un comando. Este evento se ejecuta <strong>cuando cualquier tipo de canal (texto, voz, etc.) es eliminado</strong> del servidor.</p>
+<blockquote>
+<p>📌 Se pueden usar múltiples <code>$onChannelDelete</code> por bot, pero no es recomendable para evitar conflictos o sobrecarga.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<blockquote>
+<p>No requiere parámetros específicos. Puedes utilizar funciones como <code>$sendMessage[]</code>, <code>$print[]</code>, <code>$channelID[]</code> o <code>$channelName[]</code> para registrar o responder a la eliminación del canal.</p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onChannelDelete", "⚠️ El canal `$channelName[$channelID[]]` ha sido eliminado del servidor.")
+
+bot.run(...)
+</code></pre>
 
                     </main>
 

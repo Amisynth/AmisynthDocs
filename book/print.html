@@ -2064,10 +2064,10 @@ $c[Elimina el canal mencionado.]
 <p>Soon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="addbutton-1"><a class="header" href="#addbutton-1">$addButton[]</a></h1>
 <p>Añade un botón a un mensaje.</p>
-<p><strong>Sintaxis</strong></p>
+<h2 id="sintaxis-5"><a class="header" href="#sintaxis-5">Sintaxis</a></h2>
 <pre><code>$addButton[¿Nueva fila?;ID/URL de interacción;Etiqueta;Estilo;(¿Deshabilitar?;Emoji;ID del mensaje)]
 </code></pre>
-<p><strong>Parámetros</strong></p>
+<h3 id="parámetros-5"><a class="header" href="#parámetros-5">Parámetros</a></h3>
 <ul>
 <li><code>¿Nueva fila?</code> <code>(Tipo: Bool || Marca: Obligatorio)</code>: Si se establece en sí, el botón aparecerá en una nueva fila. Si se establece en no, el botón aparecerá en la misma fila que el botón anterior.</li>
 </ul>
@@ -2092,7 +2092,7 @@ $c[Elimina el canal mencionado.]
 <p><code>ID de mensaje</code> <code>(Tipo: Copo de nieve || Indicador: Vacante)</code>: Agrega el botón al ID de mensaje proporcionado. Es importante tener en cuenta que el autor del ID de mensaje proporcionado debe ser el bot.</p>
 </li>
 </ul>
-<p><strong>Ejemplo</strong></p>
+<h3 id="ejemplo-12"><a class="header" href="#ejemplo-12">Ejemplo</a></h3>
 <pre><code>Test
 $addButton[false;id;Prueba de boton;primary;false]
 </code></pre>
@@ -2192,14 +2192,14 @@ $average[$message[1];$message[2]]
 <p><img src="funciones/image-94.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="abs"><a class="header" href="#abs">$abs[]</a></h1>
 <p>Devuelve el numero absoluto proporcionado.</p>
-<p><strong>Sintaxis</strong></p>
+<h2 id="sintaxis-6"><a class="header" href="#sintaxis-6">Sintaxis</a></h2>
 <pre><code>$adbc[Número]
 </code></pre>
-<p><strong>Parámetros</strong></p>
+<h3 id="parámetros-6"><a class="header" href="#parámetros-6">Parámetros</a></h3>
 <ul>
 <li><code>Número</code> <code>(Tipo: Coma flotante, Entero || Indicador: Obligatorio)</code>: Devuelve el valor absoluto prporcionado.</li>
 </ul>
-<p><strong>Ejemplo</strong></p>
+<h3 id="ejemplo-13"><a class="header" href="#ejemplo-13">Ejemplo</a></h3>
 <pre><code>$argsCheck[&gt;2;❌ Uso no válido. Uso: `!promediar (número1)`]
 $abs[$message[1]]
 </code></pre>
@@ -2230,7 +2230,7 @@ $abs[$message[1]]
 <p><img src="funciones/image-63.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="argscheck"><a class="header" href="#argscheck">$argsCheck[]</a></h1>
 <p>Al usar esta función, el comando solo se puede ejecutar si el mensaje del usuario contiene una cierta cantidad de argumentos (palabras).</p>
-<h2 id="sintaxis-5"><a class="header" href="#sintaxis-5">Sintaxis</a></h2>
+<h2 id="sintaxis-7"><a class="header" href="#sintaxis-7">Sintaxis</a></h2>
 <pre><code>$argsCheck[¿Cuántos?;Mensaje de error]
 </code></pre>
 <p><strong>Parámetros</strong></p>
@@ -2457,10 +2457,10 @@ $description[&lt;- Este es el color]
 <p><img src="funciones/image-100.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="channelnames"><a class="header" href="#channelnames">$channelNames[]</a></h1>
 <p><code>$channelNames[]</code> retornar todos los nombre de los canales del servidor</p>
-<h3 id="sintaxis-6"><a class="header" href="#sintaxis-6"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-8"><a class="header" href="#sintaxis-8"><strong>Sintaxis</strong></a></h3>
 <pre><code>$channelNames[separador;(guild opcional)]
 </code></pre>
-<h3 id="parámetros-5"><a class="header" href="#parámetros-5"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-7"><a class="header" href="#parámetros-7"><strong>Parámetros</strong></a></h3>
 <ul>
 <li>
 <p><code>Separador</code> <em>(Tipo: Cadena | Obligatorio)</em> → Especifica el carácter o texto que separará los nombres de los canales en la lista.</p>
@@ -2469,7 +2469,7 @@ $description[&lt;- Este es el color]
 <p><code>Guild ID</code> <em>(Tipo: ID | Opcional)</em> → ID del servidor del que se desean obtener los nombres de los canales. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
 </li>
 </ul>
-<h3 id="ejemplo-12"><a class="header" href="#ejemplo-12"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-14"><a class="header" href="#ejemplo-14"><strong>Ejemplo</strong></a></h3>
 <pre><code>$channelNames[|]
 </code></pre>
 <p>🔹 Devuelve algo como: <code>general, memes, música, sugerencias</code></p>
@@ -2517,10 +2517,10 @@ $description[&lt;- Este es el color]
 <p><img src="funciones/image-103.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="categoryids"><a class="header" href="#categoryids">$categoryIDs[]</a></h1>
 <p><code>$categoryIDs[]</code> retorna todos los nombres de las categorías del servidor.</p>
-<h3 id="sintaxis-7"><a class="header" href="#sintaxis-7"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-9"><a class="header" href="#sintaxis-9"><strong>Sintaxis</strong></a></h3>
 <pre><code>$categoryIDs[separador;(guild opcional)]
 </code></pre>
-<h3 id="parámetros-6"><a class="header" href="#parámetros-6"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-8"><a class="header" href="#parámetros-8"><strong>Parámetros</strong></a></h3>
 <ul>
 <li>
 <p><code>Separador</code> <code>(Tipo: Cadena | Obligatorio)</code> → Especifica el carácter o texto que separará los nombres de las categorías en la lista.</p>
@@ -2529,17 +2529,17 @@ $description[&lt;- Este es el color]
 <p><code>Guild ID</code> <code>(Tipo: ID | Opcional)</code> → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
 </li>
 </ul>
-<h3 id="ejemplo-13"><a class="header" href="#ejemplo-13"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-15"><a class="header" href="#ejemplo-15"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">$categoryIDs[|]
 </code></pre>
 <p>🔹 Devuelve algo como: <code>1171903881001832591|1171903881001832595|1171903881442242634</code></p>
 <p><img src="funciones/image-104.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="categorynames"><a class="header" href="#categorynames">$categoryNames[]</a></h1>
 <p><code>$categoryNames[]</code> retorna todos los nombres de las categorías del servidor.</p>
-<h3 id="sintaxis-8"><a class="header" href="#sintaxis-8"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-10"><a class="header" href="#sintaxis-10"><strong>Sintaxis</strong></a></h3>
 <pre><code>$categoryNames[separador;(guild opcional)]
 </code></pre>
-<h3 id="parámetros-7"><a class="header" href="#parámetros-7"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-9"><a class="header" href="#parámetros-9"><strong>Parámetros</strong></a></h3>
 <ul>
 <li>
 <p><code>Separador</code> <code>(Tipo: Cadena | Obligatorio)</code> → Especifica el carácter o texto que separará los nombres de las categorías en la lista.</p>
@@ -2548,7 +2548,7 @@ $description[&lt;- Este es el color]
 <p><code>Guild ID</code> <code>(Tipo: ID | Opcional)</code> → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
 </li>
 </ul>
-<h3 id="ejemplo-14"><a class="header" href="#ejemplo-14"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-16"><a class="header" href="#ejemplo-16"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">$categorysNames[|]
 </code></pre>
 <p>🔹 Devuelve algo como: <code>Información, General, Juegos, Staff</code></p>
@@ -2619,13 +2619,13 @@ $description[&lt;- Este es el color]
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="customid"><a class="header" href="#customid">$customID[]</a></h1>
 <p><code>$customID[]</code> retorna el <strong>ID personalizado</strong> de una interacción con botones o menús desplegables en Discord.</p>
-<h3 id="sintaxis-9"><a class="header" href="#sintaxis-9"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-11"><a class="header" href="#sintaxis-11"><strong>Sintaxis</strong></a></h3>
 <pre><code>$customID[]
 </code></pre>
 <blockquote>
 <p>📌 <strong>Nota:</strong> Solo funciona dentro de eventos como <code>$onInteraction</code>.</p>
 </blockquote>
-<h3 id="ejemplo-15"><a class="header" href="#ejemplo-15"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-17"><a class="header" href="#ejemplo-17"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot = ..
 
 bot.new_event("$onInteraction", "customid: $customID[]")
@@ -2720,14 +2720,14 @@ $addButton[false;http://botdesignerdiscord.com;Visita nuestra web;link;false;�
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="editmessageafter"><a class="header" href="#editmessageafter">$editMessageAfter[]</a></h1>
 <p><code>$editMessageAfter[]</code> devuelde el mensaje ya editado.</p>
-<h3 id="sintaxis-10"><a class="header" href="#sintaxis-10"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-12"><a class="header" href="#sintaxis-12"><strong>Sintaxis</strong></a></h3>
 <pre><code>$editMessageAfter[]
 </code></pre>
-<h3 id="parámetros-8"><a class="header" href="#parámetros-8"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-10"><a class="header" href="#parámetros-10"><strong>Parámetros</strong></a></h3>
 <blockquote>
 <p>No requiere Parametros, solo funciona en el evento <code>$onMessageEdit</code></p>
 </blockquote>
-<h3 id="ejemplo-16"><a class="header" href="#ejemplo-16"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-18"><a class="header" href="#ejemplo-18"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">Contenido Original: $editMessageBefore[]
 Contenido Nuevo: $editMessageAfter[]
 </code></pre>
@@ -2862,10 +2862,10 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera [opción]
 <blockquote>
 <p>Puede editar el menú de selección principal con <a href="funciones/./editSelectMenu.html"><code>$editSelectMenu[]</code></a>.</p>
 </blockquote>
-<h2 id="sintaxis-11"><a class="header" href="#sintaxis-11">Sintaxis</a></h2>
+<h2 id="sintaxis-13"><a class="header" href="#sintaxis-13">Sintaxis</a></h2>
 <pre><code>$editSelectMenuOption[ID de la opción del menú;Etiqueta;Valor;Descripción;(Predeterminado;Emoji;ID del mensaje)]
 </code></pre>
-<h3 id="parámetros-9"><a class="header" href="#parámetros-9">Parámetros</a></h3>
+<h3 id="parámetros-11"><a class="header" href="#parámetros-11">Parámetros</a></h3>
 <ul>
 <li>
 <p><code>ID de la opción del menú</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: El ID del menú de selección. Debe ser el mismo que el ID utilizado en su <code>$newSelectMenu[]</code>.</p>
@@ -3084,7 +3084,7 @@ $footer[&lt;- icono]
 <ul>
 <li><code>Role</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El nombre, ID o mención del rol que se buscará.</li>
 </ul>
-<h2 id="ejemplo-17"><a class="header" href="#ejemplo-17">Ejemplo</a></h2>
+<h2 id="ejemplo-19"><a class="header" href="#ejemplo-19">Ejemplo</a></h2>
 <pre><code>$findRole[RoleVerde]
 </code></pre>
 <p><img src="funciones/image-128.png" alt="alt text" /></p>
@@ -3361,7 +3361,7 @@ $color[FFFF00]
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getmenuvalueoption"><a class="header" href="#getmenuvalueoption">$getMenuValueOption[]</a></h1>
 <p>Recupera el ID de opcion de un menú de selección.</p>
-<h3 id="sintaxis-12"><a class="header" href="#sintaxis-12">Sintaxis</a></h3>
+<h3 id="sintaxis-14"><a class="header" href="#sintaxis-14">Sintaxis</a></h3>
 <pre><code>$getMenuValueOption[]
 </code></pre>
 <p>Ejemplo de uso</p>
@@ -3373,7 +3373,7 @@ bot.run(..)
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getselectmenuid"><a class="header" href="#getselectmenuid">$getSelectMenuID[]</a></h1>
 <p>Recupera el ID de un menú de selección.</p>
-<h3 id="sintaxis-13"><a class="header" href="#sintaxis-13">Sintaxis</a></h3>
+<h3 id="sintaxis-15"><a class="header" href="#sintaxis-15">Sintaxis</a></h3>
 <pre><code>$getSelectMenuID[]
 </code></pre>
 <p>Ejemplo de uso</p>
@@ -3405,14 +3405,14 @@ bot.run(..)
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="gettextsplitindex-1"><a class="header" href="#gettextsplitindex-1">$getTextSplitIndex[]</a></h1>
 <p>Obtiene el índice de un valor dentro del texto dividido con <code>$textSplit</code>. Devuelve <code>-1</code> si el valor no se encuentra.</p>
-<h2 id="sintaxis-14"><a class="header" href="#sintaxis-14">Sintaxis</a></h2>
+<h2 id="sintaxis-16"><a class="header" href="#sintaxis-16">Sintaxis</a></h2>
 <pre><code>$getTextSplitIndex[Valor]
 </code></pre>
-<h2 id="parámetros-10"><a class="header" href="#parámetros-10">Parámetros</a></h2>
+<h2 id="parámetros-12"><a class="header" href="#parámetros-12">Parámetros</a></h2>
 <ul>
 <li><code>Valor</code> <code>(Tipo: String || Opcional)</code>: El valor a buscar dentro del texto dividido.</li>
 </ul>
-<h2 id="ejemplo-18"><a class="header" href="#ejemplo-18">Ejemplo</a></h2>
+<h2 id="ejemplo-20"><a class="header" href="#ejemplo-20">Ejemplo</a></h2>
 <h3 id="ejemplo-1-2"><a class="header" href="#ejemplo-1-2">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$textSplit[hello_world_!;_]
 &gt; $getTextSplitIndex[$message[-1]]   // Devuelve el índice del valor en la lista dividida o -1 si no se encuentra
@@ -3542,11 +3542,95 @@ $if[$checkCondition[h==$message[-1]];Verdadero;Falso]
 $if[hola==$message[-1];Verdadero;Falso]  
 </code></pre>
 <p><img src="funciones/image-56.png" alt="alt text" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="isnumber"><a class="header" href="#isnumber">$isNumber[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="isnumber"><a class="header" href="#isnumber">$isNumber</a></h1>
+<p>Comprueba si el valor especificado es un entero.</p>
+<pre><code class="language-admonish tip">`true` significa que el valor es un entero, `false` significa que no lo es.
+</code></pre>
+<h2 id="sintaxis-17"><a class="header" href="#sintaxis-17">Sintaxis</a></h2>
+<pre><code>$isNumber[Valor]
+</code></pre>
+<h3 id="parámetros-13"><a class="header" href="#parámetros-13">Parámetros</a></h3>
+<ul>
+<li><code>Valor</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: La cadena que se comprobará.</li>
+</ul>
+<h2 id="ejemplo-21"><a class="header" href="#ejemplo-21">Ejemplo</a></h2>
+<pre><code>¿Entero?: $isNumber[10]
+</code></pre>
+<p><img src="funciones/image-134.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ishoisted"><a class="header" href="#ishoisted">$isHoisted[]</a></h1>
+<p>Devuelve si un rol se muestra por separado o no.</p>
+<blockquote>
+<p>🧙‍♂️ "true" significa que el rol está activado, "false" significa que no.</p>
+</blockquote>
+<h2 id="sintaxis-18"><a class="header" href="#sintaxis-18">Sintaxis</a></h2>
+<pre><code>$isHoisted[ID del rol]
+</code></pre>
+<h3 id="parámetros-14"><a class="header" href="#parámetros-14">Parámetros</a></h3>
+<ul>
+<li><code>ID del rol</code> <code>(Tipo: Copo de nieve || Indicador: Obligatorio)</code>: El rol para comprobar su estado activado.</li>
+</ul>
+<h3 id="ejemplo-22"><a class="header" href="#ejemplo-22">Ejemplo</a></h3>
+<pre><code>$nomention
+$isHoisted[$findRole[1171903881001832590]]
+</code></pre>
+<p><img src="funciones/image-133.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="isbanned"><a class="header" href="#isbanned">$isBanned[]</a></h1>
+<p>Devuelve si un usuario está baneado del servidor actual. Requiere el permiso <code>BAN_MEMBERS</code>.</p>
+<blockquote>
+<p>🧙‍♂️ "true" significa que el usuario está baneado, "false" significa que no.</p>
+</blockquote>
+<h2 id="sintaxis-19"><a class="header" href="#sintaxis-19">Sintaxis</a></h2>
+<pre><code>$isBanned[ID de usuario]
+</code></pre>
+<h3 id="parámetros-15"><a class="header" href="#parámetros-15">Parámetros</a></h3>
+<ul>
+<li><code>ID de usuario</code> <code>(Tipo: Copo de nieve || Indicador: Obligatorio)</code>: El usuario para consultar su estado de baneo.</li>
+</ul>
+<h2 id="ejemplo-23"><a class="header" href="#ejemplo-23">Ejemplo</a></h2>
+<pre><code>$isBanned[$authorID[]]
+</code></pre>
+<p><img src="funciones/image-131.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="isadmin"><a class="header" href="#isadmin">$isAdmin[]</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="isbolean"><a class="header" href="#isbolean">$isBolean[]</a></h1>
+<p>Devuelve si el usuario proporcionado tiene permisos de administrador.</p>
+<blockquote>
+<p>"true" significa que el usuario tiene permisos de administrador, "false" significa que no los tiene.</p>
+</blockquote>
+<h2 id="sintaxis-20"><a class="header" href="#sintaxis-20">Sintaxis</a></h2>
+<pre><code>$isAdmin[ID de usuario]
+</code></pre>
+<h3 id="parámetros-16"><a class="header" href="#parámetros-16">Parámetros</a></h3>
+<ul>
+<li><code>ID de usuario</code> <code>(Tipo: Copo de nieve || Marca: Obligatorio)</code>: El usuario a verificar.</li>
+</ul>
+<h3 id="ejemplo-24"><a class="header" href="#ejemplo-24">Ejemplo</a></h3>
+<pre><code>$nomention
+¿Eres administrador?: `$isAdmin[$authorID[]]`
+</code></pre>
+<p><img src="funciones/image-130.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="isboolean"><a class="header" href="#isboolean">$isBoolean[]</a></h1>
+<p>Devuelve si el texto proporcionado es un booleano o no.</p>
+<blockquote>
+<p>"true" significa que el texto es un booleano, "false" significa que no lo es.</p>
+</blockquote>
+<h2 id="sintaxis-21"><a class="header" href="#sintaxis-21">Sintaxis</a></h2>
+<pre><code>$isBoolean[Texto]
+</code></pre>
+<h3 id="parámetros-17"><a class="header" href="#parámetros-17">Parámetros</a></h3>
+<ul>
+<li><code>Texto</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El texto a comprobar.</li>
+</ul>
+<h3 id="valores-booleanos-admitidos"><a class="header" href="#valores-booleanos-admitidos">Valores booleanos admitidos</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Positivo</th><th>Negativo</th></tr></thead><tbody>
+<tr><td>true</td><td>false</td></tr>
+<tr><td>yes</td><td>no</td></tr>
+<tr><td>on</td><td>off</td></tr>
+<tr><td>enable</td><td>Deshabilitar</td></tr>
+</tbody></table>
+</div>
+<h3 id="ejemplo-25"><a class="header" href="#ejemplo-25">Ejemplo</a></h3>
+<pre><code>¿Es booleano?: `$isBoolean[keso]`
+</code></pre>
+<p><img src="funciones/image-132.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="image"><a class="header" href="#image">$image[]</a></h1>
 <p>$image Añade una imagen a la incrustación.</p>
 <p>Sintaxis</p>
@@ -3583,14 +3667,14 @@ $joinSplitText[+]
 <blockquote>
 <p>La función $json devolverá una cadena vacía si el valor es nulo, la clave no existe, no se ejecutaron las funciones $jsonParse o $jsonSet, o se ejecutó $jsonClear.</p>
 </blockquote>
-<p>Sintaxis</p>
+<h2 id="sintaxis-22"><a class="header" href="#sintaxis-22">Sintaxis</a></h2>
 <pre><code>$json[Key;...]
 </code></pre>
-<p>Parámetros</p>
+<h3 id="parámetros-18"><a class="header" href="#parámetros-18">Parámetros</a></h3>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Flag: Required)</code>: La clave JSON que se recuperará.</li>
 </ul>
-<p>Ejemplos</p>
+<h3 id="ejemplos-1"><a class="header" href="#ejemplos-1">Ejemplos</a></h3>
 <pre><code># Sin arrays
 
 $jsonParse[{
@@ -3611,14 +3695,14 @@ Edad: $json[identity;age] años
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jsonarray--1"><a class="header" href="#jsonarray--1">$jsonArray []</a></h1>
 <p>La función <code>$jsonArray</code> marca una clave JSON especificada como un <strong>array</strong>.</p>
-<p><strong>Sintaxis</strong></p>
+<h2 id="sintaxis-23"><a class="header" href="#sintaxis-23">Sintaxis</a></h2>
 <pre><code class="language-plaintext">$jsonArray[Key;...]
 </code></pre>
-<p><strong>Parámetros</strong></p>
+<h3 id="parámetros-19"><a class="header" href="#parámetros-19">Parámetros</a></h3>
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Obligatorio)</code>: La clave JSON que será marcada como un array.</li>
 </ul>
-<p><strong>Ejemplo</strong></p>
+<h3 id="ejemplo-26"><a class="header" href="#ejemplo-26">Ejemplo</a></h3>
 <pre><code class="language-plaintext">
 $jsonParse[{
     'games': ''
@@ -4314,7 +4398,7 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
 <p><img src="funciones/image-76.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="or"><a class="header" href="#or">$or[]</a></h1>
 <p>Devuelve <code>True</code> si al menos una de las condiciones proporcionadas es <code>True</code>; de lo contrario, devuelve <code>False</code>.</p>
-<h2 id="sintaxis-15"><a class="header" href="#sintaxis-15">Sintaxis</a></h2>
+<h2 id="sintaxis-24"><a class="header" href="#sintaxis-24">Sintaxis</a></h2>
 <pre><code>$or[Condiciones;...]
 </code></pre>
 <p><strong>Parámetros</strong></p>
@@ -4342,13 +4426,13 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
 <div style="break-before: page; page-break-before: always;"></div><h1 id="power"><a class="header" href="#power">$power[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="reationevent"><a class="header" href="#reationevent">$reationEvent[]</a></h1>
 <p>La función <code>$reactionEvent[]</code> almacena un valor en una variable temporal dentro de la ejecución del comando.</p>
-<h3 id="sintaxis-16"><a class="header" href="#sintaxis-16"><code>Sintaxis</code></a></h3>
+<h3 id="sintaxis-25"><a class="header" href="#sintaxis-25"><code>Sintaxis</code></a></h3>
 <pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <blockquote>
 <p>Esta es una funcion compartida que retornar el emoji usado o removido en los eventos <code>$onReactionAdd</code> y <code>$onReactionRemove</code></p>
 </blockquote>
-<h3 id="ejemplo-19"><a class="header" href="#ejemplo-19"><code>Ejemplo</code></a></h3>
+<h3 id="ejemplo-27"><a class="header" href="#ejemplo-27"><code>Ejemplo</code></a></h3>
 <pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <p><img src="funciones/image-3.png" alt="alt text" /></p>
@@ -4364,7 +4448,7 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
 <blockquote>
 <p>📝 Al proporcionar el "ID del mensaje", asegúrese de que el autor del mensaje sea el bot.</p>
 </blockquote>
-<h2 id="ejemplo-20"><a class="header" href="#ejemplo-20">Ejemplo</a></h2>
+<h2 id="ejemplo-28"><a class="header" href="#ejemplo-28">Ejemplo</a></h2>
 <pre><code>$removeButtons[$message[1]]
 Se eliminaron todos los botones del mensaje correctamente. 
 </code></pre>
@@ -4392,7 +4476,7 @@ Se eliminaron todos los botones del mensaje correctamente.
 <p><img src="funciones/../gen/image-4.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="removeselectmenus"><a class="header" href="#removeselectmenus">$removeSelectMenus[]</a></h1>
 <p>Elimina todos los menú de selección.</p>
-<h2 id="sintaxis-17"><a class="header" href="#sintaxis-17">Sintaxis</a></h2>
+<h2 id="sintaxis-26"><a class="header" href="#sintaxis-26">Sintaxis</a></h2>
 <pre><code>$removeSelectMenus[]
 </code></pre>
 <h3 id="ejemplo-de-uso"><a class="header" href="#ejemplo-de-uso">Ejemplo de uso</a></h3>
@@ -4483,7 +4567,7 @@ $removeSplitTextElement[2]
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rolegrant"><a class="header" href="#rolegrant">$roleGrant[]</a></h1>
 <p>Añade o elimina roles del usuario proporcionado.</p>
-<h2 id="sintaxis-18"><a class="header" href="#sintaxis-18">Sintaxis</a></h2>
+<h2 id="sintaxis-27"><a class="header" href="#sintaxis-27">Sintaxis</a></h2>
 <pre><code>$roleGrant[ID de usuario;+/-ID de rol;...]
 </code></pre>
 <p><strong>Parámetros</strong></p>
@@ -4712,7 +4796,7 @@ $setUserVar[dinero;0;$authorID[]]
 <p><strong>Sintaxis</strong></p>
 <pre><code>$setVar[Nombre de la variable;Nuevo valor;(ID de usuario)]
 </code></pre>
-<h3 id="parámetros-11"><a class="header" href="#parámetros-11">Parámetros</a></h3>
+<h3 id="parámetros-20"><a class="header" href="#parámetros-20">Parámetros</a></h3>
 <ul>
 <li>
 <p><code>Nombre de la variable</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: La variable que se actualizará.</p>
@@ -4884,14 +4968,14 @@ $titleURL[https:/example.com]
 <p><img src="funciones/image-7.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="username"><a class="header" href="#username">$username[]</a></h1>
 <p><code>$username[]</code> retorna el nombre de usuario de un miembro del servidor.</p>
-<h3 id="sintaxis-19"><a class="header" href="#sintaxis-19"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-28"><a class="header" href="#sintaxis-28"><strong>Sintaxis</strong></a></h3>
 <pre><code>$username[(ID de usuario)]
 </code></pre>
-<h3 id="parámetros-12"><a class="header" href="#parámetros-12"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-21"><a class="header" href="#parámetros-21"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>ID de usuario</code> <code>(Tipo: ID | Opcional)</code>: → Especifica el ID del usuario del que se desea obtener el nombre. Si se omite, devuelve el nombre del usuario que ejecutó el comando o activó el evento.</li>
 </ul>
-<h3 id="ejemplo-21"><a class="header" href="#ejemplo-21"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-29"><a class="header" href="#ejemplo-29"><strong>Ejemplo</strong></a></h3>
 <pre><code>Tu nombre es: $username
 </code></pre>
 <p><img src="funciones/image-19.png" alt="alt text" /></p>
@@ -4901,6 +4985,21 @@ $titleURL[https:/example.com]
 <div style="break-before: page; page-break-before: always;"></div><h1 id="url"><a class="header" href="#url">$url[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="urlvalid"><a class="header" href="#urlvalid">$urlValid[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="useravatar"><a class="header" href="#useravatar">$userAvatar[]</a></h1>
+<p>Devuelve la URL del avatar de un usuario.</p>
+<h2 id="sintaxis-29"><a class="header" href="#sintaxis-29">Sintaxis</a></h2>
+<pre><code>$userAvatar[(ID de usuario)]
+</code></pre>
+<h3 id="parámetros-22"><a class="header" href="#parámetros-22">Parámetros</a></h3>
+<ul>
+<li><code>ID de usuario</code> <code>(Tipo: Copo de nieve || Marca: Opcional)</code>: El usuario para el que se devolverá el avatar si no se establece un ID devuelve del autor.</li>
+</ul>
+<h2 id="ejemplo-30"><a class="header" href="#ejemplo-30">Ejemplo</a></h2>
+<pre><code>$userAvatar[]
+</code></pre>
+<p><img src="funciones/image-135.png" alt="alt text" /></p>
+<blockquote>
+<p>📌 Opcionalmente, puedes añadir la cadena de consulta <code>?size=VALUE</code> al final de la URL para aumentar el tamaño del avatar. El valor de <code>tamaño</code> admite cualquier potencia de dos entre 16 y 4096.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="unban"><a class="header" href="#unban">$unban[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="while"><a class="header" href="#while">$while[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="eventos"><a class="header" href="#eventos">Eventos</a></h1>
@@ -5014,7 +5113,43 @@ bot.run(..)
 <p><img src="Eventos/image-5.png" alt="alt text" /></p>
 <p><img src="Eventos/image-4.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onmessagetyping"><a class="header" href="#onmessagetyping">$onMessageTyping</a></h1>
+<p><code>$onMessageTyping</code> se activa cuando un usuario comienza a escribir un mensaje en un canal del servidor.</p>
+<pre><code>$onMessageTyping
+</code></pre>
+<p>Es una llamada de retorno, lo que significa que se utiliza como disparador de un comando (no en el código directamente). Se activa <strong>cuando un usuario empieza a escribir</strong> en el canal, <strong>no cuando envía el mensaje</strong>.</p>
+<blockquote>
+<p>📌 Se pueden tener múltiples <code>$onMessageTyping</code> por bot, aunque no es recomendable.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<blockquote>
+<p>No requiere parámetros específicos. Para responder al evento, puedes usar funciones como <code>$sendMessage[]</code> o <code>$sendEmbedMessage[]</code>.</p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onMessageTyping", "Hola $username[], veo que estás escribiendo algo...")
+
+bot.run(...)
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onmessagetyping-1"><a class="header" href="#onmessagetyping-1">$onMessageTyping</a></h1>
+<p><code>$onMessageTyping</code> se activa cuando un usuario comienza a escribir un mensaje en un canal del servidor.</p>
+<pre><code>$onMessageTyping
+</code></pre>
+<p>Es una llamada de retorno, lo que significa que se utiliza como disparador de un comando (no en el código directamente). Se activa <strong>cuando un usuario empieza a escribir</strong> en el canal, <strong>no cuando envía el mensaje</strong>.</p>
+<blockquote>
+<p>📌 Se pueden tener múltiples <code>$onMessageTyping</code> por bot, aunque no es recomendable.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<blockquote>
+<p>No requiere parámetros específicos. Para responder al evento, puedes usar funciones como <code>$sendMessage[]</code> o <code>$sendEmbedMessage[]</code>.</p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onMessageTyping", "Hola $username[], veo que estás escribiendo algo...")
+
+bot.run(...)
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onreactionremove"><a class="header" href="#onreactionremove">$onReactionRemove</a></h1>
 <p><code>$onReactionRemove</code> se activa cuando un usuario elimina una reacción de un mensaje en el servidor.</p>
 <pre><code>$onReactionRemove
@@ -5037,13 +5172,13 @@ bot.run(..)
 <p><img src="Eventos/image-1.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onreactionadd"><a class="header" href="#onreactionadd">$onReactionAdd</a></h1>
 <p><code>$onReactionAdd</code> es un evento que se activa cuando un usuario añade una reacción a un mensaje en el servidor.</p>
-<h3 id="sintaxis-20"><a class="header" href="#sintaxis-20"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-30"><a class="header" href="#sintaxis-30"><strong>Sintaxis</strong></a></h3>
 <pre><code>$onReactionAdd
 </code></pre>
 <blockquote>
 <p>📌 <strong>Nota:</strong> Este evento se usa como un disparador, no dentro del código del comando.</p>
 </blockquote>
-<h3 id="ejemplo-22"><a class="header" href="#ejemplo-22"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-31"><a class="header" href="#ejemplo-31"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot = ..
 
 bot.new_event("$onReactionAdd", "Emoji: $editReaction[]")
@@ -5053,15 +5188,199 @@ bot.run(..)
 <p>🔹 Si un usuario llamado "Saul" reacciona con "✅" en el canal <code>#general</code>, el bot enviará:</p>
 <p><img src="Eventos/image.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onchannelcreate"><a class="header" href="#onchannelcreate">$onChannelCreate</a></h1>
+<p><code>$onChannelCreate</code> se activa cuando se crea un nuevo canal en el servidor.</p>
+<pre><code>$onChannelCreate
+</code></pre>
+<p>Es una llamada de retorno (callback), lo que significa que se usa como disparador de un comando (no se escribe dentro del código directamente). Este evento se ejecuta <strong>cuando se crea un canal de texto, voz u otro tipo</strong> en el servidor.</p>
+<blockquote>
+<p>📌 Se pueden tener múltiples <code>$onChannelCreate</code> por bot, aunque no es recomendable por organización y eficiencia.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<blockquote>
+<p>No requiere parámetros. Para responder al evento, puedes utilizar funciones como <code>$sendMessage[]</code>, <code>$print[]</code>, entre otras relacionadas con canales.</p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onChannelCreate", "📢 Se ha creado un nuevo canal: $channelName[$channelID[]]")
+
+bot.run(...)
+</code></pre>
+<hr />
+<p>¿Quieres que agregue una sección con las variables que se pueden usar dentro del evento como <code>$channelID[]</code>, <code>$channelName[]</code>, etc.?</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onchanneldelete"><a class="header" href="#onchanneldelete">$onChannelDelete</a></h1>
+<p><code>$onChannelDelete</code> se activa cuando un canal del servidor es eliminado.</p>
+<pre><code>$onChannelDelete
+</code></pre>
+<p>Es una llamada de retorno que se usa como disparador de un comando. Este evento se ejecuta <strong>cuando cualquier tipo de canal (texto, voz, etc.) es eliminado</strong> del servidor.</p>
+<blockquote>
+<p>📌 Se pueden usar múltiples <code>$onChannelDelete</code> por bot, pero no es recomendable para evitar conflictos o sobrecarga.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<blockquote>
+<p>No requiere parámetros específicos. Puedes utilizar funciones como <code>$sendMessage[]</code>, <code>$print[]</code>, <code>$channelID[]</code> o <code>$channelName[]</code> para registrar o responder a la eliminación del canal.</p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onChannelDelete", "⚠️ El canal `$channelName[$channelID[]]` ha sido eliminado del servidor.")
+
+bot.run(...)
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onchanneledit"><a class="header" href="#onchanneledit">$onChannelEdit</a></h1>
+<p><code>$onChannelEdit</code> se activa cuando un canal del servidor es editado.</p>
+<pre><code>$onChannelEdit
+</code></pre>
+<p>Este evento se dispara <strong>cuando se cambia el nombre, tipo, posición, permisos o cualquier otra propiedad de un canal</strong>.</p>
+<blockquote>
+<p>📌 Se recomienda tener solo uno o pocos <code>$onChannelEdit</code> por bot para una mejor organización.</p>
+</blockquote>
+<p><strong>Sintaxis</strong></p>
+<blockquote>
+<p>No requiere parámetros. Puedes usar funciones como <code>$channelID[]</code>, <code>$channelName[]</code>, <code>$newChannelName[]</code>, entre otras (dependiendo del sistema que estés usando).</p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onChannelEdit", "🔧 El canal `$channelName[$channelID[]]` ha sido editado.")
+
+bot.run(...)
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onthreadcreate"><a class="header" href="#onthreadcreate">$onThreadCreate</a></h1>
+<p><code>$onThreadCreate</code> se activa cuando se crea un nuevo hilo (thread) dentro de un canal del servidor.</p>
+<pre><code>$onThreadCreate
+</code></pre>
+<p>Este evento se dispara <strong>cuando un usuario crea un nuevo hilo</strong>, ya sea a partir de un mensaje existente o como un hilo sin mensaje inicial.</p>
+<blockquote>
+<p>📌 Puedes tener varios <code>$onThreadCreate</code> por bot, aunque se recomienda mantenerlo organizado para evitar conflictos.</p>
+</blockquote>
+<h3 id="sintaxis-31"><a class="header" href="#sintaxis-31">Sintaxis</a></h3>
+<blockquote>
+<p>No requiere parámetros. Para responder al evento, puedes usar funciones como <code>$sendMessage[]</code>, <code>$channelID[]</code>, entre otras relacionadas con hilos y canales.</p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onThreadCreate", "🧵 Se ha creado un nuevo hilo, en el canal &lt;#$channelID[]&gt;")
+
+bot.run(...)
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onthreaddelete"><a class="header" href="#onthreaddelete">$onThreadDelete</a></h1>
+<p><code>$onThreadDelete</code> se activa cuando un hilo (thread) es eliminado en el servidor.</p>
+<pre><code>$onThreadDelete
+</code></pre>
+<p>Este evento se ejecuta <strong>cuando un hilo existente es eliminado</strong>, ya sea manualmente por un usuario o automáticamente por inactividad (dependiendo de la configuración del servidor).</p>
+<blockquote>
+<p>📌 Puedes tener varios <code>$onThreadDelete</code> en tu bot, pero se recomienda mantener una estructura clara para evitar redundancias.</p>
+</blockquote>
+<h3 id="sintaxis-32"><a class="header" href="#sintaxis-32">Sintaxis</a></h3>
+<blockquote>
+<p>No requiere parámetros específicos. Puedes usar funciones como <code>$threadID[]</code>, <code>$channelID[]</code>, para obtener detalles sobre el hilo eliminado.</p>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onThreadDelete", "❌ El hilo `$threadName[]` ha sido eliminado del canal &lt;#$channelID[]&gt;.")
+
+bot.run(...)
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onthreadremove"><a class="header" href="#onthreadremove">$onThreadRemove</a></h1>
+<p><code>$onThreadRemove</code> se activa cuando un hilo (thread) es eliminado o removido de un servidor.</p>
+<pre><code>$onThreadRemove
+</code></pre>
+<p>Este evento se ejecuta <strong>cuando un hilo es eliminado</strong> de un canal, ya sea de manera manual o automática (por inactividad o por configuraciones del servidor).</p>
+<blockquote>
+<p>📌 Se recomienda tener solo uno o pocos <code>$onThreadRemove</code> por bot para mantener la organización y evitar conflictos.</p>
+</blockquote>
+<h2 id="sintaxis-33"><a class="header" href="#sintaxis-33">Sintaxis</a></h2>
+<blockquote>
+<p>No requiere parámetros específicos. Puedes utilizar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$channelID[]</code> o <code>$channelType[]</code> para obtener detalles sobre el hilo eliminado.</p>
+</blockquote>
+<h3 id="ejemplo-32"><a class="header" href="#ejemplo-32">Ejemplo</a></h3>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onThreadRemove", "🗑️ El hilo `$threadName[]` ha sido eliminado del canal &lt;#$channelID[]&gt;.")
+
+bot.run(...)
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onthreadjoin"><a class="header" href="#onthreadjoin">$onThreadJoin</a></h1>
+<p><code>$onThreadJoin</code> se activa cuando el <strong>bot</strong> se une a un hilo (thread).</p>
+<pre><code>$onThreadJoin
+</code></pre>
+<p>Este evento se ejecuta <strong>cuando el bot se añade a un hilo</strong>, ya sea automáticamente al ser mencionado, al recibir permisos, o manualmente.</p>
+<blockquote>
+<p>📌 Este evento solo se activa para el bot, <strong>no para otros miembros</strong>. Para detectar cuando un usuario se une a un hilo, usa <code>$onThreadJoinMember</code>.</p>
+</blockquote>
+<h2 id="sintaxis-34"><a class="header" href="#sintaxis-34">Sintaxis</a></h2>
+<blockquote>
+<p>No requiere parámetros específicos. Puedes usar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$channelID[]</code> para obtener información del hilo.</p>
+</blockquote>
+<h3 id="ejemplo-33"><a class="header" href="#ejemplo-33">Ejemplo</a></h3>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onThreadJoin", "🤖 Me he unido al hilo `$threadName[]` en el canal &lt;#$channelID[]&gt;.")
+
+bot.run(...)
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onthreadupdate"><a class="header" href="#onthreadupdate">$onThreadUpdate</a></h1>
+<p><code>$onThreadUpdate</code> se activa cuando un hilo (thread) es editado.</p>
+<pre><code>$onThreadUpdate
+</code></pre>
+<p>Este evento se dispara <strong>cuando se modifica algún aspecto de un hilo</strong>, como el nombre, el estado de archivo, la duración de auto-archivo, la invocación lenta (slowmode), entre otros atributos del hilo.</p>
+<blockquote>
+<p>📌 Es útil para monitorear cambios en la configuración de hilos o detectar acciones administrativas.</p>
+</blockquote>
+<h2 id="sintaxis-35"><a class="header" href="#sintaxis-35">Sintaxis</a></h2>
+<blockquote>
+<p>No requiere parámetros. Puedes usar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$oldThreadName[]</code>, <code>$newThreadName[]</code>, <code>$channelID[]</code>, entre otras, según el sistema que estés utilizando.</p>
+</blockquote>
+<h3 id="ejemplo-34"><a class="header" href="#ejemplo-34">Ejemplo</a></h3>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onThreadUpdate", "✏️ El hilo `$threadName[]` ha sido actualizado en el canal &lt;#$channelID[]&gt;.")
+
+bot.run(...)
+</code></pre>
+<hr />
+<p>¿Te gustaría que prepare una tabla o lista de variables útiles disponibles dentro del evento, como <code>$oldThreadName[]</code>, <code>$threadArchiveStatus[]</code>, etc.? Eso podría ayudarte a personalizar más tus respuestas.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onthreadjoinmember"><a class="header" href="#onthreadjoinmember">$onThreadJoinMember</a></h1>
+<p><code>$onThreadJoinMember</code> se activa cuando un miembro se une a un hilo (thread) en un canal del servidor.</p>
+<pre><code>$onThreadJoinMember
+</code></pre>
+<p>Este evento se dispara <strong>cuando un usuario entra en un hilo</strong> dentro de un canal, ya sea un hilo de texto o de voz.</p>
+<blockquote>
+<p>📌 Puedes tener varios <code>$onThreadJoinMember</code> por bot, pero se recomienda mantener el código organizado para evitar conflictos o redundancias.</p>
+</blockquote>
+<h2 id="sintaxis-36"><a class="header" href="#sintaxis-36">Sintaxis</a></h2>
+<blockquote>
+<p>No requiere parámetros específicos. Puedes usar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$userID[]</code>, <code>$username[]</code> para obtener detalles sobre el hilo y el miembro que se unió.</p>
+</blockquote>
+<h3 id="ejemplo-35"><a class="header" href="#ejemplo-35">Ejemplo</a></h3>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onThreadJoinMember", "🎉 El usuario $username[] se ha unido al hilo `$threadName[]`.")
+
+bot.run(...)
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onthreadremovemember"><a class="header" href="#onthreadremovemember">$onThreadRemoveMember</a></h1>
+<p><code>$onThreadMemberRemove</code> se activa cuando un usuario es eliminado o abandona un hilo (thread).</p>
+<pre><code>$onThreadMemberRemove
+</code></pre>
+<p>Este evento se ejecuta <strong>cuando un miembro abandona o es removido de un hilo</strong>, ya sea manualmente o por otras razones como inactividad o permisos.</p>
+<blockquote>
+<p>📌 Puedes tener varios <code>$onThreadRemoveMember</code> por bot, pero se recomienda mantener una sola instancia para mejor control.</p>
+</blockquote>
+<h2 id="sintaxis-37"><a class="header" href="#sintaxis-37">Sintaxis</a></h2>
+<blockquote>
+<p>No requiere parámetros. Puedes usar funciones como: <code>$authorID[]</code> y <code>$username[]</code> para obtener información sobre el hilo y el usuario afectado.</p>
+</blockquote>
+<h3 id="ejemplo-36"><a class="header" href="#ejemplo-36">Ejemplo</a></h3>
+<pre><code class="language-python">bot = ...
+
+bot.new_event("$onThreadRemoveMember", "👋 El usuario $username[] ha salido o fue removido del hilo `$threadName[]`.")
+
+bot.run(...)
+</code></pre>
 
                     </main>
 

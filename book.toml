@@ -1,6 +1,7 @@
 [book]
 authors = ["samiunkonow"]
 multilingual = true
+color = "black"
 src = "src"
 title = "AmisynthDocs"
 
@@ -9,8 +10,3 @@ title = "AmisynthDocs"
 default-theme = "dark"  
 preferred-dark-theme = "navy"
 
-
-[preprocessor.mdbook-discord-components]
-after = ["links"]
-command = "mdbook-discord-components"
-embed-script = false

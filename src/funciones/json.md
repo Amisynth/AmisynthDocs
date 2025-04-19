@@ -3,15 +3,15 @@ La función $json recupera valores JSON de una clave especificada en el objeto J
 
 > La función $json devolverá una cadena vacía si el valor es nulo, la clave no existe, no se ejecutaron las funciones $jsonParse o $jsonSet, o se ejecutó $jsonClear.
 
-Sintaxis
+## Sintaxis
 ```
 $json[Key;...]
 ```
-Parámetros
+### Parámetros
 
 - `Key` `(Tipo: String || Flag: Required)`: La clave JSON que se recuperará.
 
-Ejemplos
+### Ejemplos
 ```
 # Sin arrays
 
