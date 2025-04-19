@@ -153,6 +153,22 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="getmessagedelete"><a class="header" href="#getmessagedelete">$getMessageDelete[]</a></h1>
+<p>Devuelve el contenido del mensaje que fue eliminado, si está disponible.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getMessageDelete[]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><em>(Ninguno)</em>: Esta función no recibe parámetros. Su funcionamiento depende del contexto del evento de eliminación de mensaje (<code>$onMessageDelete</code>).</li>
+</ul>
+<p><strong>Requisitos</strong></p>
+<ul>
+<li>Esta función solo funciona dentro de un evento donde se haya detectado la eliminación de mensaje (<code>$onMessageDelete</code>).</li>
+<li>El mensaje eliminado debe estar en caché para poder acceder a su contenido.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>📤 El mensaje eliminado decía: `$getMessageDelete[]`
+</code></pre>
 
                     </main>
 

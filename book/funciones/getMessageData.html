@@ -153,6 +153,54 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="getmessagedata"><a class="header" href="#getmessagedata">$getMessageData[]</a></h1>
+<p>Devuelve datos específicos de un mensaje o de un embed a partir del ID de mensaje proporcionado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getMessageData[Mensaje ID;Tipo;Propiedad;(índice Embed)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Mensaje ID</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code><br />
+ID del mensaje del cual se obtendrán los datos.</p>
+</li>
+<li>
+<p><code>Tipo</code> <code>(Tipo: Cadena || Valores: message | embed || Predeterminado: message)</code><br />
+Define si se desea obtener datos del mensaje (<code>message</code>) o de un embed (<code>embed</code>).</p>
+</li>
+<li>
+<p><code>Propiedad</code> <code>(Tipo: Cadena || Predeterminado: content)</code><br />
+Define qué propiedad del mensaje o embed se desea obtener.</p>
+</li>
+<li>
+<p><code>índice Embed</code> <code>(Tipo: Entero || Predeterminado: 1)</code><br />
+Solo usado si <code>tipo = embed</code>. Determina el índice del embed (empezando desde 1).</p>
+</li>
+</ul>
+<p><strong>Propiedades disponibles</strong></p>
+<p>🟢 Si <code>tipo = message</code>:</p>
+<ul>
+<li><code>content</code> → Devuelve el contenido del mensaje.</li>
+<li><code>authorID</code> → Devuelve el ID del autor del mensaje.</li>
+<li><code>username</code> → Devuelve el nombre de usuario del autor.</li>
+<li><code>avatar</code> → Devuelve el enlace al avatar del autor.</li>
+</ul>
+<p>🔵 Si <code>tipo = embed</code>:</p>
+<ul>
+<li><code>title</code> → Devuelve el título del embed.</li>
+<li><code>description</code> → Devuelve la descripción.</li>
+<li><code>footer</code> → Devuelve el texto del pie del embed.</li>
+<li><code>color</code> → Devuelve el color del embed.</li>
+<li><code>timestamp</code> → Devuelve la marca de tiempo.</li>
+<li><code>image</code> → Devuelve la URL de la imagen del embed.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$getMessageData[122223334445556666;message;username]
+</code></pre>
+<p>📤 Devuelve el nombre de usuario del autor del mensaje con ID <code>122223334445556666</code>.</p>
+<pre><code>$getMessageData[122223334445556666;embed;title;1]
+</code></pre>
+<p>📤 Devuelve el título del primer embed del mensaje.</p>
+<p>¿Quieres que te genere una imagen similar a esa para esta función también?</p>
 
                     </main>
 

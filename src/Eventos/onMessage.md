@@ -1,7 +1,7 @@
 # $onMessage
 
 
-$onMessage Se activa cuando un usuario se une al servidor.
+$onMessage Se activa cuando un usuario envia un mensaje al servidor.
 
 ```
 $onMessage

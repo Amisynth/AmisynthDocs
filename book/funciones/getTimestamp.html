@@ -153,6 +153,32 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="gettimestamp"><a class="header" href="#gettimestamp">$getTimestamp[]</a></h1>
+<p>Devuelve la <a href="https://www.unixtimestamp.com/">marca de tiempo UNIX</a> actual en la unidad de tiempo seleccionada.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getTimestamp[(Unidad de tiempo)]**
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Unidad de tiempo</code> <code>(Tipo: Enumeración || Indicador: Opcional)</code>: Establece la unidad de tiempo de la marca de tiempo.</li>
+</ul>
+<blockquote>
+<p>📝 El valor de la unidad de tiempo puede ser:</p>
+<ul>
+<li><code>s</code> (segundos)</li>
+<li><code>ms</code> (milisegundos)</li>
+<li><code>ns</code> (nanosegundos)</li>
+</ul>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code>Marca de tiempo UNIX
+En segundos: $getTimestamp[s]
+En milisegundos: $getTimestamp[ms]
+En nanosegundos: $getTimestamp[ns]
+</code></pre>
+<p><img src="image-129.png" alt="alt text" /></p>
+<blockquote>
+<p>📄 Para obtener más información sobre las marcas de tiempo UNIX en Discord, haz clic <a href="../resources/discordTimestamps.html">aquí</a>.</p>
+</blockquote>
 
                     </main>
 

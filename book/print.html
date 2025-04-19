@@ -3128,11 +3128,101 @@ $footer[&lt;- icono]
 </code></pre>
 <p><img src="funciones/image-127.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getmessagedelete"><a class="header" href="#getmessagedelete">$getMessageDelete[]</a></h1>
+<p>Devuelve el contenido del mensaje que fue eliminado, si está disponible.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getMessageDelete[]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><em>(Ninguno)</em>: Esta función no recibe parámetros. Su funcionamiento depende del contexto del evento de eliminación de mensaje (<code>$onMessageDelete</code>).</li>
+</ul>
+<p><strong>Requisitos</strong></p>
+<ul>
+<li>Esta función solo funciona dentro de un evento donde se haya detectado la eliminación de mensaje (<code>$onMessageDelete</code>).</li>
+<li>El mensaje eliminado debe estar en caché para poder acceder a su contenido.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>📤 El mensaje eliminado decía: `$getMessageDelete[]`
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getmessagedata"><a class="header" href="#getmessagedata">$getMessageData[]</a></h1>
+<p>Devuelve datos específicos de un mensaje o de un embed a partir del ID de mensaje proporcionado.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getMessageData[Mensaje ID;Tipo;Propiedad;(índice Embed)]
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li>
+<p><code>Mensaje ID</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code><br />
+ID del mensaje del cual se obtendrán los datos.</p>
+</li>
+<li>
+<p><code>Tipo</code> <code>(Tipo: Cadena || Valores: message | embed || Predeterminado: message)</code><br />
+Define si se desea obtener datos del mensaje (<code>message</code>) o de un embed (<code>embed</code>).</p>
+</li>
+<li>
+<p><code>Propiedad</code> <code>(Tipo: Cadena || Predeterminado: content)</code><br />
+Define qué propiedad del mensaje o embed se desea obtener.</p>
+</li>
+<li>
+<p><code>índice Embed</code> <code>(Tipo: Entero || Predeterminado: 1)</code><br />
+Solo usado si <code>tipo = embed</code>. Determina el índice del embed (empezando desde 1).</p>
+</li>
+</ul>
+<p><strong>Propiedades disponibles</strong></p>
+<p>🟢 Si <code>tipo = message</code>:</p>
+<ul>
+<li><code>content</code> → Devuelve el contenido del mensaje.</li>
+<li><code>authorID</code> → Devuelve el ID del autor del mensaje.</li>
+<li><code>username</code> → Devuelve el nombre de usuario del autor.</li>
+<li><code>avatar</code> → Devuelve el enlace al avatar del autor.</li>
+</ul>
+<p>🔵 Si <code>tipo = embed</code>:</p>
+<ul>
+<li><code>title</code> → Devuelve el título del embed.</li>
+<li><code>description</code> → Devuelve la descripción.</li>
+<li><code>footer</code> → Devuelve el texto del pie del embed.</li>
+<li><code>color</code> → Devuelve el color del embed.</li>
+<li><code>timestamp</code> → Devuelve la marca de tiempo.</li>
+<li><code>image</code> → Devuelve la URL de la imagen del embed.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$getMessageData[122223334445556666;message;username]
+</code></pre>
+<p>📤 Devuelve el nombre de usuario del autor del mensaje con ID <code>122223334445556666</code>.</p>
+<pre><code>$getMessageData[122223334445556666;embed;title;1]
+</code></pre>
+<p>📤 Devuelve el título del primer embed del mensaje.</p>
+<p>¿Quieres que te genere una imagen similar a esa para esta función también?</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getcreateslash"><a class="header" href="#getcreateslash">$getCreateSlash[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getslashid"><a class="header" href="#getslashid">$getSlashID[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="gettypeslash"><a class="header" href="#gettypeslash">$getTypeSlash[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="gettimestamp"><a class="header" href="#gettimestamp">$getTimestamp[]</a></h1>
+<p>Devuelve la <a href="https://www.unixtimestamp.com/">marca de tiempo UNIX</a> actual en la unidad de tiempo seleccionada.</p>
+<p><strong>Sintaxis</strong></p>
+<pre><code>$getTimestamp[(Unidad de tiempo)]**
+</code></pre>
+<p><strong>Parámetros</strong></p>
+<ul>
+<li><code>Unidad de tiempo</code> <code>(Tipo: Enumeración || Indicador: Opcional)</code>: Establece la unidad de tiempo de la marca de tiempo.</li>
+</ul>
+<blockquote>
+<p>📝 El valor de la unidad de tiempo puede ser:</p>
+<ul>
+<li><code>s</code> (segundos)</li>
+<li><code>ms</code> (milisegundos)</li>
+<li><code>ns</code> (nanosegundos)</li>
+</ul>
+</blockquote>
+<p><strong>Ejemplo</strong></p>
+<pre><code>Marca de tiempo UNIX
+En segundos: $getTimestamp[s]
+En milisegundos: $getTimestamp[ms]
+En nanosegundos: $getTimestamp[ns]
+</code></pre>
+<p><img src="funciones/image-129.png" alt="alt text" /></p>
+<blockquote>
+<p>📄 Para obtener más información sobre las marcas de tiempo UNIX en Discord, haz clic <a href="funciones/../resources/discordTimestamps.html">aquí</a>.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getservervar"><a class="header" href="#getservervar">$getServerVar[]</a></h1>
 <p>Devuelve el valor de la variable de servidor proporcionada.</p>
 <p><strong>Sintaxis</strong></p>
@@ -3392,6 +3482,13 @@ bot.run(..)
 <blockquote>
 <p>Para más información, consulta la <a href="funciones/../gen/variables.html">Guía de variables</a>.</p>
 </blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="httpaddheader"><a class="header" href="#httpaddheader">$httpAddHeader[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="httppost"><a class="header" href="#httppost">$httpPost[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="httpput"><a class="header" href="#httpput">$httpPut[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="httpdelete"><a class="header" href="#httpdelete">$httpDelete[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="httpget"><a class="header" href="#httpget">$httpGet[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="httppatch"><a class="header" href="#httppatch">$httpPatch[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="httpresult"><a class="header" href="#httpresult">$httpResult[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="if"><a class="header" href="#if">$if[]</a></h1>
 <p>Ejecuta el siguiente bloque de código si la condición proporcionada es verdadera.</p>
 <p><strong>Sintaxis</strong></p>
@@ -3445,6 +3542,11 @@ $if[$checkCondition[h==$message[-1]];Verdadero;Falso]
 $if[hola==$message[-1];Verdadero;Falso]  
 </code></pre>
 <p><img src="funciones/image-56.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="isnumber"><a class="header" href="#isnumber">$isNumber[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ishoisted"><a class="header" href="#ishoisted">$isHoisted[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="isbanned"><a class="header" href="#isbanned">$isBanned[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="isadmin"><a class="header" href="#isadmin">$isAdmin[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="isbolean"><a class="header" href="#isbolean">$isBolean[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="image"><a class="header" href="#image">$image[]</a></h1>
 <p>$image Añade una imagen a la incrustación.</p>
 <p>Sintaxis</p>
@@ -4234,6 +4336,7 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
 <pre><code>$or[$nickname[]==Saul;$message[-1]==Actualizar]
 </code></pre>
 <p><img src="funciones/image-62.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ping"><a class="header" href="#ping">$ping[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="print"><a class="header" href="#print">$print[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="porcent"><a class="header" href="#porcent">$porcent[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="power"><a class="header" href="#power">$power[]</a></h1>
@@ -4841,7 +4944,7 @@ bot.new_event("$onLeaveMember", "$sendMessage[Bye;false;1353757407079301123]")
 bot.run(..)
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onmessage"><a class="header" href="#onmessage">$onMessage</a></h1>
-<p>$onMessage Se activa cuando un usuario se une al servidor.</p>
+<p>$onMessage Se activa cuando un usuario envia un mensaje al servidor.</p>
 <pre><code>$onMessage
 </code></pre>
 <p>es una llamada de retorno, lo que significa que se utiliza en el disparador del comando (no en el código). El comando un usuario mand un mnesaje al servidor.</p>
