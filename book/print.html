@@ -5197,6 +5197,45 @@ $setVar[contador;1]
 <pre><code>Resultado: $sum[5;6;1]
 </code></pre>
 <p><img src="funciones/image-74.png" alt="alt text" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="threadname"><a class="header" href="#threadname">$ThreadName[]</a></h1>
+<p>Devuelve el nombre del hilo (thread) a partir de su ID.</p>
+<h2 id="sintaxis-42"><a class="header" href="#sintaxis-42">Sintaxis</a></h2>
+<pre><code>$ThreadName[(ID del hilo)]
+</code></pre>
+<h3 id="parámetro"><a class="header" href="#parámetro">Parámetro</a></h3>
+<ul>
+<li><code>ID del hilo</code> <code>(Tipo: Entero || Indicador: Opcional)</code>: El identificador del hilo del cual se desea obtener el nombre si no espeicifica devuelve el ID en el evento.</li>
+</ul>
+<h3 id="ejemplo-43"><a class="header" href="#ejemplo-43">Ejemplo</a></h3>
+<pre><code>$ThreadName[112233445566778899]
+</code></pre>
+<p><strong>Resultado:</strong></p>
+<pre><code>soporte-ayuda
+</code></pre>
+<blockquote>
+<p>Asegúrate de que el ID pertenezca a un hilo válido y accesible por el bot.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="threadid"><a class="header" href="#threadid">$ThreadID[]</a></h1>
+<p>Devuelve el ID del hilo (thread) a partir de su nombre.</p>
+<h2 id="sintaxis-43"><a class="header" href="#sintaxis-43">Sintaxis</a></h2>
+<pre><code>$ThreadID[Nombre del hilo]
+</code></pre>
+<h3 id="parámetro-1"><a class="header" href="#parámetro-1">Parámetro</a></h3>
+<ul>
+<li><code>Nombre del hilo</code> <code>(Tipo: Texto || Indicador: Obligatorio)</code>: El nombre exacto del hilo que deseas buscar.</li>
+</ul>
+<h3 id="ejemplo-44"><a class="header" href="#ejemplo-44">Ejemplo</a></h3>
+<pre><code>$ThreadID[soporte-ayuda]
+</code></pre>
+<p><strong>Resultado:</strong></p>
+<pre><code>112233445566778899
+</code></pre>
+<blockquote>
+<p>El nombre debe coincidir exactamente con el del hilo. Si hay varios con el mismo nombre, puede devolver solo el primero que se encuentre.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="threadmemberscount"><a class="header" href="#threadmemberscount">$ThreadMembersCount[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="threadmembers"><a class="header" href="#threadmembers">$ThreadMembers[]</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="threadslowmode"><a class="header" href="#threadslowmode">$ThreadSlowMode[]</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="textsplit-1"><a class="header" href="#textsplit-1">$textSplit[]</a></h1>
 <p>Divide el texto proporcionado utilizando un separador y guarda el valor temporalmente.</p>
 <p><strong>Sintaxis</strong></p>
@@ -5294,21 +5333,21 @@ $titleURL[https:/example.com]
 <p><img src="funciones/image-7.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="username"><a class="header" href="#username">$username[]</a></h1>
 <p><code>$username[]</code> retorna el nombre de usuario de un miembro del servidor.</p>
-<h3 id="sintaxis-42"><a class="header" href="#sintaxis-42"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-44"><a class="header" href="#sintaxis-44"><strong>Sintaxis</strong></a></h3>
 <pre><code>$username[(ID de usuario)]
 </code></pre>
 <h3 id="parámetros-33"><a class="header" href="#parámetros-33"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>ID de usuario</code> <code>(Tipo: ID | Opcional)</code>: → Especifica el ID del usuario del que se desea obtener el nombre. Si se omite, devuelve el nombre del usuario que ejecutó el comando o activó el evento.</li>
 </ul>
-<h3 id="ejemplo-43"><a class="header" href="#ejemplo-43"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-45"><a class="header" href="#ejemplo-45"><strong>Ejemplo</strong></a></h3>
 <pre><code>Tu nombre es: $username
 </code></pre>
 <p><img src="funciones/image-19.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="userexists"><a class="header" href="#userexists">$userExists[]</a></h1>
 <p>Verifica si un usuario con el ID especificado existe y puede ser accedido por el bot o sistema.<br />
 Devuelve un valor booleano (<code>true</code> o <code>false</code>).</p>
-<h2 id="sintaxis-43"><a class="header" href="#sintaxis-43">Sintaxis</a></h2>
+<h2 id="sintaxis-45"><a class="header" href="#sintaxis-45">Sintaxis</a></h2>
 <pre><code>$userExists[ID del usuario]
 </code></pre>
 <h3 id="parámetros-34"><a class="header" href="#parámetros-34">Parámetros</a></h3>
@@ -5330,7 +5369,7 @@ Puede ayudar a prevenir errores al intentar usar un ID inválido o desconocido.<
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="userbadges"><a class="header" href="#userbadges">$userBadges[]</a></h1>
 <p>Devuelve una lista de insignias oficiales (badges) del usuario de Discord, separadas por el texto definido.</p>
-<h2 id="sintaxis-44"><a class="header" href="#sintaxis-44">Sintaxis</a></h2>
+<h2 id="sintaxis-46"><a class="header" href="#sintaxis-46">Sintaxis</a></h2>
 <pre><code>$userBadges[ID del usuario; Separador]
 </code></pre>
 <h3 id="parámetros-35"><a class="header" href="#parámetros-35">Parámetros</a></h3>
@@ -5365,7 +5404,7 @@ Las insignias devueltas pueden incluir: <code>HypeSquad</code>, <code>Bug Hunter
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="userroles"><a class="header" href="#userroles">$userRoles[]</a></h1>
 <p>Obtiene los roles de un usuario y los devuelve como una lista, usando el separador definido y el formato especificado.</p>
-<h2 id="sintaxis-45"><a class="header" href="#sintaxis-45">Sintaxis</a></h2>
+<h2 id="sintaxis-47"><a class="header" href="#sintaxis-47">Sintaxis</a></h2>
 <pre><code>$userRoles[Separador; Opción]
 </code></pre>
 <h3 id="parámetros-36"><a class="header" href="#parámetros-36">Parámetros</a></h3>
@@ -5400,7 +5439,7 @@ Solo se mostrarán los roles visibles para el bot o sistema, y no se incluye <co
 <blockquote>
 <p>La codificación URL es un método para convertir caracteres reservados, inseguros o no ASCII a un formato URL universalmente aceptado y comprendido por todos los navegadores y servidores web, mientras que la decodificación URL es la inversa.</p>
 </blockquote>
-<h2 id="sintaxis-46"><a class="header" href="#sintaxis-46">Sintaxis</a></h2>
+<h2 id="sintaxis-48"><a class="header" href="#sintaxis-48">Sintaxis</a></h2>
 <pre><code>$url[Modo;Texto]
 </code></pre>
 <h3 id="parámetros-37"><a class="header" href="#parámetros-37">Parámetros</a></h3>
@@ -5412,7 +5451,7 @@ Solo se mostrarán los roles visibles para el bot o sistema, y no se incluye <co
 <p><code>Texto</code> <code>(Tipo: Cadena || Indicador: Vaciable)</code>: El texto que se va a modificar.</p>
 </li>
 </ul>
-<h3 id="ejemplo-44"><a class="header" href="#ejemplo-44">Ejemplo</a></h3>
+<h3 id="ejemplo-46"><a class="header" href="#ejemplo-46">Ejemplo</a></h3>
 <ul>
 <li>Codificación</li>
 </ul>
@@ -5430,7 +5469,7 @@ Solo se mostrarán los roles visibles para el bot o sistema, y no se incluye <co
 <blockquote>
 <p>Esta función evalúa si una cadena cumple con la estructura de una URL correctamente formada. Esto incluye el protocolo (como <code>http://</code> o <code>https://</code>), el dominio, y opcionalmente la ruta, los parámetros y el puerto. Es útil para validar entradas del usuario o asegurar que una URL puede ser utilizada correctamente por sistemas o peticiones web.</p>
 </blockquote>
-<h2 id="sintaxis-47"><a class="header" href="#sintaxis-47">Sintaxis</a></h2>
+<h2 id="sintaxis-49"><a class="header" href="#sintaxis-49">Sintaxis</a></h2>
 <pre><code>$urlValid[URL]
 </code></pre>
 <h3 id="parámetros-38"><a class="header" href="#parámetros-38">Parámetros</a></h3>
@@ -5448,20 +5487,20 @@ Solo se mostrarán los roles visibles para el bot o sistema, y no se incluye <co
 <li>Retorna <code>true</code> si la URL es válida.</li>
 <li>Retorna <code>false</code> si la URL no tiene un formato válido.</li>
 </ul>
-<h3 id="ejemplo-45"><a class="header" href="#ejemplo-45">Ejemplo</a></h3>
+<h3 id="ejemplo-47"><a class="header" href="#ejemplo-47">Ejemplo</a></h3>
 <pre><code>$urlValid[https://google.com]
 </code></pre>
 <p><img src="funciones/image-139.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="useravatar"><a class="header" href="#useravatar">$userAvatar[]</a></h1>
 <p>Devuelve la URL del avatar de un usuario.</p>
-<h2 id="sintaxis-48"><a class="header" href="#sintaxis-48">Sintaxis</a></h2>
+<h2 id="sintaxis-50"><a class="header" href="#sintaxis-50">Sintaxis</a></h2>
 <pre><code>$userAvatar[(ID de usuario)]
 </code></pre>
 <h3 id="parámetros-39"><a class="header" href="#parámetros-39">Parámetros</a></h3>
 <ul>
 <li><code>ID de usuario</code> <code>(Tipo: Copo de nieve || Marca: Opcional)</code>: El usuario para el que se devolverá el avatar si no se establece un ID devuelve del autor.</li>
 </ul>
-<h2 id="ejemplo-46"><a class="header" href="#ejemplo-46">Ejemplo</a></h2>
+<h2 id="ejemplo-48"><a class="header" href="#ejemplo-48">Ejemplo</a></h2>
 <pre><code>$userAvatar[]
 </code></pre>
 <p><img src="funciones/image-135.png" alt="alt text" /></p>
@@ -5471,14 +5510,14 @@ Solo se mostrarán los roles visibles para el bot o sistema, y no se incluye <co
 <div style="break-before: page; page-break-before: always;"></div><h1 id="unban"><a class="header" href="#unban">$unban[]</a></h1>
 <p>Desbanea a un usuario del servidor utilizando su ID.<br />
 Permite restaurar el acceso al servidor a un usuario previamente baneado.</p>
-<h2 id="sintaxis-49"><a class="header" href="#sintaxis-49">Sintaxis</a></h2>
+<h2 id="sintaxis-51"><a class="header" href="#sintaxis-51">Sintaxis</a></h2>
 <pre><code>$unBan[ID del usuario]
 </code></pre>
 <h3 id="parámetros-40"><a class="header" href="#parámetros-40">Parámetros</a></h3>
 <ul>
 <li><code>ID del usuario</code> <code>(Tipo: Entero || Indicador: Obligatorio)</code>: El ID del usuario que será desbaneado del servidor.</li>
 </ul>
-<h3 id="ejemplo-47"><a class="header" href="#ejemplo-47">Ejemplo</a></h3>
+<h3 id="ejemplo-49"><a class="header" href="#ejemplo-49">Ejemplo</a></h3>
 <pre><code>$argsCheck[&gt;1;❌ Uso incorrecto. Uso: `!unban (ID del usuario)`]
 $unBan[1105238336328708168]
 ✅ Usuario desbaneado correctamente.
@@ -5495,7 +5534,7 @@ Si el ID es inválido o el usuario no está baneado, la acción puede fallar o d
 <div style="break-before: page; page-break-before: always;"></div><h1 id="while"><a class="header" href="#while">$while[]</a></h1>
 <p>Ejecuta un bloque de código de manera repetitiva mientras la condición sea verdadera.<br />
 Esta función permite crear bucles condicionales en tu sistema.</p>
-<h2 id="sintaxis-50"><a class="header" href="#sintaxis-50">Sintaxis</a></h2>
+<h2 id="sintaxis-52"><a class="header" href="#sintaxis-52">Sintaxis</a></h2>
 <pre><code>$while[Condición; Código a ejecutar]
 </code></pre>
 <h3 id="parámetros-41"><a class="header" href="#parámetros-41">Parámetros</a></h3>
@@ -5699,13 +5738,13 @@ bot.run(..)
 <p><img src="Eventos/image-1.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onreactionadd"><a class="header" href="#onreactionadd">$onReactionAdd</a></h1>
 <p><code>$onReactionAdd</code> es un evento que se activa cuando un usuario añade una reacción a un mensaje en el servidor.</p>
-<h3 id="sintaxis-51"><a class="header" href="#sintaxis-51"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-53"><a class="header" href="#sintaxis-53"><strong>Sintaxis</strong></a></h3>
 <pre><code>$onReactionAdd
 </code></pre>
 <blockquote>
 <p>📌 <strong>Nota:</strong> Este evento se usa como un disparador, no dentro del código del comando.</p>
 </blockquote>
-<h3 id="ejemplo-48"><a class="header" href="#ejemplo-48"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-50"><a class="header" href="#ejemplo-50"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot = ..
 
 bot.new_event("$onReactionAdd", "Emoji: $editReaction[]")
@@ -5779,7 +5818,7 @@ bot.run(...)
 <blockquote>
 <p>📌 Puedes tener varios <code>$onThreadCreate</code> por bot, aunque se recomienda mantenerlo organizado para evitar conflictos.</p>
 </blockquote>
-<h3 id="sintaxis-52"><a class="header" href="#sintaxis-52">Sintaxis</a></h3>
+<h3 id="sintaxis-54"><a class="header" href="#sintaxis-54">Sintaxis</a></h3>
 <blockquote>
 <p>No requiere parámetros. Para responder al evento, puedes usar funciones como <code>$sendMessage[]</code>, <code>$channelID[]</code>, entre otras relacionadas con hilos y canales.</p>
 </blockquote>
@@ -5798,7 +5837,7 @@ bot.run(...)
 <blockquote>
 <p>📌 Puedes tener varios <code>$onThreadDelete</code> en tu bot, pero se recomienda mantener una estructura clara para evitar redundancias.</p>
 </blockquote>
-<h3 id="sintaxis-53"><a class="header" href="#sintaxis-53">Sintaxis</a></h3>
+<h3 id="sintaxis-55"><a class="header" href="#sintaxis-55">Sintaxis</a></h3>
 <blockquote>
 <p>No requiere parámetros específicos. Puedes usar funciones como <code>$threadID[]</code>, <code>$channelID[]</code>, para obtener detalles sobre el hilo eliminado.</p>
 </blockquote>
@@ -5817,11 +5856,11 @@ bot.run(...)
 <blockquote>
 <p>📌 Se recomienda tener solo uno o pocos <code>$onThreadRemove</code> por bot para mantener la organización y evitar conflictos.</p>
 </blockquote>
-<h2 id="sintaxis-54"><a class="header" href="#sintaxis-54">Sintaxis</a></h2>
+<h2 id="sintaxis-56"><a class="header" href="#sintaxis-56">Sintaxis</a></h2>
 <blockquote>
 <p>No requiere parámetros específicos. Puedes utilizar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$channelID[]</code> o <code>$channelType[]</code> para obtener detalles sobre el hilo eliminado.</p>
 </blockquote>
-<h3 id="ejemplo-49"><a class="header" href="#ejemplo-49">Ejemplo</a></h3>
+<h3 id="ejemplo-51"><a class="header" href="#ejemplo-51">Ejemplo</a></h3>
 <pre><code class="language-python">bot = ...
 
 bot.new_event("$onThreadRemove", "🗑️ El hilo `$threadName[]` ha sido eliminado del canal &lt;#$channelID[]&gt;.")
@@ -5836,11 +5875,11 @@ bot.run(...)
 <blockquote>
 <p>📌 Este evento solo se activa para el bot, <strong>no para otros miembros</strong>. Para detectar cuando un usuario se une a un hilo, usa <code>$onThreadJoinMember</code>.</p>
 </blockquote>
-<h2 id="sintaxis-55"><a class="header" href="#sintaxis-55">Sintaxis</a></h2>
+<h2 id="sintaxis-57"><a class="header" href="#sintaxis-57">Sintaxis</a></h2>
 <blockquote>
 <p>No requiere parámetros específicos. Puedes usar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$channelID[]</code> para obtener información del hilo.</p>
 </blockquote>
-<h3 id="ejemplo-50"><a class="header" href="#ejemplo-50">Ejemplo</a></h3>
+<h3 id="ejemplo-52"><a class="header" href="#ejemplo-52">Ejemplo</a></h3>
 <pre><code class="language-python">bot = ...
 
 bot.new_event("$onThreadJoin", "🤖 Me he unido al hilo `$threadName[]` en el canal &lt;#$channelID[]&gt;.")
@@ -5855,11 +5894,11 @@ bot.run(...)
 <blockquote>
 <p>📌 Es útil para monitorear cambios en la configuración de hilos o detectar acciones administrativas.</p>
 </blockquote>
-<h2 id="sintaxis-56"><a class="header" href="#sintaxis-56">Sintaxis</a></h2>
+<h2 id="sintaxis-58"><a class="header" href="#sintaxis-58">Sintaxis</a></h2>
 <blockquote>
 <p>No requiere parámetros. Puedes usar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$oldThreadName[]</code>, <code>$newThreadName[]</code>, <code>$channelID[]</code>, entre otras, según el sistema que estés utilizando.</p>
 </blockquote>
-<h3 id="ejemplo-51"><a class="header" href="#ejemplo-51">Ejemplo</a></h3>
+<h3 id="ejemplo-53"><a class="header" href="#ejemplo-53">Ejemplo</a></h3>
 <pre><code class="language-python">bot = ...
 
 bot.new_event("$onThreadUpdate", "✏️ El hilo `$threadName[]` ha sido actualizado en el canal &lt;#$channelID[]&gt;.")
@@ -5876,11 +5915,11 @@ bot.run(...)
 <blockquote>
 <p>📌 Puedes tener varios <code>$onThreadJoinMember</code> por bot, pero se recomienda mantener el código organizado para evitar conflictos o redundancias.</p>
 </blockquote>
-<h2 id="sintaxis-57"><a class="header" href="#sintaxis-57">Sintaxis</a></h2>
+<h2 id="sintaxis-59"><a class="header" href="#sintaxis-59">Sintaxis</a></h2>
 <blockquote>
 <p>No requiere parámetros específicos. Puedes usar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$userID[]</code>, <code>$username[]</code> para obtener detalles sobre el hilo y el miembro que se unió.</p>
 </blockquote>
-<h3 id="ejemplo-52"><a class="header" href="#ejemplo-52">Ejemplo</a></h3>
+<h3 id="ejemplo-54"><a class="header" href="#ejemplo-54">Ejemplo</a></h3>
 <pre><code class="language-python">bot = ...
 
 bot.new_event("$onThreadJoinMember", "🎉 El usuario $username[] se ha unido al hilo `$threadName[]`.")
@@ -5895,11 +5934,11 @@ bot.run(...)
 <blockquote>
 <p>📌 Puedes tener varios <code>$onThreadRemoveMember</code> por bot, pero se recomienda mantener una sola instancia para mejor control.</p>
 </blockquote>
-<h2 id="sintaxis-58"><a class="header" href="#sintaxis-58">Sintaxis</a></h2>
+<h2 id="sintaxis-60"><a class="header" href="#sintaxis-60">Sintaxis</a></h2>
 <blockquote>
 <p>No requiere parámetros. Puedes usar funciones como: <code>$authorID[]</code> y <code>$username[]</code> para obtener información sobre el hilo y el usuario afectado.</p>
 </blockquote>
-<h3 id="ejemplo-53"><a class="header" href="#ejemplo-53">Ejemplo</a></h3>
+<h3 id="ejemplo-55"><a class="header" href="#ejemplo-55">Ejemplo</a></h3>
 <pre><code class="language-python">bot = ...
 
 bot.new_event("$onThreadRemoveMember", "👋 El usuario $username[] ha salido o fue removido del hilo `$threadName[]`.")

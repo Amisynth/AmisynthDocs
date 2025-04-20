@@ -169,6 +169,16 @@
     - [$splitText[]](funciones/splitText.md)
     - [$sub[]](funciones/sub.md)
     - [$sum[]](funciones/sum.md)
+    - [$ThreadName[]](funciones/threadname.md)
+    - [$ThreadID[]](funciones/threadid.md)
+    - [$ThreadMembersCount[]](funciones/ThreadhMembersCount.md)
+    - [$ThreadMembers[]](funciones/ThreadMembers.md)
+    - [$ThreadSlowMode[]](funciones/ThreadSlowMode.md)
+
+
+
+
+
     - [$textSplit[]](funciones/textSplit.md)
     - [$thumbnail[]](funciones/thumbnail.md)
     - [$typingUser[]](funciones/typingUser.md)

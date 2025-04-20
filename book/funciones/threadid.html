@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>$sum[] - AmisynthDocs</title>
+        <title>$ThreadID[] - AmisynthDocs</title>
 
 
         <!-- Custom HTML head -->
@@ -152,29 +152,34 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="sum"><a class="header" href="#sum">$sum[]</a></h1>
-<p>Devuelve la suma de los números proporcionados.</p>
-<p><strong>Sintaxis</strong></p>
-<pre><code>$sum[Número;...]
+                        <h1 id="threadid"><a class="header" href="#threadid">$ThreadID[]</a></h1>
+<p>Devuelve el ID del hilo (thread) a partir de su nombre.</p>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$ThreadID[Nombre del hilo]
 </code></pre>
-<p><strong>Parámetros</strong></p>
+<h3 id="parámetro"><a class="header" href="#parámetro">Parámetro</a></h3>
 <ul>
-<li><code>Número</code> <code>(Tipo: Entero, Flotante || Indicador: Obligatorio)</code>: Los números a sumar. Separe los valores múltiples con <code>;</code>.</li>
+<li><code>Nombre del hilo</code> <code>(Tipo: Texto || Indicador: Obligatorio)</code>: El nombre exacto del hilo que deseas buscar.</li>
 </ul>
-<p><strong>Ejemplo</strong></p>
-<pre><code>Resultado: $sum[5;6;1]
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code>$ThreadID[soporte-ayuda]
 </code></pre>
-<p><img src="image-74.png" alt="alt text" /></p>
+<p><strong>Resultado:</strong></p>
+<pre><code>112233445566778899
+</code></pre>
+<blockquote>
+<p>El nombre debe coincidir exactamente con el del hilo. Si hay varios con el mismo nombre, puede devolver solo el primero que se encuentre.</p>
+</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../funciones/sub.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../funciones/threadname.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../funciones/threadname.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../funciones/ThreadhMembersCount.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -184,11 +189,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../funciones/sub.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../funciones/threadname.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../funciones/threadname.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../funciones/ThreadhMembersCount.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
