@@ -1,6 +1,5 @@
 # $print[]
 
-
 Devuelve el ping del nodo del bot, en milisegundos.
 
 ## Sintaxis
@@ -15,3 +14,4 @@ $print[Texto]
 $print[Hello $username[]]
 ```
 
+![alt text](image-150.png)

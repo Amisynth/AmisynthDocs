@@ -153,6 +153,35 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="power"><a class="header" href="#power">$power[]</a></h1>
+<p>Eleva un número (base) a una potencia (exponente).<br />
+Devuelve el resultado de calcular <code>base ^ exponente</code>.</p>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$power[Base; Exponente]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>Base</code> <code>(Tipo: Decimal/Entero || Indicador: Obligatorio)</code>: El número que será elevado a la potencia.</p>
+</li>
+<li>
+<p><code>Exponente</code> <code>(Tipo: Decimal/Entero || Indicador: Obligatorio)</code>: La potencia a la que se elevará la base.</p>
+</li>
+</ul>
+<hr />
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code>$power[2;3]
+</code></pre>
+<p><strong>Resultado:</strong> <code>8</code><br />
+(2 elevado a la 3 = 2 × 2 × 2 = 8)</p>
+<p><img src="image-149.png" alt="alt text" /></p>
+<blockquote>
+<p>Ambos parámetros deben ser valores numéricos.<br />
+Si el exponente es 0, el resultado siempre será <code>1</code>, excepto si la base es 0 (lo cual puede resultar en una indeterminación en algunos sistemas).<br />
+Soporta exponentes negativos y decimales: <code>$power[2;-2]</code> dará <code>0.25</code>.</p>
+</blockquote>
+<blockquote>
+<p>Esta función es útil para cálculos matemáticos, físicos o financieros en automatizaciones.</p>
+</blockquote>
 
                     </main>
 

@@ -153,6 +153,28 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="userexists"><a class="header" href="#userexists">$userExists[]</a></h1>
+<p>Verifica si un usuario con el ID especificado existe y puede ser accedido por el bot o sistema.<br />
+Devuelve un valor booleano (<code>true</code> o <code>false</code>).</p>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$userExists[ID del usuario]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<ul>
+<li><code>ID del usuario</code> <code>(Tipo: Entero || Indicador: Obligatorio)</code>: El ID del usuario que se desea verificar.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$userExists[487430318500872203]
+</code></pre>
+<p><strong>Resultado:</strong> <code>True</code> (si el usuario existe y puede ser accedido)<br />
+<strong>Resultado alternativo:</strong> <code>False</code> (si no existe, fue eliminado, o no es visible para el bot)</p>
+<p><img src="image-154.png" alt="alt text" /></p>
+<blockquote>
+<p>Esta función es útil para validar datos antes de ejecutar otras acciones como baneos, menciones, registros o asignaciones.<br />
+Puede ayudar a prevenir errores al intentar usar un ID inválido o desconocido.</p>
+</blockquote>
+<blockquote>
+<p>El usuario puede no existir si el ID es incorrecto, ha sido eliminado, o si el bot no tiene acceso a esa información.</p>
+</blockquote>
 
                     </main>
 

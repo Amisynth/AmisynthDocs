@@ -2338,6 +2338,18 @@ $ban[$mensaje[1];$message[2]]
 <p>La razón se guarda si tu sistema o bot la admite para registros o auditoría.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="break"><a class="header" href="#break">$break[]</a></h1>
+<p>Rompe la ejecución de un bucle en el que se encuentra.</p>
+<p>La función <code>$break[]</code> detiene inmediatamente la ejecución de un bucle como <code>$while[]</code>, <code>$for[]</code>, o cualquier ciclo repetitivo.</p>
+<h3 id="ejemplo-14"><a class="header" href="#ejemplo-14">Ejemplo</a></h3>
+<pre><code class="language-bash">$while[True; 
+   $print[Ejecutando ciclo...]
+   $break[]
+]
+</code></pre>
+<p>Este ciclo se detendrá después de una sola ejecución debido al <code>$break[]</code>.</p>
+<blockquote>
+<p>Útil para interrumpir ciclos cuando se cumple una condición sin esperar a que termine todo el ciclo.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="channelid"><a class="header" href="#channelid">$channelID[]</a></h1>
 <p>Devuelve el ID del canal para el nombre del canal especificado.</p>
 <p>Sintaxis</p>
@@ -2458,7 +2470,7 @@ $description[&lt;- Este es el color]
 <p><code>Guild ID</code> <em>(Tipo: ID | Opcional)</em> → ID del servidor del que se desean obtener los nombres de los canales. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
 </li>
 </ul>
-<h3 id="ejemplo-14"><a class="header" href="#ejemplo-14"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-15"><a class="header" href="#ejemplo-15"><strong>Ejemplo</strong></a></h3>
 <pre><code>$channelNames[|]
 </code></pre>
 <p>🔹 Devuelve algo como: <code>general, memes, música, sugerencias</code></p>
@@ -2518,7 +2530,7 @@ $description[&lt;- Este es el color]
 <p><code>Guild ID</code> <code>(Tipo: ID | Opcional)</code> → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
 </li>
 </ul>
-<h3 id="ejemplo-15"><a class="header" href="#ejemplo-15"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-16"><a class="header" href="#ejemplo-16"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">$categoryIDs[|]
 </code></pre>
 <p>🔹 Devuelve algo como: <code>1171903881001832591|1171903881001832595|1171903881442242634</code></p>
@@ -2537,7 +2549,7 @@ $description[&lt;- Este es el color]
 <p><code>Guild ID</code> <code>(Tipo: ID | Opcional)</code> → ID del servidor del que se desean obtener los nombres de las categorías. Si se omite, se usará el servidor donde se ejecutó el comando.</p>
 </li>
 </ul>
-<h3 id="ejemplo-16"><a class="header" href="#ejemplo-16"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-17"><a class="header" href="#ejemplo-17"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">$categorysNames[|]
 </code></pre>
 <p>🔹 Devuelve algo como: <code>Información, General, Juegos, Staff</code></p>
@@ -2614,7 +2626,7 @@ $description[&lt;- Este es el color]
 <blockquote>
 <p>📌 <strong>Nota:</strong> Solo funciona dentro de eventos como <code>$onInteraction</code>.</p>
 </blockquote>
-<h3 id="ejemplo-17"><a class="header" href="#ejemplo-17"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-18"><a class="header" href="#ejemplo-18"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot = ..
 
 bot.new_event("$onInteraction", "customid: $customID[]")
@@ -2716,7 +2728,7 @@ $addButton[false;http://botdesignerdiscord.com;Visita nuestra web;link;false;�
 <blockquote>
 <p>No requiere Parametros, solo funciona en el evento <code>$onMessageEdit</code></p>
 </blockquote>
-<h3 id="ejemplo-18"><a class="header" href="#ejemplo-18"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-19"><a class="header" href="#ejemplo-19"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">Contenido Original: $editMessageBefore[]
 Contenido Nuevo: $editMessageAfter[]
 </code></pre>
@@ -3073,7 +3085,7 @@ $footer[&lt;- icono]
 <ul>
 <li><code>Role</code> <code>(Tipo: Cadena || Marca: Vaciable)</code>: El nombre, ID o mención del rol que se buscará.</li>
 </ul>
-<h2 id="ejemplo-19"><a class="header" href="#ejemplo-19">Ejemplo</a></h2>
+<h2 id="ejemplo-20"><a class="header" href="#ejemplo-20">Ejemplo</a></h2>
 <pre><code>$findRole[RoleVerde]
 </code></pre>
 <p><img src="funciones/image-128.png" alt="alt text" /></p>
@@ -3401,7 +3413,7 @@ bot.run(..)
 <ul>
 <li><code>Valor</code> <code>(Tipo: String || Opcional)</code>: El valor a buscar dentro del texto dividido.</li>
 </ul>
-<h2 id="ejemplo-20"><a class="header" href="#ejemplo-20">Ejemplo</a></h2>
+<h2 id="ejemplo-21"><a class="header" href="#ejemplo-21">Ejemplo</a></h2>
 <h3 id="ejemplo-1-2"><a class="header" href="#ejemplo-1-2">Ejemplo #1</a></h3>
 <pre><code class="language-plaintext">$textSplit[hello_world_!;_]
 &gt; $getTextSplitIndex[$message[-1]]   // Devuelve el índice del valor en la lista dividida o -1 si no se encuentra
@@ -3499,7 +3511,7 @@ bot.run(..)
 <li>Especificar el tipo de contenido (<code>Content-Type: application/json</code>).</li>
 <li>Definir el origen de la solicitud (<code>Origin</code>, <code>Referer</code>, etc.).</li>
 </ul>
-<h3 id="ejemplo-21"><a class="header" href="#ejemplo-21">Ejemplo</a></h3>
+<h3 id="ejemplo-22"><a class="header" href="#ejemplo-22">Ejemplo</a></h3>
 <pre><code>$httpAddHeader[Authorization;Bearer abc123]
 $httpAddHeader[Content-Type;application/json]
 $httpPost[https://api.ejemplo.com/datos;{"nombre":"Amisadai"}]
@@ -3530,7 +3542,7 @@ $httpResult[-1]
 <li>Crear registros en una base de datos remota.</li>
 <li>Enviar formularios complejos con múltiples campos.</li>
 </ul>
-<h3 id="ejemplo-22"><a class="header" href="#ejemplo-22">Ejemplo</a></h3>
+<h3 id="ejemplo-23"><a class="header" href="#ejemplo-23">Ejemplo</a></h3>
 <pre><code class="language-bash">$httpAddHeader[Authorization;Bearer abc123]
 $httpPost[https://api.ejemplo.com/usuarios;{'nombre':'Amisadai','edad':21}]
 $httpResult[-1]
@@ -3570,7 +3582,7 @@ $httpResult[-1]
 <li>Modificar configuraciones guardadas en una base de datos remota.</li>
 <li>Reemplazar un registro completo con nuevos valores.</li>
 </ul>
-<h3 id="ejemplo-23"><a class="header" href="#ejemplo-23">Ejemplo</a></h3>
+<h3 id="ejemplo-24"><a class="header" href="#ejemplo-24">Ejemplo</a></h3>
 <pre><code class="language-bash">$httpAddHeader[Authorization;Bearer abc123]
 $httpAddHeader[Content-Type;application/json]
 $httpPut[https://api.ejemplo.com/usuarios/123;{"nombre":"Amisadai","edad":22}]
@@ -3600,7 +3612,7 @@ $httpResult[-1]
 <li>Eliminar un recurso específico (usuario, archivo, sesión, etc.).</li>
 <li>Confirmar la eliminación con datos adicionales si la API lo requiere.</li>
 </ul>
-<h3 id="ejemplo-24"><a class="header" href="#ejemplo-24">Ejemplo</a></h3>
+<h3 id="ejemplo-25"><a class="header" href="#ejemplo-25">Ejemplo</a></h3>
 <pre><code class="language-bash">$httpAddHeader[Authorization;Bearer abc123]
 $httpDelete[https://api.ejemplo.com/usuarios/123;{"confirmar":True}]
 $httpResult[-1]
@@ -3626,7 +3638,7 @@ $httpResult[-1]
 <li>Obtener detalles de un recurso específico.</li>
 <li>Llamar a APIs públicas para recuperar información.</li>
 </ul>
-<h3 id="ejemplo-25"><a class="header" href="#ejemplo-25">Ejemplo</a></h3>
+<h3 id="ejemplo-26"><a class="header" href="#ejemplo-26">Ejemplo</a></h3>
 <pre><code class="language-txt">$httpAddHeader[Authorization;Bearer abc123]
 $httpGet[https://api.ejemplo.com/usuarios/487430318500872203]
 $httpResult[-1]
@@ -3656,7 +3668,7 @@ $httpResult[-1]
 <ul>
 <li><code>clave</code> <code>(Tipo: Cadena || Requerido)</code>: Nombre de la propiedad JSON que deseas obtener del resultado. Por ejemplo, si el JSON contiene <code>{ "nombre": "Saul" }</code>, puedes usar <code>$httpResult[nombre]</code> para obtener <code>"Saul"</code> y si se proporciona <code>-1</code> devuelve todo el JSON.</li>
 </ul>
-<h3 id="ejemplo-26"><a class="header" href="#ejemplo-26">Ejemplo</a></h3>
+<h3 id="ejemplo-27"><a class="header" href="#ejemplo-27">Ejemplo</a></h3>
 <pre><code class="language-txt">$httpGet[https://api.ejemplo.com/search/usuarios/487430318500872203]
 Usuario encontrado: $httpResult[user]
 </code></pre>
@@ -3730,7 +3742,7 @@ $if[hola==$message[-1];Verdadero;Falso]
 <ul>
 <li><code>Valor</code> <code>(Tipo: Cadena || Indicador: Obligatorio)</code>: La cadena que se comprobará.</li>
 </ul>
-<h2 id="ejemplo-27"><a class="header" href="#ejemplo-27">Ejemplo</a></h2>
+<h2 id="ejemplo-28"><a class="header" href="#ejemplo-28">Ejemplo</a></h2>
 <pre><code>¿Entero?: $isNumber[10]
 </code></pre>
 <p><img src="funciones/image-134.png" alt="alt text" /></p>
@@ -3746,7 +3758,7 @@ $if[hola==$message[-1];Verdadero;Falso]
 <ul>
 <li><code>ID del rol</code> <code>(Tipo: Copo de nieve || Indicador: Obligatorio)</code>: El rol para comprobar su estado activado.</li>
 </ul>
-<h3 id="ejemplo-28"><a class="header" href="#ejemplo-28">Ejemplo</a></h3>
+<h3 id="ejemplo-29"><a class="header" href="#ejemplo-29">Ejemplo</a></h3>
 <pre><code>$nomention
 $isHoisted[$findRole[1171903881001832590]]
 </code></pre>
@@ -3763,7 +3775,7 @@ $isHoisted[$findRole[1171903881001832590]]
 <ul>
 <li><code>ID de usuario</code> <code>(Tipo: Copo de nieve || Indicador: Obligatorio)</code>: El usuario para consultar su estado de baneo.</li>
 </ul>
-<h2 id="ejemplo-29"><a class="header" href="#ejemplo-29">Ejemplo</a></h2>
+<h2 id="ejemplo-30"><a class="header" href="#ejemplo-30">Ejemplo</a></h2>
 <pre><code>$isBanned[$authorID[]]
 </code></pre>
 <p><img src="funciones/image-131.png" alt="alt text" /></p>
@@ -3779,7 +3791,7 @@ $isHoisted[$findRole[1171903881001832590]]
 <ul>
 <li><code>ID de usuario</code> <code>(Tipo: Copo de nieve || Marca: Obligatorio)</code>: El usuario a verificar.</li>
 </ul>
-<h3 id="ejemplo-30"><a class="header" href="#ejemplo-30">Ejemplo</a></h3>
+<h3 id="ejemplo-31"><a class="header" href="#ejemplo-31">Ejemplo</a></h3>
 <pre><code>$nomention
 ¿Eres administrador?: `$isAdmin[$authorID[]]`
 </code></pre>
@@ -3804,7 +3816,7 @@ $isHoisted[$findRole[1171903881001832590]]
 <tr><td>enable</td><td>Deshabilitar</td></tr>
 </tbody></table>
 </div>
-<h3 id="ejemplo-31"><a class="header" href="#ejemplo-31">Ejemplo</a></h3>
+<h3 id="ejemplo-32"><a class="header" href="#ejemplo-32">Ejemplo</a></h3>
 <pre><code>¿Es booleano?: `$isBoolean[keso]`
 </code></pre>
 <p><img src="funciones/image-132.png" alt="alt text" /></p>
@@ -3879,7 +3891,7 @@ Edad: $json[identity;age] años
 <ul>
 <li><code>Key</code> <code>(Tipo: String || Obligatorio)</code>: La clave JSON que será marcada como un array.</li>
 </ul>
-<h3 id="ejemplo-32"><a class="header" href="#ejemplo-32">Ejemplo</a></h3>
+<h3 id="ejemplo-33"><a class="header" href="#ejemplo-33">Ejemplo</a></h3>
 <pre><code class="language-plaintext">
 $jsonParse[{
     'games': ''
@@ -4405,6 +4417,23 @@ Age: $json[identity;age] years old]
 <p>Para obtener más información, consulte la Guía de <a href="funciones/../gen/json.html">JSON Funciones</a>.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="kick"><a class="header" href="#kick">$kick[]</a></h1>
+<p>Expulsa al usuario proporcionado.</p>
+<h2 id="sintaxis-31"><a class="header" href="#sintaxis-31">Sintaxis</a></h2>
+<pre><code>$kick[ID de usuario;(razón)]
+</code></pre>
+<h3 id="parámetros-27"><a class="header" href="#parámetros-27">Parámetros</a></h3>
+<ul>
+<li><code>ID de usuario</code> <code>(Tipo: Copo de nieve || Indicador: Obligatorio)</code>: El usuario que se expulsará del servidor.</li>
+<li><code>razón</code> <code>(Tipo: Cadena || Indicador: Vacante)</code>: El motivo del registro de auditoría para la expulsión.</li>
+</ul>
+<h2 id="ejemplo-34"><a class="header" href="#ejemplo-34">Ejemplo</a></h2>
+<pre><code>$nomention
+$onlyPerms[kick;❌ ¡Necesitas el permiso `kick` para usar esto!]
+$argsCheck[&gt;1;❌ Por favor, proporciona un usuario para expulsar. Uso: `!kick (usuario) &lt;razón&gt;`.]
+$kick[$mentioned[1];$message[2]]
+✅ Expulsado `$username[$mentioned[1]]#$discriminator[$mentioned[1]]`!
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/69215413/123518740-4742a600-d675-11eb-8581-1707b6989203.png" alt="ejemplo" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="let"><a class="header" href="#let">$let[]</a></h1>
 <p>La función <code>$let[]</code> almacena un valor en una variable temporal dentro de la ejecución del comando.</p>
 <p><strong>Sintaxis</strong></p>
@@ -4575,7 +4604,7 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
 <p><img src="funciones/image-76.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="or"><a class="header" href="#or">$or[]</a></h1>
 <p>Devuelve <code>True</code> si al menos una de las condiciones proporcionadas es <code>True</code>; de lo contrario, devuelve <code>False</code>.</p>
-<h2 id="sintaxis-31"><a class="header" href="#sintaxis-31">Sintaxis</a></h2>
+<h2 id="sintaxis-32"><a class="header" href="#sintaxis-32">Sintaxis</a></h2>
 <pre><code>$or[Condiciones;...]
 </code></pre>
 <p><strong>Parámetros</strong></p>
@@ -4599,35 +4628,97 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
 <p><img src="funciones/image-62.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ping"><a class="header" href="#ping">$ping[]</a></h1>
 <p>Devuelve el ping del nodo del bot, en milisegundos.</p>
-<h2 id="sintaxis-32"><a class="header" href="#sintaxis-32">Sintaxis</a></h2>
+<h2 id="sintaxis-33"><a class="header" href="#sintaxis-33">Sintaxis</a></h2>
 <pre><code>$ping[]
 </code></pre>
-<h3 id="ejemplo-33"><a class="header" href="#ejemplo-33">Ejemplo</a></h3>
+<h3 id="ejemplo-35"><a class="header" href="#ejemplo-35">Ejemplo</a></h3>
 <pre><code>Pong 🏓 $ping[]
 </code></pre>
 <p><img src="funciones/image-136.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="print"><a class="header" href="#print">$print[]</a></h1>
 <p>Devuelve el ping del nodo del bot, en milisegundos.</p>
-<h2 id="sintaxis-33"><a class="header" href="#sintaxis-33">Sintaxis</a></h2>
+<h2 id="sintaxis-34"><a class="header" href="#sintaxis-34">Sintaxis</a></h2>
 <pre><code>$print[Texto]
 </code></pre>
 <ul>
 <li><code>Texto</code>  <code>(Tipo: Copo de nieve || Marca: Obligatorio)</code>: El texto que a de inprimir.</li>
 </ul>
-<h3 id="ejemplo-34"><a class="header" href="#ejemplo-34">Ejemplo</a></h3>
+<h3 id="ejemplo-36"><a class="header" href="#ejemplo-36">Ejemplo</a></h3>
 <pre><code>$print[Hello $username[]]
 </code></pre>
+<p><img src="funciones/image-150.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="porcent"><a class="header" href="#porcent">$porcent[]</a></h1>
+<p>Calcula el porcentaje indicado de un número dado.<br />
+Devuelve el valor correspondiente al <code>%</code> aplicado sobre el número base.</p>
+<h2 id="sintaxis-35"><a class="header" href="#sintaxis-35">Sintaxis</a></h2>
+<pre><code>$porcent[Número base; Porcentaje a aplicar]
+</code></pre>
+<h3 id="parámetros-28"><a class="header" href="#parámetros-28">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>Número base</code> <code>(Tipo: Decimal/Entero || Indicador: Obligatorio)</code>: El número al cual se le aplicará el porcentaje.</p>
+</li>
+<li>
+<p><code>Porcentaje a aplicar</code> <code>(Tipo: Decimal/Entero || Indicador: Obligatorio)</code>: El valor porcentual que se aplicará sobre el número base.</p>
+</li>
+</ul>
+<h3 id="ejemplo-37"><a class="header" href="#ejemplo-37">Ejemplo</a></h3>
+<pre><code>$porcent[200;10]
+</code></pre>
+<p><strong>Resultado:</strong> <code>20</code><br />
+(El 10% de 200 es 20)</p>
+<p><img src="funciones/image-148.png" alt="alt text" /></p>
+<blockquote>
+<p>Ambos valores deben ser numéricos válidos, de lo contrario puede producir errores o resultados inesperados.</p>
+</blockquote>
+<blockquote>
+<p>Soporta valores decimales. Ejemplo: <code>$porcent[250.5;12.5]</code> devolverá <code>31.3125</code>.</p>
+</blockquote>
+<blockquote>
+<p>Si el porcentaje es mayor a 100, el resultado será mayor que el número base.</p>
+</blockquote>
+<blockquote>
+<p>Esta función es útil para cálculos rápidos de descuentos, aumentos o proporciones.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="power"><a class="header" href="#power">$power[]</a></h1>
+<p>Eleva un número (base) a una potencia (exponente).<br />
+Devuelve el resultado de calcular <code>base ^ exponente</code>.</p>
+<h2 id="sintaxis-36"><a class="header" href="#sintaxis-36">Sintaxis</a></h2>
+<pre><code>$power[Base; Exponente]
+</code></pre>
+<h3 id="parámetros-29"><a class="header" href="#parámetros-29">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>Base</code> <code>(Tipo: Decimal/Entero || Indicador: Obligatorio)</code>: El número que será elevado a la potencia.</p>
+</li>
+<li>
+<p><code>Exponente</code> <code>(Tipo: Decimal/Entero || Indicador: Obligatorio)</code>: La potencia a la que se elevará la base.</p>
+</li>
+</ul>
+<hr />
+<h3 id="ejemplo-38"><a class="header" href="#ejemplo-38">Ejemplo</a></h3>
+<pre><code>$power[2;3]
+</code></pre>
+<p><strong>Resultado:</strong> <code>8</code><br />
+(2 elevado a la 3 = 2 × 2 × 2 = 8)</p>
+<p><img src="funciones/image-149.png" alt="alt text" /></p>
+<blockquote>
+<p>Ambos parámetros deben ser valores numéricos.<br />
+Si el exponente es 0, el resultado siempre será <code>1</code>, excepto si la base es 0 (lo cual puede resultar en una indeterminación en algunos sistemas).<br />
+Soporta exponentes negativos y decimales: <code>$power[2;-2]</code> dará <code>0.25</code>.</p>
+</blockquote>
+<blockquote>
+<p>Esta función es útil para cálculos matemáticos, físicos o financieros en automatizaciones.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="reationevent"><a class="header" href="#reationevent">$reationEvent[]</a></h1>
 <p>La función <code>$reactionEvent[]</code> almacena un valor en una variable temporal dentro de la ejecución del comando.</p>
-<h3 id="sintaxis-34"><a class="header" href="#sintaxis-34"><code>Sintaxis</code></a></h3>
+<h3 id="sintaxis-37"><a class="header" href="#sintaxis-37"><code>Sintaxis</code></a></h3>
 <pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <blockquote>
 <p>Esta es una funcion compartida que retornar el emoji usado o removido en los eventos <code>$onReactionAdd</code> y <code>$onReactionRemove</code></p>
 </blockquote>
-<h3 id="ejemplo-35"><a class="header" href="#ejemplo-35"><code>Ejemplo</code></a></h3>
+<h3 id="ejemplo-39"><a class="header" href="#ejemplo-39"><code>Ejemplo</code></a></h3>
 <pre><code class="language-plaintext">$reactionEvent[]
 </code></pre>
 <p><img src="funciones/image-3.png" alt="alt text" /></p>
@@ -4643,7 +4734,7 @@ $addSelectMenuOption[Ejemplo;Tercero;tercera opción;La tercera opción]
 <blockquote>
 <p>📝 Al proporcionar el "ID del mensaje", asegúrese de que el autor del mensaje sea el bot.</p>
 </blockquote>
-<h2 id="ejemplo-36"><a class="header" href="#ejemplo-36">Ejemplo</a></h2>
+<h2 id="ejemplo-40"><a class="header" href="#ejemplo-40">Ejemplo</a></h2>
 <pre><code>$removeButtons[$message[1]]
 Se eliminaron todos los botones del mensaje correctamente. 
 </code></pre>
@@ -4671,7 +4762,7 @@ Se eliminaron todos los botones del mensaje correctamente.
 <p><img src="funciones/../gen/image-4.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="removeselectmenus"><a class="header" href="#removeselectmenus">$removeSelectMenus[]</a></h1>
 <p>Elimina todos los menú de selección.</p>
-<h2 id="sintaxis-35"><a class="header" href="#sintaxis-35">Sintaxis</a></h2>
+<h2 id="sintaxis-38"><a class="header" href="#sintaxis-38">Sintaxis</a></h2>
 <pre><code>$removeSelectMenus[]
 </code></pre>
 <h3 id="ejemplo-de-uso-1"><a class="header" href="#ejemplo-de-uso-1">Ejemplo de uso</a></h3>
@@ -4762,7 +4853,7 @@ $removeSplitTextElement[2]
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rolegrant"><a class="header" href="#rolegrant">$roleGrant[]</a></h1>
 <p>Añade o elimina roles del usuario proporcionado.</p>
-<h2 id="sintaxis-36"><a class="header" href="#sintaxis-36">Sintaxis</a></h2>
+<h2 id="sintaxis-39"><a class="header" href="#sintaxis-39">Sintaxis</a></h2>
 <pre><code>$roleGrant[ID de usuario;+/-ID de rol;...]
 </code></pre>
 <p><strong>Parámetros</strong></p>
@@ -4787,10 +4878,10 @@ $roleGrant[3869969062509936;-9368562753613496]
 <p><img src="funciones/image-25.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="round"><a class="header" href="#round">$round[]</a></h1>
 <p>Redondea hacia arriba el número proporcionado.</p>
-<h2 id="sintaxis-37"><a class="header" href="#sintaxis-37">Sintaxis</a></h2>
+<h2 id="sintaxis-40"><a class="header" href="#sintaxis-40">Sintaxis</a></h2>
 <pre><code>$round[Número;(Decimal)]
 </code></pre>
-<h3 id="parámetros-27"><a class="header" href="#parámetros-27">Parámetros</a></h3>
+<h3 id="parámetros-30"><a class="header" href="#parámetros-30">Parámetros</a></h3>
 <ul>
 <li>
 <p><code>Número</code> <code>(Tipo: Flotante || Indicador: Obligatorio)</code>: El número a redondear.</p>
@@ -4799,11 +4890,34 @@ $roleGrant[3869969062509936;-9368562753613496]
 <p><code>Decimal</code> <code>(Tipo: Entero || Indicador: Vacante)</code>: El número de decimales a redondear. El valor predeterminado es <code>0</code>.</p>
 </li>
 </ul>
-<h3 id="ejemplo-37"><a class="header" href="#ejemplo-37">Ejemplo</a></h3>
+<h3 id="ejemplo-41"><a class="header" href="#ejemplo-41">Ejemplo</a></h3>
 <pre><code>Resultado: $round[100.123;1]
 </code></pre>
 <p><img src="funciones/image-141.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="sqtr"><a class="header" href="#sqtr">$sqtr[]</a></h1>
+<p>Calcula la raíz cuadrada de un número dado.<br />
+Devuelve el valor correspondiente a <code>√n</code>.</p>
+<h2 id="sintaxis-41"><a class="header" href="#sintaxis-41">Sintaxis</a></h2>
+<pre><code>$sqtr[Número]
+</code></pre>
+<h3 id="parámetros-31"><a class="header" href="#parámetros-31">Parámetros</a></h3>
+<ul>
+<li><code>Número</code> <code>(Tipo: Decimal/Entero || Indicador: Obligatorio)</code>: El número del cual se desea obtener la raíz cuadrada.</li>
+</ul>
+<h3 id="ejemplo-42"><a class="header" href="#ejemplo-42">Ejemplo</a></h3>
+<pre><code>$sqtr[25]
+</code></pre>
+<p><strong>Resultado:</strong> <code>5.0</code></p>
+<p><img src="funciones/image-151.png" alt="alt text" /></p>
+<blockquote>
+<p>Si el número es negativo, el resultado puede ser indefinido o producir error dependiendo del sistema, ya que la raíz cuadrada de un número negativo no es real.</p>
+</blockquote>
+<blockquote>
+<p>Puedes usar esta función en conjunto con otras operaciones matemáticas como <code>$power[]</code>, <code>$porcent[]</code>, etc.</p>
+</blockquote>
+<blockquote>
+<p>Útil en cálculos científicos, matemáticos o lógicos donde se requiere extraer raíces.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="sendembedmessage"><a class="header" href="#sendembedmessage">$sendEmbedMessage[]</a></h1>
 <p>Envía un mensaje embed completo (incluye filas) al canal proporcionado. Los campos no necesarios pueden dejarse vacíos.</p>
 <p><strong>Sintaxis</strong></p>
@@ -5008,7 +5122,7 @@ $setUserVar[dinero;0;$authorID[]]
 <p><strong>Sintaxis</strong></p>
 <pre><code>$setVar[Nombre de la variable;Nuevo valor;(ID de usuario)]
 </code></pre>
-<h3 id="parámetros-28"><a class="header" href="#parámetros-28">Parámetros</a></h3>
+<h3 id="parámetros-32"><a class="header" href="#parámetros-32">Parámetros</a></h3>
 <ul>
 <li>
 <p><code>Nombre de la variable</code> <code>(Tipo: Cadena || Marca: Obligatorio)</code>: La variable que se actualizará.</p>
@@ -5180,29 +5294,116 @@ $titleURL[https:/example.com]
 <p><img src="funciones/image-7.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="username"><a class="header" href="#username">$username[]</a></h1>
 <p><code>$username[]</code> retorna el nombre de usuario de un miembro del servidor.</p>
-<h3 id="sintaxis-38"><a class="header" href="#sintaxis-38"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-42"><a class="header" href="#sintaxis-42"><strong>Sintaxis</strong></a></h3>
 <pre><code>$username[(ID de usuario)]
 </code></pre>
-<h3 id="parámetros-29"><a class="header" href="#parámetros-29"><strong>Parámetros</strong></a></h3>
+<h3 id="parámetros-33"><a class="header" href="#parámetros-33"><strong>Parámetros</strong></a></h3>
 <ul>
 <li><code>ID de usuario</code> <code>(Tipo: ID | Opcional)</code>: → Especifica el ID del usuario del que se desea obtener el nombre. Si se omite, devuelve el nombre del usuario que ejecutó el comando o activó el evento.</li>
 </ul>
-<h3 id="ejemplo-38"><a class="header" href="#ejemplo-38"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-43"><a class="header" href="#ejemplo-43"><strong>Ejemplo</strong></a></h3>
 <pre><code>Tu nombre es: $username
 </code></pre>
 <p><img src="funciones/image-19.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="userexists"><a class="header" href="#userexists">$userExists[]</a></h1>
+<p>Verifica si un usuario con el ID especificado existe y puede ser accedido por el bot o sistema.<br />
+Devuelve un valor booleano (<code>true</code> o <code>false</code>).</p>
+<h2 id="sintaxis-43"><a class="header" href="#sintaxis-43">Sintaxis</a></h2>
+<pre><code>$userExists[ID del usuario]
+</code></pre>
+<h3 id="parámetros-34"><a class="header" href="#parámetros-34">Parámetros</a></h3>
+<ul>
+<li><code>ID del usuario</code> <code>(Tipo: Entero || Indicador: Obligatorio)</code>: El ID del usuario que se desea verificar.</li>
+</ul>
+<p><strong>Ejemplo</strong></p>
+<pre><code>$userExists[487430318500872203]
+</code></pre>
+<p><strong>Resultado:</strong> <code>True</code> (si el usuario existe y puede ser accedido)<br />
+<strong>Resultado alternativo:</strong> <code>False</code> (si no existe, fue eliminado, o no es visible para el bot)</p>
+<p><img src="funciones/image-154.png" alt="alt text" /></p>
+<blockquote>
+<p>Esta función es útil para validar datos antes de ejecutar otras acciones como baneos, menciones, registros o asignaciones.<br />
+Puede ayudar a prevenir errores al intentar usar un ID inválido o desconocido.</p>
+</blockquote>
+<blockquote>
+<p>El usuario puede no existir si el ID es incorrecto, ha sido eliminado, o si el bot no tiene acceso a esa información.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="userbadges"><a class="header" href="#userbadges">$userBadges[]</a></h1>
+<p>Devuelve una lista de insignias oficiales (badges) del usuario de Discord, separadas por el texto definido.</p>
+<h2 id="sintaxis-44"><a class="header" href="#sintaxis-44">Sintaxis</a></h2>
+<pre><code>$userBadges[ID del usuario; Separador]
+</code></pre>
+<h3 id="parámetros-35"><a class="header" href="#parámetros-35">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>ID del usuario</code> <code>(Tipo: Entero || Indicador: Obligatorio)</code>: El ID del usuario del cual se desea obtener las insignias.</p>
+</li>
+<li>
+<p><code>Separador</code> <code>(Tipo: Texto || Indicador: Obligatorio)</code>: El carácter o cadena que se usará para separar cada insignia en el resultado.<br />
+Ejemplos: <code>, </code> <code>|</code> <code>\n</code></p>
+</li>
+</ul>
+<p><strong>Ejemplo 1: Obtener insignias separadas por coma</strong></p>
+<pre><code>$userBadges[$authorID[];-]
+</code></pre>
+<p><strong>Resultado:</strong> <code>Bravery</code></p>
+<p><img src="funciones/image-153.png" alt="alt text" /></p>
+<p><strong>Ejemplo 2: Obtener insignias separadas por salto de línea</strong></p>
+<pre><code>$userBadges[849302840932840;\n]
+</code></pre>
+<p><strong>Resultado:</strong></p>
+<pre><code>Discord Partner  
+Bug Hunter  
+Verified Bot Developer
+</code></pre>
+<blockquote>
+<p>Si el usuario no tiene insignias, la función puede retornar vacío o un mensaje predeterminado si así lo configuras.<br />
+Las insignias devueltas pueden incluir: <code>HypeSquad</code>, <code>Bug Hunter</code>, <code>Partner</code>, <code>Verified Bot Developer</code>, <code>Active Developer</code>, <code>Staff</code>, entre otras.</p>
+</blockquote>
+<blockquote>
+<p>Útil para mostrar el estatus, contribuciones o privilegios de un usuario dentro del ecosistema Discord.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="userroles"><a class="header" href="#userroles">$userRoles[]</a></h1>
+<p>Obtiene los roles de un usuario y los devuelve como una lista, usando el separador definido y el formato especificado.</p>
+<h2 id="sintaxis-45"><a class="header" href="#sintaxis-45">Sintaxis</a></h2>
+<pre><code>$userRoles[Separador; Opción]
+</code></pre>
+<h3 id="parámetros-36"><a class="header" href="#parámetros-36">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>Separador</code> <code>(Tipo: Texto || Indicador: Obligatorio)</code>: El carácter o texto que se usará para separar los roles en la salida.<br />
+Ejemplos comunes: <code>, </code> <code>|</code> <code>\n</code></p>
+</li>
+<li>
+<p><code>Opción</code> <code>(Tipo: Texto || Indicador: Obligatorio)</code>: Define el tipo de dato que se devolverá.<br />
+Valores válidos:</p>
+<ul>
+<li><code>"names"</code> → Devuelve los nombres de los roles.</li>
+<li><code>"ids"</code> → Devuelve los IDs de los roles.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo 1: Obtener nombres de roles separados por coma</strong></p>
+<pre><code>$userRoles[-;names]
+</code></pre>
+<p><strong>Resultado:</strong> <code>Mod Tester-officers (example)</code></p>
+<p><img src="funciones/image-152.png" alt="alt text" /></p>
+<blockquote>
+<p>La lista de roles se ordena de mayor a menor jerarquía según Discord (de arriba hacia abajo).<br />
+Solo se mostrarán los roles visibles para el bot o sistema, y no se incluye <code>@everyone</code>.</p>
+</blockquote>
+<blockquote>
+<p>Esta función es útil para mostrar permisos, exportar roles, o realizar validaciones de acceso.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="url"><a class="header" href="#url">$url[]</a></h1>
 <p>Codifica o decodifica el texto proporcionado en el formato de codificación URL.</p>
 <blockquote>
 <p>La codificación URL es un método para convertir caracteres reservados, inseguros o no ASCII a un formato URL universalmente aceptado y comprendido por todos los navegadores y servidores web, mientras que la decodificación URL es la inversa.</p>
 </blockquote>
-<h2 id="sintaxis-39"><a class="header" href="#sintaxis-39">Sintaxis</a></h2>
+<h2 id="sintaxis-46"><a class="header" href="#sintaxis-46">Sintaxis</a></h2>
 <pre><code>$url[Modo;Texto]
 </code></pre>
-<h3 id="parámetros-30"><a class="header" href="#parámetros-30">Parámetros</a></h3>
+<h3 id="parámetros-37"><a class="header" href="#parámetros-37">Parámetros</a></h3>
 <ul>
 <li>
 <p><code>Modo</code> <code>(Tipo: Enumeración || Indicador: Obligatorio)</code>: Si se codifica o decodifica el texto proporcionado. Acepta <code>codificar</code> o <code>decodificar</code> como entrada.</p>
@@ -5211,7 +5412,7 @@ $titleURL[https:/example.com]
 <p><code>Texto</code> <code>(Tipo: Cadena || Indicador: Vaciable)</code>: El texto que se va a modificar.</p>
 </li>
 </ul>
-<h3 id="ejemplo-39"><a class="header" href="#ejemplo-39">Ejemplo</a></h3>
+<h3 id="ejemplo-44"><a class="header" href="#ejemplo-44">Ejemplo</a></h3>
 <ul>
 <li>Codificación</li>
 </ul>
@@ -5229,10 +5430,10 @@ $titleURL[https:/example.com]
 <blockquote>
 <p>Esta función evalúa si una cadena cumple con la estructura de una URL correctamente formada. Esto incluye el protocolo (como <code>http://</code> o <code>https://</code>), el dominio, y opcionalmente la ruta, los parámetros y el puerto. Es útil para validar entradas del usuario o asegurar que una URL puede ser utilizada correctamente por sistemas o peticiones web.</p>
 </blockquote>
-<h2 id="sintaxis-40"><a class="header" href="#sintaxis-40">Sintaxis</a></h2>
+<h2 id="sintaxis-47"><a class="header" href="#sintaxis-47">Sintaxis</a></h2>
 <pre><code>$urlValid[URL]
 </code></pre>
-<h3 id="parámetros-31"><a class="header" href="#parámetros-31">Parámetros</a></h3>
+<h3 id="parámetros-38"><a class="header" href="#parámetros-38">Parámetros</a></h3>
 <ul>
 <li><code>URL</code> <code>(Tipo: Cadena || Requerido)</code>: Cadena que se desea validar como una URL.</li>
 </ul>
@@ -5247,20 +5448,20 @@ $titleURL[https:/example.com]
 <li>Retorna <code>true</code> si la URL es válida.</li>
 <li>Retorna <code>false</code> si la URL no tiene un formato válido.</li>
 </ul>
-<h3 id="ejemplo-40"><a class="header" href="#ejemplo-40">Ejemplo</a></h3>
+<h3 id="ejemplo-45"><a class="header" href="#ejemplo-45">Ejemplo</a></h3>
 <pre><code>$urlValid[https://google.com]
 </code></pre>
 <p><img src="funciones/image-139.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="useravatar"><a class="header" href="#useravatar">$userAvatar[]</a></h1>
 <p>Devuelve la URL del avatar de un usuario.</p>
-<h2 id="sintaxis-41"><a class="header" href="#sintaxis-41">Sintaxis</a></h2>
+<h2 id="sintaxis-48"><a class="header" href="#sintaxis-48">Sintaxis</a></h2>
 <pre><code>$userAvatar[(ID de usuario)]
 </code></pre>
-<h3 id="parámetros-32"><a class="header" href="#parámetros-32">Parámetros</a></h3>
+<h3 id="parámetros-39"><a class="header" href="#parámetros-39">Parámetros</a></h3>
 <ul>
 <li><code>ID de usuario</code> <code>(Tipo: Copo de nieve || Marca: Opcional)</code>: El usuario para el que se devolverá el avatar si no se establece un ID devuelve del autor.</li>
 </ul>
-<h2 id="ejemplo-41"><a class="header" href="#ejemplo-41">Ejemplo</a></h2>
+<h2 id="ejemplo-46"><a class="header" href="#ejemplo-46">Ejemplo</a></h2>
 <pre><code>$userAvatar[]
 </code></pre>
 <p><img src="funciones/image-135.png" alt="alt text" /></p>
@@ -5268,7 +5469,66 @@ $titleURL[https:/example.com]
 <p>📌 Opcionalmente, puedes añadir la cadena de consulta <code>?size=VALUE</code> al final de la URL para aumentar el tamaño del avatar. El valor de <code>tamaño</code> admite cualquier potencia de dos entre 16 y 4096.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="unban"><a class="header" href="#unban">$unban[]</a></h1>
+<p>Desbanea a un usuario del servidor utilizando su ID.<br />
+Permite restaurar el acceso al servidor a un usuario previamente baneado.</p>
+<h2 id="sintaxis-49"><a class="header" href="#sintaxis-49">Sintaxis</a></h2>
+<pre><code>$unBan[ID del usuario]
+</code></pre>
+<h3 id="parámetros-40"><a class="header" href="#parámetros-40">Parámetros</a></h3>
+<ul>
+<li><code>ID del usuario</code> <code>(Tipo: Entero || Indicador: Obligatorio)</code>: El ID del usuario que será desbaneado del servidor.</li>
+</ul>
+<h3 id="ejemplo-47"><a class="header" href="#ejemplo-47">Ejemplo</a></h3>
+<pre><code>$argsCheck[&gt;1;❌ Uso incorrecto. Uso: `!unban (ID del usuario)`]
+$unBan[1105238336328708168]
+✅ Usuario desbaneado correctamente.
+</code></pre>
+<p><img src="funciones/image-155.png" alt="alt text" /></p>
+<blockquote>
+<p>El bot debe tener el permiso <code>Ban Members</code> para ejecutar esta acción.<br />
+Asegúrate de que el ID ingresado corresponde a un usuario actualmente baneado del servidor.<br />
+Si el ID es inválido o el usuario no está baneado, la acción puede fallar o devolver un error.</p>
+</blockquote>
+<blockquote>
+<p>Esta función es útil para automatizar la gestión de sanciones y restaurar miembros con comandos personalizados.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="while"><a class="header" href="#while">$while[]</a></h1>
+<p>Ejecuta un bloque de código de manera repetitiva mientras la condición sea verdadera.<br />
+Esta función permite crear bucles condicionales en tu sistema.</p>
+<h2 id="sintaxis-50"><a class="header" href="#sintaxis-50">Sintaxis</a></h2>
+<pre><code>$while[Condición; Código a ejecutar]
+</code></pre>
+<h3 id="parámetros-41"><a class="header" href="#parámetros-41">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>Condición</code> <code>(Tipo: Booleano || Indicador: Obligatorio)</code>: La condición que debe ser verdadera (<code>True</code>) para que el código dentro del bloque se ejecute. Si la condición es <code>False</code>, el bloque de código no se ejecutará.</p>
+</li>
+<li>
+<p><code>Código a ejecutar</code> <code>(Tipo: Código/Texto || Indicador: Obligatorio)</code>: El bloque de código o instrucciones que se ejecutarán repetidamente mientras la condición sea <code>True</code>.</p>
+</li>
+</ul>
+<h3 id="ejemplo-1-bucle-simple-que-imprime-un-mensaje-5-veces"><a class="header" href="#ejemplo-1-bucle-simple-que-imprime-un-mensaje-5-veces">Ejemplo 1: Bucle simple que imprime un mensaje 5 veces**</a></h3>
+<pre><code>$let[contador;0]
+$while[$get[contador] &lt; 5; 
+   $print[Mensaje número $get[contador]]
+   $let[contador;$sum[$get[contador];1]]
+]
+</code></pre>
+<p><strong>Resultado en consola:</strong></p>
+<pre><code>Mensaje número 0  
+Mensaje número 1  
+Mensaje número 2  
+Mensaje número 3  
+Mensaje número 4
+</code></pre>
+<p><img src="funciones/image-156.png" alt="alt text" /></p>
+<blockquote>
+<p>Asegúrate de que la condición eventualmente cambie a <code>False</code>, de lo contrario, el bucle puede ejecutarse infinitamente y causar un bloqueo o sobrecarga del sistema.<br />
+Esta función es útil para procesos repetitivos como conteos, verificaciones o temporizadores.</p>
+</blockquote>
+<blockquote>
+<p>Es recomendable usarla con cuidado, especialmente si la condición es muy amplia o puede quedarse en <code>True</code> indefinidamente.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="eventos"><a class="header" href="#eventos">Eventos</a></h1>
 <p>Soon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onjoinmember"><a class="header" href="#onjoinmember">$onJoinMember</a></h1>
@@ -5439,13 +5699,13 @@ bot.run(..)
 <p><img src="Eventos/image-1.png" alt="alt text" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="onreactionadd"><a class="header" href="#onreactionadd">$onReactionAdd</a></h1>
 <p><code>$onReactionAdd</code> es un evento que se activa cuando un usuario añade una reacción a un mensaje en el servidor.</p>
-<h3 id="sintaxis-42"><a class="header" href="#sintaxis-42"><strong>Sintaxis</strong></a></h3>
+<h3 id="sintaxis-51"><a class="header" href="#sintaxis-51"><strong>Sintaxis</strong></a></h3>
 <pre><code>$onReactionAdd
 </code></pre>
 <blockquote>
 <p>📌 <strong>Nota:</strong> Este evento se usa como un disparador, no dentro del código del comando.</p>
 </blockquote>
-<h3 id="ejemplo-42"><a class="header" href="#ejemplo-42"><strong>Ejemplo</strong></a></h3>
+<h3 id="ejemplo-48"><a class="header" href="#ejemplo-48"><strong>Ejemplo</strong></a></h3>
 <pre><code class="language-python">bot = ..
 
 bot.new_event("$onReactionAdd", "Emoji: $editReaction[]")
@@ -5519,7 +5779,7 @@ bot.run(...)
 <blockquote>
 <p>📌 Puedes tener varios <code>$onThreadCreate</code> por bot, aunque se recomienda mantenerlo organizado para evitar conflictos.</p>
 </blockquote>
-<h3 id="sintaxis-43"><a class="header" href="#sintaxis-43">Sintaxis</a></h3>
+<h3 id="sintaxis-52"><a class="header" href="#sintaxis-52">Sintaxis</a></h3>
 <blockquote>
 <p>No requiere parámetros. Para responder al evento, puedes usar funciones como <code>$sendMessage[]</code>, <code>$channelID[]</code>, entre otras relacionadas con hilos y canales.</p>
 </blockquote>
@@ -5538,7 +5798,7 @@ bot.run(...)
 <blockquote>
 <p>📌 Puedes tener varios <code>$onThreadDelete</code> en tu bot, pero se recomienda mantener una estructura clara para evitar redundancias.</p>
 </blockquote>
-<h3 id="sintaxis-44"><a class="header" href="#sintaxis-44">Sintaxis</a></h3>
+<h3 id="sintaxis-53"><a class="header" href="#sintaxis-53">Sintaxis</a></h3>
 <blockquote>
 <p>No requiere parámetros específicos. Puedes usar funciones como <code>$threadID[]</code>, <code>$channelID[]</code>, para obtener detalles sobre el hilo eliminado.</p>
 </blockquote>
@@ -5557,11 +5817,11 @@ bot.run(...)
 <blockquote>
 <p>📌 Se recomienda tener solo uno o pocos <code>$onThreadRemove</code> por bot para mantener la organización y evitar conflictos.</p>
 </blockquote>
-<h2 id="sintaxis-45"><a class="header" href="#sintaxis-45">Sintaxis</a></h2>
+<h2 id="sintaxis-54"><a class="header" href="#sintaxis-54">Sintaxis</a></h2>
 <blockquote>
 <p>No requiere parámetros específicos. Puedes utilizar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$channelID[]</code> o <code>$channelType[]</code> para obtener detalles sobre el hilo eliminado.</p>
 </blockquote>
-<h3 id="ejemplo-43"><a class="header" href="#ejemplo-43">Ejemplo</a></h3>
+<h3 id="ejemplo-49"><a class="header" href="#ejemplo-49">Ejemplo</a></h3>
 <pre><code class="language-python">bot = ...
 
 bot.new_event("$onThreadRemove", "🗑️ El hilo `$threadName[]` ha sido eliminado del canal &lt;#$channelID[]&gt;.")
@@ -5576,11 +5836,11 @@ bot.run(...)
 <blockquote>
 <p>📌 Este evento solo se activa para el bot, <strong>no para otros miembros</strong>. Para detectar cuando un usuario se une a un hilo, usa <code>$onThreadJoinMember</code>.</p>
 </blockquote>
-<h2 id="sintaxis-46"><a class="header" href="#sintaxis-46">Sintaxis</a></h2>
+<h2 id="sintaxis-55"><a class="header" href="#sintaxis-55">Sintaxis</a></h2>
 <blockquote>
 <p>No requiere parámetros específicos. Puedes usar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$channelID[]</code> para obtener información del hilo.</p>
 </blockquote>
-<h3 id="ejemplo-44"><a class="header" href="#ejemplo-44">Ejemplo</a></h3>
+<h3 id="ejemplo-50"><a class="header" href="#ejemplo-50">Ejemplo</a></h3>
 <pre><code class="language-python">bot = ...
 
 bot.new_event("$onThreadJoin", "🤖 Me he unido al hilo `$threadName[]` en el canal &lt;#$channelID[]&gt;.")
@@ -5595,11 +5855,11 @@ bot.run(...)
 <blockquote>
 <p>📌 Es útil para monitorear cambios en la configuración de hilos o detectar acciones administrativas.</p>
 </blockquote>
-<h2 id="sintaxis-47"><a class="header" href="#sintaxis-47">Sintaxis</a></h2>
+<h2 id="sintaxis-56"><a class="header" href="#sintaxis-56">Sintaxis</a></h2>
 <blockquote>
 <p>No requiere parámetros. Puedes usar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$oldThreadName[]</code>, <code>$newThreadName[]</code>, <code>$channelID[]</code>, entre otras, según el sistema que estés utilizando.</p>
 </blockquote>
-<h3 id="ejemplo-45"><a class="header" href="#ejemplo-45">Ejemplo</a></h3>
+<h3 id="ejemplo-51"><a class="header" href="#ejemplo-51">Ejemplo</a></h3>
 <pre><code class="language-python">bot = ...
 
 bot.new_event("$onThreadUpdate", "✏️ El hilo `$threadName[]` ha sido actualizado en el canal &lt;#$channelID[]&gt;.")
@@ -5616,11 +5876,11 @@ bot.run(...)
 <blockquote>
 <p>📌 Puedes tener varios <code>$onThreadJoinMember</code> por bot, pero se recomienda mantener el código organizado para evitar conflictos o redundancias.</p>
 </blockquote>
-<h2 id="sintaxis-48"><a class="header" href="#sintaxis-48">Sintaxis</a></h2>
+<h2 id="sintaxis-57"><a class="header" href="#sintaxis-57">Sintaxis</a></h2>
 <blockquote>
 <p>No requiere parámetros específicos. Puedes usar funciones como <code>$threadID[]</code>, <code>$threadName[]</code>, <code>$userID[]</code>, <code>$username[]</code> para obtener detalles sobre el hilo y el miembro que se unió.</p>
 </blockquote>
-<h3 id="ejemplo-46"><a class="header" href="#ejemplo-46">Ejemplo</a></h3>
+<h3 id="ejemplo-52"><a class="header" href="#ejemplo-52">Ejemplo</a></h3>
 <pre><code class="language-python">bot = ...
 
 bot.new_event("$onThreadJoinMember", "🎉 El usuario $username[] se ha unido al hilo `$threadName[]`.")
@@ -5635,11 +5895,11 @@ bot.run(...)
 <blockquote>
 <p>📌 Puedes tener varios <code>$onThreadRemoveMember</code> por bot, pero se recomienda mantener una sola instancia para mejor control.</p>
 </blockquote>
-<h2 id="sintaxis-49"><a class="header" href="#sintaxis-49">Sintaxis</a></h2>
+<h2 id="sintaxis-58"><a class="header" href="#sintaxis-58">Sintaxis</a></h2>
 <blockquote>
 <p>No requiere parámetros. Puedes usar funciones como: <code>$authorID[]</code> y <code>$username[]</code> para obtener información sobre el hilo y el usuario afectado.</p>
 </blockquote>
-<h3 id="ejemplo-47"><a class="header" href="#ejemplo-47">Ejemplo</a></h3>
+<h3 id="ejemplo-53"><a class="header" href="#ejemplo-53">Ejemplo</a></h3>
 <pre><code class="language-python">bot = ...
 
 bot.new_event("$onThreadRemoveMember", "👋 El usuario $username[] ha salido o fue removido del hilo `$threadName[]`.")

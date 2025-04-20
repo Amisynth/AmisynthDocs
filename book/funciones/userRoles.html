@@ -153,6 +153,37 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="userroles"><a class="header" href="#userroles">$userRoles[]</a></h1>
+<p>Obtiene los roles de un usuario y los devuelve como una lista, usando el separador definido y el formato especificado.</p>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$userRoles[Separador; Opción]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>Separador</code> <code>(Tipo: Texto || Indicador: Obligatorio)</code>: El carácter o texto que se usará para separar los roles en la salida.<br />
+Ejemplos comunes: <code>, </code> <code>|</code> <code>\n</code></p>
+</li>
+<li>
+<p><code>Opción</code> <code>(Tipo: Texto || Indicador: Obligatorio)</code>: Define el tipo de dato que se devolverá.<br />
+Valores válidos:</p>
+<ul>
+<li><code>"names"</code> → Devuelve los nombres de los roles.</li>
+<li><code>"ids"</code> → Devuelve los IDs de los roles.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ejemplo 1: Obtener nombres de roles separados por coma</strong></p>
+<pre><code>$userRoles[-;names]
+</code></pre>
+<p><strong>Resultado:</strong> <code>Mod Tester-officers (example)</code></p>
+<p><img src="image-152.png" alt="alt text" /></p>
+<blockquote>
+<p>La lista de roles se ordena de mayor a menor jerarquía según Discord (de arriba hacia abajo).<br />
+Solo se mostrarán los roles visibles para el bot o sistema, y no se incluye <code>@everyone</code>.</p>
+</blockquote>
+<blockquote>
+<p>Esta función es útil para mostrar permisos, exportar roles, o realizar validaciones de acceso.</p>
+</blockquote>
 
                     </main>
 

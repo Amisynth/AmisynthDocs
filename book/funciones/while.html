@@ -153,6 +153,42 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="while"><a class="header" href="#while">$while[]</a></h1>
+<p>Ejecuta un bloque de código de manera repetitiva mientras la condición sea verdadera.<br />
+Esta función permite crear bucles condicionales en tu sistema.</p>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$while[Condición; Código a ejecutar]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>Condición</code> <code>(Tipo: Booleano || Indicador: Obligatorio)</code>: La condición que debe ser verdadera (<code>True</code>) para que el código dentro del bloque se ejecute. Si la condición es <code>False</code>, el bloque de código no se ejecutará.</p>
+</li>
+<li>
+<p><code>Código a ejecutar</code> <code>(Tipo: Código/Texto || Indicador: Obligatorio)</code>: El bloque de código o instrucciones que se ejecutarán repetidamente mientras la condición sea <code>True</code>.</p>
+</li>
+</ul>
+<h3 id="ejemplo-1-bucle-simple-que-imprime-un-mensaje-5-veces"><a class="header" href="#ejemplo-1-bucle-simple-que-imprime-un-mensaje-5-veces">Ejemplo 1: Bucle simple que imprime un mensaje 5 veces**</a></h3>
+<pre><code>$let[contador;0]
+$while[$get[contador] &lt; 5; 
+   $print[Mensaje número $get[contador]]
+   $let[contador;$sum[$get[contador];1]]
+]
+</code></pre>
+<p><strong>Resultado en consola:</strong></p>
+<pre><code>Mensaje número 0  
+Mensaje número 1  
+Mensaje número 2  
+Mensaje número 3  
+Mensaje número 4
+</code></pre>
+<p><img src="image-156.png" alt="alt text" /></p>
+<blockquote>
+<p>Asegúrate de que la condición eventualmente cambie a <code>False</code>, de lo contrario, el bucle puede ejecutarse infinitamente y causar un bloqueo o sobrecarga del sistema.<br />
+Esta función es útil para procesos repetitivos como conteos, verificaciones o temporizadores.</p>
+</blockquote>
+<blockquote>
+<p>Es recomendable usarla con cuidado, especialmente si la condición es muy amplia o puede quedarse en <code>True</code> indefinidamente.</p>
+</blockquote>
 
                     </main>
 

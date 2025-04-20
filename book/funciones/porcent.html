@@ -153,6 +153,38 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="porcent"><a class="header" href="#porcent">$porcent[]</a></h1>
+<p>Calcula el porcentaje indicado de un número dado.<br />
+Devuelve el valor correspondiente al <code>%</code> aplicado sobre el número base.</p>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$porcent[Número base; Porcentaje a aplicar]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>Número base</code> <code>(Tipo: Decimal/Entero || Indicador: Obligatorio)</code>: El número al cual se le aplicará el porcentaje.</p>
+</li>
+<li>
+<p><code>Porcentaje a aplicar</code> <code>(Tipo: Decimal/Entero || Indicador: Obligatorio)</code>: El valor porcentual que se aplicará sobre el número base.</p>
+</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code>$porcent[200;10]
+</code></pre>
+<p><strong>Resultado:</strong> <code>20</code><br />
+(El 10% de 200 es 20)</p>
+<p><img src="image-148.png" alt="alt text" /></p>
+<blockquote>
+<p>Ambos valores deben ser numéricos válidos, de lo contrario puede producir errores o resultados inesperados.</p>
+</blockquote>
+<blockquote>
+<p>Soporta valores decimales. Ejemplo: <code>$porcent[250.5;12.5]</code> devolverá <code>31.3125</code>.</p>
+</blockquote>
+<blockquote>
+<p>Si el porcentaje es mayor a 100, el resultado será mayor que el número base.</p>
+</blockquote>
+<blockquote>
+<p>Esta función es útil para cálculos rápidos de descuentos, aumentos o proporciones.</p>
+</blockquote>
 
                     </main>
 

@@ -153,6 +153,40 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="userbadges"><a class="header" href="#userbadges">$userBadges[]</a></h1>
+<p>Devuelve una lista de insignias oficiales (badges) del usuario de Discord, separadas por el texto definido.</p>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$userBadges[ID del usuario; Separador]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>ID del usuario</code> <code>(Tipo: Entero || Indicador: Obligatorio)</code>: El ID del usuario del cual se desea obtener las insignias.</p>
+</li>
+<li>
+<p><code>Separador</code> <code>(Tipo: Texto || Indicador: Obligatorio)</code>: El carácter o cadena que se usará para separar cada insignia en el resultado.<br />
+Ejemplos: <code>, </code> <code>|</code> <code>\n</code></p>
+</li>
+</ul>
+<p><strong>Ejemplo 1: Obtener insignias separadas por coma</strong></p>
+<pre><code>$userBadges[$authorID[];-]
+</code></pre>
+<p><strong>Resultado:</strong> <code>Bravery</code></p>
+<p><img src="image-153.png" alt="alt text" /></p>
+<p><strong>Ejemplo 2: Obtener insignias separadas por salto de línea</strong></p>
+<pre><code>$userBadges[849302840932840;\n]
+</code></pre>
+<p><strong>Resultado:</strong></p>
+<pre><code>Discord Partner  
+Bug Hunter  
+Verified Bot Developer
+</code></pre>
+<blockquote>
+<p>Si el usuario no tiene insignias, la función puede retornar vacío o un mensaje predeterminado si así lo configuras.<br />
+Las insignias devueltas pueden incluir: <code>HypeSquad</code>, <code>Bug Hunter</code>, <code>Partner</code>, <code>Verified Bot Developer</code>, <code>Active Developer</code>, <code>Staff</code>, entre otras.</p>
+</blockquote>
+<blockquote>
+<p>Útil para mostrar el estatus, contribuciones o privilegios de un usuario dentro del ecosistema Discord.</p>
+</blockquote>
 
                     </main>
 

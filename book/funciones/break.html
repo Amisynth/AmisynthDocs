@@ -153,6 +153,18 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="break"><a class="header" href="#break">$break[]</a></h1>
+<p>Rompe la ejecución de un bucle en el que se encuentra.</p>
+<p>La función <code>$break[]</code> detiene inmediatamente la ejecución de un bucle como <code>$while[]</code>, <code>$for[]</code>, o cualquier ciclo repetitivo.</p>
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code class="language-bash">$while[True; 
+   $print[Ejecutando ciclo...]
+   $break[]
+]
+</code></pre>
+<p>Este ciclo se detendrá después de una sola ejecución debido al <code>$break[]</code>.</p>
+<blockquote>
+<p>Útil para interrumpir ciclos cuando se cumple una condición sin esperar a que termine todo el ciclo.</p>
+</blockquote>
 
                     </main>
 
