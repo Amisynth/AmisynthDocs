@@ -153,6 +153,35 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="url"><a class="header" href="#url">$url[]</a></h1>
+<p>Codifica o decodifica el texto proporcionado en el formato de codificación URL.</p>
+<blockquote>
+<p>La codificación URL es un método para convertir caracteres reservados, inseguros o no ASCII a un formato URL universalmente aceptado y comprendido por todos los navegadores y servidores web, mientras que la decodificación URL es la inversa.</p>
+</blockquote>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$url[Modo;Texto]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>Modo</code> <code>(Tipo: Enumeración || Indicador: Obligatorio)</code>: Si se codifica o decodifica el texto proporcionado. Acepta <code>codificar</code> o <code>decodificar</code> como entrada.</p>
+</li>
+<li>
+<p><code>Texto</code> <code>(Tipo: Cadena || Indicador: Vaciable)</code>: El texto que se va a modificar.</p>
+</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<ul>
+<li>Codificación</li>
+</ul>
+<pre><code>https://example.url/encode?convert=$url[encode;¡Hola mundo!]
+</code></pre>
+<p><img src="image-137.png" alt="alt text" /></p>
+<ul>
+<li>Decodificación</li>
+</ul>
+<pre><code>$url[decode;https://example.url/decode?convert=¡Hola+mundo%21%21]
+</code></pre>
+<p><img src="image-138.png" alt="alt text" /></p>
 
                     </main>
 

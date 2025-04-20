@@ -153,6 +153,46 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="httpput"><a class="header" href="#httpput">$httpPut[]</a></h1>
+<p>Envía una solicitud HTTP de tipo <strong>PUT</strong> a la URL especificada, enviando datos en formato JSON para <strong>actualizar</strong> un recurso existente en el servidor.</p>
+<blockquote>
+<p>El método HTTP <strong>PUT</strong> se usa comúnmente para modificar o reemplazar un recurso en una API REST. A diferencia del POST (que suele crear), PUT sobrescribe o actualiza datos según la información enviada.</p>
+</blockquote>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$httpPut[Url;Json]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>Url</code> <code>(Tipo: Cadena || Requerido)</code>: La dirección completa del recurso que se desea actualizar (por ejemplo, <code>https://api.ejemplo.com/usuarios/123</code>).</p>
+</li>
+<li>
+<p><code>Json</code> <code>(Tipo: Cadena || Requerido)</code>: El cuerpo de la solicitud en formato JSON, con los datos actualizados.</p>
+</li>
+</ul>
+<h3 id="comportamiento"><a class="header" href="#comportamiento">Comportamiento</a></h3>
+<ul>
+<li>La estructura JSON debe ser válida.</li>
+<li>Generalmente requiere un identificador en la URL para saber qué recurso se va a modificar.</li>
+<li>Puedes agregar encabezados personalizados antes de llamar a esta función, como <code>Authorization</code> o <code>Content-Type</code>, usando <code>$httpAddHeader</code>.</li>
+</ul>
+<h3 id="uso-común"><a class="header" href="#uso-común">Uso común</a></h3>
+<ul>
+<li>Actualizar información de un usuario.</li>
+<li>Modificar configuraciones guardadas en una base de datos remota.</li>
+<li>Reemplazar un registro completo con nuevos valores.</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code class="language-bash">$httpAddHeader[Authorization;Bearer abc123]
+$httpAddHeader[Content-Type;application/json]
+$httpPut[https://api.ejemplo.com/usuarios/123;{"nombre":"Amisadai","edad":22}]
+$httpResult[-1]
+</code></pre>
+<h3 id="resultado"><a class="header" href="#resultado">Resultado</a></h3>
+<ul>
+<li>Devuelve la respuesta del servidor, que puede ser una confirmación, un objeto actualizado, o un mensaje de estado.</li>
+<li>Si falla, puedes recibir un error de validación o permisos (como un código 400 o 403).</li>
+</ul>
+<p><img src="image-143.png" alt="alt text" /></p>
 
                     </main>
 

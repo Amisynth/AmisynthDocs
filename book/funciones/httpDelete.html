@@ -153,6 +153,31 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="httpdelete"><a class="header" href="#httpdelete">$httpDelete[]</a></h1>
+<p>Envía una solicitud HTTP de tipo <strong>DELETE</strong> a la URL indicada, incluyendo un cuerpo en formato JSON si es necesario.</p>
+<blockquote>
+<p>Aunque el método DELETE normalmente no lleva cuerpo, algunas APIs modernas aceptan un JSON adicional para confirmar la acción, proporcionar autenticación extra o especificar detalles sobre lo que se eliminará.</p>
+</blockquote>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$httpDelete[url;json]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<ul>
+<li><code>url</code> <code>(Tipo: Cadena || Requerido)</code>: Dirección completa del recurso que se desea eliminar (por ejemplo: <code>https://api.ejemplo.com/usuarios/123</code>).</li>
+<li><code>json</code> <code>(Tipo: Cadena || Requerido)</code>: Datos adicionales en formato JSON que se incluirán en el cuerpo de la solicitud DELETE.</li>
+</ul>
+<h3 id="uso-común"><a class="header" href="#uso-común">Uso común</a></h3>
+<ul>
+<li>Eliminar un recurso específico (usuario, archivo, sesión, etc.).</li>
+<li>Confirmar la eliminación con datos adicionales si la API lo requiere.</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code class="language-bash">$httpAddHeader[Authorization;Bearer abc123]
+$httpDelete[https://api.ejemplo.com/usuarios/123;{"confirmar":True}]
+$httpResult[-1]
+</code></pre>
+<h3 id="resultado-esperado"><a class="header" href="#resultado-esperado">Resultado esperado</a></h3>
+<p><img src="image-144.png" alt="alt text" /></p>
+<p>📷 <em>Tal como se muestra en la imagen del bot Amisynth respondiendo: <code>{'message': 'Solicitud completada'}</code>.</em></p>
 
                     </main>
 

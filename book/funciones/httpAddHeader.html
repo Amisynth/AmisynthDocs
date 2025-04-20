@@ -153,6 +153,40 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="httpaddheader"><a class="header" href="#httpaddheader">$httpAddHeader[]</a></h1>
+<p>Agrega un encabezado personalizado a las solicitudes HTTP realizadas por funciones que utilicen llamadas externas, como <code>$httpRequest[]</code> o similares.</p>
+<blockquote>
+<p>Los encabezados HTTP (HTTP headers) proporcionan información adicional al servidor sobre la solicitud o sobre el cliente que la está realizando. Esta función permite establecer manualmente estos encabezados para controlar aspectos como el tipo de contenido, autenticación, origen, entre otros.</p>
+</blockquote>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code class="language-bash">$httpAddHeader[nombre;valor]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<ul>
+<li>
+<p><code>nombre</code> <code>(Tipo: Cadena || Requerido)</code>: El nombre del encabezado HTTP que deseas agregar (por ejemplo: <code>Authorization</code>, <code>Content-Type</code>, <code>User-Agent</code>, etc.).</p>
+</li>
+<li>
+<p><code>valor</code> <code>(Tipo: Cadena || Requerido)</code>: El valor correspondiente al encabezado.</p>
+</li>
+</ul>
+<h3 id="comportamiento"><a class="header" href="#comportamiento">Comportamiento</a></h3>
+<ul>
+<li>Esta función debe usarse <strong>antes de</strong> la función que ejecuta la solicitud HTTP (<code>$httpRequest[]</code>, por ejemplo).</li>
+<li>Puedes agregar múltiples encabezados llamando varias veces a <code>$httpAddHeader</code>.</li>
+</ul>
+<h3 id="uso-común"><a class="header" href="#uso-común">Uso común</a></h3>
+<ul>
+<li>Enviar un token de autenticación (<code>Authorization: Bearer TOKEN</code>).</li>
+<li>Especificar el tipo de contenido (<code>Content-Type: application/json</code>).</li>
+<li>Definir el origen de la solicitud (<code>Origin</code>, <code>Referer</code>, etc.).</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code>$httpAddHeader[Authorization;Bearer abc123]
+$httpAddHeader[Content-Type;application/json]
+$httpPost[https://api.ejemplo.com/datos;{"nombre":"Amisadai"}]
+$httpResult[-1]
+</code></pre>
+<p><img src="image-140.png" alt="alt text" /></p>
 
                     </main>
 

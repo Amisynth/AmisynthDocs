@@ -5,7 +5,7 @@ Devuelve el ID del usuario mencionado.
 **Sintaxis**
 
 ```
-$mentioned[Número de mención]
+$mentioned[Número de mención;(¿Devolver autor?)]
 ```
 
 **Parámetros**

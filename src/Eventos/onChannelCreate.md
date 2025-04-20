@@ -24,7 +24,3 @@ bot.new_event("$onChannelCreate", "📢 Se ha creado un nuevo canal: $channelNam
 
 bot.run(...)
 ```
-
----
-
-¿Quieres que agregue una sección con las variables que se pueden usar dentro del evento como `$channelID[]`, `$channelName[]`, etc.?

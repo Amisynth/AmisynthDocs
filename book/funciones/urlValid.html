@@ -153,6 +153,32 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="urlvalid"><a class="header" href="#urlvalid">$urlValid[]</a></h1>
+<p>Verifica si una URL proporcionada es válida según el formato estándar de direcciones web.</p>
+<blockquote>
+<p>Esta función evalúa si una cadena cumple con la estructura de una URL correctamente formada. Esto incluye el protocolo (como <code>http://</code> o <code>https://</code>), el dominio, y opcionalmente la ruta, los parámetros y el puerto. Es útil para validar entradas del usuario o asegurar que una URL puede ser utilizada correctamente por sistemas o peticiones web.</p>
+</blockquote>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$urlValid[URL]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<ul>
+<li><code>URL</code> <code>(Tipo: Cadena || Requerido)</code>: Cadena que se desea validar como una URL.</li>
+</ul>
+<h3 id="uso-común"><a class="header" href="#uso-común">Uso común</a></h3>
+<ul>
+<li>Validar enlaces ingresados por el usuario.</li>
+<li>Prevenir errores al hacer solicitudes HTTP con URLs mal formadas.</li>
+<li>Comprobar enlaces antes de procesarlos o almacenarlos.</li>
+</ul>
+<h3 id="resultado"><a class="header" href="#resultado">Resultado</a></h3>
+<ul>
+<li>Retorna <code>true</code> si la URL es válida.</li>
+<li>Retorna <code>false</code> si la URL no tiene un formato válido.</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code>$urlValid[https://google.com]
+</code></pre>
+<p><img src="image-139.png" alt="alt text" /></p>
 
                     </main>
 

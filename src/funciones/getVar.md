@@ -16,7 +16,7 @@ $getVar[Nombre de la variable;(ID de usuario)]
 - `ID de usuario` `(Tipo: Copo de nieve, Cadena || Indicador: Vacantable)`: El usuario del que se obtiene el valor (si es un usuario global).
 
 **Ejemplo**
-```
+```bash
 El contador global esra en $getVar[contador]
 ```
 

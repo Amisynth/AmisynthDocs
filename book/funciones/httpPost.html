@@ -153,6 +153,40 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="httppost"><a class="header" href="#httppost">$httpPost[]</a></h1>
+<p>Envía una solicitud HTTP de tipo <strong>POST</strong> a la URL especificada, enviando datos en formato JSON en el cuerpo de la solicitud.</p>
+<blockquote>
+<p>Este tipo de solicitud se utiliza comúnmente para enviar datos a un servidor, como cuando se crea un nuevo recurso, se envían formularios o se realiza una autenticación. La función permite interactuar con APIs externas de forma sencilla desde tu entorno.</p>
+</blockquote>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$httpPost[Url;Json]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<ul>
+<li><code>Url</code> <code>(Tipo: Cadena || Requerido)</code>: La dirección completa a la que se enviará la solicitud POST (por ejemplo, <code>https://api.ejemplo.com/usuarios</code>).</li>
+<li><code>Json</code> <code>(Tipo: Cadena || Requerido)</code>: El cuerpo del mensaje en formato JSON que se enviará con la solicitud.</li>
+</ul>
+<h3 id="comportamiento"><a class="header" href="#comportamiento">Comportamiento</a></h3>
+<ul>
+<li>El contenido enviado debe tener una estructura válida en formato JSON.</li>
+<li>Por defecto, algunos encabezados como <code>Content-Type: application/json</code> pueden estar predefinidos, pero se pueden sobrescribir usando <code>$httpAddHeader</code>.</li>
+</ul>
+<h3 id="uso-común"><a class="header" href="#uso-común">Uso común</a></h3>
+<ul>
+<li>Enviar datos a una API REST.</li>
+<li>Crear registros en una base de datos remota.</li>
+<li>Enviar formularios complejos con múltiples campos.</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code class="language-bash">$httpAddHeader[Authorization;Bearer abc123]
+$httpPost[https://api.ejemplo.com/usuarios;{'nombre':'Amisadai','edad':21}]
+$httpResult[-1]
+</code></pre>
+<h3 id="resultado"><a class="header" href="#resultado">Resultado</a></h3>
+<ul>
+<li>Devuelve la respuesta del servidor (puede ser un JSON, un mensaje, un código, etc.).</li>
+<li>Si hay un error en la solicitud (como una URL incorrecta o JSON malformado), se puede recibir un mensaje de error o código de estado.</li>
+</ul>
+<p><img src="image-142.png" alt="alt text" /></p>
 
                     </main>
 

@@ -14,7 +14,7 @@ $getUserVar[Nombre de la variable;(ID del usuario;ID del servidor)]
 - `ID del servidor` `(Tipo: Copo de nieve || Indicador: Opcional)`: El servidor para el que se obtendrá el valor de la variable. Si no se proporciona ningún gremio, se utiliza el gremio actual.
 
 **Ejemplo**
-```
+```bash
 Tu dinero es $getUserVar[dinero;$authorID[]]
 ```
 

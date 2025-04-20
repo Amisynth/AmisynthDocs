@@ -25,7 +25,7 @@
     - [Recusos](Recursos/README.md)
         - [Creacion](Recursos/Creacion.md)
         - [Indice Embeds](Recursos/Indices.md)
-        - [Disocord Tiempo UNIX](Recursos/MarcaTiempo.md)
+        - [Discord Tiempo UNIX](Recursos/MarcaTiempo.md)
         - [Discord Sistema de IDs](Recursos/IDs.md)
         - [Permisos](Recursos/Permisos.md)
         - [Hiper Links](Recursos/hiperlink.md)

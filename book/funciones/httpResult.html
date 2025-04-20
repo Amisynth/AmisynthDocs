@@ -153,6 +153,24 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="httpresult"><a class="header" href="#httpresult">$httpResult[]</a></h1>
+<p>Extrae un valor de la <strong>respuesta JSON</strong> obtenida por cualquier solicitud HTTP (<code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, <code>DELETE</code>).</p>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code>$httpResult[Clave]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<ul>
+<li><code>clave</code> <code>(Tipo: Cadena || Requerido)</code>: Nombre de la propiedad JSON que deseas obtener del resultado. Por ejemplo, si el JSON contiene <code>{ "nombre": "Saul" }</code>, puedes usar <code>$httpResult[nombre]</code> para obtener <code>"Saul"</code> y si se proporciona <code>-1</code> devuelve todo el JSON.</li>
+</ul>
+<h3 id="ejemplo"><a class="header" href="#ejemplo">Ejemplo</a></h3>
+<pre><code class="language-txt">$httpGet[https://api.ejemplo.com/search/usuarios/487430318500872203]
+Usuario encontrado: $httpResult[user]
+</code></pre>
+<p><img src="image-145.png" alt="alt text" /></p>
+<p>O para obtener todo:</p>
+<pre><code class="language-txt">$httpGet[https://api.ejemplo.com/search/usuarios/487430318500872203]
+Resultado completo: $httpResult[-1]
+</code></pre>
+<p><img src="image-147.png" alt="alt text" /></p>
 
                     </main>
 

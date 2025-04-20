@@ -153,6 +153,20 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="httppatch"><a class="header" href="#httppatch">$httpPatch[]</a></h1>
+<p>Envía una solicitud HTTP de tipo PATCH a la URL indicada, con datos JSON, para modificar parcialmente un recurso existente.</p>
+<p>A diferencia de PUT, que suele reemplazar por completo un recurso, PATCH solo actualiza los campos especificados.</p>
+<h2 id="sintaxis"><a class="header" href="#sintaxis">Sintaxis</a></h2>
+<pre><code class="language-bash">$httpPatch[url;json]
+</code></pre>
+<h3 id="parámetros"><a class="header" href="#parámetros">Parámetros</a></h3>
+<p><code>Url</code> <code>(Tipo: Cadena || Requerido)</code>: Dirección del recurso que deseas modificar.</p>
+<p><code>Json</code> <code>(Tipo: Cadena || Requerido)</code>: Datos en formato JSON con los campos que deseas actualizar.</p>
+<h3 id="ejemplo-de-uso"><a class="header" href="#ejemplo-de-uso">Ejemplo de uso</a></h3>
+<pre><code class="language-bash">$httpAddHeader[Authorization;Bearer abc123]
+$httpPatch[https://api.ejemplo.com/usuarios/123;{'nombre':'Saul'}]
+$httpResult[-1]
+</code></pre>
+<p><img src="image-142.png" alt="alt text" /></p>
 
                     </main>
 
