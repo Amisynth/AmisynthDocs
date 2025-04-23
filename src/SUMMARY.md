@@ -202,27 +202,38 @@
 
 
 - [Eventos](Eventos/README.md)
-    - [$onJoinMember](Eventos/onJoinMember.md)
-    - [$onLeaveMember](Eventos/onLeaveMember.md)
-    - [$onMessage](Eventos/onMessage.md)
-    - [$onMessageDelete](Eventos/onMessageDelete.md)
-    - [$onMessageEdit](Eventos/onMessageEdit.md)
-    - [$onMessageTyping](Eventos/onMessageTyping.md)
-    - [$onMessagesPurged](Eventos/onMessageTyping.md)
-    - [$onReactionRemove](Eventos/onReactionRemove.md)
-    - [$onReactionAdd](Eventos/onReactionAdd.md)
-    - [$onChannelCreate](Eventos/onChannelCreate.md)
-    - [$onChannelDelete](Eventos/onChannelDelete.md)
-    - [$onChannelEdit](Eventos/onChannelEdit.md)
-    - [$onThreadCreate](Eventos/onThreadCreate.md)
-    - [$onThreadDelete](Eventos/onThreadDelete.md)
-    - [$onThreadRemove](Eventos/onThreadRemove.md)
-    - [$onThreadJoin](Eventos/onThreadJoin.md)
-    - [$onThreadUpdate](Eventos/onThreadUpdate.md)
-    - [$onThreadJoinMember](Eventos/onThreadJoinMember.md)
-    - [$onThreadRemoveMember](Eventos/onThreadRemoveMember.md)
-    
+    - [Miembros](Eventos/n.md)
+       - [$onJoinMember](Eventos/onJoinMember.md)
+       - [$onLeaveMember](Eventos/onLeaveMember.md)
+       - [$onMessage](Eventos/onMessage.md)
+       - [$onMessageDelete](Eventos/onMessageDelete.md)
 
+    - [Mensajes](Eventos/Mensajes.md)
+       - [$onMessageEdit](Eventos/onMessageEdit.md)
+       - [$onMessageTyping](Eventos/onMessageTyping.md)
+       - [$onMessagesPurged](Eventos/onMessageTyping.md)
+
+    - [Reacciones](Eventos/Reacciones.md)
+        - [$onReactionRemove](Eventos/onReactionRemove.md)
+        - [$onReactionAdd](Eventos/onReactionAdd.md)
+
+    - [Canales](Eventos/canales.md)
+        - [$onChannelCreate](Eventos/onChannelCreate.md)
+        - [$onChannelDelete](Eventos/onChannelDelete.md)
+        - [$onChannelEdit](Eventos/onChannelEdit.md)
+
+    - [Hilos](Eventos/Hilos.md)
+        - [$onThreadCreate](Eventos/onThreadCreate.md)
+        - [$onThreadDelete](Eventos/onThreadDelete.md)
+        - [$onThreadRemove](Eventos/onThreadRemove.md)
+        - [$onThreadJoin](Eventos/onThreadJoin.md)
+        - [$onThreadUpdate](Eventos/onThreadUpdate.md)
+        - [$onThreadJoinMember](Eventos/onThreadJoinMember.md)
+        - [$onThreadRemoveMember](Eventos/onThreadRemoveMember.md)
+    
+    - [Servidor](Eventos/servidor.md)
+        - [$onBotJoinServer](Eventos/onBotJoinServer.md)
+        - [$onBotLeaveServer](Eventos/onBotLeaveServer.md)
 
 
 [output.html]

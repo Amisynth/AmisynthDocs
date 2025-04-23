@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>$onReactionRemove - AmisynthDocs</title>
+        <title>$onBotJoinServer - AmisynthDocs</title>
 
 
         <!-- Custom HTML head -->
@@ -152,36 +152,17 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="onreactionremove"><a class="header" href="#onreactionremove">$onReactionRemove</a></h1>
-<p><code>$onReactionRemove</code> se activa cuando un usuario elimina una reacción de un mensaje en el servidor.</p>
-<pre><code>$onReactionRemove
-</code></pre>
-<p>Es una llamada de retorno que se ejecuta automáticamente cuando un usuario quita una reacción de un mensaje.</p>
-<blockquote>
-<p>📌 Se puede tener varios <code>$onReactionRemove</code> por bot, pero no es recomendable.</p>
-</blockquote>
-<p><strong>Sintaxis</strong></p>
-<blockquote>
-<p>No requiere sintaxis específica, pero para capturar detalles de la reacción eliminada se pueden usar funciones como <code>$reactionEvent[]</code>, <code>$channelID[]</code>, <code>$messageID[]</code>.</p>
-</blockquote>
-<p><strong>Ejemplo</strong></p>
-<pre><code class="language-python">bot = ...
-
-bot.new_event("$onReactionRemove", "Emoji: $reactionEvent[]")
-
-bot.run(..)
-</code></pre>
-<p><img src="image-1.png" alt="alt text" /></p>
+                        <h1 id="onbotjoinserver"><a class="header" href="#onbotjoinserver">$onBotJoinServer</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../Eventos/Reacciones.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../Eventos/servidor.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../Eventos/onReactionAdd.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../Eventos/onBotLeaveServer.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -191,11 +172,11 @@ bot.run(..)
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../Eventos/Reacciones.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../Eventos/servidor.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../Eventos/onReactionAdd.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../Eventos/onBotLeaveServer.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
